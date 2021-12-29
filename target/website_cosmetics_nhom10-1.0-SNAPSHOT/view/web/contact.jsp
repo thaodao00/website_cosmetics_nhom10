@@ -1,106 +1,13 @@
-
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@include file="/common/taglib.jsp" %>
+
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
     <title>Contact Us</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="template/web/assets/css/base.css">
-    <link rel="stylesheet" href="template/web/assets/css/grid.css">
-    <link rel="stylesheet" href="template/web/assets/css/main.css">
-    <link rel="stylesheet" href="template/web/assets/css/responsive.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Comforter+Brush&family=Estonia&family=Kaushan+Script&family=Marck+Script&family=Nothing+You+Could+Do&family=Patrick+Hand&family=Roboto&family=Satisfy&family=Sawarabi+Gothic&family=Tangerine:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/font/fontawesome-free-5.15.3-web/css/all.min.css">
 </head>
 <body>
 <div id="app">
-    <!--Header: begin-->
-    <header class="header">
-        <div class="grid wide ">
-            <div class="row navbar">
-                <div class="col l-2 m-2 c-6">
-                    <a href="index.html" style="text-decoration: none">
-                        <h1 class="logo"about=""> Cosmetics</h1>
-                    </a>
-                </div>
-                <div class="col l-8 m-8 c-0">
-                    <ul class="navbar__list">
-                        <li class="navbar__item">
-                            <a href="./index.html" class="navbar__item-link">
-                                HOME
-                            </a>
-                        </li>
-                        <li class="navbar__item">
-                            <a class="navbar__item-link" href="./products.html">
-                                PRODUCTS
-                            </a>
-                        </li>
-                        <li class="navbar__item">
-                            <a class="navbar__item-link" href="./about.html">
-                                ABOUT US
-                            </a>
-                        </li>
-                        <li class="navbar__item">
-                            <a class="navbar__item-link" href="./contact.html">
-                                CONTACT US
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="header-icon col l-2 m-2 c-0">
-                    <a class="search-link">
-                        <i class="fas fa-search"></i>
-                    </a>
-                    <a href="./cart.html" class="cart-link">
-                        <span class="cart-link-notice">3</span>
-                        <i class="fa fa-cart-plus"></i>
-                    </a>
-                    <a class="login-link">
-                        <i class="fa fa-user"></i>
-                    </a>
-
-                </div>
-                <div class="nav-icon col l-0 m-0 c-6">
-                    <label for="nav-mobile__label">
-                        <i class="nav-link fas fa-bars"></i>
-                    </label>
-                    <input type="checkbox" hidden="" id="nav-mobile__label" class="navbar__check">
-                    <div class="nav-mobile">
-                        <label for="nav-mobile__label">
-                            <i class="icon-exit far fa-times-circle"></i>
-                        </label>
-                        <ul class="nav-mobile__list">
-                            <a href="./index.html" class="nav-mobile__link">
-                                <li class="nav-mobile__item">
-                                    Home
-                                </li>
-                            </a>
-                            <a href="./products.html" class="nav-mobile__link">
-                                <li class="nav-mobile__item">
-                                    Products
-                                </li>
-                            </a>
-                            <a href="./about.html"class="nav-mobile__link">
-                                <li class="nav-mobile__item">
-                                    About Us
-                                </li>
-                            </a>
-                            <a href="./contact.html" class="nav-mobile__link">
-                                <li class="nav-mobile__item">
-                                    Contact Us
-                                </li>
-                            </a>
-                        </ul>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </header>
-    <!--Header: end-->
     <div class="contact-content">
         <div class="product-slider">
             <div class="product-slider-wrapper">
@@ -116,7 +23,7 @@
                             <li><h2>ZURICH</h2></li>
                             <li><a href="#">Address: Seestrasse 21, Zurich</a></li>
                             <li><a href="#">E-mail: biagiottitheme@gmail.com</a></li>
-                            <li> <a href="#">Phone : + 99 411 725 39 12</a></li>
+                            <li><a href="#">Phone : + 99 411 725 39 12</a></li>
                         </ul>
                     </div>
                     <div class="col l-3 m-6 c-12 branch">
@@ -124,23 +31,23 @@
                             <li><h2>PARIS</h2></li>
                             <li><a href="#">Address: Rue Vieille Du Temple, Paris</a></li>
                             <li><a href="#">E-mail: biagiottitheme@gmail.com</a></li>
-                            <li> <a href="#">Phone : + 99 411 725 39 12</a></li>
+                            <li><a href="#">Phone : + 99 411 725 39 12</a></li>
                         </ul>
                     </div>
                     <div class="col l-3 m-6 c-12 branch">
                         <ul class="branch-item">
-                            <li>  <h2>LONDON</h2></li>
+                            <li><h2>LONDON</h2></li>
                             <li><a href="#">Address: 191 Victoria Street, London</a></li>
                             <li><a href="#">E-mail: biagiottitheme@gmail.com</a></li>
-                            <li> <a href="#">Phone : + 99 411 725 39 12</a></li>
+                            <li><a href="#">Phone : + 99 411 725 39 12</a></li>
                         </ul>
                     </div>
                     <div class="col l-3 m-6 c-12 branch">
                         <ul class="branch-item">
-                            <li>  <h2>VIETNAM</h2></li>
+                            <li><h2>VIETNAM</h2></li>
                             <li><a href="#">Address: Tan Phu ward,Thu Duc city</a></li>
                             <li><a href="#">E-mail: biagiottitheme@gmail.com</a></li>
-                            <li> <a href="#">Phone : + 99 411 725 39 12</a></li>
+                            <li><a href="#">Phone : + 99 411 725 39 12</a></li>
                         </ul>
                     </div>
                 </div>
@@ -154,11 +61,12 @@
                         <div class="contact-section-inner">
                             <h2 class="tagline"> Perfect shades</h2>
                             <h2 class="title">Ask us anything</h2>
-                            <h5 class="subtitle">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque</h5>
+                            <h5 class="subtitle">At vero eos et accusamus et iusto odio dignissimos ducimus qui
+                                blanditiis praesentium voluptatum deleniti atque</h5>
                         </div>
                         <div class="contact-form">
                             <input type="email" class="your-email" placeholder="Email*">
-                            <textarea  class="your-message" cols="40" rows="10" placeholder="Your comment"></textarea>
+                            <textarea class="your-message" cols="40" rows="10" placeholder="Your comment"></textarea>
                             <button class="submit-btn">SUBMIT</button>
                         </div>
                     </div>
@@ -168,92 +76,11 @@
                 </div>
             </div>
         </div>
-        <!--Footer: begin-->
-        <div class="footer">
-            <div class="grid wide">
-                <div class="row footer-content">
-                    <div class="col l-4 m-12 c-12">
-                        <ul class="footer__contact">
-                            <li class="footer__contact--title">
-                                CONTACT
-                            </li>
-                            <a class="footer__contact-link" href="">
-                                <li class="footer__contact-address">
-                                    Address: Ho Chi Minh City
-                                </li>
-                            </a>
-                            <a class="footer__contact-link" href="">
-                                <li class="footer__contact-email">
-                                    Email: @gmail.com
-                                </li>
-                            </a>
-                            <a class="footer__contact-link" href="">
-                                <li class="footer__contact-phone">
-                                    Phone: +0363275624
-                                </li>
-                            </a>
-                            <img class="footer__contact-img" src="assets/img/footer-tab-1.png" alt="">
 
-                        </ul>
-                    </div>
-                    <div class="col l-4 m-12 c-12">
-                        <ul class="footer__follow">
-                            <li class="footer__contact--title">
-                                COSMETICS
-                            </li>
-                            <p class="footer__follow-text">
-                                An oasis of online beauty built
-                                <br>
-                                specifically so your new cosmetics
-                                <br>
-                                site can take everyone’s breaths away.
-                            </p>
-                            <div class="footer__follow-icon">
-                                <a href="" class="footer__follow-icon-link">
-                                    <i class="fab fa-internet-explorer"></i>
-                                </a>
-                                <a href="" class="footer__follow-icon-link">
-                                    <i class="fab fa-instagram"></i>
-                                </a>
-                                <a href="" class="footer__follow-icon-link">
-                                    <i class="fab fa-facebook-square"></i>
-                                </a>
-                                <a href="" class="footer__follow-icon-link">
-                                    <i class="fab fa-pinterest-square"></i>
-                                </a>
-
-                            </div>
-                        </ul>
-                    </div>
-                    <div class="col l-4 m-12 c-12">
-                        <ul class="footer__follow">
-                            <li class="footer__contact--title">
-                                COLLECTIONS
-                            </li>
-                            <p class="footer__follow-text">
-                                Glowing skin is a result
-                                <br>
-                                ABCDEH Beauty – Forever Young
-                                <br>
-                                Pure Skin Solutions
-                            </p>
-                        </ul>
-                    </div>
-
-                </div>
-
-            </div>
-            <div class="footer--bottom">
-                <p class="footer-bottom__text">Copyright © Group 1 Nong Lam University</p>
-            </div>
-
-
-        </div>
-        <!--Footer: end-->
         <!--Search mobile-->
         <div class="search-mobile">
             <div class="search-mobile__input">
-                <input class="search-mobile__input-text" placeholder="Search..." >
+                <input class="search-mobile__input-text" placeholder="Search...">
                 <i class="icon-search fas fa-search"></i>
             </div>
 
@@ -453,6 +280,6 @@
         </div>
     </div>
 </div>
-<script src="template/web/assets/js/showHide.js"></script>
+
 </body>
 </html>
