@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<decorators defaultdir="/decorators">
+    <excludes>
+        <!--Không apply giao diện-->
+        <pattern>/api*</pattern>
+    </excludes>
+    <!--Apply giao diện-->
+    <decorator name="admin" page="admin.jsp">
+        <pattern>/admin*</pattern>
+    </decorator>
+    <decorator name="home" page="home.jsp">
+        <pattern>/home</pattern>
+    </decorator>
+
+    <decorator name="cart" page="cart.jsp">
+        <pattern>/web-cart</pattern>
+    </decorator>
+
+    <decorator name="contact us" page="contact.jsp">
+        <pattern>/web-contact</pattern>
+    </decorator>
+
+</decorators>
