@@ -1,8 +1,7 @@
 <%@include file="/common/taglib.jsp"%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<!DOCTYPE html>
-<html lang="en">
 
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -282,14 +281,14 @@
     <div class="slideshow-container">
         <!-- Full-width images with number and caption text -->
         <div class="mySlides fade">
-            <img src="assets/img/slider-3.jpg" style="width:100%">
+            <img src="template/web/assets/img/slider-3.jpg" style="width:100%">
         </div>
         <div class="mySlides fade">
-            <img src="assets/img/slider-2.jpg" style="width:100%">
+            <img src="template/web/assets/img/slider-2.jpg" style="width:100%">
         </div>
 
         <div class="mySlides fade">
-            <img src="assets/img/slider-1.jpg" style="width:100%">
+            <img src="template/web/assets/img/slider-1.jpg" style="width:100%">
         </div>
     </div>
     <br>
@@ -313,7 +312,7 @@
                     <a href="#" class="col l-2-4 m-3 c-6">
                         <div class="product__item">
                             <img class="product__item-img"
-                                 src="assets/img/hot/rdn-high-spreadability-fluid-primer-30ml-4.png">
+                                 src="template/web/assets/img/hot/rdn-high-spreadability-fluid-primer-30ml-4.png">
                             <h3 class="product__item-name">
                                 High-Spreadability Fluid Primer
                             </h3>
@@ -348,7 +347,7 @@
                     <a href="#" class="col l-2-4 m-3 c-6">
                         <div class="product__item">
                             <img class="product__item-img"
-                                 src="assets/img/hot/rdn-glycolic-acid-7pct-toning-solution-240ml-7.png">
+                                 src="template/web/assets/img/hot/rdn-glycolic-acid-7pct-toning-solution-240ml-7.png">
                             <h3 class="product__item-name">
                                 Glycolic Acid 7% Toning Solution
                             </h3>
@@ -383,7 +382,7 @@
                     <a href="#" class="col l-2-4 m-3 c-6">
                         <div class="product__item">
                             <img class="product__item-img"
-                                 src="assets/img/hot/rdn-caffeine-solution-5pct-egcg-30ml-8.png">
+                                 src="template/web/assets/img/hot/rdn-caffeine-solution-5pct-egcg-30ml-8.png">
                             <h3 class="product__item-name">
                                 Caffeine Solution 5% + EGCG
                             </h3>
@@ -421,7 +420,7 @@
                     <a href="#" class="col l-2-4 m-3 c-6">
                         <div class="product__item">
                             <img class="product__item-img"
-                                 src="assets/img/hot/rdn-niacinamide-10pct-zinc-1pct-30ml-9.png">
+                                 src="template/web/assets/img/hot/rdn-niacinamide-10pct-zinc-1pct-30ml-9.png">
                             <h3 class="product__item-name">
                                 Niacinamide 10% + Zinc 1%
                             </h3>
@@ -459,7 +458,7 @@
                     <a href="#" class="col l-2-4 m-3 c-6">
                         <div class="product__item">
                             <img class="product__item-img"
-                                 src="assets/img/hot/R-ScentsforsmallspacesUK_480x480-5.jpg">
+                                 src="template/web/assets/img/hot/R-ScentsforsmallspacesUK_480x480-5.jpg">
                             <h3 class="product__item-name">
                                 Scents for Small Spaces
                             </h3>
@@ -501,7 +500,7 @@
         <!-- Featured Items: end-->
         <div class="row sile-content">
             <div class="l-6 m-6 c-12 slide-content__main">
-                <img class="slide-content__img" src="./assets/img/slide-f-11.jpg" alt="" srcset="">
+                <img class="slide-content__img" src="template/web/assets/img/slide-f-11.jpg" alt="" srcset="">
                 <div class="slide-content__text">
                     <h3 style="padding-top: 50%">MAKE UP IS AN ART FORM</h3>
                     <p>Honoring natural beauty.</p>
@@ -509,14 +508,14 @@
             </div>
             <div class="l-6 m-6 c-12 ">
                 <div class="row slide-content__main">
-                    <img class="slide-content__img" src="./assets/img/m-h-port-gallery-6.jpg" alt="" srcset="">
+                    <img class="slide-content__img" src="template/web/assets/img/m-h-port-gallery-6.jpg" alt="" srcset="">
                     <div class="slide-content__text">
                         <h3>MAKE UP IS AN ART FORM</h3>
                         <p>It gives you confidence and shine.</p>
                     </div>
                 </div>
                 <div class="row slide-content__main">
-                    <img class="slide-content__img" src="./assets/img/slide-f-3.jpg" alt="" srcset="">
+                    <img class="slide-content__img" src="template/web/assets/img/slide-f-3.jpg" alt="" srcset="">
                     <div class="slide-content__text">
                         <h3>MAKE UP IS AN ART FORM</h3>
                         <p>Spread your own beauty with your hands.</p>
@@ -738,15 +737,15 @@
                         <!--Slider: begin-->
                         <div class="products-slidesshow">
                             <div class="mySlider fadeSlider">
-                                <img class="mySlider-img" src="assets/img/slide/s1.webp"
+                                <img class="mySlider-img" src="template/web/assets/img/slide/s1.webp"
                                      style="width: 100%;margin-bottom: 15px;">
                             </div>
                             <div class="mySlider fadeSlider">
-                                <img class="mySlider-img" src="assets/img/slide/s2.webp"
+                                <img class="mySlider-img" src="template/web/assets/img/slide/s2.webp"
                                      style="width: 100%;margin-bottom: 15px;">
                             </div>
                             <div class="mySlider fadeSlider">
-                                <img class="mySlider-img" src="assets/img/slide/s3.webp"
+                                <img class="mySlider-img" src="template/web/assets/img/slide/s3.webp"
                                      style="width: 100%;margin-bottom: 15px;">
                             </div>
                             <a class="prev" onclick="plusSlider(-1)" style="color: brown">

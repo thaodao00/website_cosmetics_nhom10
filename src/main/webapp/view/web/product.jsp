@@ -6,11 +6,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Store</title>
-    <link rel="stylesheet" href="assets/font/fontawesome-free-5.15.3-web/css/all.min.css">
-    <link rel="stylesheet" href="assets/css/base.css">
-    <link rel="stylesheet" href="assets/css/grid.css">
-    <link rel="stylesheet" href="assets/css/main.css">
-    <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="template/web/assets/font/fontawesome-free-5.15.3-web/css/all.min.css">
+    <link rel="stylesheet" href="template/web/assets/css/base.css">
+    <link rel="stylesheet" href="template/web/assets/css/grid.css">
+    <link rel="stylesheet" href="template/web/assets/css/main.css">
+    <link rel="stylesheet" href="template/web/assets/css/responsive.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -816,8 +816,8 @@
         </div>
     </div>
 </div>
-<script src="assets/js/JSProduct.js"></script>
-<script type="module" src="assets/js/showHide.js"></script>
+<script src="template/web/assets/js/JSProduct.js"></script>
+<script type="module" src="template/web/assets/js/showHide.js"></script>
 </div>
 </body>
 </html>

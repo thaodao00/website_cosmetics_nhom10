@@ -8,11 +8,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Products</title>
-    <link rel="stylesheet" href="assets/css/base.css">
-    <link rel="stylesheet" href="assets/css/grid.css">
-    <link rel="stylesheet" href="assets/css/main.css">
-    <link rel="stylesheet" href="assets/css/responsive.css">
-    <link rel="stylesheet" href="assets/font/fontawesome-free-5.15.3-web/css/all.min.css">
+    <link rel="stylesheet" href="template/web/assets/css/base.css">
+    <link rel="stylesheet" href="template/web/assets/css/grid.css">
+    <link rel="stylesheet" href="template/web/assets/css/main.css">
+    <link rel="stylesheet" href="template/web/assets/css/responsive.css">
+    <link rel="stylesheet" href="template/web/assets/font/fontawesome-free-5.15.3-web/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Comforter+Brush&family=Estonia&family=Kaushan+Script&family=Marck+Script&family=Nothing+You+Could+Do&family=Patrick+Hand&family=Roboto&family=Satisfy&family=Sawarabi+Gothic&family=Tangerine:wght@700&display=swap" rel="stylesheet">
@@ -198,7 +198,7 @@
                     <div class="row products">
                         <a href="./product.html" class="col l-2-4 m-4 c-6">
                             <div class="product__item">
-                                <img class="product__item-img" src="assets/img/ordinary/rdn-serum-foundation-31-y-30ml-1.png">
+                                <img class="product__item-img" src="template/web/assets/img/ordinary/rdn-serum-foundation-31-y-30ml-1.png">
                                 <h5 class="product__item-name">
                                     Serum Foundation
                                 </h5>
@@ -230,7 +230,7 @@
                         </a>
                         <a href="#" class="col l-2-4 m-4 c-6">
                             <div class="product__item">
-                                <img class="product__item-img" src="assets/img/ordinary/rdn-high-adherence-silicone-primer-30ml-2.png">
+                                <img class="product__item-img" src="template/web/assets/img/ordinary/rdn-high-adherence-silicone-primer-30ml-2.png">
                                 <h5 class="product__item-name">
                                     High-Adherence Silicone Primer
                                 </h5>
@@ -261,7 +261,7 @@
                         </a>
                         <a href="#" class="col l-2-4 m-4 c-6">
                             <div class="product__item">
-                                <img class="product__item-img" src="assets/img/ordinary/rdn-concealer-30-y-8ml-3.png">
+                                <img class="product__item-img" src="template/web/assets/img/ordinary/rdn-concealer-30-y-8ml-3.png">
                                 <h5 class="product__item-name">
                                     Concealer
                                 </h5>
@@ -291,7 +291,7 @@
                         </a>
                         <a href="#" class="col l-2-4 m-4 c-6">
                             <div class="product__item">
-                                <img class="product__item-img" src="assets/img/ordinary/rdn-high-spreadability-fluid-primer-30ml-4.png">
+                                <img class="product__item-img" src="template/web/assets/img/ordinary/rdn-high-spreadability-fluid-primer-30ml-4.png">
                                 <h5 class="product__item-name">
                                     High-Spreadability Fluid Primer                                </h5>
                                 <div class="product__item-price-wrapper">
@@ -320,7 +320,7 @@
                         </a>
                         <a href="#" class="col l-2-4 m-4 c-6">
                             <div class="product__item">
-                                <img class="product__item-img" src="assets/img/ordinary/rdn-coverage-foundation-30-y-30ml-5.png">
+                                <img class="product__item-img" src="template/web/assets/img/ordinary/rdn-coverage-foundation-30-y-30ml-5.png">
                                 <h5 class="product__item-name">
                                     Coverage Foundation
                                 </h5>
@@ -350,7 +350,7 @@
                         </a>
                         <a href="#" class="col l-2-4 m-4 c-6">
                             <div class="product__item">
-                                <img class="product__item-img" src="assets/img/ordinary/rdn-multi-peptide-serum-for-hair-density-60ml-6.png">
+                                <img class="product__item-img" src="template/web/assets/img/ordinary/rdn-multi-peptide-serum-for-hair-density-60ml-6.png">
                                 <h5 class="product__item-name">
                                     Multi-Peptide Serum for Hair Density
                                 </h5>
@@ -380,7 +380,7 @@
                         </a>
                         <a href="#" class="col l-2-4 m-4 c-6">
                             <div class="product__item">
-                                <img class="product__item-img" src="assets/img/ordinary/rdn-glycolic-acid-7pct-toning-solution-240ml-7.png">
+                                <img class="product__item-img" src="template/web/assets/img/ordinary/rdn-glycolic-acid-7pct-toning-solution-240ml-7.png">
                                 <h5 class="product__item-name">
                                     Glycolic Acid 7% Toning Solution
                                 </h5>
@@ -410,7 +410,7 @@
                         </a>
                         <a href="#" class="col l-2-4 m-4 c-6">
                             <div class="product__item">
-                                <img class="product__item-img" src="assets/img/ordinary/rdn-caffeine-solution-5pct-egcg-30ml-8.png">
+                                <img class="product__item-img" src="template/web/assets/img/ordinary/rdn-caffeine-solution-5pct-egcg-30ml-8.png">
                                 <h5 class="product__item-name">
                                     Caffeine Solution 5% + EGCG
                                 </h5>
@@ -440,7 +440,7 @@
                         </a>
                         <a href="#" class="col l-2-4 m-4 c-6">
                             <div class="product__item">
-                                <img class="product__item-img" src="assets/img/ordinary/rdn-niacinamide-10pct-zinc-1pct-30ml-9.png">
+                                <img class="product__item-img" src="template/web/assets/img/ordinary/rdn-niacinamide-10pct-zinc-1pct-30ml-9.png">
                                 <h5 class="product__item-name">
                                     Niacinamide 10% + Zinc 1%
                                 </h5>
@@ -470,7 +470,7 @@
                         </a>
                         <a href="#" class="col l-2-4 m-4 c-6">
                             <div class="product__item">
-                                <img class="product__item-img" src="assets/img/ordinary/rdn-natural-moisturizing-factors-ha-30ml-10.png">
+                                <img class="product__item-img" src="template/web/assets/img/ordinary/rdn-natural-moisturizing-factors-ha-30ml-10.png">
                                 <h5 class="product__item-name">
                                     Natural Moisturizing Factors + HA
                                 </h5>
@@ -763,6 +763,6 @@
     </div>
 </div>
 
-<script src="assets/js/showHide.js"></script>
+<script src="template/web/assets/js/showHide.js"></script>
 </body>
 </html>
