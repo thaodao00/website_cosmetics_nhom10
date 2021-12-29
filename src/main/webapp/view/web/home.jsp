@@ -1,281 +1,15 @@
 <%@include file="/common/taglib.jsp"%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>cosmetics</title>
-    <link rel="stylesheet" href="template/web/assets/css/base.css">
-    <link rel="stylesheet" href="template/web/assets/css/grid.css">
-    <link rel="stylesheet" href="template/web/assets/css/main.css">
-    <link rel="stylesheet" href="template/web/assets/css/responsive.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-            href="https://fonts.googleapis.com/css2?family=Comforter+Brush&family=Estonia&family=Kaushan+Script&family=Marck+Script&family=Nothing+You+Could+Do&family=Patrick+Hand&family=Roboto&family=Satisfy&family=Sawarabi+Gothic&family=Tangerine:wght@700&display=swap"
-            rel="stylesheet">
+    <title>Home</title>
+
 </head>
 
 <body>
-<div id="app">
-    <!--Header: begin-->
-    <header class="header">
-        <div class="grid wide ">
-            <div class="row navbar">
-                <div class="col l-2 m-2 c-6">
-                    <a href="index.html" style="text-decoration: none">
-                        <h1 class="logo" about=""> Cosmetics</h1>
-                    </a>
-                </div>
-                <div class="col l-8 m-8 c-0">
-                    <ul class="navbar__list">
-                        <li class="navbar__item">
-                            <a href="./index.html" class="navbar__item-link">
-                                HOME
-                            </a>
-                        </li>
-                        <li class="navbar__item">
-                            <a class="navbar__item-link" href="./products.html">
-                                PRODUCTS
-                            </a>
-                        </li>
-                        <li class="navbar__item">
-                            <a class="navbar__item-link" href="./about.html">
-                                ABOUT US
-                            </a>
-                        </li>
-                        <li class="navbar__item">
-                            <a class="navbar__item-link" href="./contact.html">
-                                CONTACT US
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="header-icon col l-2 m-2 c-0">
-                    <div class="search-link__wrapper">
-                        <a class="search-link">
-                            <i class="fas fa-search"></i>
-                        </a>
-                    </div>
-                    <div class="cart-link__wrapper">
-                        <a href="./cart.html" class="cart-link">
-                            <span class="cart-link-notice">5</span>
-                            <i class="fa fa-cart-plus"></i>
-                        </a>
-                        <!-- cart list -->
-                        <div class="cart-list">
-                            <!-- empty cart list -->
-                            <div class="cart-list__empty-cart">
-                                <img src="./assets/img/icon/empty_cart.png" alt="Empty cart" class="cart-list__empty-cart-img">
-                                <div class="cart-list__empty-cart-title">
-                                    Unfortunately, Your Cart Is Empty
-                                </div>
-                                <div class="cart-list__empty-cart-message">
-                                    Please add something in your cart
-                                </div>
-                            </div>
-                            <!-- filled cart list -->
-                            <div class="cart-list__filled-cart">
-                                <div class="filled-cart__header">
-                                        <span class="filled-cart__title">
-                                            Added Products
-                                        </span>
-                                </div>
-                                <ul class="cart-list__filled-cart__items-list">
-                                    <a href="./" class="cart-list__filled-cart__item-wrapper">
-                                        <li class="cart-list__filled-cart__item">
-                                            <img src="./assets/img/ordinary/rdn-coverage-foundation-30-y-30ml-5.png" alt="foundation" class="filled-cart__item-img">
-                                            <div class="cart-list__filled-cart__item-info">
-                                                <div class="cart-list__filled-cart__item-info-head">
-                                                        <span class="cart-list__filled-cart__item-name">
-                                                            RDN Coverage Foundation
-                                                        </span>
-                                                    <div class="cart-list__filled-cart__price-wrapper">
-                                                        <div class="cart-list__filled-cart__item-price">
-                                                            $20
-                                                        </div>
-                                                        <div class="cart-list__filled-cart__multiphy">x</div>
-                                                        <div class="cart-list__filled-cart__item-quantity">
-                                                            2
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="cart-list__filled-cart__item-info-body">
-                                                        <span class="cart-list__filled-cart__item-category">
-                                                            Category: Serum
-                                                        </span>
-                                                    <span class="cart-list__filled-cart__remove">
-                                                            Remove
-                                                        </span>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </a>
-
-                                    <li class="cart-list__filled-cart__item">
-                                        <img src="./assets/img/ordinary/rdn-multi-peptide-serum-for-hair-density-60ml-6.png" alt="foundation" class="filled-cart__item-img">
-                                        <div class="cart-list__filled-cart__item-info">
-                                            <div class="cart-list__filled-cart__item-info-head">
-                                                    <span class="cart-list__filled-cart__item-name">
-                                                        RDN High Spreadability Fluid Primer 30ml limited version made in USA
-                                                    </span>
-                                                <div class="cart-list__filled-cart__price-wrapper">
-                                                    <div class="cart-list__filled-cart__item-price">
-                                                        $25
-                                                    </div>
-                                                    <div class="cart-list__filled-cart__multiphy">x</div>
-                                                    <div class="cart-list__filled-cart__item-quantity">
-                                                        4
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="cart-list__filled-cart__item-info-body">
-                                                    <span class="cart-list__filled-cart__item-category">
-                                                        Category: Serum
-                                                    </span>
-                                                <span class="cart-list__filled-cart__remove">
-                                                        Remove
-                                                    </span>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="cart-list__filled-cart__item">
-                                        <img src="./assets/img/ordinary/rdn-niacinamide-10pct-zinc-1pct-30ml-9.png" alt="foundation" class="filled-cart__item-img">
-                                        <div class="cart-list__filled-cart__item-info">
-                                            <div class="cart-list__filled-cart__item-info-head">
-                                                    <span class="cart-list__filled-cart__item-name">
-                                                        Niacinamide
-                                                    </span>
-                                                <div class="cart-list__filled-cart__price-wrapper">
-                                                    <div class="cart-list__filled-cart__item-price">
-                                                        $22
-                                                    </div>
-                                                    <div class="cart-list__filled-cart__multiphy">x</div>
-                                                    <div class="cart-list__filled-cart__item-quantity">
-                                                        1
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="cart-list__filled-cart__item-info-body">
-                                                    <span class="cart-list__filled-cart__item-category">
-                                                        Category: Serum
-                                                    </span>
-                                                <span class="cart-list__filled-cart__remove">
-                                                        Remove
-                                                    </span>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="cart-list__filled-cart__item">
-                                        <img src="./assets/img/ordinary/rdn-natural-moisturizing-factors-ha-30ml-10.png" alt="foundation" class="filled-cart__item-img">
-                                        <div class="cart-list__filled-cart__item-info">
-                                            <div class="cart-list__filled-cart__item-info-head">
-                                                    <span class="cart-list__filled-cart__item-name">
-                                                        RDN Natural Moisturizung
-                                                    </span>
-                                                <div class="cart-list__filled-cart__price-wrapper">
-                                                    <div class="cart-list__filled-cart__item-price">
-                                                        $14
-                                                    </div>
-                                                    <div class="cart-list__filled-cart__multiphy">x</div>
-                                                    <div class="cart-list__filled-cart__item-quantity">
-                                                        1
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="cart-list__filled-cart__item-info-body">
-                                                    <span class="cart-list__filled-cart__item-category">
-                                                        Category: Serum
-                                                    </span>
-                                                <span class="cart-list__filled-cart__remove">
-                                                        Remove
-                                                    </span>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="cart-list__filled-cart__item">
-                                        <img src="./assets/img/ordinary/rdn-glycolic-acid-7pct-toning-solution-240ml-7.png" alt="foundation" class="filled-cart__item-img">
-                                        <div class="cart-list__filled-cart__item-info">
-                                            <div class="cart-list__filled-cart__item-info-head">
-                                                    <span class="cart-list__filled-cart__item-name">
-                                                        RDN High Adherence Silicone Primer 30ml
-                                                    </span>
-                                                <div class="cart-list__filled-cart__price-wrapper">
-                                                    <div class="cart-list__filled-cart__item-price">
-                                                        $33
-                                                    </div>
-                                                    <div class="cart-list__filled-cart__multiphy">x</div>
-                                                    <div class="cart-list__filled-cart__item-quantity">
-                                                        2
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="cart-list__filled-cart__item-info-body">
-                                                    <span class="cart-list__filled-cart__item-category">
-                                                        Category: Serum
-                                                    </span>
-                                                <span class="cart-list__filled-cart__remove">
-                                                        Remove
-                                                    </span>
-                                            </div>
-                                        </div>
-                                    </li>
-                                </ul>
-                                <a href="./cart.html" class="cart-list__filled-cart__footer">
-                                    <button id="cart-list__view-button" class="buttons buttons--smaller">View Cart</button>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="login-link__wrapper">
-                        <a class="login-link">
-                            <i class="fa fa-user"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="nav-mobile__overlay"></div>
-                <div class="nav-icon col l-0 m-0 c-6">
-                    <label for="nav-mobile__label">
-                        <i class="nav-link fas fa-bars"></i>
-                    </label>
-                    <input type="checkbox" hidden="" id="nav-mobile__label" class="navbar__check">
-                    <div class="nav-mobile">
-                        <label for="nav-mobile__label">
-                            <i class="icon-exit far fa-times-circle"></i>
-                        </label>
-                        <ul class="nav-mobile__list">
-                            <a href="./index.html" class="nav-mobile__link">
-                                <li class="nav-mobile__item">
-                                    Home
-                                </li>
-                            </a>
-                            <a href="./products.html" class="nav-mobile__link">
-                                <li class="nav-mobile__item">
-                                    Products
-                                </li>
-                            </a>
-                            <a href="./about.html" class="nav-mobile__link">
-                                <li class="nav-mobile__item">
-                                    About Us
-                                </li>
-                            </a>
-                            <a href="./contact.html" class="nav-mobile__link">
-                                <li class="nav-mobile__item">
-                                    Contact Us
-                                </li>
-                            </a>
-                        </ul>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </header>
-    <!--Header: end-->
-
     <!--Slider: begin-->
     <!-- Slideshow container -->
     <div class="slideshow-container">
@@ -1130,88 +864,7 @@
     </div>
     <!--Overview: end-->
 
-    <!--Footer: begin-->
-    <div class="footer">
-        <div class="grid wide">
-            <div class="row footer-content">
-                <div class="col l-4 m-12 c-12">
-                    <ul class="footer__contact">
-                        <li class="footer__contact--title">
-                            CONTACT
-                        </li>
-                        <a class="footer__contact-link" href="">
-                            <li class="footer__contact-address">
-                                Address: Ho Chi Minh City
-                            </li>
-                        </a>
-                        <a class="footer__contact-link" href="">
-                            <li class="footer__contact-email">
-                                Email: @gmail.com
-                            </li>
-                        </a>
-                        <a class="footer__contact-link" href="">
-                            <li class="footer__contact-phone">
-                                Phone: +0363275624
-                            </li>
-                        </a>
-                        <img class="footer__contact-img" src="assets/img/footer-tab-1.png" alt="">
 
-                    </ul>
-                </div>
-                <div class="col l-4 m-12 c-12">
-                    <ul class="footer__follow">
-                        <li class="footer__contact--title">
-                            COSMETICS
-                        </li>
-                        <p class="footer__follow-text">
-                            An oasis of online beauty built
-                            <br>
-                            specifically so your new cosmetics
-                            <br>
-                            site can take everyone’s breaths away.
-                        </p>
-                        <div class="footer__follow-icon">
-                            <a href="" class="footer__follow-icon-link">
-                                <i class="fab fa-internet-explorer"></i>
-                            </a>
-                            <a href="" class="footer__follow-icon-link">
-                                <i class="fab fa-instagram"></i>
-                            </a>
-                            <a href="" class="footer__follow-icon-link">
-                                <i class="fab fa-facebook-square"></i>
-                            </a>
-                            <a href="" class="footer__follow-icon-link">
-                                <i class="fab fa-pinterest-square"></i>
-                            </a>
-
-                        </div>
-                    </ul>
-                </div>
-                <div class="col l-4 m-12 c-12">
-                    <ul class="footer__follow">
-                        <li class="footer__contact--title">
-                            COLLECTIONS
-                        </li>
-                        <p class="footer__follow-text">
-                            Glowing skin is a result
-                            <br>
-                            ABCDEH Beauty – Forever Young
-                            <br>
-                            Pure Skin Solutions
-                        </p>
-                    </ul>
-                </div>
-
-            </div>
-
-        </div>
-        <div class="footer--bottom">
-            <p class="footer-bottom__text">Copyright © Group 1 Nong Lam University</p>
-        </div>
-
-
-    </div>
-    <!--Footer: end-->
     <!--Search mobile-->
     <div class="search-mobile">
         <div class="search-mobile__input">
@@ -1227,7 +880,7 @@
         </a>
 
     </div>
-</div>
+
 <!--    modal-->
 <div class="modal">
     <div class="modal__icon-close">
@@ -1440,8 +1093,7 @@
         setTimeout(showSlides, 2000); // Change image every 2 seconds
     }
 </script>
-<script src="template/web/assets/js/JSBase.js"></script>
-<script src="template/web/assets/js/showHide.js"></script>
+
 
 </body>
 
