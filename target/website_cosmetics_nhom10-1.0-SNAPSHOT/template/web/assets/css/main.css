@@ -2055,7 +2055,7 @@ select.auth-form__input:hover {
 .filled-cart__item-img, .pay__item-img {
     width: 100px;
     height: 100px;
-    background-image: url("../img/product/granary/kdream.jpg");
+    /*background-image: url("../img/product/granary/kdream.jpg");*/
     background-size: contain;
     background-position: center 0;
     /*background-repeat: no-repeat;*/

@@ -1,5 +1,11 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ include file="/common/taglib.jsp" %>
+<%
+    request.setCharacterEncoding ("UTF-8");
+    response.setCharacterEncoding ("UTF-8");
+%>
+<jsp:useBean id="cart" scope="request" type="com.example.website_cosmetics_nhom10.bean.Cart"/>
+<jsp:useBean id="product" scope="request" type="com.example.website_cosmetics_nhom10.bean.Product"/>
 <!DOCTYPE html>
 <html>
 <head>
@@ -29,66 +35,68 @@
             </div>
 
             <div class="filled-cart__items-wrapper">
+                <c:set var="list" value="${sessionScope.cart.data}">
+                <c:forEach var="i" items="${list}" >
                 <div class="filled-cart__item">
                     <input type="checkbox" class="select-product">
                     <a href="#" class="filled-cart__item-info">
-                        <div class="filled-cart__item-img"></div>
-                        <p class="filled-cart__item-description">K Dream Kem lót trang điểm tự nhiên lâu trôi & xịt nhũ
-                            khoá trang điểm 8h lâu trôi phù hợp với mọi loại da</p>
+                        <div class="filled-cart__item-img">${i.product.thumnailImg}</div>
+                        <p class="filled-cart__item-description">${i.product.name}</p>
                     </a>
-                    <span class="filled-cart__item-price">$24</span>
+                    <span class="filled-cart__item-price">${i.product.price}</span>
                     <div class="filled-cart__item-quantity">
                         <div class="quantity-buttons">
                             <button class="quantity-buttons--minus">-</button>
-                            <div class="quantity-buttons--number">1</div>
+                            <div class="quantity-buttons--number">${i.quantity}</div>
                             <button class="quantity-buttons--plus">+</button>
                         </div>
                     </div>
-                    <span class="filled-cart__item-totalPrice">$24</span>
+                    <span class="filled-cart__item-totalPrice">${i.total}</span>
                     <div class="filled-cart__item-delete-button">
                         <button class="buttons">Delete</button>
                     </div>
                 </div>
+                </c:forEach>
+                </c:set>
+<%--                <div class="filled-cart__item">--%>
+<%--                    <input type="checkbox" class="select-product">--%>
+<%--                    <a href="#" class="filled-cart__item-info">--%>
+<%--                        <div class="filled-cart__item-img"></div>--%>
+<%--                        <p class="filled-cart__item-description">K Dream Kem lót trang điểm tự nhiên lâu trôi</p>--%>
+<%--                    </a>--%>
+<%--                    <span class="filled-cart__item-price">$24</span>--%>
+<%--                    <div class="filled-cart__item-quantity">--%>
+<%--                        <div class="quantity-buttons">--%>
+<%--                            <button class="quantity-buttons--minus">-</button>--%>
+<%--                            <div class="quantity-buttons--number">1</div>--%>
+<%--                            <button class="quantity-buttons--plus">+</button>--%>
+<%--                        </div>--%>
+<%--                    </div>--%>
+<%--                    <span class="filled-cart__item-totalPrice">$24</span>--%>
+<%--                    <div class="filled-cart__item-delete-button">--%>
+<%--                        <button class="buttons">Delete</button>--%>
+<%--                    </div>--%>
+<%--                </div>--%>
 
-                <div class="filled-cart__item">
-                    <input type="checkbox" class="select-product">
-                    <a href="#" class="filled-cart__item-info">
-                        <div class="filled-cart__item-img"></div>
-                        <p class="filled-cart__item-description">K Dream Kem lót trang điểm tự nhiên lâu trôi</p>
-                    </a>
-                    <span class="filled-cart__item-price">$24</span>
-                    <div class="filled-cart__item-quantity">
-                        <div class="quantity-buttons">
-                            <button class="quantity-buttons--minus">-</button>
-                            <div class="quantity-buttons--number">1</div>
-                            <button class="quantity-buttons--plus">+</button>
-                        </div>
-                    </div>
-                    <span class="filled-cart__item-totalPrice">$24</span>
-                    <div class="filled-cart__item-delete-button">
-                        <button class="buttons">Delete</button>
-                    </div>
-                </div>
-
-                <div class="filled-cart__item">
-                    <input type="checkbox" class="select-product">
-                    <a href="#" class="filled-cart__item-info">
-                        <div class="filled-cart__item-img"></div>
-                        <p class="filled-cart__item-description">K Dream</p>
-                    </a>
-                    <span class="filled-cart__item-price">$24</span>
-                    <div class="filled-cart__item-quantity">
-                        <div class="quantity-buttons">
-                            <button class="quantity-buttons--minus">-</button>
-                            <div class="quantity-buttons--number">1</div>
-                            <button class="quantity-buttons--plus">+</button>
-                        </div>
-                    </div>
-                    <span class="filled-cart__item-totalPrice">$24</span>
-                    <div class="filled-cart__item-delete-button">
-                        <button class="buttons">Delete</button>
-                    </div>
-                </div>
+<%--                <div class="filled-cart__item">--%>
+<%--                    <input type="checkbox" class="select-product">--%>
+<%--                    <a href="#" class="filled-cart__item-info">--%>
+<%--                        <div class="filled-cart__item-img"></div>--%>
+<%--                        <p class="filled-cart__item-description">K Dream</p>--%>
+<%--                    </a>--%>
+<%--                    <span class="filled-cart__item-price">$24</span>--%>
+<%--                    <div class="filled-cart__item-quantity">--%>
+<%--                        <div class="quantity-buttons">--%>
+<%--                            <button class="quantity-buttons--minus">-</button>--%>
+<%--                            <div class="quantity-buttons--number">1</div>--%>
+<%--                            <button class="quantity-buttons--plus">+</button>--%>
+<%--                        </div>--%>
+<%--                    </div>--%>
+<%--                    <span class="filled-cart__item-totalPrice">$24</span>--%>
+<%--                    <div class="filled-cart__item-delete-button">--%>
+<%--                        <button class="buttons">Delete</button>--%>
+<%--                    </div>--%>
+<%--                </div>--%>
             </div>
 
             <a href="./pay.html" class="purchase-confirmation-button">

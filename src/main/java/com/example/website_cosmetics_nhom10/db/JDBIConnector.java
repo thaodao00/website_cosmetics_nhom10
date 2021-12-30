@@ -10,9 +10,9 @@ public class JDBIConnector {
 
     private static void makeConnect() {
         MysqlDataSource dataSource = new MysqlDataSource();
-        dataSource.setURL("jdbc:mysql://" + DBProperties.getDbHost() + ":" + DBProperties.getDbPort() + "/" + DBProperties.getDatabaseName());
-        dataSource.setUser(DBProperties.getUsername());
-        dataSource.setPassword(DBProperties.getPassword());
+        dataSource.setURL("jdbc:mysql://" + com.example.website_cosmetics_nhom10.db.DBProperties.getDbHost() + ":" + com.example.website_cosmetics_nhom10.db.DBProperties.getDbPort() + "/" + com.example.website_cosmetics_nhom10.db.DBProperties.getDatabaseName());
+        dataSource.setUser(com.example.website_cosmetics_nhom10.db.DBProperties.getUsername());
+        dataSource.setPassword(com.example.website_cosmetics_nhom10.db.DBProperties.getPassword());
         try {
             dataSource.setUseCompression(true);
             dataSource.setAutoReconnect(true);
