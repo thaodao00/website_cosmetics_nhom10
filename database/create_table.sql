@@ -23,3 +23,15 @@ create table role(
 );
 
 alter table user add constraint fk_user_role foreign key (roleid) references role(id);
+
+create table product(
+                     id bigint not null primary key auto_increment,
+                     name VARCHAR(255) not null,
+                     fullname VARCHAR(255) null,
+                     password VARCHAR(255) not null,
+                     email VARCHAR(255) null,
+                     phone VARCHAR(15) null,
+                     country VARCHAR(50) null,
+                     roleid BIGINT not null DEFAULT 0,
+                     cartid BIGINT null
+);

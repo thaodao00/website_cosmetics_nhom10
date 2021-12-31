@@ -1,6 +1,8 @@
 package com.example.website_cosmetics_nhom10.bean;
 
-public class Product {
+import java.io.Serializable;
+
+public class Product implements Serializable {
     Long id ;
     String name;
     String thumnailImg;

@@ -12,13 +12,7 @@ public class CartServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
        HttpSession session = request.getSession ();
-        Cart cart = (Cart) session.getAttribute ("cart");
-        if(cart==null){
-            cart = Cart.getInstance ();
-            session.setAttribute ("cart",cart);
-        }
-       request.setAttribute ("cart", cart);
-        request.getRequestDispatcher("view/web/cart.jsp").forward(request, response);
+                request.getRequestDispatcher("view/web/cart.jsp").forward(request, response);
     }
 
     @Override

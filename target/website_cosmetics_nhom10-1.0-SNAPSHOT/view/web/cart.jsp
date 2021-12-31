@@ -4,8 +4,6 @@
     request.setCharacterEncoding ("UTF-8");
     response.setCharacterEncoding ("UTF-8");
 %>
-<jsp:useBean id="cart" scope="request" type="com.example.website_cosmetics_nhom10.bean.Cart"/>
-<jsp:useBean id="product" scope="request" type="com.example.website_cosmetics_nhom10.bean.Product"/>
 <!DOCTYPE html>
 <html>
 <head>
@@ -35,68 +33,46 @@
             </div>
 
             <div class="filled-cart__items-wrapper">
-                <c:set var="list" value="${sessionScope.cart.data}">
-                <c:forEach var="i" items="${list}" >
+
                 <div class="filled-cart__item">
                     <input type="checkbox" class="select-product">
                     <a href="#" class="filled-cart__item-info">
-                        <div class="filled-cart__item-img">${i.product.thumnailImg}</div>
-                        <p class="filled-cart__item-description">${i.product.name}</p>
+                        <div class="filled-cart__item-img"></div>
+                        <p class="filled-cart__item-description">K Dream Kem lót trang điểm tự nhiên lâu trôi</p>
                     </a>
-                    <span class="filled-cart__item-price">${i.product.price}</span>
+                    <span class="filled-cart__item-price">$24</span>
                     <div class="filled-cart__item-quantity">
                         <div class="quantity-buttons">
                             <button class="quantity-buttons--minus">-</button>
-                            <div class="quantity-buttons--number">${i.quantity}</div>
+                            <div class="quantity-buttons--number">1</div>
                             <button class="quantity-buttons--plus">+</button>
                         </div>
                     </div>
-                    <span class="filled-cart__item-totalPrice">${i.total}</span>
+                    <span class="filled-cart__item-totalPrice">$24</span>
                     <div class="filled-cart__item-delete-button">
                         <button class="buttons">Delete</button>
                     </div>
                 </div>
-                </c:forEach>
-                </c:set>
-<%--                <div class="filled-cart__item">--%>
-<%--                    <input type="checkbox" class="select-product">--%>
-<%--                    <a href="#" class="filled-cart__item-info">--%>
-<%--                        <div class="filled-cart__item-img"></div>--%>
-<%--                        <p class="filled-cart__item-description">K Dream Kem lót trang điểm tự nhiên lâu trôi</p>--%>
-<%--                    </a>--%>
-<%--                    <span class="filled-cart__item-price">$24</span>--%>
-<%--                    <div class="filled-cart__item-quantity">--%>
-<%--                        <div class="quantity-buttons">--%>
-<%--                            <button class="quantity-buttons--minus">-</button>--%>
-<%--                            <div class="quantity-buttons--number">1</div>--%>
-<%--                            <button class="quantity-buttons--plus">+</button>--%>
-<%--                        </div>--%>
-<%--                    </div>--%>
-<%--                    <span class="filled-cart__item-totalPrice">$24</span>--%>
-<%--                    <div class="filled-cart__item-delete-button">--%>
-<%--                        <button class="buttons">Delete</button>--%>
-<%--                    </div>--%>
-<%--                </div>--%>
 
-<%--                <div class="filled-cart__item">--%>
-<%--                    <input type="checkbox" class="select-product">--%>
-<%--                    <a href="#" class="filled-cart__item-info">--%>
-<%--                        <div class="filled-cart__item-img"></div>--%>
-<%--                        <p class="filled-cart__item-description">K Dream</p>--%>
-<%--                    </a>--%>
-<%--                    <span class="filled-cart__item-price">$24</span>--%>
-<%--                    <div class="filled-cart__item-quantity">--%>
-<%--                        <div class="quantity-buttons">--%>
-<%--                            <button class="quantity-buttons--minus">-</button>--%>
-<%--                            <div class="quantity-buttons--number">1</div>--%>
-<%--                            <button class="quantity-buttons--plus">+</button>--%>
-<%--                        </div>--%>
-<%--                    </div>--%>
-<%--                    <span class="filled-cart__item-totalPrice">$24</span>--%>
-<%--                    <div class="filled-cart__item-delete-button">--%>
-<%--                        <button class="buttons">Delete</button>--%>
-<%--                    </div>--%>
-<%--                </div>--%>
+                <div class="filled-cart__item">
+                    <input type="checkbox" class="select-product">
+                    <a href="#" class="filled-cart__item-info">
+                        <div class="filled-cart__item-img"></div>
+                        <p class="filled-cart__item-description">K Dream</p>
+                    </a>
+                    <span class="filled-cart__item-price">$24</span>
+                    <div class="filled-cart__item-quantity">
+                        <div class="quantity-buttons">
+                            <button class="quantity-buttons--minus">-</button>
+                            <div class="quantity-buttons--number">1</div>
+                            <button class="quantity-buttons--plus">+</button>
+                        </div>
+                    </div>
+                    <span class="filled-cart__item-totalPrice">$24</span>
+                    <div class="filled-cart__item-delete-button">
+                        <button class="buttons">Delete</button>
+                    </div>
+                </div>
             </div>
 
             <a href="./pay.html" class="purchase-confirmation-button">
