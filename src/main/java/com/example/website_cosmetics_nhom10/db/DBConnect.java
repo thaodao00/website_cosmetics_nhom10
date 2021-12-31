@@ -9,7 +9,7 @@ import java.util.Collection;
 public class DBConnect {
     private static DBConnect dbConnect;
     private static Connection connection;
-    private  static  final  String DB_URL = "jdbc:mysql://localhost:3306/website-cosmetics-group10";
+    private  static  final  String DB_URL = "jdbc:mysql://localhost:3306/web_cosmetics_nhom10";
     private static String USER ="root";
     private static String PASS ="";
 

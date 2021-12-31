@@ -1,7 +1,7 @@
 package com.example.website_cosmetics_nhom10.dao;
 
 import com.example.website_cosmetics_nhom10.db.JDBIConnector;
-import com.example.website_cosmetics_nhom10.bean.Product;
+import com.example.website_cosmetics_nhom10.beans.Product;
 
 import java.util.List;
 import java.util.stream.Collectors;

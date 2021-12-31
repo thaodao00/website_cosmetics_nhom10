@@ -1,6 +1,6 @@
 package com.example.website_cosmetics_nhom10.controller.web.ProductListController;
 
-import com.example.website_cosmetics_nhom10.bean.Product;
+import com.example.website_cosmetics_nhom10.beans.Product;
 import com.example.website_cosmetics_nhom10.service.ProductsService;
 
 import javax.servlet.*;

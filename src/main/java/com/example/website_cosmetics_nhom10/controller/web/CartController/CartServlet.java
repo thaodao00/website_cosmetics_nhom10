@@ -1,7 +1,5 @@
 package com.example.website_cosmetics_nhom10.controller.web.CartController;
 
-import com.example.website_cosmetics_nhom10.bean.Cart;
-
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;

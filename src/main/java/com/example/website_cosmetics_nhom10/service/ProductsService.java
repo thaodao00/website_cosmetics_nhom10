@@ -1,6 +1,6 @@
 package com.example.website_cosmetics_nhom10.service;
 
-import com.example.website_cosmetics_nhom10.bean.Product;
+import com.example.website_cosmetics_nhom10.beans.Product;
 import com.example.website_cosmetics_nhom10.dao.ProductDao;
 
 import java.util.List;

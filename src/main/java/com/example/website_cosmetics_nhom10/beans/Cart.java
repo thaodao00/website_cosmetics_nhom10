@@ -1,4 +1,4 @@
-package com.example.website_cosmetics_nhom10.bean;
+package com.example.website_cosmetics_nhom10.beans;
 
 import java.util.Collection;
 import java.util.HashMap;
