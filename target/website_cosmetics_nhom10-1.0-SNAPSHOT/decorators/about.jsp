@@ -4,11 +4,11 @@
 <head>
     <title>About</title>
     <title><dec:title default="About Us" /></title>
-    <link href="<c:url value='/template/web/assets/css/base.css' />" rel="stylesheet" type="text/css" media="all"/>
-    <link href="<c:url value='/template/web/assets/css/grid.css' />" rel="stylesheet" type="text/css" media="all"/>
+    <link href="<c:url value='/template/base.css' />" rel="stylesheet" type="text/css" media="all"/>
+    <link href="<c:url value='/template/grid.css' />" rel="stylesheet" type="text/css" media="all"/>
     <link href="<c:url value='/template/web/assets/css/main.css' />" rel="stylesheet" type="text/css" media="all"/>
     <link href="<c:url value='/template/web/assets/css/responsive.css' />" rel="stylesheet" type="text/css" media="all"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="<c:url value='/template/web/assets/font/fontawesome-free-5.15.3-web/css/all.min.css' />" rel="stylesheet" type="text/css" media="all"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link

@@ -19,8 +19,8 @@ public class ProductDao {
     }
     public List<Product> getAll(){
         //Cú pháp lambda
-        return  JDBIConnector.get ().withHandle (handle ->{
-            return handle.createQuery ("select *from product").mapToBean (Product.class).stream ().collect(Collectors.toList ());
-        });
+        return  JDBIConnector.get ().withHandle (handle ->
+             handle.createQuery ("select *from product").mapToBean (Product.class).stream ().collect(Collectors.toList ()));
+
     }
 }

@@ -7,7 +7,7 @@
     </excludes>
     
     <!-- apply Sitemesh default template -->
-    <decorator name="admin" page="admin.jsp">
+    <decorator name="admin" page="admin-account.jsp">
         <pattern>/admin*</pattern>
     </decorator>
     
@@ -24,9 +24,7 @@
         <pattern>/api*</pattern>
     </excludes>
     <!--Apply giao diện-->
-    <decorator name="admin" page="admin.jsp">
-        <pattern>/admin*</pattern>
-    </decorator>
+
     <decorator name="home" page="home.jsp">
         <pattern>/home</pattern>
     </decorator>

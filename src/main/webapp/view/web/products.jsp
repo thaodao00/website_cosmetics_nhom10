@@ -5,7 +5,7 @@
     response.setCharacterEncoding ("UTF-8");
 %>
 <jsp:useBean id="products" scope="request" type="java.util.List"/>
-<!DOCTYPE html>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

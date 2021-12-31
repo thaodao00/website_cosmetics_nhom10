@@ -6,8 +6,8 @@
     <title><dec:title default="Contact Us"/></title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="template/web/assets/css/base.css">
-    <link rel="stylesheet" href="template/web/assets/css/grid.css">
+    <link rel="stylesheet" href="template/base.css">
+    <link rel="stylesheet" href="template/grid.css">
     <link rel="stylesheet" href="template/web/assets/css/main.css">
     <link rel="stylesheet" href="template/web/assets/css/responsive.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">

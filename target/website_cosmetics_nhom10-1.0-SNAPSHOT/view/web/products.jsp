@@ -5,7 +5,7 @@
     response.setCharacterEncoding ("UTF-8");
 %>
 <jsp:useBean id="products" scope="request" type="java.util.List"/>
-<!DOCTYPE html>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,7 +13,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Products</title>
-
 </head>
 <body>
     <!--Content: begin-->

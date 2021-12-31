@@ -9,8 +9,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><dec:title default="Cart"/></title>
     <link rel="stylesheet" href="template/web/assets/font/fontawesome-free-5.15.3-web/css/all.css">
-    <link rel="stylesheet" href="template/web/assets/css/base.css">
-    <link rel="stylesheet" href="template/web/assets/css/grid.css">
+    <link rel="stylesheet" href="template/base.css">
+    <link rel="stylesheet" href="template/grid.css">
     <link rel="stylesheet" href="template/web/assets/css/main.css">
     <link rel="stylesheet" href="template/web/assets/css/responsive.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
