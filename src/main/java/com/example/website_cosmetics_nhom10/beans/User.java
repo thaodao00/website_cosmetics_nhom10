@@ -2,7 +2,7 @@ package com.example.website_cosmetics_nhom10.beans;
 
 public class User {
     private long id, phone, roleId, cartId;
-    private String username, password, email, country, avatar;
+    private String username, fullName, password, email, country, avatar;
 
     public User() {
 
@@ -13,7 +13,7 @@ public class User {
         this.password = password;
     }
 
-    public User(long id, long phone, long roleId, long cartId, String username, String password, String email, String country, String avatar) {
+    public User(long id, long phone, long roleId, long cartId, String username, String fullName, String password, String email, String country, String avatar) {
         this.id = id;
         this.phone = phone;
         this.roleId = roleId;
@@ -23,6 +23,7 @@ public class User {
         this.email = email;
         this.country = country;
         this.avatar = avatar;
+        this.fullName = fullName;
     }
 
     public long getId() {
@@ -97,5 +98,11 @@ public class User {
         this.avatar = avatar;
     }
 
-    
+    public String getFullName() {
+        return fullName;
+    }
+
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
+    }
 }
