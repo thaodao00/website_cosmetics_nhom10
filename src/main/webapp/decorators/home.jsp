@@ -1,5 +1,9 @@
 <%@include file="/common/taglib.jsp" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<% request.setCharacterEncoding("UTF-8");
+    response.setCharacterEncoding("UTF-8");
+    String success = (String) request.getAttribute("success");
+    String error = (String) request.getAttribute("error");%>
 <html>
 <head>
     <title><dec:title default="Home" /></title>

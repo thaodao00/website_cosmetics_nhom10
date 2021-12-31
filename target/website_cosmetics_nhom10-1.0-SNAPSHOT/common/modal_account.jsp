@@ -21,8 +21,8 @@
                             <input type="password" class="auth-form__input" placeholder="Password" name="password">
                         </div>
                         <div class="auth-form__group">
-                            <input type="password" class="auth-form__input" placeholder="Confirm password"
-                                   name="confirm_password">
+                            <input type="password" class="auth-form__input" placeholder="confirm password"
+                                   name="confirmPassword">
                         </div>
 
                     </div>
