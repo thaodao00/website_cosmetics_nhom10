@@ -19,8 +19,17 @@
     <!-- header -->
     <%@ include file="/common/web/header.jsp" %>
     <!-- header -->
+
     <dec:body/>
+
+    <!-- modal account -->
+    <%@ include file="/common/modal_account.jsp" %>
+    <!-- modal account -->
+
+    <!-- footer -->
     <%@ include file="/common/web/footer.jsp" %>
+    <!-- footer -->
+
 </div>
 <script type="text/javascript" src="<c:url value='/template/web/assets/js/JSBase.js' />"></script>
 <script type="text/javascript" src="<c:url value='/template/web/assets/js/showHide.js' />"></script>
