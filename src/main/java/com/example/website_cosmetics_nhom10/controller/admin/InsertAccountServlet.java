@@ -5,11 +5,11 @@ import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
 
-@WebServlet(name = "AccountServlet", value = "/admin-account")
+@WebServlet(name = "admin", value = "/admin-insert-contact")
 public class InsertAccountServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher ("/view/admin/account.jsp").forward (request,response);
+        request.getRequestDispatcher ("/view/admin/insertContact.jsp").forward (request,response);
     }
 
     @Override

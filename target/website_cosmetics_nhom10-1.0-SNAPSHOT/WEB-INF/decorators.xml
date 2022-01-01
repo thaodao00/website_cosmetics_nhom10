@@ -7,8 +7,35 @@
     </excludes>
     
     <!-- apply Sitemesh default template -->
-    <decorator name="admin" page="admin-account.jsp">
-        <pattern>/admin*</pattern>
+    <decorator name="admin-account" page="admin-account.jsp">
+        <pattern>/admin-account</pattern>
+    </decorator>
+    <decorator name="admin-insert-account" page="admin-insert-account.jsp">
+        <pattern>/admin-insert-account</pattern>
+    </decorator>
+    <decorator name="admin-product" page="admin-products.jsp">
+        <pattern>/admin-products</pattern>
+    </decorator>
+    <decorator name="admin-insert-product" page="admin-insert-products.jsp">
+        <pattern>/admin-insert-products</pattern>
+    </decorator>
+
+    <decorator name="admin-category" page="admin-category.jsp">
+        <pattern>/admin-category</pattern>
+    </decorator>
+    <decorator name="admin-insert-category" page="admin-insert-category.jsp">
+        <pattern>/admin-insert-category</pattern>
+    </decorator>
+
+    <decorator name="admin-order" page="admin-order.jsp">
+        <pattern>/admin-order</pattern>
+    </decorator>
+
+    <decorator name="admin-contact" page="admin-contact.jsp">
+        <pattern>/admin-contact</pattern>
+    </decorator>
+    <decorator name="admin-insert-contact" page="admin-insert-contact.jsp">
+        <pattern>/admin-insert-contact</pattern>
     </decorator>
     
     <decorator name="web" page="home.jsp">
