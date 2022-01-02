@@ -59,7 +59,9 @@
     <decorator name="cart" page="cart.jsp">
         <pattern>/web-cart</pattern>
     </decorator>
-
+    <decorator name="products" page="products.jsp">
+        <pattern>/web-products</pattern>
+    </decorator>
     <decorator name="contact us" page="contact.jsp">
         <pattern>/web-contact</pattern>
     </decorator>

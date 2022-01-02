@@ -5,16 +5,30 @@
     response.setCharacterEncoding ("UTF-8");
 %>
 <jsp:useBean id="products" scope="request" type="java.util.List"/>
-
+<jsp:useBean id="category" scope="request" type="java.util.List"/>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<%--    <meta name="viewport" content="width=device-width, initial-scale=1.0">--%>
     <title>Products</title>
 </head>
 <body>
+<ul class="header__sort-bar">
+    <li class="header__sort-item">
+        <a href="" class="header__sort-link">Common</a>
+    </li>
+    <li class="header__sort-item header__sort-item--active">
+        <a href="" class="header__sort-link">New</a>
+    </li>
+    <li class="header__sort-item">
+        <a href="" class="header__sort-link">Lowest first</a>
+    </li>
+    <li class="header__sort-item">
+        <a href="" class="header__sort-link">Highest first</a>
+    </li>
+</ul>
     <!--Content: begin-->
     <div class="content-products">
         <div class="grid wide">
@@ -25,27 +39,14 @@
                             CATEGORIES
                         </h3>
                         <ul class="product__items-list">
+                            <c:forEach var="i" items="${category}">
                             <a href="" class="product__item-link">
-                                <li class="product__items-item active-btn">The Ordinary</li>
+<%--                                <li class="product__items-item active-btn">${i.title}</li>--%>
+                                <li class="product__items-item">${i.title}</li>
+
                             </a>
-                            <a href="" class="product__item-link">
-                                <li class="product__items-item">Body Oil</li>
-                            </a>
-                            <a href="" class="product__item-link">
-                                <li class="product__items-item">Face Masks</li>
-                            </a>
-                            <a href="" class="product__item-link">
-                                <li class="product__items-item">Make Up</li>
-                            </a>
-                            <a href="" class="product__item-link">
-                                <li class="product__items-item">Hari care</li>
-                            </a>
-                            <a href="" class="product__item-link">
-                                <li class="product__items-item">Skincare</li>
-                            </a>
-                            <a href="" class="product__item-link">
-                                <li class="product__items-item">Tool</li>
-                            </a>
+
+                            </c:forEach>
                         </ul>
                     </div>
                 </div>
@@ -85,10 +86,10 @@
                                 <a href="" class="mobile-category__link">Hair Care</a></a>
                             </li> <li class="mobile-category__item">
                             <a href="" class="mobile-category__link">Skincare</a></a>
-                        </li>
-                            </li> <li class="mobile-category__item">
-                            <a href="" class="mobile-category__link">Tool</a></a>
-                        </li>
+                            </li>
+                                </li> <li class="mobile-category__item">
+                                <a href="" class="mobile-category__link">Tool</a></a>
+                            </li>
                         </ul>
                     </nav>
                     <br>

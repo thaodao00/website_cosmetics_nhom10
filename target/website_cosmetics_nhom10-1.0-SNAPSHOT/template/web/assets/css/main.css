@@ -550,6 +550,7 @@ h1{
     align-items: center;
     background: var(--white-color);
     display: none;
+    z-index: 500;
 }
 .header__sort-item{
     flex: 1;
