@@ -53,7 +53,7 @@
     <!--Apply giao diện-->
 
     <decorator name="home" page="home.jsp">
-        <pattern>/home</pattern>
+        <pattern>/web-home</pattern>
     </decorator>
     <decorator name="products" page="products.jsp">
         <pattern>/web-products</pattern>

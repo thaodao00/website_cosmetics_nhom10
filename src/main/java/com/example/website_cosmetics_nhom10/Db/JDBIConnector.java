@@ -4,7 +4,7 @@ import com.mysql.cj.jdbc.MysqlDataSource;
 import org.jdbi.v3.core.Jdbi;
 
 import java.sql.SQLException;
-import static com.example.website_cosmetics_nhom10.Db.DBPropreties.*;
+import static com.example.website_cosmetics_nhom10.Db.DBProperties.*;
 
 public class JDBIConnector {
     public static Jdbi jdbi;

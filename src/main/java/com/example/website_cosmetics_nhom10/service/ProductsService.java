@@ -23,4 +23,7 @@ public class ProductsService {
         return ProductDao.getInstance ().getAll ();
 
     }
+    public  List<Product> getTagName(String name){
+        return ProductDao.getInstance ().getTagName (name);
+    }
 }

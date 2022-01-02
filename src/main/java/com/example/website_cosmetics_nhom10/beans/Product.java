@@ -14,12 +14,12 @@ public class Product implements Serializable {
     double rate;
     String weight;
     String dimension;
-
+    String tagName;
     public Product(){
 
     }
 
-    public Product(Long id, String name, String thumnailImg, double price, double discount, int sold, String shortDescription, String longDescription, double rate, String weight, String dimension) {
+    public Product(Long id, String name, String thumnailImg, double price, double discount, int sold, String shortDescription, String longDescription, double rate, String weight, String dimension,String tagName) {
         this.id = id;
         this.name = name;
         this.thumnailImg = thumnailImg;
@@ -31,6 +31,7 @@ public class Product implements Serializable {
         this.rate = rate;
         this.weight = weight;
         this.dimension = dimension;
+        this.tagName= tagName;
     }
 
     public Long getId() {
@@ -119,5 +120,13 @@ public class Product implements Serializable {
 
     public void setDimension(String dimension) {
         this.dimension = dimension;
+    }
+
+    public void setTagName(String tagName) {
+        this.tagName = tagName;
+    }
+
+    public String getTagName() {
+        return tagName;
     }
 }

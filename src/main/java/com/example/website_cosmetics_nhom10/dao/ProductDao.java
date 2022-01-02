@@ -24,4 +24,10 @@ public class ProductDao {
              handle.createQuery ("select *from product").mapToBean (Product.class).stream ().collect(Collectors.toList ()));
 
     }
+    public List<Product> getTagName(String tagName){
+        //Cú pháp lambda
+        return  JDBIConnector.get ().withHandle (handle ->
+                handle.createQuery ("select *from product where tagName = ?").bind (0,tagName).mapToBean (Product.class).stream ().collect(Collectors.toList ()));
+
+    }
 }
