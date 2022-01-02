@@ -1,7 +1,8 @@
 package com.example.website_cosmetics_nhom10.dao;
 
+import com.example.website_cosmetics_nhom10.Db.JDBIConnector;
 import com.example.website_cosmetics_nhom10.beans.User;
-import com.example.website_cosmetics_nhom10.db.JDBIConnector;
+
 
 import java.math.BigInteger;
 import java.security.MessageDigest;
