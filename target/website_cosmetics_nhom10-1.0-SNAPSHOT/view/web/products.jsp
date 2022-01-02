@@ -15,20 +15,7 @@
     <title>Products</title>
 </head>
 <body>
-<ul class="header__sort-bar">
-    <li class="header__sort-item">
-        <a href="" class="header__sort-link">Common</a>
-    </li>
-    <li class="header__sort-item header__sort-item--active">
-        <a href="" class="header__sort-link">New</a>
-    </li>
-    <li class="header__sort-item">
-        <a href="" class="header__sort-link">Lowest first</a>
-    </li>
-    <li class="header__sort-item">
-        <a href="" class="header__sort-link">Highest first</a>
-    </li>
-</ul>
+
     <!--Content: begin-->
     <div class="content-products">
         <div class="grid wide">
@@ -70,26 +57,13 @@
                     </div>
                     <nav class="mobile-category">
                         <ul class="mobile-category__list">
+                            <c:forEach var="i" items="${category}">
                             <li class="mobile-category__item">
-                                <a href="" class="mobile-category__link active-border">The Ordinary</a></a>
+<%--                                <a href="" class="mobile-category__link active-border">${i.title}</a>--%>
+                                <a href="" class="mobile-category__link">${i.title}</a>
+
                             </li>
-                            <li class="mobile-category__item">
-                                <a href="" class="mobile-category__link">Body Oil</a></a>
-                            </li>
-                            <li class="mobile-category__item">
-                                <a href="" class="mobile-category__link">Face Masks</a></a>
-                            </li>
-                            <li class="mobile-category__item">
-                                <a href="" class="mobile-category__link">Make Up</a></a>
-                            </li>
-                            <li class="mobile-category__item">
-                                <a href="" class="mobile-category__link">Hair Care</a></a>
-                            </li> <li class="mobile-category__item">
-                            <a href="" class="mobile-category__link">Skincare</a></a>
-                            </li>
-                                </li> <li class="mobile-category__item">
-                                <a href="" class="mobile-category__link">Tool</a></a>
-                            </li>
+                            </c:forEach>
                         </ul>
                     </nav>
                     <br>

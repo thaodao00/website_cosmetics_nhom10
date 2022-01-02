@@ -542,7 +542,6 @@ h1{
     left: 0;
     height:50px;
     list-style: none;
-    /*display: flex;*/
     margin: 0 ;
     padding-left: 0;
     border-top: 1px solid #e5e5e5;
@@ -574,6 +573,7 @@ h1{
 }
 .content-products{
     margin-top: 120px;
+
 }
 /*Nav mobile*/
 .icon-exit{
