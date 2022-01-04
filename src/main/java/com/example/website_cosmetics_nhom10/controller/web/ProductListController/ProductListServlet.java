@@ -1,7 +1,7 @@
 package com.example.website_cosmetics_nhom10.controller.web.ProductListController;
 
 import com.example.website_cosmetics_nhom10.beans.Category;
-import com.example.website_cosmetics_nhom10.beans.Product;
+import com.example.website_cosmetics_nhom10.beans.Products;
 import com.example.website_cosmetics_nhom10.service.CategoryService;
 import com.example.website_cosmetics_nhom10.service.ProductsService;
 
@@ -15,7 +15,7 @@ import java.util.List;
 public class ProductListServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        List<Product> products = ProductsService.getInstance ().getAll ();
+        List<Products> products = ProductsService.getInstance ().getAll ();
         List<Category> category = CategoryService.getInstance ().getAllCategory ();
         request.setAttribute ("category",category);
         request.setAttribute ("products",products);

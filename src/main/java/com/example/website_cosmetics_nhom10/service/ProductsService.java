@@ -1,12 +1,12 @@
 package com.example.website_cosmetics_nhom10.service;
 
-import com.example.website_cosmetics_nhom10.beans.Product;
+import com.example.website_cosmetics_nhom10.beans.Products;
 import com.example.website_cosmetics_nhom10.dao.ProductDao;
 
 import java.util.List;
 
 public class ProductsService {
-    private static ProductsService instance;
+    public static ProductsService instance;
 
     public static ProductsService getInstance() {
         if (instance == null) {
@@ -19,11 +19,14 @@ public class ProductsService {
 
     }
 
-    public List<Product> getAll() {
+    public List<Products> getAll() {
         return ProductDao.getInstance ().getAll ();
 
     }
-    public  List<Product> getTagName(String name){
+    public  List<Products> getTagName(String name){
         return ProductDao.getInstance ().getTagName (name);
+    }
+    public Products getById(Long id){
+        return ProductDao.getInstance ().getById (id);
     }
 }

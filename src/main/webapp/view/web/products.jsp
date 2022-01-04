@@ -69,7 +69,7 @@
                     <br>
                     <div class="row products">
                         <c:forEach var="i" items="${products}">
-                        <a href="./product.html" class="col l-2-4 m-4 c-6">
+                        <a href="Add?id=${i.id}" class="col l-2-4 m-4 c-6">
                             <div class="product__item">
                                 <img class="product__item-img" src="${i.thumnailImg}">
                                 <h5 class="product__item-name">
@@ -94,8 +94,8 @@
                                     <div class="product__sold-number"> ${i.sold} sold</div>
                                 </div>
                                 <div class="product__item-company-wrapper">
-                                    <span class="product__item-company">Ordinary</span>
-                                    <span class="product__item-origin-name">USA</span>
+                                    <span class="product__item-company">${i.companyName}</span>
+                                    <span class="product__item-origin-name">${i.originName}</span>
                                 </div>
 
 

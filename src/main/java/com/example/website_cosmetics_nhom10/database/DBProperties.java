@@ -1,4 +1,4 @@
-package com.example.website_cosmetics_nhom10.Db;
+package com.example.website_cosmetics_nhom10.database;
 
 import java.io.IOException;
 import java.util.Properties;

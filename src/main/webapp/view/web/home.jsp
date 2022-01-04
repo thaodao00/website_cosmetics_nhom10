@@ -77,8 +77,8 @@
                                 <div class="product__sold-number">${i.sold} sold</div>
                             </div>
                             <div class="product__item-company-wrapper">
-                                <span class="product__item-company">Ordinary</span>
-                                <span class="product__item-origin-name">USA</span>
+                                <span class="product__item-company">${i.companyName}</span>
+                                <span class="product__item-origin-name">${i.originName}</span>
                             </div>
                             <div class="product__item--describe">
                                 <i class="fas fa-check"></i>
@@ -152,8 +152,8 @@
                                 <div class="product__sold-number">${i.sold} sold</div>
                             </div>
                             <div class="product__item-company-wrapper">
-                                <span class="product__item-company">Ordinary</span>
-                                <span class="product__item-origin-name">USA</span>
+                                <span class="product__item-company">${i.companyName}</span>
+                                <span class="product__item-origin-name">${i.originName}</span>
                             </div>
                             <div class="product__item--describe">
                                 <i class="fas fa-check"></i>
@@ -274,8 +274,8 @@
                                         <div class="product__sold-number">${i.sold} sold</div>
                                     </div>
                                     <div class="product__item-company-wrapper">
-                                        <span class="product__item-company">Ordinary</span>
-                                        <span class="product__item-origin-name">USA</span>
+                                        <span class="product__item-company">${i.companyName}</span>
+                                        <span class="product__item-origin-name">${i.originName}</span>
                                     </div>
                                     <div class="product__item--describe">
                                         <i class="fas fa-check"></i>

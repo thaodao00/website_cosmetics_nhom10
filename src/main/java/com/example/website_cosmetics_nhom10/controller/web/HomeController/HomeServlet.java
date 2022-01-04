@@ -1,6 +1,6 @@
 package com.example.website_cosmetics_nhom10.controller.web.HomeController;
 
-import com.example.website_cosmetics_nhom10.beans.Product;
+import com.example.website_cosmetics_nhom10.beans.Products;
 import com.example.website_cosmetics_nhom10.service.ProductsService;
 
 import javax.servlet.*;
@@ -13,11 +13,11 @@ import java.util.List;
 public class HomeServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        List<Product> productsHot  = ProductsService.getInstance ().getTagName ("Hot");
+        List<Products> productsHot  = ProductsService.getInstance ().getTagName ("Hot");
         request.setAttribute ("productsHot", productsHot);
-        List<Product> productsNew  = ProductsService.getInstance ().getTagName ("New");
+        List<Products> productsNew  = ProductsService.getInstance ().getTagName ("New");
         request.setAttribute ("productsNew", productsNew);
-        List<Product> productsSale  = ProductsService.getInstance ().getTagName ("Sale");
+        List<Products> productsSale  = ProductsService.getInstance ().getTagName ("Sale");
         request.setAttribute ("productsSale", productsSale);
         request.getRequestDispatcher("/view/web/home.jsp").forward(request, response);
     }

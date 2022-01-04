@@ -1,6 +1,6 @@
 package com.example.website_cosmetics_nhom10.dao;
 
-import com.example.website_cosmetics_nhom10.Db.JDBIConnector;
+import com.example.website_cosmetics_nhom10.database.JDBIConnector;
 import com.example.website_cosmetics_nhom10.beans.User;
 
 

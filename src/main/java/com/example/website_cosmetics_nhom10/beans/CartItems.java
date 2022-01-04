@@ -4,13 +4,13 @@ public class CartItems {
     Long id;
     int quantity;
     double total;
-    Product product;
+    Products product;
 
     public CartItems(){
 
     }
 
-    public CartItems(Long id, int quantity, double total, Product product) {
+    public CartItems(Long id, int quantity, double total, Products product) {
         this.id = id;
         this.quantity = quantity;
         this.total = total;
@@ -41,11 +41,11 @@ public class CartItems {
         this.total = total;
     }
 
-    public Product getProduct() {
+    public Products getProduct() {
         return product;
     }
 
-    public void setProduct(Product product) {
+    public void setProduct(Products product) {
         this.product = product;
     }
 
