@@ -1,8 +1,8 @@
-<%@include file="/common/taglib.jsp"%>
+<%@include file="/common/taglib.jsp" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
-    request.setCharacterEncoding ("UTF-8");
-    response.setCharacterEncoding ("UTF-8");
+    request.setCharacterEncoding("UTF-8");
+    response.setCharacterEncoding("UTF-8");
 %>
 <jsp:useBean id="products" scope="request" type="java.util.List"/>
 <jsp:useBean id="category" scope="request" type="java.util.List"/>
@@ -11,76 +11,76 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<%--    <meta name="viewport" content="width=device-width, initial-scale=1.0">--%>
+    <%--    <meta name="viewport" content="width=device-width, initial-scale=1.0">--%>
     <title>Products</title>
 </head>
 <body>
 
-    <!--Content: begin-->
-    <div class="content-products">
-        <div class="grid wide">
-            <div class="row">
-                <div class="col l-2 m-2 c-0">
-                    <div class="product__items">
-                        <h3 class="product_item-title">
-                            CATEGORIES
-                        </h3>
-                        <ul class="product__items-list">
-                            <c:forEach var="i" items="${category}">
+<!--Content: begin-->
+<div class="content-products">
+    <div class="grid wide">
+        <div class="row">
+            <div class="col l-2 m-2 c-0">
+                <div class="product__items">
+                    <h3 class="product_item-title">
+                        CATEGORIES
+                    </h3>
+                    <ul class="product__items-list">
+                        <c:forEach var="i" items="${category}">
                             <a href="" class="product__item-link">
-<%--                                <li class="product__items-item active-btn">${i.title}</li>--%>
+                                    <%--                                <li class="product__items-item active-btn">${i.title}</li>--%>
                                 <li class="product__items-item">${i.title}</li>
 
                             </a>
 
-                            </c:forEach>
+                        </c:forEach>
+                    </ul>
+                </div>
+            </div>
+            <div class="col l-10 m-10 c-12">
+                <div class="home-filter hide-on-mobile-tablet">
+                    <span class="home-filter__lable">Sort by</span>
+                    <button class="home-filter__btn btn">Common</button>
+                    <button class="home-filter__btn btn btn--primary">New</button>
+                    <div class="select-input">
+                        <span class="select-input__lable">Price</span>
+                        <i class="select-input__icon fas fa-angle-down "></i>
+                        <ul class="select-input__list">
+                            <li class="select-input__item">
+                                <a href="" class="select-input__link">Lowest first</a>
+                            </li>
+                            <li class="select-input__item">
+                                <a href="" class="select-input__link">Highest first</a>
+                            </li>
                         </ul>
                     </div>
                 </div>
-                <div class="col l-10 m-10 c-12">
-                    <div class="home-filter hide-on-mobile-tablet">
-                        <span class="home-filter__lable">Sort by</span>
-                        <button class="home-filter__btn btn">Common</button>
-                        <button class="home-filter__btn btn btn--primary">New</button>
-                        <div class="select-input">
-                            <span class="select-input__lable">Price</span>
-                            <i class="select-input__icon fas fa-angle-down "></i>
-                            <ul class="select-input__list">
-                                <li class="select-input__item">
-                                    <a href="" class="select-input__link">Lowest first</a>
-                                </li>
-                                <li class="select-input__item">
-                                    <a href="" class="select-input__link">Highest first</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <nav class="mobile-category">
-                        <ul class="mobile-category__list">
-                            <c:forEach var="i" items="${category}">
+                <nav class="mobile-category">
+                    <ul class="mobile-category__list">
+                        <c:forEach var="i" items="${category}">
                             <li class="mobile-category__item">
-<%--                                <a href="" class="mobile-category__link active-border">${i.title}</a>--%>
+                                    <%--                                <a href="" class="mobile-category__link active-border">${i.title}</a>--%>
                                 <a href="" class="mobile-category__link">${i.title}</a>
 
                             </li>
-                            </c:forEach>
-                        </ul>
-                    </nav>
-                    <br>
-                    <div class="row products">
-                        <c:forEach var="i" items="${products}">
-                        <a href="Add?id=${i.id}" class="col l-2-4 m-4 c-6">
+                        </c:forEach>
+                    </ul>
+                </nav>
+                <br>
+                <div class="row products">
+                    <c:forEach var="i" items="${products}">
+                        <a href="web-product?id=${i.id}" class="col l-2-4 m-4 c-6">
                             <div class="product__item">
-                                <img class="product__item-img" src="${i.thumnailImg}">
+                                <img class="product__item-img" src="<c:url value="/template/web/assets/img/ordinary/${i.thumnailImg}"/>">
                                 <h5 class="product__item-name">
-                                    ${i.name}
+                                        ${i.name}
                                 </h5>
                                 <div class="product__item-price-wrapper">
                                     <h3 class="product__item-price product__item-price--old">
                                             ${i.discount}
                                     </h3>
                                     <h3 class="product__item-price">
-                                            $${i.price}
+                                        $${i.price}
                                     </h3>
                                 </div>
                                 <div class="star-link-sold-wrapper">
@@ -97,35 +97,33 @@
                                     <span class="product__item-company">${i.companyName}</span>
                                     <span class="product__item-origin-name">${i.originName}</span>
                                 </div>
-
-
                             </div>
                         </a>
-                        </c:forEach>
-                    </div>
-                    <button class="buttons" style="margin: 20px auto; display: block">
-                        LOAD MORE
-                    </button>
+                    </c:forEach>
                 </div>
+                <button class="buttons" style="margin: 20px auto; display: block">
+                    LOAD MORE
+                </button>
             </div>
         </div>
-
     </div>
 
-    <!--Search mobile-->
-    <div class="search-mobile">
-        <div class="search-mobile__input">
-            <input class="search-mobile__input-text" placeholder="Search..." >
-            <i class="icon-search fas fa-search"></i>
-        </div>
+</div>
 
-        <a href="cart.html" class="cart-link">
-            <i class="fa fa-cart-plus"></i>
-        </a>
-        <a class="login-link " style="padding-right: 10px">
-            <i class="fa fa-user"></i>
-        </a>
+<!--Search mobile-->
+<div class="search-mobile">
+    <div class="search-mobile__input">
+        <input class="search-mobile__input-text" placeholder="Search...">
+        <i class="icon-search fas fa-search"></i>
     </div>
+
+    <a href="cart.html" class="cart-link">
+        <i class="fa fa-cart-plus"></i>
+    </a>
+    <a class="login-link " style="padding-right: 10px">
+        <i class="fa fa-user"></i>
+    </a>
+</div>
 </div>
 
 <!--    modal  search -->

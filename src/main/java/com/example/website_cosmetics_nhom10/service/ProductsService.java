@@ -1,5 +1,6 @@
 package com.example.website_cosmetics_nhom10.service;
 
+import com.example.website_cosmetics_nhom10.beans.Product;
 import com.example.website_cosmetics_nhom10.beans.Products;
 import com.example.website_cosmetics_nhom10.dao.ProductDao;
 
@@ -10,7 +11,7 @@ public class ProductsService {
 
     public static ProductsService getInstance() {
         if (instance == null) {
-            instance = new ProductsService ();
+            instance = new ProductsService();
         }
         return instance;
     }
@@ -20,13 +21,15 @@ public class ProductsService {
     }
 
     public List<Products> getAll() {
-        return ProductDao.getInstance ().getAll ();
+        return ProductDao.getInstance().getAll();
 
     }
-    public  List<Products> getTagName(String name){
-        return ProductDao.getInstance ().getTagName (name);
+
+    public List<Products> getTagName(String name) {
+        return ProductDao.getInstance().getTagName(name);
     }
-    public Products getById(Long id){
-        return ProductDao.getInstance ().getById (id);
+
+    public Product getById(Long id) {
+        return ProductDao.getInstance().getById(id);
     }
 }

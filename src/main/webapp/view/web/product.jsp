@@ -1,10 +1,13 @@
+<%@ page import="com.example.website_cosmetics_nhom10.beans.Product" %>
+<%@ page import="com.example.website_cosmetics_nhom10.beans.Products" %>
 <%@ include file="/common/taglib.jsp" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
-    request.setCharacterEncoding ("UTF-8");
-    response.setCharacterEncoding ("UTF-8");
+    request.setCharacterEncoding("UTF-8");
+    response.setCharacterEncoding("UTF-8");
 %>
-<jsp:useBean id="product" scope="request" type="com.example.website_cosmetics_nhom10.beans.Product"/>
+<% Product i = (Product) request.getAttribute("product"); %>
+<%--<jsp:useBean id="product" scope="request" type="com.example.website_cosmetics_nhom10.beans.Product"/>--%>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -77,8 +80,8 @@
                             slider[index - 1].style.display = "block";
                         }
                     </script>
-                    <c:set var="list" value="${sessionScope.product.getData()}">
-                    <c:forEach var="i" items="${list}">
+                    <%--                    <c:set var="list" value="${sessionScope.product.getData()}">--%>
+                    <%--                    <c:forEach var="i" items="${list}">--%>
                     <div class="col l-6 m-5 c-12">
                         <div class="product-content__text-wrapper">
                             <div class="product-content__text">
@@ -140,8 +143,8 @@
                             </div>
                         </div>
                     </div>
-                    </c:forEach>
-                    </c:set>
+                    <%--                    </c:forEach>--%>
+                    <%--                    </c:set>--%>
                 </div>
 
 

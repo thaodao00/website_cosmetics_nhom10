@@ -13,22 +13,19 @@ import java.io.IOException;
 public class AddProductServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-
-        Long id = Long.parseLong (request.getParameter ("id"));
-
-        HttpSession session = request.getSession ();
-        Product product =(Product)session.getAttribute ("product");
-        if(product == null){
-           product = Product.getInstance ();
+        Long id = Long.parseLong(request.getParameter("id"));
+        HttpSession session = request.getSession();
+        Product product = (Product) session.getAttribute("product");
+        if (product == null) {
+            product = Product.getInstance();
         }
-        Products p = ProductsService.getInstance ().getById (id);
+//        Products p = ProductsService.getInstance().getById(id);
 
-        product.put (p);
+//        product.put(p);
 
-        session.setAttribute ("product",product);
+        session.setAttribute("product", product);
 
-        response.sendRedirect ("/web-product");
+        response.sendRedirect("/web-product");
     }
 
     @Override
