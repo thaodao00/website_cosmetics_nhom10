@@ -77,5 +77,10 @@
     <decorator name="cart" page="cart.jsp">
         <pattern>/web-cart</pattern>
     </decorator>
-
+    <decorator name="login" page="login.jsp">
+        <pattern>/web-login</pattern>
+    </decorator>
+    <decorator name="register" page="register.jsp">
+        <pattern>/web-register</pattern>
+    </decorator>
 </decorators>

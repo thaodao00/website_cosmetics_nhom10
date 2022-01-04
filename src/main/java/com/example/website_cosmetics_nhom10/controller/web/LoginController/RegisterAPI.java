@@ -1,4 +1,4 @@
-package com.example.website_cosmetics_nhom10.controller.web.HomeController;
+package com.example.website_cosmetics_nhom10.controller.web.LoginController;
 
 import com.example.website_cosmetics_nhom10.beans.User;
 import com.example.website_cosmetics_nhom10.service.UserServices;
@@ -9,8 +9,8 @@ import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.sql.SQLException;
 
-@WebServlet(name = "RegisterServlet", value = "/api-register")
-public class RegisterServlet extends HttpServlet {
+@WebServlet(name = "RegisterAPI", value = "/api-register")
+public class RegisterAPI extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
@@ -30,7 +30,6 @@ public class RegisterServlet extends HttpServlet {
                 }
             } catch (SQLException e) {
                 request.setAttribute("error", "Account already exists!!!");
-                request.getRequestDispatcher("web-home").forward(request, response);
             }
         }
     }

@@ -2671,6 +2671,30 @@ select.auth-form__input:hover {
     display: none;
 }
 
+
+.login-register-background {
+    background-image: url(../img/slider-3.jpg);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform: translateY(70px);
+}
+
+.modal-account.register {
+    position: unset;
+    display: flex;
+}
+
+.modal__overlay.register {
+    position: absolute;
+    transform: translateY(82px);
+}
+
+.modal__body.register {
+    margin-top: 12.5%;
+}
+
+
 /**---------------Nguyễn Hữu Kha - end---------------------*/
 
 /**---------------Triệu Huệ Mẩn - start--------------------*/
