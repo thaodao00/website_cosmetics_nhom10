@@ -12,13 +12,12 @@
 
 <body>
 <!--modal account-->
-<div class="modal-account register">
-    <div class="login-register-background"></div>
-    <div class="modal__overlay register"></div>
-    <div class="modal__body register">
+<div class="modal-account modal-account__open">
+    <div class="modal__overlay"></div>
+    <div class="modal__body">
         <!--Register form -->
         <form id="register-form" action="api-register" method="post" class="register-form">
-            <div class="auth-form">
+           <div class="auth-form">
                 <div class="auth-form__container">
                     <div class="auth-form__header">
                         <h3 class="auth-form__heading">Register</h3>
@@ -344,8 +343,7 @@
                         <span class="auth-form__social-title">
                                 Connect to Facebook</span>
                     </a>
-                    <a href=""
-                       class="auth-form_socials-icon auth-form_socials--google btn btn--size-s btn--width-icon">
+                    <a href="" class="auth-form_socials-icon auth-form_socials--google btn btn--size-s btn--width-icon">
                         <i class="icon-gg fab fa-google-plus-square"></i>
                         <span class="auth-form__social-title">
                                 Connect to Google</span>
@@ -378,7 +376,6 @@
         </div>
     </div>
 </div>
-
 </body>
 
 </html>

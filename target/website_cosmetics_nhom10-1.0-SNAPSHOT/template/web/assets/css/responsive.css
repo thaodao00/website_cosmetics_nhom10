@@ -311,17 +311,20 @@
     .auth-form__heading {
         font-size: 1.8rem;
     }
-
     .auth-form__input {
-        height: 35px;
+        height: 25px; !important;
         font-size: 1.2rem;
     }
-
+    .modal__body{
+        margin-top: 0;
+    }
+    .modal__overlay{
+        background: white;
+    }
     /*    Products*/
     .header__sort-bar {
         display: flex;
     }
-
     .home-filter {
         display: none;
     }

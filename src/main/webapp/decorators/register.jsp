@@ -19,16 +19,6 @@
         rel="stylesheet">
 </head>
 <body>
-
-<!-- header -->
-<%@ include file="/common/web/header.jsp" %>
-<!-- header -->
-
 <dec:body/>
-
-<!-- footer -->
-<%@ include file="/common/web/footer.jsp" %>
-<!-- footer -->
-
 </body>
 </html>
