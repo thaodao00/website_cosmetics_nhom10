@@ -77,8 +77,6 @@
                             slider[index - 1].style.display = "block";
                         }
                     </script>
-                    <%--                    <c:set var="list" value="${sessionScope.product.getData()}">--%>
-                    <%--                    <c:forEach var="i" items="${list}">--%>
                     <div class="col l-6 m-5 c-12">
                         <div class="product-content__text-wrapper">
                             <div class="product-content__text">

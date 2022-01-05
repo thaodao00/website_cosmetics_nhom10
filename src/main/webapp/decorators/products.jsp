@@ -21,7 +21,7 @@
 <body>
 <div id="app">
     <!-- header -->
-    <%@ include file="/common/web/header.jsp" %>
+    <%@ include file="/common/web/headerProduct.jsp" %>
     <!-- header -->
     <dec:body/>
     <%@ include file="/common/web/footer.jsp" %>
