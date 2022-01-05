@@ -26,10 +26,6 @@
 
     <dec:body/>
 
-    <!-- modal account -->
-    <%@ include file="/common/modal_account.jsp" %>
-    <!-- modal account -->
-
     <!-- footer -->
     <%@ include file="/common/web/footer.jsp" %>
     <!-- footer -->

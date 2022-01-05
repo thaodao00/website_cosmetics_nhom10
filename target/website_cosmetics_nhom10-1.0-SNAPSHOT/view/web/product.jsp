@@ -1,13 +1,10 @@
 <%@ page import="com.example.website_cosmetics_nhom10.beans.Product" %>
-<%@ page import="com.example.website_cosmetics_nhom10.beans.Products" %>
 <%@ include file="/common/taglib.jsp" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
     request.setCharacterEncoding("UTF-8");
     response.setCharacterEncoding("UTF-8");
 %>
-<% Product i = (Product) request.getAttribute("product"); %>
-<%--<jsp:useBean id="product" scope="request" type="com.example.website_cosmetics_nhom10.beans.Product"/>--%>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -85,13 +82,17 @@
                     <div class="col l-6 m-5 c-12">
                         <div class="product-content__text-wrapper">
                             <div class="product-content__text">
-                                <div class="product-content__text__title">${i.name}</div>
+                                <% Product product = (Product) request.getAttribute("product"); %>
+                                <script>
+                                    console.log(product)
+                                </script>
+                                <div class="product-content__text__title">${product.name}</div>
 
                                 <p class="product-price price">
-                                    <span class="product-price__old del">$${i.price}</span>
+                                    <span class="product-price__old del">$${product.price}</span>
 
                                     <span class="product-price__new">
-                                        $${i.discount}
+                                        $${product.discount}
                                     </span>
                                 </p>
 
@@ -106,7 +107,7 @@
                                 </div>
 
                                 <div class="product-content__details-description">
-                                    <p>${i.shortDescription}</p>
+                                    <p>${product.shortDescription}</p>
                                 </div>
 
                                 <div class="product-content__quantity-vs-purchase">
@@ -116,7 +117,7 @@
                                         <button class="quantity-buttons--plus">+</button>
                                     </div>
 
-                                    <div class="purchase-buttons buttons">Add to Cart</div>
+                                    <div class="purchase-buttons buttons">Add</div>
                                 </div>
 
                                 <a href="#" class="product-content__add-to-wishlist">
@@ -143,8 +144,6 @@
                             </div>
                         </div>
                     </div>
-                    <%--                    </c:forEach>--%>
-                    <%--                    </c:set>--%>
                 </div>
 
 
@@ -157,7 +156,7 @@
                     </ul>
 
                     <div class="product-content__tabs-content">
-                        <div class="tabs-content__item tabs-content__description tabs-active">${i.longDescription}
+                        <div class="tabs-content__item tabs-content__description tabs-active">${product.longDescription}
                         </div>
 
                         <div class="tabs-content__item tabs-content__info">
@@ -458,33 +457,6 @@
         </a>
     </div>
 </div>
-<!-- Popup -->
-<div class="popup-wrapper">
-    <div class="popup-overlay"></div>
-    <div class="popup stay-in-touch">
-        <div class="close-wrapper">
-            <a href="javascript:void(0)" class="close">
-                <i class="fas fa-times close-icon"></i>
-            </a>
-        </div>
-        <div class="stay-in-touch__title">
-            <h2>Stay in touch</h2>
-        </div>
-        <div class="stay-in-touch__form">
-            <input type="text" placeholder="E-mail address">
-            <button class="buttons">Send</button>
-        </div>
-        <div class="stay-in-touch__form-description">
-            <p>*At vero eos et accusamus et iusto odio dignissimos</p>
-        </div>
-        <div class="stay-in-touch__prevent">
-            <input type="checkbox" value="1" id="input-checkbox-prevent">
-            <label for="input-checkbox-prevent">
-                <p>Prevent This Pop-up</p>
-            </label>
-        </div>
-    </div>
-</div>
 
 <!-- Modal-->
 <div class="modal">
@@ -506,145 +478,10 @@
         </ul>
     </div>
 </div>
-<!-- Modal account-->
-<div class="modal-account">
-    <div class="modal__overlay"></div>
-    <div class="modal__body">
-        <!--Register form -->
-        <div class="register-form">
-            <div class="auth-form">
-                <div class="auth-form__container">
-                    <div class="auth-form__header">
-                        <h3 class="auth-form__heading">Register</h3>
-                        <span class="login-from__btn auth-form__switch-btn">Login</span>
-                    </div>
-                    <div class="auth-form__form">
-                        <div class="auth-form__group">
-                            <input type="mail" class="auth-form__input" placeholder="User name">
-                        </div>
-                        <div class="auth-form__group">
-                            <input type="mail" class="auth-form__input" placeholder="Email">
-                        </div>
-                        <div class="auth-form__group">
-                            <input type="password" class="auth-form__input" placeholder="Password">
-                        </div>
-                        <div class="auth-form__group">
-                            <input type="password" class="auth-form__input" placeholder="Confirm password">
-                        </div>
 
-                    </div>
-                    <div class="auth-form__aside">
-                        <p class="auth-form__policy-text">
-                            By registering, you agree with Cosmetics
-                            <a href="" class="auth-form__text-link">
-                                Terms of service
-                            </a>&
-                            <a href="" class="auth-form__text-link">
-                                Privacy policy
-                            </a>
-                        </p>
-                    </div>
-                    <div class="auth-form__controls">
-                        <button class="btn buttons auth-form__controls-back ">
-                            BACK
-                        </button>
-                        <button class="buttons">
-                            REGISTER
-                        </button>
-                    </div>
-                </div>
-                <div class="auth-form_socials">
-                    <a href="" class="auth-form_socials--face btn btn--size-s btn--width-icon">
-                        <i class="auth-form_socials-icon fab fa-facebook-square"></i>
-                        <span class="auth-form__social-title">
-        Connect to Facebook</span>
-                    </a>
-                    <a href=""
-                       class="auth-form_socials-icon auth-form_socials--google btn btn--size-s btn--width-icon">
-                        <i class="icon-gg fab fa-google-plus-square"></i>
-                        <span class="auth-form__social-title">
-        Connect to Google</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-        <!--Login form -->
-        <div class="login-form">
-            <div class="auth-form">
-                <div class="auth-form__container">
-                    <div class="auth-form__header">
-                        <h3 class="auth-form__heading">Login</h3>
-                        <span class="register-from__btn auth-form__switch-btn">Register</span>
-
-                    </div>
-                    <div class="auth-form__form">
-                        <div class="auth-form__group">
-                            <input id="mail" type="email" class="auth-form__input" placeholder="User name">
-                        </div>
-                        <div class="auth-form__group">
-                            <input id="password" type="password" class="auth-form__input" placeholder="Password">
-                        </div>
-
-
-                    </div>
-                    <div class="auth-form__aside">
-                        <div class="auth-form__help">
-        <span href="" class="auth-form__help-link auth-form__help-link--forgot">Forgot
-        password</span>
-                            <span class="auth-form__help-separate"></span>
-                            <a href="" class="auth-form__help-link">Help?</a>
-                        </div>
-                    </div>
-                    <div class="auth-form__controls">
-                        <button class="btn buttons auth-form__controls-back ">
-                            BACK
-                        </button>
-                        <a><input id="submit" type="submit" class="buttons" name="Login"> </a>
-
-                    </div>
-                </div>
-                <div class="auth-form_socials">
-                    <a href="" class="auth-form_socials--face btn btn--size-s btn--width-icon">
-                        <i class="auth-form_socials-icon fab fa-facebook-square"></i>
-                        <span class="auth-form__social-title">
-        Kết nối với Facebook</span>
-                    </a>
-                    <a href=""
-                       class="auth-form_socials-icon auth-form_socials--google btn btn--size-s btn--width-icon">
-                        <i class="icon-gg fab fa-google-plus-square"></i>
-                        <span class="auth-form__social-title">
-        Kết nối với Google</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-        <!--Forgot password-->
-        <div class="forgot-pass-form">
-            <div class="auth-form">
-                <div class="auth-form__container">
-                    <div class="auth-form__header">
-                        <h3 class="auth-form__heading">Forgot password</h3>
-                    </div>
-                    <div class="auth-form__form">
-                        <div class="auth-form__group">
-                            <input type="mail" class="auth-form__input" placeholder="Email">
-                        </div>
-                    </div>
-                    <div class="auth-form__controls">
-                        <button class="btn buttons auth-form__controls-back ">
-                            BACK
-                        </button>
-                        <button class="buttons">
-                            SEND
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 <script src="template/web/assets/js/JSProduct.js"></script>
 <script type="module" src="template/web/assets/js/showHide.js"></script>
+
 </div>
 </body>
 </html>

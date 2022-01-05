@@ -4,12 +4,14 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title><dec:title default="Products" /></title>
+    <title><dec:title default="Products"/></title>
     <link href="<c:url value='/template/base.css' />" rel="stylesheet" type="text/css" media="all"/>
     <link href="<c:url value='/template/grid.css' />" rel="stylesheet" type="text/css" media="all"/>
     <link href="<c:url value='/template/web/assets/css/main.css' />" rel="stylesheet" type="text/css" media="all"/>
-    <link href="<c:url value='/template/web/assets/css/responsive.css' />" rel="stylesheet" type="text/css" media="all"/>
-    <link href="<c:url value='/template/web/assets/font/fontawesome-free-5.15.3-web/css/all.min.css' />" rel="stylesheet" type="text/css" media="all"/>
+    <link href="<c:url value='/template/web/assets/css/responsive.css' />" rel="stylesheet" type="text/css"
+          media="all"/>
+    <link href="<c:url value='/template/web/assets/font/fontawesome-free-5.15.3-web/css/all.min.css' />"
+          rel="stylesheet" type="text/css" media="all"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -19,8 +21,7 @@
 <body>
 <div id="app">
     <!-- header -->
-
-    <%@ include file="/common/web/headerProducts.jsp" %>
+    <%@ include file="/common/web/header.jsp" %>
     <!-- header -->
     <dec:body/>
     <%@ include file="/common/web/footer.jsp" %>

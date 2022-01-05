@@ -378,32 +378,32 @@
 </div>
 
 <!-- Popup -->
-<div class="popup-wrapper">
-    <div class="popup-overlay"></div>
-    <div class="popup stay-in-touch">
-        <div class="close-wrapper">
-            <a href="javascript:void(0)" class="close">
-                <i class="fas fa-times close-icon"></i>
-            </a>
-        </div>
-        <div class="stay-in-touch__title">
-            <h2>Stay in touch</h2>
-        </div>
-        <div class="stay-in-touch__form">
-            <input type="text" placeholder="E-mail address">
-            <button class="buttons">Send</button>
-        </div>
-        <div class="stay-in-touch__form-description">
-            <p>*At vero eos et accusamus et iusto odio dignissimos</p>
-        </div>
-        <div class="stay-in-touch__prevent">
-            <input type="checkbox" value="1" id="input-checkbox-prevent">
-            <label for="input-checkbox-prevent">
-                <p>Prevent This Pop-up</p>
-            </label>
-        </div>
-    </div>
-</div>
+<%--<div class="popup-wrapper">--%>
+<%--    <div class="popup-overlay"></div>--%>
+<%--    <div class="popup stay-in-touch">--%>
+<%--        <div class="close-wrapper">--%>
+<%--            <a href="javascript:void(0)" class="close-js">--%>
+<%--                <i class="fas fa-times close-icon"></i>--%>
+<%--            </a>--%>
+<%--        </div>--%>
+<%--        <div class="stay-in-touch__title">--%>
+<%--            <h2>Stay in touch</h2>--%>
+<%--        </div>--%>
+<%--        <div class="stay-in-touch__form">--%>
+<%--            <input type="text" placeholder="E-mail address">--%>
+<%--            <button class="buttons">Send</button>--%>
+<%--        </div>--%>
+<%--        <div class="stay-in-touch__form-description">--%>
+<%--            <p>*At vero eos et accusamus et iusto odio dignissimos</p>--%>
+<%--        </div>--%>
+<%--        <div class="stay-in-touch__prevent">--%>
+<%--            <input type="checkbox" value="1" id="input-checkbox-prevent">--%>
+<%--            <label for="input-checkbox-prevent">--%>
+<%--                <p>Prevent This Pop-up</p>--%>
+<%--            </label>--%>
+<%--        </div>--%>
+<%--    </div>--%>
+<%--</div>--%>
 
 <!--Js slide-->
 <script>
