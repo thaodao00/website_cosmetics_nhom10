@@ -80,19 +80,19 @@ for(const authForm of authForms) {
 }
 
 
-const close = $('.close');
+const close = $('.close-js');
 const overlay = $('.popup-overlay');
 const popup = $('.popup');
 
 popup.onclick = function (e) {
     e.stopPropagation();
 }
-close.onclick = function(e) {
-    document.querySelector('.stay-in-touch').style.display = 'none';
+close.onclick = function() {
+    $('.stay-in-touch').style.display = 'none';
     overlay.style.display = 'none';
 }
 overlay.onclick = function (){
-    document.querySelector('.stay-in-touch').style.display = 'none';
+    $('.stay-in-touch').style.display = 'none';
     overlay.style.display = 'none';
 }
 

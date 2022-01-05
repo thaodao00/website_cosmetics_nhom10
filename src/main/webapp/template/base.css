@@ -159,7 +159,7 @@ a {
         cursor: pointer;
         z-index: 3;
         min-width: 100px;
-
+        text-align: center;
     }
 
     .buttons:hover{

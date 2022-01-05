@@ -13,12 +13,9 @@ import java.io.IOException;
 public class ProductServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//        HttpSession session = request.getSession();
         Long id = Long.parseLong(request.getParameter("id"));
         Product product = ProductsService.getInstance().getById(id);
         request.setAttribute("product", product);
-//        session.setAttribute("product", product);
-
         request.getRequestDispatcher("/view/web/product.jsp").forward(request, response);
     }
 
