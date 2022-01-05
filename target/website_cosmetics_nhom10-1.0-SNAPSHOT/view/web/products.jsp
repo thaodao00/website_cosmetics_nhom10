@@ -1,4 +1,4 @@
-<%@include file="/common/taglist.jsp"%>
+<%@include file="/common/taglib.jsp" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
     request.setCharacterEncoding ("UTF-8");
@@ -72,9 +72,9 @@
 
                                 <img class="product__item-img"
 
-                                     src="<c:url value="${i.thumnailImg}"/>">
+<%--                                     src="<c:url value="${i.thumbnailImg}"/>">--%>
 
-                                     src="<c:url value="/template/web/assets/img/ordinary/${i.thumbnailImg}"/>">
+                                     src="<c:url value="${i.thumbnailImg}"/>">
 
                                 <h5 class="product__item-name">
                                         ${i.name}
