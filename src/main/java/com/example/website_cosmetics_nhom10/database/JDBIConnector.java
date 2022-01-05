@@ -11,18 +11,18 @@ public class JDBIConnector {
     public static Jdbi jdbi;
 
     public static void makeConnect() {
-        MysqlDataSource dataSource = new MysqlDataSource ();
-        dataSource.setURL ("jdbc:mysql://" + getDbHost () + ":" + getDbPort () + "/" + getDbName ());
-        dataSource.setUser (getUserName ());
-        dataSource.setPassword (getPassword ());
+        MysqlDataSource dataSource = new MysqlDataSource();
+        dataSource.setURL("jdbc:mysql://" + getDbHost() + ":" + getDbPort() + "/" + getDbName());
+        dataSource.setUser(getUserName());
+        dataSource.setPassword(getPassword());
         try {
-            dataSource.setUseCompression (true);
-            dataSource.setAutoReconnect (true);
+            dataSource.setUseCompression(true);
+            dataSource.setAutoReconnect(true);
         } catch (SQLException e) {
-            e.printStackTrace ();
+            e.printStackTrace();
         }
 
-        jdbi = Jdbi.create (dataSource);
+        jdbi = Jdbi.create(dataSource);
 
     }
 
@@ -31,9 +31,8 @@ public class JDBIConnector {
     }
 
     public static Jdbi get() {
-        if (jdbi == null) {
-            makeConnect ();
-        }
+        if (jdbi == null)
+            makeConnect();
         return jdbi;
     }
 }
