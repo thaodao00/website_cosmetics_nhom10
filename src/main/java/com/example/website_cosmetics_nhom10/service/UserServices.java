@@ -22,8 +22,20 @@ public class UserServices {
         return instance;
     }
 
+    public static boolean checkLogin(String username) {
+        return UserDAO.getInstance().checkLogin(username);
+    }
+
+    public static User login(String username, String password) {
+        return UserDAO.getInstance().login(username, password);
+    }
+
     public boolean checkRegister(String password, String confirmPassword) {
         return password.equals(confirmPassword);
+    }
+
+    public boolean checkUserExist(String username) throws SQLException {
+        return UserDAO.getInstance().checkUserExist(username);
     }
 
     public boolean register(User newUser) throws SQLException {

@@ -1,5 +1,8 @@
 <%@include file="/common/taglib.jsp" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<% request.setCharacterEncoding("UTF-8");
+    response.setCharacterEncoding("UTF-8");
+    String error = (String) request.getAttribute("error"); %>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -16,8 +19,8 @@
     <div class="modal__overlay"></div>
     <div class="modal__body">
         <!--Register form -->
-        <form id="register-form" action="api-register" method="post" class="register-form">
-           <div class="auth-form">
+        <form id="register-form" action="web-register" method="post" class="register-form">
+            <div class="auth-form">
                 <div class="auth-form__container">
                     <div class="auth-form__header">
                         <h3 class="auth-form__heading">Register</h3>
@@ -33,14 +36,14 @@
                                    name="fullName">
                         </div>
                         <div class="auth-form__group">
-                            <input type="mail" class="auth-form__input" placeholder="Email" name="email">
+                            <input type="mail" class="auth-form__input" placeholder="email" name="email">
                         </div>
                         <div class="auth-form__group">
                             <input type="mail" class="auth-form__input" placeholder="phone"
                                    name="phone">
                         </div>
                         <div class="auth-form__group">
-                            <input type="password" class="auth-form__input" placeholder="Password*" required id="test2"
+                            <input type="password" class="auth-form__input" placeholder="password*" required id="test2"
                                    name="password">
                         </div>
                         <div class="auth-form__group">
@@ -49,7 +52,7 @@
                                    name="confirmPassword">
                         </div>
                         <div class="auth-form__group">
-                            <select name="" id="country" class="auth-form__input">
+                            <select name="country" id="country" class="auth-form__input">
                                 <option value="">Select a Country</option>
                                 <option value="Afghanistan">Afghanistan</option>
                                 <option value="Aland Islands">Aland Islands</option>
@@ -324,15 +327,14 @@
                             </a>
                         </p>
                     </div>
-                    <div class="auth-form__aside" style="text-align: center; transform: translateY(40px);">
-                        <p class="error-message regis-fail-js" style="display: none">Register failed!</p>
+                    <div class="auth-form__aside" style="text-align: center;">
+                        <p class="error-message regis-fail-js">${error}</p>
                     </div>
                     <div class="auth-form__controls">
                         <button class="btn buttons auth-form__controls-back ">
                             BACK
                         </button>
-                        <button type="submit" form="register-form" formmethod="post" formaction="api-register"
-                                class="buttons">
+                        <button type="submit" form="register-form" class="buttons">
                             Register
                         </button>
                     </div>

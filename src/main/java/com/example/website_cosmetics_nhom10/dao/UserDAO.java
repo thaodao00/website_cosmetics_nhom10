@@ -8,6 +8,7 @@ import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.sql.SQLException;
+import java.util.List;
 
 public class UserDAO {
 
@@ -28,12 +29,20 @@ public class UserDAO {
         int i = JDBIConnector.get().withHandle(handle -> handle.createUpdate(sql)
                 .bind(0, newUser.getUsername())
                 .bind(1, newUser.getFullName())
-                .bind(2, newUser.getPassword())
+                .bind(2, hashPassword(newUser.getPassword()))
                 .bind(3, newUser.getEmail())
                 .bind(4, newUser.getPhone())
                 .bind(5, newUser.getCountry())
                 .execute());
         return i == 1;
+    }
+
+    public boolean checkUserExist(String username) throws SQLException {
+        String sql = "Select * from user where username = ?";
+        List<User> list = JDBIConnector.get().withHandle(handle -> handle.createQuery(sql)
+                .bind(0, username)
+                .mapToBean(User.class).list());
+        return list.size() < 1;
     }
 
     private String hashPassword(String password) {
@@ -48,5 +57,27 @@ public class UserDAO {
             e.printStackTrace();
             return null;
         }
+    }
+
+    public boolean checkLogin(String username) {
+        String sql = "Select * from user where username = ?";
+        List<User> list = JDBIConnector.get().withHandle(handle -> handle.createQuery(sql)
+                .bind(0, username)
+                .mapToBean(User.class).list());
+        return list.size() == 1;
+    }
+
+    public User login(String username, String password) {
+        String sql = "Select * from user where username = ? and password = ?";
+        List<User> list = JDBIConnector.get().withHandle(handle -> handle.createQuery(sql)
+                .bind(0, username)
+                .bind(1, hashPassword(password))
+                .mapToBean(User.class).list());
+        User user = null;
+        if (list.size() == 1) {
+            user = list.get(0);
+            user.setPassword(null);
+        }
+        return user;
     }
 }
