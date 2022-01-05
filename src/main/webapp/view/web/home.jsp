@@ -1,8 +1,8 @@
 <%@include file="/common/taglib.jsp" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
-    request.setCharacterEncoding("UTF-8");
-    response.setCharacterEncoding("UTF-8");
+    request.setCharacterEncoding ("UTF-8");
+    response.setCharacterEncoding ("UTF-8");
 %>
 <jsp:useBean id="productsHot" scope="request" type="java.util.List"/>
 <jsp:useBean id="productsNew" scope="request" type="java.util.List"/>
@@ -13,6 +13,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
+
 </head>
 
 <body>
@@ -53,7 +54,7 @@
                     <a href="#" class="col l-2-4 m-3 c-6">
                         <div class="product__item">
                             <img class="product__item-img"
-                                 src="${i.thumbnailImg}">
+                                 src="${i.thumnailImg}">
                             <h3 class="product__item-name">
                                     ${i.name}
                             </h3>
@@ -128,7 +129,7 @@
                     <a href="#" class="col l-2-4 m-3 c-6">
                         <div class="product__item">
                             <img class="product__item-img"
-                                 src="${i.thumbnailImg}">
+                                 src="${i.thumnailImg}">
                             <h3 class="product__item-name">
                                     ${i.name}
                             </h3>
@@ -158,6 +159,9 @@
                                 <i class="fas fa-check"></i>
                                 <span>${i.tagName}</span>
                             </div>
+                            <!-- <div class="product__item-sale-off">-->
+                            <!-- <span class="product__item-sale-off-percent">43%</span>-->
+                            <!-- </div>-->
                         </div>
                     </a>
                 </c:forEach>
@@ -247,7 +251,7 @@
                             <a href="#" class="col l-3 m-3 c-6">
                                 <div class="product__item">
                                     <img class="product__item-img"
-                                         src="${i.thumbnailImg}">
+                                         src="${i.thumnailImg}">
                                     <h3 class="product__item-name">
                                             ${i.name}
                                     </h3>

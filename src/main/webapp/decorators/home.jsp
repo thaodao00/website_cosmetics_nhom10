@@ -2,17 +2,16 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <% request.setCharacterEncoding("UTF-8");
     response.setCharacterEncoding("UTF-8");
-%>
+    String success = (String) request.getAttribute("success");
+    String error = (String) request.getAttribute("error");%>
 <html>
 <head>
-    <title><dec:title default="Home"/></title>
+    <title><dec:title default="Home" /></title>
     <link href="<c:url value='/template/base.css' />" rel="stylesheet" type="text/css" media="all"/>
     <link href="<c:url value='/template/grid.css' />" rel="stylesheet" type="text/css" media="all"/>
     <link href="<c:url value='/template/web/assets/css/main.css' />" rel="stylesheet" type="text/css" media="all"/>
-    <link href="<c:url value='/template/web/assets/css/responsive.css' />" rel="stylesheet" type="text/css"
-          media="all"/>
-    <link href="<c:url value='/template/web/assets/font/fontawesome-free-5.15.3-web/css/all.min.css' />"
-          rel="stylesheet" type="text/css" media="all"/>
+    <link href="<c:url value='/template/web/assets/css/responsive.css' />" rel="stylesheet" type="text/css" media="all"/>
+    <link href="<c:url value='/template/web/assets/font/fontawesome-free-5.15.3-web/css/all.min.css' />" rel="stylesheet" type="text/css" media="all"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link

@@ -32,7 +32,7 @@ public class ProductDao {
     public List<Products> getTagName(String tagName) {
         //Cú pháp lambda
         return JDBIConnector.get().withHandle(handle ->
-                handle.createQuery("select * from products where tagName = ?").bind(0, tagName).mapToBean(Products.class).stream().collect(Collectors.toList()));
+                handle.createQuery("select *from products where tagName = ?").bind(0, tagName).mapToBean(Products.class).stream().collect(Collectors.toList()));
     }
 
     public Product getById(Long id) {
