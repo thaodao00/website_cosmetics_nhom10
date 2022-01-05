@@ -70,7 +70,7 @@
                         <a href="web-product?id=${i.id}" class="col l-2-4 m-4 c-6">
                             <div class="product__item">
                                 <img class="product__item-img"
-                                     src="<c:url value="/template/web/assets/img/ordinary/${i.thumnailImg}"/>">
+                                     src="<c:url value="/template/web/assets/img/ordinary/${i.thumbnailImg}"/>">
                                 <h5 class="product__item-name">
                                         ${i.name}
                                 </h5>

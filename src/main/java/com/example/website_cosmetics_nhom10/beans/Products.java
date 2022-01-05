@@ -1,15 +1,12 @@
 package com.example.website_cosmetics_nhom10.beans;
 
 import java.io.Serializable;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
 
 public class Products implements Serializable {
 
     String id ;
     String name;
-    String thumnailImg;
+    String thumbnailImg;
     double price;
     double discount;
     int sold;
@@ -28,7 +25,7 @@ public class Products implements Serializable {
     public Products(String id, String name, String thumnailImg, double price, double discount, int sold, String shortDescription, String longDescription, double rate, String weight, String dimension, String tagName, String companyName, String originName) {
         this.id = id;
         this.name = name;
-        this.thumnailImg = thumnailImg;
+        this.thumbnailImg = thumnailImg;
         this.price = price;
         this.discount = discount;
         this.sold = sold;
@@ -58,12 +55,12 @@ public class Products implements Serializable {
         this.name = name;
     }
 
-    public String getThumnailImg() {
-        return thumnailImg;
+    public String getThumbnailImg() {
+        return thumbnailImg;
     }
 
-    public void setThumnailImg(String thumnailImg) {
-        this.thumnailImg = thumnailImg;
+    public void setThumbnailImg(String thumbnailImg) {
+        this.thumbnailImg = thumbnailImg;
     }
 
     public double getPrice() {
