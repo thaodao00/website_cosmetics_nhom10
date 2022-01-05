@@ -28,7 +28,14 @@ public class ProductDao {
                 handle.createQuery("select *from products").mapToBean(Products.class).stream().collect(Collectors.toList()));
 
     }
-
+    public List<Products> getTop10(){
+        return  JDBIConnector.get ().withHandle (handle ->
+                handle.createQuery ("select*from products limit 10").mapToBean (Products.class).stream ().collect(Collectors.toList()));
+    }
+    public List<Products> getNext10(int amount){
+        return  JDBIConnector.get ().withHandle (handle ->
+                handle.createQuery ("select*from products limit ? , 10").bind (0,amount).mapToBean (Products.class).stream ().collect(Collectors.toList()));
+    }
     public List<Products> getTagName(String tagName) {
         //Cú pháp lambda
         return JDBIConnector.get().withHandle(handle ->

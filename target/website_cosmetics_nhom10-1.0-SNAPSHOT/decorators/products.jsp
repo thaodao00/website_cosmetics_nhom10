@@ -17,6 +17,7 @@
     <link
             href="https://fonts.googleapis.com/css2?family=Comforter+Brush&family=Estonia&family=Kaushan+Script&family=Marck+Script&family=Nothing+You+Could+Do&family=Patrick+Hand&family=Roboto&family=Satisfy&family=Sawarabi+Gothic&family=Tangerine:wght@700&display=swap"
             rel="stylesheet">
+
 </head>
 <body>
 <div id="app">
@@ -26,6 +27,6 @@
     <dec:body/>
     <%@ include file="/common/web/footer.jsp" %>
 </div>
-<script type="text/javascript" src="<c:url value='/template/web/assets/js/showHide.js' />"></script>
+
 </body>
 </html>

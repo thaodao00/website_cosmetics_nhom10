@@ -24,6 +24,10 @@ public class ProductsService {
         return ProductDao.getInstance().getAll();
 
     }
+    public List<Products> getTop10() {
+        return ProductDao.getInstance().getTop10 ();
+
+    }
 
     public List<Products> getTagName(String name) {
         return ProductDao.getInstance().getTagName(name);

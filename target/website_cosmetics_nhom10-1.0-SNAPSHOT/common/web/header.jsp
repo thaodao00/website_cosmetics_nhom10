@@ -251,19 +251,5 @@
 
         </div>
     </div>
-    <ul class="header__sort-bar">
-        <li class="header__sort-item">
-            <a href="" class="header__sort-link">Common</a>
-        </li>
-        <li class="header__sort-item header__sort-item--active">
-            <a href="" class="header__sort-link">New</a>
-        </li>
-        <li class="header__sort-item">
-            <a href="" class="header__sort-link">Lowest first</a>
-        </li>
-        <li class="header__sort-item">
-            <a href="" class="header__sort-link">Highest first</a>
-        </li>
-    </ul>
 </header>
 <!--Header: end-->

@@ -1,8 +1,8 @@
 <%@include file="/common/taglib.jsp" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
-    request.setCharacterEncoding("UTF-8");
-    response.setCharacterEncoding("UTF-8");
+    request.setCharacterEncoding ("UTF-8");
+    response.setCharacterEncoding ("UTF-8");
 %>
 <jsp:useBean id="products" scope="request" type="java.util.List"/>
 <jsp:useBean id="category" scope="request" type="java.util.List"/>
@@ -11,7 +11,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <%--    <meta name="viewport" content="width=device-width, initial-scale=1.0">--%>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Products</title>
 </head>
 <body>
@@ -65,12 +65,13 @@
                     </ul>
                 </nav>
                 <br>
-                <div class="row products">
+                <div id="content" class="row products">
                     <c:forEach var="i" items="${products}">
-                        <a href="web-product?id=${i.id}" class="col l-2-4 m-4 c-6">
+                        <a href="web-product?id=${i.id}" class="product col l-2-4 m-4 c-6">
                             <div class="product__item">
+
                                 <img class="product__item-img"
-                                     src="<c:url value="/template/web/assets/img/ordinary/${i.thumnailImg}"/>">
+                                     src="<c:url value="${i.thumnailImg}"/>">
                                 <h5 class="product__item-name">
                                         ${i.name}
                                 </h5>
@@ -100,7 +101,7 @@
                         </a>
                     </c:forEach>
                 </div>
-                <button class="buttons" style="margin: 20px auto; display: block">
+                <button onclick="loadMore()" class="buttons" style="margin: 20px auto; display: block">
                     LOAD MORE
                 </button>
             </div>
@@ -145,5 +146,27 @@
     </div>
 </div>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<%--<script type="text/javascript" src="<c:url value='/template/web/assets/js/showHide.js' />"></script>--%>
+<%--<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>--%>
+<script>
+    function loadMore() {
+        var amount = document.getElementsByClassName("product").length;
+        console.log(amount);
+        $.ajax({
+            url: "LoadMoreServlet",
+            type: "get",
+            data:{
+                exits: amount++
+            },
+            success: function (data) {
+                var row = document.getElementById("content");
+                row.innerHTML += data;
+            }
+        });
+
+    }
+
+</script>
 </body>
 </html>
