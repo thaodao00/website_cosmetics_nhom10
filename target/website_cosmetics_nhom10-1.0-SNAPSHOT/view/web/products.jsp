@@ -27,10 +27,10 @@
                     </h3>
                     <ul class="product__items-list">
                         <c:forEach var="i" items="${category}">
-                            <a href="" class="product__item-link">
-                                <li class="product__items-item">${i.title}</li>
-                            </a>
 
+                            <a href="category?categoryId=${i.id}" class="product__item-link">
+                                <li class="product__items-item  ${tag==i.id?"active-btn":""}">${i.title}</li>
+                            </a>
                         </c:forEach>
                     </ul>
                 </div>
@@ -57,8 +57,7 @@
                     <ul class="mobile-category__list">
                         <c:forEach var="i" items="${category}">
                             <li class="mobile-category__item">
-                                    <%--                                <a href="" class="mobile-category__link active-border">${i.title}</a>--%>
-                                <a href="" class="mobile-category__link">${i.title}</a>
+                                <a href="category?categoryId=${i.id}" class="mobile-category__link ${tag==i.id?"active-btn":""}">${i.title}</a>
 
                             </li>
                         </c:forEach>
@@ -66,6 +65,8 @@
                 </nav>
                 <br>
                 <div id="content" class="row products">
+
+
                     <c:forEach var="i" items="${products}">
                         <a href="web-product?id=${i.id}" class="product col l-2-4 m-4 c-6">
                             <div class="product__item">
@@ -161,7 +162,7 @@
             url: "LoadMoreServlet",
             type: "get",
             data:{
-                exits: amount++
+                exits: amount
             },
             success: function (data) {
                 var row = document.getElementById("content");

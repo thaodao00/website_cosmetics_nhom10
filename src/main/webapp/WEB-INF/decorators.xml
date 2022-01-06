@@ -83,4 +83,7 @@
     <decorator name="register" page="register.jsp">
         <pattern>/web-register</pattern>
     </decorator>
+    <decorator name="categoryById" page="products.jsp">
+        <pattern>/category</pattern>
+    </decorator>
 </decorators>

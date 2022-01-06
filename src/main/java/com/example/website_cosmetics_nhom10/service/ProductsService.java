@@ -28,7 +28,13 @@ public class ProductsService {
         return ProductDao.getInstance().getTop10 ();
 
     }
+    public List<Products> getNext10(int amount) {
+        return ProductDao.getInstance().getNext10 (amount);
 
+    }
+    public List<Products> getProductByCateId(Long id){
+        return ProductDao.getInstance().getProductByCateId (id);
+    }
     public List<Products> getTagName(String name) {
         return ProductDao.getInstance().getTagName(name);
     }

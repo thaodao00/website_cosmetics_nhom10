@@ -3,6 +3,7 @@ package com.example.website_cosmetics_nhom10.controller.web.ProductListControlle
 import com.example.website_cosmetics_nhom10.beans.Product;
 import com.example.website_cosmetics_nhom10.beans.Products;
 import com.example.website_cosmetics_nhom10.dao.ProductDao;
+import com.example.website_cosmetics_nhom10.service.ProductsService;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -18,8 +19,7 @@ public class LoadMoreServlet extends HttpServlet {
         response.setContentType ("text/html;charset=UTF-8");
         String amount = request.getParameter ("exits");
         int iamount = Integer.parseInt (amount);
-        ProductDao productDao = new ProductDao ();
-        List<Products> list = productDao.getNext10 (iamount);
+        List<Products> list = ProductsService.getInstance ().getNext10 (iamount);
         PrintWriter out = response.getWriter ();
 
         for(Products o : list){

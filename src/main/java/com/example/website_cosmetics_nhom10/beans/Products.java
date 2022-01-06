@@ -3,8 +3,7 @@ package com.example.website_cosmetics_nhom10.beans;
 import java.io.Serializable;
 
 public class Products implements Serializable {
-
-    String id ;
+    Long id ;
     String name;
     String thumbnailImg;
     double price;
@@ -18,14 +17,15 @@ public class Products implements Serializable {
     String tagName;
     String companyName;
     String originName;
+    Long categoryId;
     public Products(){
 
     }
 
-    public Products(String id, String name, String thumnailImg, double price, double discount, int sold, String shortDescription, String longDescription, double rate, String weight, String dimension, String tagName, String companyName, String originName) {
+    public Products(Long id, String name, String thumbnailImg, double price, double discount, int sold, String shortDescription, String longDescription, double rate, String weight, String dimension, String tagName, String companyName, String originName, Long categoryId) {
         this.id = id;
         this.name = name;
-        this.thumbnailImg = thumnailImg;
+        this.thumbnailImg = thumbnailImg;
         this.price = price;
         this.discount = discount;
         this.sold = sold;
@@ -34,16 +34,17 @@ public class Products implements Serializable {
         this.rate = rate;
         this.weight = weight;
         this.dimension = dimension;
-        this.tagName= tagName;
+        this.tagName = tagName;
         this.companyName = companyName;
         this.originName = originName;
+        this.categoryId = categoryId;
     }
 
-    public String getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -127,28 +128,35 @@ public class Products implements Serializable {
         this.dimension = dimension;
     }
 
-    public void setTagName(String tagName) {
-        this.tagName = tagName;
-    }
-
     public String getTagName() {
         return tagName;
     }
 
-    public void setCompanyName(String companyName) {
-        this.companyName = companyName;
+    public void setTagName(String tagName) {
+        this.tagName = tagName;
     }
 
     public String getCompanyName() {
         return companyName;
     }
 
-    public void setOriginName(String originName) {
-        this.originName = originName;
+    public void setCompanyName(String companyName) {
+        this.companyName = companyName;
     }
 
     public String getOriginName() {
         return originName;
     }
 
+    public void setOriginName(String originName) {
+        this.originName = originName;
+    }
+
+    public Long getCategoryId() {
+        return categoryId;
+    }
+
+    public void setCategoryId(Long categoryId) {
+        this.categoryId = categoryId;
+    }
 }

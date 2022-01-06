@@ -20,4 +20,5 @@ public class CategoryDao {
     public List<Category>getAllCategory(){
         return JDBIConnector.get ().withHandle (handle -> handle.createQuery ("select * from category").mapToBean (Category.class).stream ().collect(Collectors.toList()));
     }
+
 }
