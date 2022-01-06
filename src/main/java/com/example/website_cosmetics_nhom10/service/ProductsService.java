@@ -41,7 +41,9 @@ public class ProductsService {
     public List<Products> getTagNameLimit8(String name) {
         return ProductDao.getInstance().getTagNameLimit8(name);
     }
-
+    public List<Products> searchByName(String txtSearch){
+        return  ProductDao.getInstance ().searchByName (txtSearch);
+    }
     public Product getById(Long id) {
         return ProductDao.getInstance().getById(id);
     }

@@ -69,6 +69,12 @@ h1{
     background-color: var(--black-color);
     border: 2px solid var(--white-color);
 }
+.search-btn{
+    font-size: 1.4rem;
+    border: none;
+    background: transparent;
+    color: white;
+}
 /*Slider*/
 /* Slideshow container */
 .slideshow-container {

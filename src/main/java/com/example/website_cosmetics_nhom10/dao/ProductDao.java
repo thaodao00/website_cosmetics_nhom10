@@ -55,4 +55,8 @@ public class ProductDao {
     public List<Products> getProductByCateId(Long id){
         return  JDBIConnector.get ().withHandle (handle -> handle.createQuery ("SELECT *from products where categoryId = ?").bind (0,id).mapToBean (Products.class).stream ().collect(Collectors.toList()));
     }
+    public List<Products> searchByName(String txtSearch){
+        return JDBIConnector.get ().withHandle (handle
+                -> handle.createQuery ("select * from products  where name like ?").bind (0,"%"+txtSearch+"%").mapToBean (Products.class).stream ().collect(Collectors.toList()));
+    }
 }

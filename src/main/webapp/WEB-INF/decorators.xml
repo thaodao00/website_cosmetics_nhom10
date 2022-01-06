@@ -86,4 +86,10 @@
     <decorator name="categoryById" page="products.jsp">
         <pattern>/category</pattern>
     </decorator>
+    <decorator name="searchByName" page="products.jsp">
+        <pattern>/search</pattern>
+    </decorator>
+    <decorator name="loadMore" page="products.jsp">
+        <pattern>/LoadMoreServlet</pattern>
+    </decorator>
 </decorators>
