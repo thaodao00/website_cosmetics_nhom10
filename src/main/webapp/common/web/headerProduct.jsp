@@ -259,7 +259,9 @@
             <a href="" class="header__sort-link">New</a>
         </li>
         <li class="header__sort-item">
-            <a href="" class="header__sort-link">Lowest first</a>
+                <a class="header__sort-link">Lowest first</a>
+
+
         </li>
         <li class="header__sort-item">
             <a href="" class="header__sort-link">Highest first</a>

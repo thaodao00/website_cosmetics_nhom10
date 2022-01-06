@@ -47,4 +47,7 @@ public class ProductsService {
     public Product getById(Long id) {
         return ProductDao.getInstance().getById(id);
     }
+    public List<Products> priceByLowestFirst(float price){
+        return ProductDao.getInstance ().priceByLowestFirst (price);
+    }
 }

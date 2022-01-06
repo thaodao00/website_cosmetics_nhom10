@@ -259,7 +259,10 @@
             <a href="" class="header__sort-link">New</a>
         </li>
         <li class="header__sort-item">
-            <a href="" class="header__sort-link">Lowest first</a>
+            <form action="priceByLowestFirst" method="get">
+                <button type="submit" name="price" class="header__sort-link">Lowest first</button>
+            </form>
+
         </li>
         <li class="header__sort-item">
             <a href="" class="header__sort-link">Highest first</a>

@@ -19,7 +19,7 @@ public class LoadMoreServlet extends HttpServlet {
         response.setContentType ("text/html;charset=UTF-8");
         String amount = request.getParameter ("exits");
         int iamount = Integer.parseInt (amount);
-        List<Products> list = ProductsService.getInstance ().getNext10 (iamount);
+        List<Products> list = ProductsService.getInstance ().getNext10(iamount);
         PrintWriter out = response.getWriter ();
 
         for(Products o : list){

@@ -92,4 +92,7 @@
     <decorator name="loadMore" page="products.jsp">
         <pattern>/LoadMoreServlet</pattern>
     </decorator>
+    <decorator name="priceByLowestFirst" page="products.jsp">
+        <pattern>/priceByLowestFirst</pattern>
+    </decorator>
 </decorators>
