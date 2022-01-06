@@ -13,11 +13,11 @@ import java.util.List;
 public class HomeServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        List<Products> productsHot  = ProductsService.getInstance ().getTagName ("Hot");
+        List<Products> productsHot  = ProductsService.getInstance ().getTagNameLimit5 ("Hot");
         request.setAttribute ("productsHot", productsHot);
-        List<Products> productsNew  = ProductsService.getInstance ().getTagName ("New");
+        List<Products> productsNew  = ProductsService.getInstance ().getTagNameLimit5 ("New");
         request.setAttribute ("productsNew", productsNew);
-        List<Products> productsSale  = ProductsService.getInstance ().getTagName ("Sale");
+        List<Products> productsSale  = ProductsService.getInstance ().getTagNameLimit8 ("Sale");
         request.setAttribute ("productsSale", productsSale);
         request.getRequestDispatcher("/view/web/home.jsp").forward(request, response);
     }

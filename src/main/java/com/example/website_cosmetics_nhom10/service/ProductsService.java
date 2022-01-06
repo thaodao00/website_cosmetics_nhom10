@@ -35,8 +35,11 @@ public class ProductsService {
     public List<Products> getProductByCateId(Long id){
         return ProductDao.getInstance().getProductByCateId (id);
     }
-    public List<Products> getTagName(String name) {
-        return ProductDao.getInstance().getTagName(name);
+    public List<Products> getTagNameLimit5(String name) {
+        return ProductDao.getInstance().getTagNameLimit5(name);
+    }
+    public List<Products> getTagNameLimit8(String name) {
+        return ProductDao.getInstance().getTagNameLimit8(name);
     }
 
     public Product getById(Long id) {

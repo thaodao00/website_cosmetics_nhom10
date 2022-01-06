@@ -58,7 +58,6 @@
                         <c:forEach var="i" items="${category}">
                             <li class="mobile-category__item">
                                 <a href="category?categoryId=${i.id}" class="mobile-category__link ${tag==i.id?"active-btn":""}">${i.title}</a>
-
                             </li>
                         </c:forEach>
                     </ul>

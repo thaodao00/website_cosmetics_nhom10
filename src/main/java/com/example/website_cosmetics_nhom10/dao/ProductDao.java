@@ -36,10 +36,15 @@ public class ProductDao {
         return  JDBIConnector.get ().withHandle (handle ->
                 handle.createQuery ("select*from products limit ? , 10").bind (0,amount).mapToBean (Products.class).stream ().collect(Collectors.toList()));
     }
-    public List<Products> getTagName(String tagName) {
+    public List<Products> getTagNameLimit8(String tagName) {
         //Cú pháp lambda
         return JDBIConnector.get().withHandle(handle ->
-                handle.createQuery("select * from products where tagName = ?").bind(0, tagName).mapToBean(Products.class).stream().collect(Collectors.toList()));
+                handle.createQuery("select * from products where tagName = ? limit 8").bind(0, tagName).mapToBean(Products.class).stream().collect(Collectors.toList()));
+    }
+    public List<Products> getTagNameLimit5(String tagName) {
+        //Cú pháp lambda
+        return JDBIConnector.get().withHandle(handle ->
+                handle.createQuery("select * from products where tagName = ? limit 8").bind(0, tagName).mapToBean(Products.class).stream().collect(Collectors.toList()));
     }
 
     public Product getById(Long id) {
