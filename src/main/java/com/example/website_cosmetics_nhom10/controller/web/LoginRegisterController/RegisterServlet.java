@@ -1,6 +1,8 @@
 package com.example.website_cosmetics_nhom10.controller.web.LoginRegisterController;
 
+import com.example.website_cosmetics_nhom10.beans.Cart;
 import com.example.website_cosmetics_nhom10.beans.User;
+import com.example.website_cosmetics_nhom10.service.CartService;
 import com.example.website_cosmetics_nhom10.service.UserServices;
 
 import javax.servlet.*;
@@ -30,6 +32,9 @@ public class RegisterServlet extends HttpServlet {
                     user.setPhone(request.getParameter("phone"));
                     user.setCountry(request.getParameter("country"));
                     if (UserServices.getInstance().register(user)) {
+                        User userResult = UserServices.getInstance().findByUsername(user.getUsername());
+                        if (CartService.getInstance().checkCartExist(userResult.getId()))
+                            CartService.getInstance().createCart(userResult.getId());
                         response.sendRedirect("web-login");
                     }
                 } else {

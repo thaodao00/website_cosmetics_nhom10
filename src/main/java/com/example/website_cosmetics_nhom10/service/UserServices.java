@@ -1,7 +1,7 @@
 package com.example.website_cosmetics_nhom10.service;
 
 import com.example.website_cosmetics_nhom10.beans.User;
-import com.example.website_cosmetics_nhom10.dao.UserDAO;
+import com.example.website_cosmetics_nhom10.dao.UserDao;
 
 import java.sql.SQLException;
 import java.util.HashMap;
@@ -23,11 +23,11 @@ public class UserServices {
     }
 
     public static boolean checkLogin(String username) {
-        return UserDAO.getInstance().checkLogin(username);
+        return UserDao.getInstance().checkLogin(username);
     }
 
     public static User login(String username, String password) {
-        return UserDAO.getInstance().login(username, password);
+        return UserDao.getInstance().login(username, password);
     }
 
     public boolean checkRegister(String password, String confirmPassword) {
@@ -35,10 +35,14 @@ public class UserServices {
     }
 
     public boolean checkUserExist(String username) throws SQLException {
-        return UserDAO.getInstance().checkUserExist(username);
+        return UserDao.getInstance().checkUserExist(username);
     }
 
     public boolean register(User newUser) throws SQLException {
-        return UserDAO.getInstance().register(newUser);
+        return UserDao.getInstance().register(newUser);
+    }
+
+    public User findByUsername(String username) throws SQLException {
+        return UserDao.getInstance().findByUsername(username);
     }
 }
