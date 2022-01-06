@@ -10,17 +10,17 @@ import java.security.NoSuchAlgorithmException;
 import java.sql.SQLException;
 import java.util.List;
 
-public class UserDAO {
+public class UserDao {
 
-    private static UserDAO instance;
+    private static UserDao instance;
 
-    private UserDAO() {
+    private UserDao() {
 
     }
 
-    public static UserDAO getInstance() {
+    public static UserDao getInstance() {
         if (instance == null)
-            instance = new UserDAO();
+            instance = new UserDao();
         return instance;
     }
 
@@ -79,5 +79,15 @@ public class UserDAO {
             user.setPassword(null);
         }
         return user;
+    }
+
+    public User findByUsername(String username) {
+        String sql = "select * from user where username = ?";
+        List<User> list = JDBIConnector.get().withHandle(handle -> handle.createQuery(sql)
+                .bind(0, username)
+                .mapToBean(User.class).list());
+        if (list.size() == 1)
+            return list.get(0);
+        return null;
     }
 }

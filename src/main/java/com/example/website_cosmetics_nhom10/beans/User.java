@@ -1,7 +1,7 @@
 package com.example.website_cosmetics_nhom10.beans;
 
 public class User {
-    private long id, roleId, cartId;
+    private long id, roleId;
     private String username, fullName, password, email, country, avatar, phone;
 
     public User() {
@@ -13,11 +13,10 @@ public class User {
         this.password = password;
     }
 
-    public User(long id, String phone, long roleId, long cartId, String username, String fullName, String password, String email, String country, String avatar) {
+    public User(long id, String phone, long roleId, String username, String fullName, String password, String email, String country, String avatar) {
         this.id = id;
         this.phone = phone;
         this.roleId = roleId;
-        this.cartId = cartId;
         this.username = username;
         this.password = password;
         this.email = email;
@@ -48,14 +47,6 @@ public class User {
 
     public void setRoleId(long roleId) {
         this.roleId = roleId;
-    }
-
-    public long getCartId() {
-        return cartId;
-    }
-
-    public void setCartId(long cartId) {
-        this.cartId = cartId;
     }
 
     public String getUsername() {

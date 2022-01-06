@@ -8,18 +8,19 @@ import java.util.List;
 public class CategoryService {
     private static CategoryService instance;
 
-    public static CategoryService getInstance(){
-        if(instance ==null){
-            instance = new CategoryService ();
+    public static CategoryService getInstance() {
+        if (instance == null) {
+            instance = new CategoryService();
         }
-        return  instance;
+        return instance;
     }
-    public  CategoryService(){
+
+    public CategoryService() {
 
     }
 
-    public List<Category>getAllCategory(){
-        return  CategoryDao.getInstance ().getAllCategory ();
+    public List<Category> getAllCategory() {
+        return CategoryDao.getInstance().getAllCategory();
 
     }
 }
