@@ -429,20 +429,7 @@
 </div>
 
 
-<!--Search mobile-->
-<div class="search-mobile">
-    <div class="search-mobile__input">
-        <input class="search-mobile__input-text" placeholder="Search...">
-        <i class="icon-search fas fa-search"></i>
-    </div>
 
-    <a class="cart-link">
-        <i class="fa fa-cart-plus"></i>
-    </a>
-    <a class="login-link " style="padding-right: 10px">
-        <i class="fa fa-user"></i>
-    </a>
-</div>
 
 </body>
 </html>

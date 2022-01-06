@@ -9,3 +9,21 @@
     </button>
 
 </form>
+
+<!--Search mobile-->
+<form action="search"method="post" class="search-mobile">
+    <div class="search-mobile__input">
+        <input name="txt" class="search-mobile__input-text" placeholder="Search...">
+        <button type="submit">
+            <i class="icon-search fas fa-search"></i>
+        </button>
+    </div>
+
+    <a href="cart.html" class="cart-link">
+        <i class="fa fa-cart-plus"></i>
+    </a>
+    <a class="login-link " style="padding-right: 10px">
+        <i class="fa fa-user"></i>
+    </a>
+</form>
+</div>

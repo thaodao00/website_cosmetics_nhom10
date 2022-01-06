@@ -329,25 +329,6 @@
     </div>
 </div>
 <!--Overview: end-->
-
-
-<!--Search mobile-->
-<div class="search-mobile">
-    <div class="search-mobile__input">
-        <input class="search-mobile__input-text" placeholder="Search...">
-        <i class="icon-search fas fa-search"></i>
-    </div>
-
-    <a href="./cart.html" class="cart-link">
-        <i class="fa fa-cart-plus"></i>
-    </a>
-    <a class="login-link " style="padding-right: 10px">
-        <i class="fa fa-user"></i>
-    </a>
-
-</div>
-
-
 <!-- Back to top -->
 <div id="back-to-top" class="back-to-top" title="Back to top">
     <i class="fas fa-arrow-up"></i>
