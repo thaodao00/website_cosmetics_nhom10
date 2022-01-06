@@ -1,4 +1,4 @@
-
+<%@include file="/common/taglib.jsp" %>
 <!--Header: begin-->
 <header class="header">
     <div class="grid wide ">
@@ -209,7 +209,7 @@
                     </div>
                 </div>
                 <div class="login-link__wrapper">
-                    <a class="login-link">
+                    <a href="<c:url value="/web-register"/>" class="login-link">
                         <i class="fa fa-user"></i>
                     </a>
                 </div>

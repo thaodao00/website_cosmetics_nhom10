@@ -21,9 +21,12 @@
     <!-- header -->
     <dec:body/>
     <%@ include file="/common/web/footer.jsp" %>
+    <%--Modal search--%>
+    <%@ include file="/common/web/modalSerch.jsp" %>
 </div>
-<script type="text/javascript" src="<c:url value='/template/web/assets/js/JSPersonalInfomation.js' />"></script>
 <script type="text/javascript" src="<c:url value='/template/web/assets/js/showHide.js' />"></script>
+<script type="text/javascript" src="<c:url value='/template/web/assets/js/JSPersonalInfomation.js' />"></script>
+
 
 </body>
 </html>

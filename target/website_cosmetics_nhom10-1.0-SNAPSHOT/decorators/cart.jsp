@@ -29,8 +29,10 @@
 <!-- footer -->
 <%@ include file="/common/web/footer.jsp" %>
 <!-- footer -->
-
-<script src="template/web/assets/js/JSCart.js"></script>
+<%--Modal search--%>
+<%@ include file="/common/web/modalSerch.jsp" %>
 <script src="template/web/assets/js/showHide.js"></script>
+<script src="template/web/assets/js/JSCart.js"></script>
+
 </body>
 </html>

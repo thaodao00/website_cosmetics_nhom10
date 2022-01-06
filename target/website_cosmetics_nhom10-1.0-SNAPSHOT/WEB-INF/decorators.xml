@@ -72,7 +72,7 @@
     </decorator>
 
     <decorator name="personalInformation" page="personalInformation.jsp">
-        <pattern>/web-personnalInformation</pattern>
+        <pattern>/web-personalInformation</pattern>
     </decorator>
     <decorator name="cart" page="cart.jsp">
         <pattern>/web-cart</pattern>
