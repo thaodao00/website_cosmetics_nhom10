@@ -1,6 +1,8 @@
 package com.example.website_cosmetics_nhom10.controller.web.LoginRegisterController;
 
+import com.example.website_cosmetics_nhom10.beans.Cart;
 import com.example.website_cosmetics_nhom10.beans.User;
+import com.example.website_cosmetics_nhom10.service.CartService;
 import com.example.website_cosmetics_nhom10.service.UserServices;
 
 import javax.servlet.*;
@@ -22,9 +24,13 @@ public class LoginServlet extends HttpServlet {
         if (UserServices.checkLogin(username)) {
             User user = UserServices.login(username, password);
             if (user != null) {
-                HttpSession session = request.getSession();
-                session.setAttribute("auth", user);
-                response.sendRedirect("web-home");
+                Cart cart = CartService.getInstance().getByIdUser(user.getId());
+                if (cart != null) {
+                    HttpSession session = request.getSession();
+                    session.setAttribute("cart", cart);
+                    session.setAttribute("auth", user);
+                    response.sendRedirect("web-home");
+                }
             } else {
                 request.setAttribute("error", "Wrong password");
                 request.getRequestDispatcher("/view/web/login.jsp").forward(request, response);
