@@ -44,7 +44,7 @@ public class ProductDao {
     public List<Products> getTagNameLimit5(String tagName) {
         //Cú pháp lambda
         return JDBIConnector.get().withHandle(handle ->
-                handle.createQuery("select * from products where tagName = ? limit 8").bind(0, tagName).mapToBean(Products.class).stream().collect(Collectors.toList()));
+                handle.createQuery("select * from products where tagName = ? limit 5").bind(0, tagName).mapToBean(Products.class).stream().collect(Collectors.toList()));
     }
 
     public Product getById(Long id) {
@@ -61,7 +61,7 @@ public class ProductDao {
     }
 //    sort products
     public List<Products> priceByLowestFirst(float price){
-        return JDBIConnector.get ().withHandle (handle -> handle.createQuery ("select * from products  ORDER BY ? asc").bind (0,price).mapToBean (Products.class).stream ().collect(Collectors.toList()));
+        return JDBIConnector.get ().withHandle (handle -> handle.createQuery ("select * from products  ORDER BY ? asc").bind (4,price).mapToBean (Products.class).stream ().collect(Collectors.toList()));
 
     }
 
