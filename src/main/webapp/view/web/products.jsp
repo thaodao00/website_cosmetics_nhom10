@@ -45,7 +45,7 @@
                         <i class="select-input__icon fas fa-angle-down "></i>
                         <ul class="select-input__list">
                             <li class="select-input__item">
-                                <a href="" class="select-input__link">Lowest first</a>
+                                <button onclick="lowestFirst()" class="select-input__link">Lowest first</button>
                             </li>
                             <li class="select-input__item">
                                 <a href="" class="select-input__link">Highest first</a>
@@ -57,7 +57,8 @@
                     <ul class="mobile-category__list">
                         <c:forEach var="i" items="${category}">
                             <li class="mobile-category__item">
-                                <a href="category?categoryId=${i.id}" class="mobile-category__link ${tag==i.id?"active-btn":""}">${i.title}</a>
+                                <a href="category?categoryId=${i.id}"
+                                   class="mobile-category__link ${tag==i.id?"active-btn":""}">${i.title}</a>
                             </li>
                         </c:forEach>
                     </ul>
@@ -72,7 +73,7 @@
 
                                 <img class="product__item-img"
 
-<%--                                     src="<c:url value="${i.thumbnailImg}"/>">--%>
+                                    <%--                                     src="<c:url value="${i.thumbnailImg}"/>">--%>
 
                                      src="<c:url value="${i.thumbnailImg}"/>">
 
@@ -115,19 +116,17 @@
 </div>
 
 
-
-
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <%--<script type="text/javascript" src="<c:url value='/template/web/assets/js/showHide.js' />"></script>--%>
-<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<%--<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>--%>
 <script>
     function loadMore() {
         var amount = document.getElementsByClassName("product").length;
         console.log(amount);
-        $.ajax({
+        jQuery.ajax({
             url: "LoadMoreServlet",
             type: "get",
-            data:{
+            data: {
                 exits: amount
             },
             success: function (data) {
@@ -135,8 +134,8 @@
                 row.innerHTML += data;
             }
         });
-
     }
+      
 </script>
 </body>
 </html>
