@@ -25,12 +25,11 @@ public class LoginServlet extends HttpServlet {
             User user = UserServices.login(username, password);
             if (user != null) {
                 Cart cart = CartService.getInstance().getByIdUser(user.getId());
-                if (cart != null) {
-                    HttpSession session = request.getSession();
-                    session.setAttribute("cart", cart);
-                    session.setAttribute("auth", user);
-                    response.sendRedirect("web-home");
-                }
+                if (cart == null) CartService.getInstance().createCart(user.getId());
+                HttpSession session = request.getSession();
+                session.setAttribute("cart", cart);
+                session.setAttribute("auth", user);
+                response.sendRedirect("web-home");
             } else {
                 request.setAttribute("error", "Wrong password");
                 request.getRequestDispatcher("/view/web/login.jsp").forward(request, response);
