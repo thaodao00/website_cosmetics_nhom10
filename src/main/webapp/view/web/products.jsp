@@ -6,6 +6,7 @@
 %>
 <jsp:useBean id="products" scope="request" type="java.util.List"/>
 <jsp:useBean id="category" scope="request" type="java.util.List"/>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,7 +28,6 @@
                     </h3>
                     <ul class="product__items-list">
                         <c:forEach var="i" items="${category}">
-
                             <a href="category?categoryId=${i.id}" class="product__item-link">
                                 <li class="product__items-item  ${tag==i.id?"active-btn":""}">${i.title}</li>
                             </a>
@@ -45,7 +45,7 @@
                         <i class="select-input__icon fas fa-angle-down "></i>
                         <ul class="select-input__list">
                             <li class="select-input__item">
-                                <button onclick="lowestFirst()" class="select-input__link">Lowest first</button>
+                                <a onclick="sortPrice()" class="select-input__link">Lowest first</a>
                             </li>
                             <li class="select-input__item">
                                 <a href="" class="select-input__link">Highest first</a>
@@ -135,7 +135,21 @@
             }
         });
     }
-      
+    function sortPrice() {
+        var amount = document.getElementsByClassName("products").length;
+        // console.log(amount);
+        jQuery.ajax({
+            url: "SortProductsServlet",
+            type: "get",
+            data: {
+                sort: amount
+            },
+            success: function (data) {
+                var row = document.getElementById("content");
+                row.innerHTML = data;
+            }
+        });
+    }
 </script>
 </body>
 </html>
