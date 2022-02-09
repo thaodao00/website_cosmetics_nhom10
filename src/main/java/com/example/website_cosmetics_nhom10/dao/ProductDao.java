@@ -60,8 +60,8 @@ public class ProductDao {
                 -> handle.createQuery ("select * from products  where name like ?").bind (0,"%"+txtSearch+"%").mapToBean (Products.class).stream ().collect(Collectors.toList()));
     }
 //    sort products
-    public List<Products> priceByLowestFirst(float price){
-        return JDBIConnector.get ().withHandle (handle -> handle.createQuery ("select * from products  ORDER BY ? asc").bind (4,price).mapToBean (Products.class).stream ().collect(Collectors.toList()));
+    public List<Products> priceByLowestFirst(){
+        return JDBIConnector.get ().withHandle (handle -> handle.createQuery ("select * from products  ORDER BY price asc").mapToBean (Products.class).stream ().collect(Collectors.toList()));
 
     }
 

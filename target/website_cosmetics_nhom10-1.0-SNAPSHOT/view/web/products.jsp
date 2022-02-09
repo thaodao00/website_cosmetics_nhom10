@@ -75,7 +75,7 @@
 
                                     <%--                                     src="<c:url value="${i.thumbnailImg}"/>">--%>
 
-                                     src="<c:url value="${i.thumbnailImg}"/>">
+                                     src="<c:url value="template\web\assets\img\ordinary\\${i.thumbnailImg}"/>">
 
                                 <h5 class="product__item-name">
                                         ${i.name}
@@ -135,21 +135,7 @@
             }
         });
     }
-        function lowestFirst() {
-            var price = document.getElementsByClassName("product").length;
-            jQuery.ajax({
-                url: "PriceByLowestFirstServlet",
-                type: "get",
-                data: {
-                    lowest: price,
-                },
-                success: function (data) {
-                    var row = document.getElementById("content");
-                    row.innerHTML = data;
-                }
-            });
-
-    }
+      
 </script>
 </body>
 </html>

@@ -53,7 +53,7 @@
                     <a href="#" class="col l-2-4 m-3 c-6">
                         <div class="product__item">
                             <img class="product__item-img"
-                                 src="${i.thumbnailImg}">
+                                 src="<c:url value="/template/web/assets/img/ordinary/${i.thumbnailImg}"/>">
                             <h3 class="product__item-name">
                                     ${i.name}
                             </h3>
@@ -128,7 +128,8 @@
                     <a href="#" class="col l-2-4 m-3 c-6">
                         <div class="product__item">
                             <img class="product__item-img"
-                                 src="${i.thumbnailImg}">
+
+                                 src="<c:url value="/template/web/assets/img/ordinary/${i.thumbnailImg}"/>">
                             <h3 class="product__item-name">
                                     ${i.name}
                             </h3>
@@ -247,7 +248,7 @@
                             <a href="#" class="col l-3 m-3 c-6">
                                 <div class="product__item">
                                     <img class="product__item-img"
-                                         src="${i.thumbnailImg}">
+                                         src="<c:url value="/template/web/assets/img/ordinary/${i.thumbnailImg}"/>">
                                     <h3 class="product__item-name">
                                             ${i.name}
                                     </h3>
