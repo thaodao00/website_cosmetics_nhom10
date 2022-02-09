@@ -32,8 +32,9 @@
                     <div class="col l-6 m-7 c-12">
                         <div class="product-content__img-wrapper products-slidesshow">
                             <div class="mySlider fadeSlider">
+                                <% Product product = (Product) request.getAttribute("product"); %>
                                 <img class="mySlider-img"
-                                     src="assets/img/product/granary/rdn-niacinamide-10pct-zinc-1pct-30ml-9.png"
+                                     src="<c:url value="/template/web/assets/img/ordinary/${product.thumbnailImg}"/>"
                                      style="height: 440px"/>
                             </div>
                             <div class="mySlider fadeSlider">
@@ -80,12 +81,7 @@
                     <div class="col l-6 m-5 c-12">
                         <div class="product-content__text-wrapper">
                             <div class="product-content__text">
-                                <% Product product = (Product) request.getAttribute("product"); %>
-                                <script>
-                                    console.log(product)
-                                </script>
                                 <div class="product-content__text__title">${product.name}</div>
-
                                 <p class="product-price price">
                                     <span class="product-price__old del">$${product.price}</span>
 
@@ -111,11 +107,11 @@
                                 <div class="product-content__quantity-vs-purchase">
                                     <div class="quantity-buttons">
                                         <button class="quantity-buttons--minus">-</button>
-                                        <div class="quantity-buttons--number">1</div>
+                                        <div id="quantity-product-be" class="quantity-buttons--number">1</div>
                                         <button class="quantity-buttons--plus">+</button>
                                     </div>
 
-                                    <div class="purchase-buttons buttons">Add</div>
+                                    <div id="add-product-be" class="purchase-buttons buttons">Add</div>
                                 </div>
 
                                 <a href="#" class="product-content__add-to-wishlist">
@@ -124,20 +120,20 @@
                                 </a>
 
                                 <div class="product-content__meta">
-        <span class="meta__sku-wrapper">
-        SKU:
-        <span class="meta__sku">049</span>
-        </span>
+                                <span class="meta__sku-wrapper">
+                                SKU:
+                                <span class="meta__sku">049</span>
+                                </span>
 
-                                    <span class="meta__category-wrapper">
-        Category:
-        <span class="meta__category">skin solutions</span>
-        </span>
+                                <span class="meta__category-wrapper">
+                                Category:
+                                <span class="meta__category">skin solutions</span>
+                                </span>
 
-                                    <span class="meta__tag-wrapper">
-        Tag:
-        <span class="meta__tag">Make up</span>
-        </span>
+                                <span class="meta__tag-wrapper">
+                                Tag:
+                                <span class="meta__tag">Make up</span>
+                                </span>
                                 </div>
                             </div>
                         </div>
@@ -444,10 +440,37 @@
 </div>
 
 
-
-<script src="template/web/assets/js/JSProduct.js"></script>
-<script type="module" src="template/web/assets/js/showHide.js"></script>
-
+<%--<script src="template/web/assets/js/JSProduct.js"></script>--%>
+<%--<script type="module" src="template/web/assets/js/showHide.js"></script>--%>
+<script
+        src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+        crossorigin="anonymous">
+</script>
+<script>
+    $(document).ready(function() {
+        $("#add-product-be").click(function () {
+            const id = ${product.id};
+            const quantity = $("#quantity-product-be").text();
+            console.log(id);
+            $.ajax({
+                url: "/api-add-to-cart",
+                method: "POST",
+                data: {
+                    id: id,
+                    quantity: quantity
+                },
+                success: function (data) {
+                    console.log("added")
+                },
+                error: function (data) {
+                    console.log(data)
+                    console.log("failed")
+                }
+            })
+        })
+    })
+</script>
 </div>
 </body>
 </html>

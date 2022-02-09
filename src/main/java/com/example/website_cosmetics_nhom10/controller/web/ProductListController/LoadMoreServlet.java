@@ -29,6 +29,7 @@ public class LoadMoreServlet extends HttpServlet {
                     "\n" +
                     "                                <img class=\"product__item-img\"\n" +
                     "                                     src=\"template\\web\\assets\\img\\ordinary\\"+ o.getThumbnailImg () + "\"/>\">\n" +
+                    "                                     src=\"" + "template\\web\\assets\\img\\ordinary\\" + o.getThumbnailImg() + "\"/>\n" +
                     "                                <h5 class=\"product__item-name\">\n" +
                     "                                        " + o.getName () + "\n" +
                     "                                </h5>\n" +

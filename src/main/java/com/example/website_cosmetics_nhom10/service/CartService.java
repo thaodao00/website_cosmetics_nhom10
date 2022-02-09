@@ -27,4 +27,8 @@ public class CartService {
     public static boolean checkCartExist(Long userId) {
         return CartDao.getInstance().checkCartExist(userId);
     }
+
+    public static boolean addToCart(Long productId, Long cartId, int quantity) {
+        return CartDao.getInstance().addToCart(productId, cartId, quantity);
+    }
 }
