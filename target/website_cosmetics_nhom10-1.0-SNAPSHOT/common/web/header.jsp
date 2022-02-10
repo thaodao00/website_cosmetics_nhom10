@@ -11,12 +11,12 @@
             <div class="col l-8 m-8 c-0">
                 <ul class="navbar__list">
                     <li class="navbar__item">
-                        <a href="./index.html" class="navbar__item-link">
+                        <a href="<c:url value="/web-home"/>" class="navbar__item-link">
                             HOME
                         </a>
                     </li>
                     <li class="navbar__item">
-                        <a class="navbar__item-link" href="./products.html">
+                        <a class="navbar__item-link" href="<c:url value="/web-products"/>">
                             PRODUCTS
                         </a>
                     </li>

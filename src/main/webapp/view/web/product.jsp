@@ -450,14 +450,14 @@
 <script>
     $(document).ready(function() {
         $("#add-product-be").click(function () {
-            const id = ${product.id};
+            const pid = ${product.id};
             const quantity = $("#quantity-product-be").text();
-            console.log(id);
+            console.log(pid + " " + quantity);
             $.ajax({
-                url: "/api-add-to-cart",
+                url: "api-add-to-cart",
                 method: "POST",
                 data: {
-                    id: id,
+                    pid: pid,
                     quantity: quantity
                 },
                 success: function (data) {
