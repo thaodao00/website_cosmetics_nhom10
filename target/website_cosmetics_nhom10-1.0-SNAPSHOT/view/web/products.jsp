@@ -72,10 +72,7 @@
                             <div class="product__item">
 
                                 <img class="product__item-img"
-
-                                    <%--                                     src="<c:url value="${i.thumbnailImg}"/>">--%>
-
-                                     src="<c:url value="template\web\assets\img\ordinary\\${i.thumbnailImg}"/>">
+                                     src="<c:url value="/template/web/assets/img/ordinary/${i.thumbnailImg}"/>"/>
 
                                 <h5 class="product__item-name">
                                         ${i.name}
@@ -135,6 +132,7 @@
             }
         });
     }
+
     function sortPrice() {
         var amount = document.getElementsByClassName("products").length;
         // console.log(amount);

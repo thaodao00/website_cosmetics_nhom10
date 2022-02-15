@@ -43,4 +43,14 @@ public class CartDao {
                 .mapToBean(Cart.class).list());
         return list.size() < 1;
     }
+
+    public boolean addToCart(long cartId, long productId, int quantity) {
+        String sql = "insert into cartitems(cartid, productid, quantity) values(?, ?, ?)";
+        int i = JDBIConnector.get().withHandle(handle -> handle.createUpdate(sql)
+                .bind(0, cartId)
+                .bind(1, productId)
+                .bind(2, quantity)
+                .execute());
+        return i == 1;
+    }
 }
