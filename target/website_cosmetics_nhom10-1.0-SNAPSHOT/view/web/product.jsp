@@ -125,12 +125,12 @@
                                 <span class="meta__sku">049</span>
                                 </span>
 
-                                <span class="meta__category-wrapper">
+                                    <span class="meta__category-wrapper">
                                 Category:
                                 <span class="meta__category">skin solutions</span>
                                 </span>
 
-                                <span class="meta__tag-wrapper">
+                                    <span class="meta__tag-wrapper">
                                 Tag:
                                 <span class="meta__tag">Make up</span>
                                 </span>
@@ -448,7 +448,7 @@
         crossorigin="anonymous">
 </script>
 <script>
-    $(document).ready(function() {
+    $(document).ready(function () {
         $("#add-product-be").click(function () {
             const pid = ${product.id};
             const quantity = $("#quantity-product-be").text();
@@ -461,9 +461,11 @@
                     quantity: quantity
                 },
                 success: function (data) {
+                    confirm("Add to cart successfully!")
                     console.log("added")
                 },
                 error: function (data) {
+                    alert("Error")
                     console.log(data)
                     console.log("failed")
                 }

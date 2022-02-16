@@ -1,26 +1,17 @@
 package com.example.website_cosmetics_nhom10.beans;
 
 public class CartItems {
-    private long id, cartId, productId;
+    private long cartId, productId;
     private int quantity;
 
     public CartItems() {
 
     }
 
-    public CartItems(long id, long cartId, long productId, int quantity) {
-        this.id = id;
+    public CartItems(long cartId, long productId, int quantity) {
         this.cartId = cartId;
         this.productId = productId;
         this.quantity = quantity;
-    }
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
     }
 
     public long getCartId() {

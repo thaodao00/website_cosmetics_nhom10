@@ -10,8 +10,7 @@ create table user(
                      email VARCHAR(255) null,
                      phone VARCHAR(15) null,
                      country VARCHAR(50) null,
-                     roleid BIGINT not null DEFAULT 0,
-                     cartid BIGINT null
+                     roleid BIGINT not null DEFAULT 0
 );
 
 ALTER TABLE user ADD COLUMN avatar VARCHAR(255) null;
@@ -38,3 +37,21 @@ create table product
     weight           varchar(20)  null,
     dimension        varchar(20)  null
 );
+
+create table cart(
+									id bigint not null primary key auto_increment,
+									total double null,
+									userid bigint not null
+);
+
+alter table cart add constraint fk_cart_user foreign key (userid) references user(id);
+
+create table cartitems (
+									cartid bigint not null,
+									productid bigint not null,
+									quantity int not null,
+									primary key (cartid, productid)
+);
+
+alter table cartitems add constraint fk_cartitems_cart foreign key (cartid) references cart(id);
+alter table cartitems add constraint fk_cartitems_product foreign key (productid) references products(id);
