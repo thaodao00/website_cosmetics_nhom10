@@ -17,8 +17,10 @@ public class ProductListServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<Products> products = ProductsService.getInstance().getTop10 ();
         List<Category> category = CategoryService.getInstance().getAllCategory ();
+        List<Products>sort = ProductsService.getInstance ().getAll ();
         request.setAttribute ("category",category);
         request.setAttribute ("products",products);
+        request.setAttribute ("sort",sort);
         request.getRequestDispatcher("/view/web/products.jsp").forward(request, response);
     }
 

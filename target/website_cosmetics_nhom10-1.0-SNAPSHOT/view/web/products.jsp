@@ -65,8 +65,6 @@
                 </nav>
                 <br>
                 <div id="content" class="row products">
-
-
                     <c:forEach var="i" items="${products}">
                         <a href="web-product?id=${i.id}" class="product col l-2-4 m-4 c-6">
                             <div class="product__item">
@@ -120,6 +118,7 @@
 <%--<script type="text/javascript" src="<c:url value='/template/web/assets/js/showHide.js' />"></script>--%>
 <%--<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>--%>
 <script>
+    var btn = document.getElementsByClassName("buttons");
     function loadMore() {
         var amount = document.getElementsByClassName("product").length;
         console.log(amount);
@@ -135,14 +134,14 @@
             }
         });
     }
-    function sortPrice() {
-        var amount = document.getElementsByClassName("products").length;
-        // console.log(amount);
+
+    function loadMore2() {
+        var amount = document.getElementsByClassName("product").length;
+        console.log(amount);
         jQuery.ajax({
-            url: "SortProductsServlet",
+            url: "rServlet",
             type: "get",
             data: {
-                sort: amount
             },
             success: function (data) {
                 var row = document.getElementById("content");
@@ -150,6 +149,28 @@
             }
         });
     }
+    function sortPrice() {
+        var amount = document.getElementsByClassName("product").length;
+        // console.log(amount);
+        jQuery.ajax({
+            url: "SortProductsServlet",
+            type: "get",
+            data: {
+                sort: amount
+            },
+
+            success: function (data) {
+                var row = document.getElementById("content");
+                row.innerHTML = data;
+                loadMore2();
+            }
+
+        });
+
+
+    }
+
+
 </script>
 </body>
 </html>

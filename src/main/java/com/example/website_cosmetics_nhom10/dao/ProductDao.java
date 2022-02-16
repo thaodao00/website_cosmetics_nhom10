@@ -36,6 +36,7 @@ public class ProductDao {
         return  JDBIConnector.get ().withHandle (handle ->
                 handle.createQuery ("select*from products limit ? , 10").bind (0,amount).mapToBean (Products.class).stream ().collect(Collectors.toList()));
     }
+
     public List<Products> getTagNameLimit8(String tagName) {
         //Cú pháp lambda
         return JDBIConnector.get().withHandle(handle ->
@@ -61,7 +62,7 @@ public class ProductDao {
     }
 //    sort products
     public List<Products> priceByLowestFirst(){
-        return JDBIConnector.get ().withHandle (handle -> handle.createQuery ("select * from products  ORDER BY price asc").mapToBean (Products.class).stream ().collect(Collectors.toList()));
+        return JDBIConnector.get ().withHandle (handle -> handle.createQuery ("select * from products  ORDER BY price asc limit 10").mapToBean (Products.class).stream ().collect(Collectors.toList()));
 
     }
 
