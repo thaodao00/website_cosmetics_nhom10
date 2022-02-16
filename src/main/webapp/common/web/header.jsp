@@ -4,29 +4,29 @@
     <div class="grid wide ">
         <div class="row navbar">
             <div class="col l-2 m-2 c-6">
-                <a href="index.html" style="text-decoration: none">
+                <a href="<c:url value="/web-home"/>" style="text-decoration: none">
                     <h1 class="logo" about=""> Cosmetics</h1>
                 </a>
             </div>
             <div class="col l-8 m-8 c-0">
                 <ul class="navbar__list">
                     <li class="navbar__item">
-                        <a href="./index.html" class="navbar__item-link">
+                        <a href="<c:url value="/web-home"/>" class="navbar__item-link">
                             HOME
                         </a>
                     </li>
                     <li class="navbar__item">
-                        <a class="navbar__item-link" href="./products.html">
+                        <a class="navbar__item-link" href="<c:url value="/web-products"/>">
                             PRODUCTS
                         </a>
                     </li>
                     <li class="navbar__item">
-                        <a class="navbar__item-link" href="./about.html">
+                        <a class="navbar__item-link" href="<c:url value="/web-about"/>">
                             ABOUT US
                         </a>
                     </li>
                     <li class="navbar__item">
-                        <a class="navbar__item-link" href="./contact.html">
+                        <a class="navbar__item-link" href="<c:url value="/web-contact"/>">
                             CONTACT US
                         </a>
                     </li>
@@ -209,7 +209,7 @@
                     </div>
                 </div>
                 <div class="login-link__wrapper">
-                    <a href="<c:url value="/web-register"/>" class="login-link">
+                    <a href="<c:url value="/api-login"/>" class="login-link">
                         <i class="fa fa-user"></i>
                     </a>
                 </div>
@@ -225,22 +225,22 @@
                         <i class="icon-exit far fa-times-circle"></i>
                     </label>
                     <ul class="nav-mobile__list">
-                        <a href="./index.html" class="nav-mobile__link">
+                        <a href="<c:url value="/web-home"/>" class="nav-mobile__link">
                             <li class="nav-mobile__item">
                                 Home
                             </li>
                         </a>
-                        <a href="./products.html" class="nav-mobile__link">
+                        <a href="<c:url value="/web-products"/>" class="nav-mobile__link">
                             <li class="nav-mobile__item">
                                 Products
                             </li>
                         </a>
-                        <a href="./about.html" class="nav-mobile__link">
+                        <a href="<c:url value="/web-about"/>" class="nav-mobile__link">
                             <li class="nav-mobile__item">
                                 About Us
                             </li>
                         </a>
-                        <a href="./contact.html" class="nav-mobile__link">
+                        <a href="<c:url value="/web-contact"/>" class="nav-mobile__link">
                             <li class="nav-mobile__item">
                                 Contact Us
                             </li>

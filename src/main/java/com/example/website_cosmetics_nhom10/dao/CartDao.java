@@ -1,6 +1,7 @@
 package com.example.website_cosmetics_nhom10.dao;
 
 import com.example.website_cosmetics_nhom10.beans.Cart;
+import com.example.website_cosmetics_nhom10.beans.CartItems;
 import com.example.website_cosmetics_nhom10.database.JDBIConnector;
 
 import java.util.List;
@@ -42,5 +43,30 @@ public class CartDao {
                 .bind(0, userId)
                 .mapToBean(Cart.class).list());
         return list.size() < 1;
+    }
+
+    public boolean addToCart(long cartId, long productId, int quantity) {
+        String sql = "select quantity from cartitems where cartid = ? and productid = ?";
+        List<Integer> list = JDBIConnector.get().withHandle(handle -> handle.createQuery(sql)
+                .bind(0, cartId)
+                .bind(1, productId)
+                .mapTo(Integer.class).list());
+        int i;
+        if (list.size() > 0) {
+            String sql1 = "update cartitems set quantity = ? where cartid = ? and productid = ?";
+            i = JDBIConnector.get().withHandle(handle -> handle.createUpdate(sql1)
+                    .bind(0, list.get(0) + quantity)
+                    .bind(1, cartId)
+                    .bind(2, productId)
+                    .execute());
+        } else {
+            String sql2 = "insert into cartitems(cartid, productid, quantity) values(?, ?, ?)";
+            i = JDBIConnector.get().withHandle(handle -> handle.createUpdate(sql2)
+                    .bind(0, cartId)
+                    .bind(1, productId)
+                    .bind(2, quantity)
+                    .execute());
+        }
+        return i == 1;
     }
 }

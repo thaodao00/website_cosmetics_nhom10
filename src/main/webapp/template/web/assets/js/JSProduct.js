@@ -1,19 +1,19 @@
-let close = document.querySelector('.close');
-let overlay = document.querySelector('.popup-overlay');
+// let close = document.querySelector('.close');
+// let overlay = document.querySelector('.popup-overlay');
 
-document.querySelector('.popup').onclick = function (e) {
-    e.stopPropagation();
-}
+// document.querySelector('.popup').onclick = function (e) {
+//     e.stopPropagation();
+// }
 
-close.onclick = function() {
-    document.querySelector('.stay-in-touch').style.display = 'none';
-    overlay.style.display = 'none';
-}
+// close.onclick = function() {
+//     document.querySelector('.stay-in-touch').style.display = 'none';
+//     overlay.style.display = 'none';
+// }
 
-overlay.onclick = function() {
-    document.querySelector('.stay-in-touch').style.display = 'none';
-    overlay.style.display = 'none';
-}
+// overlay.onclick = function() {
+//     document.querySelector('.stay-in-touch').style.display = 'none';
+//     overlay.style.display = 'none';
+// }
 
 
 let quantityWantToBuy = document.querySelector('.quantity-buttons--number').innerText;
@@ -28,19 +28,19 @@ document.querySelector('.quantity-buttons--plus').onclick = function() {
     document.querySelector('.quantity-buttons--number').innerText = quantityWantToBuy;
 }
 
-const $ = document.querySelector.bind(document)
-const $$ = document.querySelectorAll.bind(document)
+// const $ = document.querySelector.bind(document)
+// const $$ = document.querySelectorAll.bind(document)
 
-const tabs = $$('.product-content__tabs-item')
-const panes = $$('.product-content__tabs-content > div')
+const tabs = document.querySelectorAll('.product-content__tabs-item')
+const panes = document.querySelectorAll('.product-content__tabs-content > div')
 
-const tabActive = $('.product-content__tabs-item.tabs-active')
+const tabActive = document.querySelector('.product-content__tabs-item.tabs-active')
 
 tabs.forEach((tab, index) => {
     const pane = panes[index]
     tab.onclick = function() {
-        $('.product-content__tabs-item.tabs-active').classList.remove('tabs-active')
-        $('.tabs-content__item.tabs-active').classList.remove('tabs-active')
+        document.querySelector('.product-content__tabs-item.tabs-active').classList.remove('tabs-active')
+        document.querySelector('.tabs-content__item.tabs-active').classList.remove('tabs-active')
 
         this.classList.add('tabs-active')
         pane.classList.add('tabs-active')
