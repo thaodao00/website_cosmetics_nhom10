@@ -39,7 +39,7 @@
                     </a>
                 </div>
                 <div class="cart-link__wrapper">
-                    <a href="./cart.html" class="cart-link">
+                    <a href="<c:url value="/web-cart"/>" class="cart-link">
                         <span class="cart-link-notice">5</span>
                         <i class="fa fa-cart-plus"></i>
                     </a>
@@ -202,7 +202,7 @@
                                     </div>
                                 </li>
                             </ul>
-                            <a href="./cart.html" class="cart-list__filled-cart__footer">
+                            <a href="<c:url value="/web-cart"/>" class="cart-list__filled-cart__footer">
                                 <button id="cart-list__view-button" class="buttons buttons--smaller">View Cart</button>
                             </a>
                         </div>

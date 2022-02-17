@@ -69,4 +69,32 @@ public class CartDao {
         }
         return i == 1;
     }
+
+    public boolean updateCart(long cartId, long productId, int quantity) {
+        String sql;
+        int i;
+        if (quantity > 0) {
+            sql = "update cartitems set quantity = ? where cartid = ? and productid = ?";
+            i = JDBIConnector.get().withHandle(handle -> handle.createUpdate(sql)
+                    .bind(0, quantity)
+                    .bind(1, cartId)
+                    .bind(2, productId)
+                    .execute());
+        } else {
+            sql = "delete from cartitems where cartid = ? and productid = ?";
+            i = JDBIConnector.get().withHandle(handle -> handle.createUpdate(sql)
+                    .bind(0, cartId)
+                    .bind(1, productId)
+                    .execute());
+        }
+        return i == 1;
+    }
+
+    public List<CartItems> loadCart(long cartId) {
+        String sql = "select * from cartitems where cartid = ?";
+        List<CartItems> list = JDBIConnector.get().withHandle(handle -> handle.createQuery(sql)
+                .bind(0, cartId)
+                .mapToBean(CartItems.class).list());
+        return list;
+    }
 }

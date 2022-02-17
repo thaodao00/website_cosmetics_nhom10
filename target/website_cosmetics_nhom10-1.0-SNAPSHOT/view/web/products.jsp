@@ -132,20 +132,6 @@
         });
     }
 
-    function loadMore2() {
-        var amount = document.getElementsByClassName("product").length;
-        console.log(amount);
-        jQuery.ajax({
-            url: "rServlet",
-            type: "get",
-            data: {
-            },
-            success: function (data) {
-                var row = document.getElementById("content");
-                row.innerHTML = data;
-            }
-        });
-    }
     function sortPrice() {
         var amount = document.getElementsByClassName("product").length;
         // console.log(amount);
@@ -159,7 +145,6 @@
             success: function (data) {
                 var row = document.getElementById("content");
                 row.innerHTML = data;
-                loadMore2();
             }
 
         });

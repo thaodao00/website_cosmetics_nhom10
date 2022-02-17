@@ -28,13 +28,15 @@ public class ProductDao {
                 handle.createQuery("select *from products").mapToBean(Products.class).stream().collect(Collectors.toList()));
 
     }
-    public List<Products> getTop10(){
-        return  JDBIConnector.get ().withHandle (handle ->
-                handle.createQuery ("select*from products limit 10").mapToBean (Products.class).stream ().collect(Collectors.toList()));
+
+    public List<Products> getTop10() {
+        return JDBIConnector.get().withHandle(handle ->
+                handle.createQuery("select*from products limit 10").mapToBean(Products.class).stream().collect(Collectors.toList()));
     }
-    public List<Products> getNext10(int amount){
-        return  JDBIConnector.get ().withHandle (handle ->
-                handle.createQuery ("select*from products limit ? , 10").bind (0,amount).mapToBean (Products.class).stream ().collect(Collectors.toList()));
+
+    public List<Products> getNext10(int amount) {
+        return JDBIConnector.get().withHandle(handle ->
+                handle.createQuery("select*from products limit ? , 10").bind(0, amount).mapToBean(Products.class).stream().collect(Collectors.toList()));
     }
 
     public List<Products> getTagNameLimit8(String tagName) {
@@ -42,6 +44,7 @@ public class ProductDao {
         return JDBIConnector.get().withHandle(handle ->
                 handle.createQuery("select * from products where tagName = ? limit 8").bind(0, tagName).mapToBean(Products.class).stream().collect(Collectors.toList()));
     }
+
     public List<Products> getTagNameLimit5(String tagName) {
         //Cú pháp lambda
         return JDBIConnector.get().withHandle(handle ->
@@ -53,17 +56,26 @@ public class ProductDao {
         return JDBIConnector.get().withHandle(handle ->
                 handle.createQuery("select * from products where id = ?").bind(0, id).mapToBean(Product.class).first());
     }
-    public List<Products> getProductByCateId(Long id){
-        return  JDBIConnector.get ().withHandle (handle -> handle.createQuery ("SELECT *from products where categoryId = ?").bind (0,id).mapToBean (Products.class).stream ().collect(Collectors.toList()));
+
+    public List<Products> getProductByCateId(Long id) {
+        return JDBIConnector.get().withHandle(handle -> handle.createQuery("SELECT *from products where categoryId = ?").bind(0, id).mapToBean(Products.class).stream().collect(Collectors.toList()));
     }
-    public List<Products> searchByName(String txtSearch){
-        return JDBIConnector.get ().withHandle (handle
-                -> handle.createQuery ("select * from products  where name like ?").bind (0,"%"+txtSearch+"%").mapToBean (Products.class).stream ().collect(Collectors.toList()));
+
+    public List<Products> searchByName(String txtSearch) {
+        return JDBIConnector.get().withHandle(handle
+                -> handle.createQuery("select * from products  where name like ?").bind(0, "%" + txtSearch + "%").mapToBean(Products.class).stream().collect(Collectors.toList()));
     }
-//    sort products
-    public List<Products> priceByLowestFirst(){
-        return JDBIConnector.get ().withHandle (handle -> handle.createQuery ("select * from products  ORDER BY price asc limit 10").mapToBean (Products.class).stream ().collect(Collectors.toList()));
+
+    //    sort products
+    public List<Products> priceByLowestFirst() {
+        return JDBIConnector.get().withHandle(handle -> handle.createQuery("select * from products  ORDER BY price asc limit 10").mapToBean(Products.class).stream().collect(Collectors.toList()));
 
     }
 
+    public Products getProductById(Long id) {
+        String sql = "select * from products where id = ?";
+        return JDBIConnector.get().withHandle(handle -> handle.createQuery(sql)
+                .bind(0, id)
+                .mapToBean(Products.class).one());
+    }
 }

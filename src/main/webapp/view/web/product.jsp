@@ -461,7 +461,7 @@
                     quantity: quantity
                 },
                 success: function (data) {
-                    confirm("Add to cart successfully!")
+                    alert("Add to cart successfully!")
                     console.log("added")
                 },
                 error: function (data) {
