@@ -24,30 +24,42 @@ public class ProductsService {
         return ProductDao.getInstance().getAll();
 
     }
+
     public List<Products> getTop10() {
-        return ProductDao.getInstance().getTop10 ();
+        return ProductDao.getInstance().getTop10();
 
     }
+
     public List<Products> getNext10(int amount) {
-        return ProductDao.getInstance().getNext10 (amount);
+        return ProductDao.getInstance().getNext10(amount);
 
     }
-    public List<Products> getProductByCateId(Long id){
-        return ProductDao.getInstance().getProductByCateId (id);
+
+    public List<Products> getProductByCateId(Long id) {
+        return ProductDao.getInstance().getProductByCateId(id);
     }
+
     public List<Products> getTagNameLimit5(String name) {
         return ProductDao.getInstance().getTagNameLimit5(name);
     }
+
     public List<Products> getTagNameLimit8(String name) {
         return ProductDao.getInstance().getTagNameLimit8(name);
     }
-    public List<Products> searchByName(String txtSearch){
-        return  ProductDao.getInstance ().searchByName (txtSearch);
+
+    public List<Products> searchByName(String txtSearch) {
+        return ProductDao.getInstance().searchByName(txtSearch);
     }
+
     public Product getById(Long id) {
         return ProductDao.getInstance().getById(id);
     }
-    public List<Products> priceByLowestFirst(){
-        return ProductDao.getInstance ().priceByLowestFirst ();
+
+    public List<Products> priceByLowestFirst() {
+        return ProductDao.getInstance().priceByLowestFirst();
+    }
+
+    public Products loadProductListById(Long id) {
+        return ProductDao.getInstance().getProductById(id);
     }
 }
