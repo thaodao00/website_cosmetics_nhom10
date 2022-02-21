@@ -10,7 +10,6 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
@@ -23,9 +22,9 @@ public class CartServlet extends HttpServlet {
         if(cart == null)
             cart = new Cart();
         List<CartItems> cartItemList = CartService.getInstance().loadCart(cart.getId());
-        HashMap<Long, Products> cartData = new HashMap<>();
+        HashMap<Products, Long> cartData = new HashMap<>();
         for (CartItems ci : cartItemList)
-            cartData.put((long) ci.getQuantity(), ProductsService.getInstance().loadProductListById(ci.getProductId()));
+            cartData.put(ProductsService.getInstance().loadProductById(ci.getProductId()), (long) ci.getQuantity());
         cart.setData(cartData);
         session.setAttribute("cart", cart);
         request.setAttribute("cartData", cartData);

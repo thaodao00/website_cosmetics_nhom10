@@ -59,7 +59,7 @@ public class ProductsService {
         return ProductDao.getInstance().priceByLowestFirst();
     }
 
-    public Products loadProductListById(Long id) {
+    public Products loadProductById(Long id) {
         return ProductDao.getInstance().getProductById(id);
     }
 }
