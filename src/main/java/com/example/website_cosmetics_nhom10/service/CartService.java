@@ -2,8 +2,10 @@ package com.example.website_cosmetics_nhom10.service;
 
 import com.example.website_cosmetics_nhom10.beans.Cart;
 import com.example.website_cosmetics_nhom10.beans.CartItems;
+import com.example.website_cosmetics_nhom10.beans.Products;
 import com.example.website_cosmetics_nhom10.dao.CartDao;
 
+import java.util.HashMap;
 import java.util.List;
 
 public class CartService {
@@ -41,5 +43,13 @@ public class CartService {
 
     public static List<CartItems> loadCart(long cartId) {
         return CartDao.getInstance().loadCart(cartId);
+    }
+
+    public static HashMap<Products, Long> loadCartData(long cartId) {
+        List<CartItems> list = loadCart(cartId);
+        HashMap<Products, Long> cartData = new HashMap<>();
+        for (CartItems ci : list)
+            cartData.put(ProductsService.getInstance().loadProductById(ci.getProductId()), (long) ci.getQuantity());
+        return cartData;
     }
 }

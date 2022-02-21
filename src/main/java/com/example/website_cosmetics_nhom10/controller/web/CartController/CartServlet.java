@@ -21,10 +21,7 @@ public class CartServlet extends HttpServlet {
         Cart cart = (Cart) session.getAttribute("cart");
         if(cart == null)
             cart = new Cart();
-        List<CartItems> cartItemList = CartService.getInstance().loadCart(cart.getId());
-        HashMap<Products, Long> cartData = new HashMap<>();
-        for (CartItems ci : cartItemList)
-            cartData.put(ProductsService.getInstance().loadProductById(ci.getProductId()), (long) ci.getQuantity());
+        HashMap<Products, Long> cartData = CartService.getInstance().loadCartData(cart.getId());
         cart.setData(cartData);
         session.setAttribute("cart", cart);
         request.setAttribute("cartData", cartData);

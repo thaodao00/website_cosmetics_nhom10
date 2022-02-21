@@ -26,8 +26,11 @@ public class AddToCartServlet extends HttpServlet {
         User user = (User) session.getAttribute("auth");
         if (cart == null)
             cart = CartService.getByIdUser(user.getId());
-        if (CartService.getInstance().addToCart(cart.getId(), pid, quantity))
+        if (CartService.getInstance().addToCart(cart.getId(), pid, quantity)) {
+            cart.setData(CartService.getInstance().loadCartData(cart.getId()));
+            session.setAttribute("cart", cart);
             response.setStatus(HttpServletResponse.SC_ACCEPTED);
+        }
         else
             response.setStatus(HttpServletResponse.SC_NOT_FOUND);
 

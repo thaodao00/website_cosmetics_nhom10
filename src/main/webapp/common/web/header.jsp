@@ -1,4 +1,5 @@
 <%@include file="/common/taglib.jsp" %>
+
 <!--Header: begin-->
 <header class="header">
     <div class="grid wide ">
