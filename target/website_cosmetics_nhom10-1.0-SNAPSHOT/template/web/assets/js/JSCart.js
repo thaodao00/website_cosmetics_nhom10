@@ -18,9 +18,9 @@ for (let i = 0; i < buttonNumbers.length; i++) {
     buttonMinus[i].onclick = function () {
         if (buttonNumbers[i].innerText >= 1)
             buttonNumbers[i].innerText -= 1;
-        if(buttonNumbers[i].innerText == 0) {
-            cartItems[i].style.display = "none";
-        }
+        // if(buttonNumbers[i].innerText == 0) {
+        //     cartItems[i].style.display = "none";
+        // }
 
         // buttonNumbers[i].innerText > 0 ? buttonNumbers[i].innerText -= 1 : buttonNumbers[i] = 0;
     }
@@ -32,7 +32,7 @@ for (let i = 0; i < buttonNumbers.length; i++) {
 let deleteButtons = document.querySelectorAll(".filled-cart__item-delete-button .buttons");
 let cartItems = document.querySelectorAll(".filled-cart__item");
 
-for (let i = 0; i < deleteButtons.length; i++)
-    deleteButtons[i].onclick = function () {
-        cartItems[i].style.display = "none";
-    }
+// for (let i = 0; i < deleteButtons.length; i++)
+//     deleteButtons[i].onclick = function () {
+//         cartItems[i].style.display = "none";
+//     }

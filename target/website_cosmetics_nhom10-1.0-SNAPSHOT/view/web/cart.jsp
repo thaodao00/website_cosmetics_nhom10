@@ -38,22 +38,22 @@
                 <c:forEach var="entry" items="${cartData.entrySet()}">
                     <div class="filled-cart__item">
                         <input type="checkbox" class="select-product">
-                        <a href="<c:url value="web-product?id=${entry.getValue().id}"/>" class="filled-cart__item-info">
+                        <a href="<c:url value="web-product?id=${entry.getKey().id}"/>" class="filled-cart__item-info">
                             <div class="filled-cart__item-img" style="background-image: url(<c:url
-                                    value="/template/web/assets/img/ordinary/${entry.getValue().thumbnailImg}"/>);"></div>
-                            <p class="filled-cart__item-description">${entry.getValue().name}</p>
+                                    value="/template/web/assets/img/ordinary/${entry.getKey().thumbnailImg}"/>);"></div>
+                            <p class="filled-cart__item-description">${entry.getKey().name}</p>
                         </a>
-                        <span class="filled-cart__item-price">${entry.getValue().price}</span>
+                        <span class="filled-cart__item-price">${entry.getKey().price}</span>
                         <div class="filled-cart__item-quantity">
                             <div class="quantity-buttons">
-                                <button class="quantity-buttons--minus update-cart-be" pid="${entry.getValue().id}">-</button>
-                                <div class="quantity-buttons--number">${entry.getKey()}</div>
-                                <button class="quantity-buttons--plus update-cart-be" pid="${entry.getValue().id}">+</button>
+                                <button class="quantity-buttons--minus update-cart-be" pid="${entry.getKey().id}">-</button>
+                                <div class="quantity-buttons--number">${entry.getValue()}</div>
+                                <button class="quantity-buttons--plus update-cart-be" pid="${entry.getKey().id}">+</button>
                             </div>
                         </div>
-                        <span class="filled-cart__item-totalPrice">${entry.getValue().price * entry.getKey()}</span>
+                        <span class="filled-cart__item-totalPrice">${entry.getKey().price * entry.getValue()}</span>
                         <div class="filled-cart__item-delete-button">
-                            <button class="buttons remove-cart-be" pid="${entry.getValue().id}">Delete</button>
+                            <button class="buttons remove-cart-be" pid="${entry.getKey().id}">Delete</button>
                         </div>
                     </div>
                 </c:forEach>
@@ -88,6 +88,8 @@
                     },
                     success: function (data) {
                         console.log("removed")
+                        console.log($(this).parents(".filled-cart__item"))
+                        $(this).parents(".filled-cart__item").css("display", "none");
                     },
                     error: function (data) {
                         console.log("failed")
@@ -114,12 +116,14 @@
                             },
                             success: function (data) {
                                 console.log("updated")
+                                $(this).parent(".filled-cart__item").css("display", "none");
                             },
                             error: function (data) {
                                 console.log("failed")
                             }
                         })
-                    }
+                    } else
+                        $(this).siblings(".quantity-buttons--number").text("1");
                 } else {
                     $.ajax({
                         url: "api-update-cart",
