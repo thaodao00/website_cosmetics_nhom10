@@ -47,6 +47,10 @@ public class Cart {
         return this.data.keySet();
     }
 
+    public HashMap<Products, Long> getDataAndQuantity() {
+        return this.data;
+    }
+
     public void setData(HashMap<Products, Long> data) {
         this.data = data;
     }
