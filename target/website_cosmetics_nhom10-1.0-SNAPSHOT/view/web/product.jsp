@@ -5,7 +5,7 @@
     request.setCharacterEncoding("UTF-8");
     response.setCharacterEncoding("UTF-8");
 %>
-
+<jsp:useBean id="products" scope="request" type="java.util.List"/>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -253,7 +253,6 @@
                                 </div>
                             </div>
                             <!-- review: end -->
-
                             <textarea id="your-review-text" type="text" placeholder="Write your review"></textarea>
                             <input id="your-name-text" type="text" placeholder="Your name" required>
                             <input id="your-email-text" type="text" placeholder="Your email" required>
@@ -263,175 +262,46 @@
                         </div>
                     </div>
                 </div>
-
             </div>
-
             <!-- Related products -->
-
-
             <div class="grid wide">
                 <div class="related-products__title">related products</div>
                 <!-- Product recommend -->
                 <div class="row products">
+                <c:forEach var="i" items="${products}">
+                        <a href="web-product?id=${i.id}" class="col l-2-4 m-4 c-6">
+                            <div class="product__item">
+                                <img class="product__item-img" src="<c:url value="/template/web/assets/img/ordinary/${i.thumbnailImg}"/>"/>
 
-                    <a href="#" class="col l-2-4 m-4 c-6">
-                        <div class="product__item">
-                            <img class="product__item-img"
-                                 src="assets/img/ordinary/rdn-multi-peptide-serum-for-hair-density-60ml-6.png">
-                            <h5 class="product__item-name">
-                                Multi-Peptide Serum for Hair Density
-                            </h5>
-                            <div class="product__item-price-wrapper">
-                                <h3 class="product__item-price product__item-price--old">
-                                    $15.0
-                                </h3>
-                                <h3 class="product__item-price">
-                                    $12.0
-                                </h3>
-                            </div>
-                            <div class="star-link-sold-wrapper">
-                                <div class="star-link">
-                                    <i class="fa fa-star star--fill" aria-hidden="true"></i>
-                                    <i class="fa fa-star star--fill" aria-hidden="true"></i>
-                                    <i class="fa fa-star star--fill" aria-hidden="true"></i>
-                                    <i class="fa fa-star star--fill" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                <h5 class="product__item-name">
+                                        ${i.name}
+                                </h5>
+                                <div class="product__item-price-wrapper">
+                                    <h3 class="product__item-price product__item-price--old">
+                                            ${i.discount}
+                                    </h3>
+                                    <h3 class="product__item-price">
+                                            ${i.price}
+                                    </h3>
                                 </div>
-                                <div class="product__sold-number">27 sold</div>
-                            </div>
-                            <div class="product__item-company-wrapper">
-                                <span class="product__item-company">Ordinary</span>
-                                <span class="product__item-origin-name">USA</span>
-                            </div>
-                        </div>
-                    </a>
-                    <a href="#" class="col l-2-4 m-4 c-6">
-                        <div class="product__item">
-                            <img class="product__item-img"
-                                 src="assets/img/ordinary/rdn-glycolic-acid-7pct-toning-solution-240ml-7.png">
-                            <h5 class="product__item-name">
-                                Glycolic Acid 7% Toning Solution
-                            </h5>
-                            <div class="product__item-price-wrapper">
-                                <h3 class="product__item-price product__item-price--old">
-                                    $8.7
-                                </h3>
-                                <h3 class="product__item-price">
-                                    $7.1
-                                </h3>
-                            </div>
-                            <div class="star-link-sold-wrapper">
-                                <div class="star-link">
-                                    <i class="fa fa-star star--fill" aria-hidden="true"></i>
-                                    <i class="fa fa-star star--fill" aria-hidden="true"></i>
-                                    <i class="fa fa-star star--fill" aria-hidden="true"></i>
-                                    <i class="fa fa-star star--fill" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                <div class="star-link-sold-wrapper">
+                                    <div class="star-link">
+                                        <i class="fa fa-star star--fill" aria-hidden="true"></i>
+                                        <i class="fa fa-star star--fill" aria-hidden="true"></i>
+                                        <i class="fa fa-star star--fill" aria-hidden="true"></i>
+                                        <i class="fa fa-star star--fill" aria-hidden="true"></i>
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="product__sold-number">${i.sold}</div>
                                 </div>
-                                <div class="product__sold-number">36 sold</div>
-                            </div>
-                            <div class="product__item-company-wrapper">
-                                <span class="product__item-company">Ordinary</span>
-                                <span class="product__item-origin-name">USA</span>
-                            </div>
-                        </div>
-                    </a>
-                    <a href="#" class="col l-2-4 m-4 c-6">
-                        <div class="product__item">
-                            <img class="product__item-img"
-                                 src="assets/img/ordinary/rdn-caffeine-solution-5pct-egcg-30ml-8.png">
-                            <h5 class="product__item-name">
-                                Caffeine Solution 5% + EGCG
-                            </h5>
-                            <div class="product__item-price-wrapper">
-                                <h3 class="product__item-price product__item-price--old">
-                                    $6.7
-                                </h3>
-                                <h3 class="product__item-price">
-                                    $5.5
-                                </h3>
-                            </div>
-                            <div class="star-link-sold-wrapper">
-                                <div class="star-link">
-                                    <i class="fa fa-star star--fill" aria-hidden="true"></i>
-                                    <i class="fa fa-star star--fill" aria-hidden="true"></i>
-                                    <i class="fa fa-star star--fill" aria-hidden="true"></i>
-                                    <i class="fa fa-star star--fill" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                <div class="product__item-company-wrapper">
+                                    <span class="product__item-company">${i.companyName}</span>
+                                    <span class="product__item-origin-name">${i.originName}</span>
                                 </div>
-                                <div class="product__sold-number">42 sold</div>
                             </div>
-                            <div class="product__item-company-wrapper">
-                                <span class="product__item-company">Ordinary</span>
-                                <span class="product__item-origin-name">USA</span>
-                            </div>
-                        </div>
-                    </a>
-                    <a href="#" class="col l-2-4 m-4 c-6">
-                        <div class="product__item">
-                            <img class="product__item-img"
-                                 src="assets/img/ordinary/rdn-niacinamide-10pct-zinc-1pct-30ml-9.png">
-                            <h5 class="product__item-name">
-                                Niacinamide 10% + Zinc 1%
-                            </h5>
-                            <div class="product__item-price-wrapper">
-                                <h3 class="product__item-price product__item-price--old">
-                                    $5.9
-                                </h3>
-                                <h3 class="product__item-price">
-                                    $5.2
-                                </h3>
-                            </div>
-                            <div class="star-link-sold-wrapper">
-                                <div class="star-link">
-                                    <i class="fa fa-star star--fill" aria-hidden="true"></i>
-                                    <i class="fa fa-star star--fill" aria-hidden="true"></i>
-                                    <i class="fa fa-star star--fill" aria-hidden="true"></i>
-                                    <i class="fa fa-star star--fill" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                </div>
-                                <div class="product__sold-number">65 sold</div>
-                            </div>
-                            <div class="product__item-company-wrapper">
-                                <span class="product__item-company">Ordinary</span>
-                                <span class="product__item-origin-name">USA</span>
-                            </div>
-                        </div>
-                    </a>
-                    <a href="#" class="col l-2-4 m-4 c-6">
-                        <div class="product__item">
-                            <img class="product__item-img"
-                                 src="assets/img/ordinary/rdn-natural-moisturizing-factors-ha-30ml-10.png">
-                            <h5 class="product__item-name">
-                                Natural Moisturizing Factors + HA
-                            </h5>
-                            <div class="product__item-price-wrapper">
-                                <h3 class="product__item-price product__item-price--old">
-                                    $5.8
-                                </h3>
-                                <h3 class="product__item-price">
-                                    $5.0
-                                </h3>
-                            </div>
-                            <div class="star-link-sold-wrapper">
-                                <div class="star-link">
-                                    <i class="fa fa-star star--fill" aria-hidden="true"></i>
-                                    <i class="fa fa-star star--fill" aria-hidden="true"></i>
-                                    <i class="fa fa-star star--fill" aria-hidden="true"></i>
-                                    <i class="fa fa-star star--fill" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                </div>
-                                <div class="product__sold-number">12 sold</div>
-                            </div>
-                            <div class="product__item-company-wrapper">
-                                <span class="product__item-company">Ordinary</span>
-                                <span class="product__item-origin-name">USA</span>
-                            </div>
-                        </div>
-                    </a>
+                        </a>
+                </c:forEach>
                 </div>
-
-
             </div>
         </div>
     </div>
