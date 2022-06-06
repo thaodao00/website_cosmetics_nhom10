@@ -1,12 +1,12 @@
-const $$ = document.querySelectorAll.bind(document)
-const $ = document.querySelector.bind(document)
+// const $$ = document.querySelectorAll.bind(document)
+// const $ = document.querySelector.bind(document)
 
 //modal show hide search
-const iconSearch = $('.search-link')
-const modal =  $('.modal')
-const iconClose = $('.modal__icon-close')
-const inputSearch = $('.modal__input')
-const searchHistory = $('.modal__history')
+const iconSearch = document.querySelector('.search-link')
+const modal =  document.querySelector('.modal')
+const iconClose = document.querySelector('.modal__icon-close')
+const inputSearch = document.querySelector('.modal__input')
+const searchHistory = document.querySelector('.modal__history')
 
 function showSearch () {
     modal.classList.add('modal__open')
@@ -28,18 +28,18 @@ searchHistory.addEventListener('click',function(event){
 })
 
 //Modal show hide account
-const modalAccount = $('.modal-account')
-const iconUsers = $$('.login-link')
-const authForms = $$('.auth-form')
-const registerForm = $('.register-form')
-const  loginForm = $('.login-form')
-const loginFormBtn = $('.login-from__btn')
-const registerFormBtn = $('.register-from__btn')
-const backBtn= $$('.auth-form__controls-back')
-const navMobile = $('.nav-mobile')
-const navBtnMobile = $('.nav-link')
-const forgotBtn = $('.auth-form__help-link')
-const forgotForm = $('.forgot-pass-form')
+const modalAccount = document.querySelector('.modal-account')
+const iconUsers = document.querySelectorAll('.login-link')
+const authForms = document.querySelectorAll('.auth-form')
+const registerForm = document.querySelector('.register-form')
+const  loginForm = document.querySelector('.login-form')
+const loginFormBtn = document.querySelector('.login-from__btn')
+const registerFormBtn = document.querySelector('.register-from__btn')
+const backBtn= document.querySelectorAll('.auth-form__controls-back')
+const navMobile = document.querySelector('.nav-mobile')
+const navBtnMobile = document.querySelector('.nav-link')
+const forgotBtn = document.querySelector('.auth-form__help-link')
+const forgotForm = document.querySelector('.forgot-pass-form')
 
 
 
@@ -80,35 +80,35 @@ for(const authForm of authForms) {
 }
 
 
-const close = $('.close-js');
-const overlay = $('.popup-overlay');
-const popup = $('.popup');
+const close = document.querySelector('.close-js');
+const overlay = document.querySelector('.popup-overlay');
+const popup = document.querySelector('.popup');
 
 popup.onclick = function (e) {
     e.stopPropagation();
 }
 close.onclick = function() {
-    $('.stay-in-touch').style.display = 'none';
+    document.querySelector('.stay-in-touch').style.display = 'none';
     overlay.style.display = 'none';
 }
 overlay.onclick = function (){
-    $('.stay-in-touch').style.display = 'none';
+    document.querySelector('.stay-in-touch').style.display = 'none';
     overlay.style.display = 'none';
 }
 
-const submitLink = $(".auth-form__controls a");
+const submitLink = document.querySelector(".auth-form__controls a");
     submitLink.onclick = function (){
         submitLink.setAttribute("href", "./personalInformation.html");
 }
 
-const navMobileOverlay = $('.nav-mobile__overlay');
+const navMobileOverlay = document.querySelector('.nav-mobile__overlay');
 
 navBtnMobile.onclick = function() {
     navMobile.style.display = "block";
     navMobileOverlay.style.display = "block";
 }
 
-const iconExit = $('.icon-exit');
+const iconExit = document.querySelector('.icon-exit');
 
 iconExit.onclick = function () {
     navMobile.style.display = "none";
