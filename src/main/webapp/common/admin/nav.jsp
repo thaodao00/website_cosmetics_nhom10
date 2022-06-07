@@ -17,28 +17,28 @@
     <ul class="sidebar">
         <li class="sidebar__item">
             <i class="sidebar__item-icon fas fa-tachometer-alt"></i>
-            <a href="./index.html" class="sidebar__item-link">Thống kê</a>
+            <a href="admin-home" class="sidebar__item-link">Thống kê</a>
         </li>
-        <label for = 'check-sidebar-list' class="sidebar__item">
+        <label for='check-sidebar-list' class="sidebar__item">
             <i class="sidebar__item-icon fas fa-list"></i>
-            <a href="./category.html" class="sidebar__item-link">Danh mục</a>
+            <a href="admin-category" class="sidebar__item-link">Danh mục</a>
         </label>
-        <input hidden id = 'check-sidebar-list' type="checkbox">
+        <input hidden id='check-sidebar-list' type="checkbox">
         <li class="sidebar__item">
             <i class="sidebar__item-icon fas fa-tshirt"></i>
-            <a href="./products.html" class="sidebar__item-link">Sản phẩm</a>
+            <a href="admin-products" class="sidebar__item-link">Sản phẩm</a>
         </li>
-        <label for = 'check-sidebar-list' class="sidebar__item">
+        <label for='check-sidebar-list' class="sidebar__item">
             <i class="sidebar__item-icon fas fa-users"></i>
-            <a href="./admin-account.html" class="sidebar__item-link">Quản lý tài khoản</a>
+            <a href="admin-account" class="sidebar__item-link">Quản lý tài khoản</a>
         </label>
-        <label for = 'check-sidebar-list' class="sidebar__item">
+        <label for='check-sidebar-list' class="sidebar__item">
             <i class="sidebar__item-icon fas fa-store"></i>
-            <a href="./order.html" class="sidebar__item-link">Quản lý đơn hàng</a>
+            <a href="admin-order" class="sidebar__item-link">Quản lý đơn hàng</a>
         </label>
-        <label for = 'check-sidebar-list' class="sidebar__item">
-            <i class="sidebar__item-icon fas fa-store"></i>
-            <a href="./contact-admin.html" class="sidebar__item-link">Quản lý thông tin chi nhánh</a>
+        <label for='check-sidebar-list' class="sidebar__item">
+            <i class="sidebar__item-icon fas fa-phone"></i>
+            <a href="admin-contact" class="sidebar__item-link">Quản lý thông tin chi nhánh</a>
         </label>
     </ul>
 </div>

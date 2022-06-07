@@ -2,7 +2,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-
     <title><dec:title default="Admin Contact" /></title>
     <link href="<c:url value='/template/base.css'/>" rel="stylesheet" type="text/css" media="all"/>
     <link href="<c:url value='/template/grid.css'/>" rel="stylesheet" type="text/css" media="all"/>

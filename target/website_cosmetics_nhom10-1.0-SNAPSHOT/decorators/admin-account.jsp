@@ -2,13 +2,13 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-
     <title><dec:title default="Admin Account" /></title>
     <link href="<c:url value='/template/base.css'/>" rel="stylesheet" type="text/css" media="all"/>
     <link href="<c:url value='/template/grid.css'/>" rel="stylesheet" type="text/css" media="all"/>
     <link href="<c:url value='/template/admin/assets/css/header.css'/>"rel="stylesheet" type="text/css" media="all"/>
     <link href="<c:url value='/template/admin/assets/css/account.css'/>" rel="stylesheet" type="text/css" media="all"/>
     <link href="<c:url value='/template/admin/assets/css/pagination.css'/>" rel="stylesheet" type="text/css" media="all"/>
+    <link href="<c:url value='/template/admin/assets/css/sidebar.css'/>" rel="stylesheet" type="text/css" media="all"/>
 
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
           integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
