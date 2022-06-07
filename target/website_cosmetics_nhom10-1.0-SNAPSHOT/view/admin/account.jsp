@@ -1,4 +1,3 @@
-
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -6,14 +5,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Admin Account</title>
 </head>
 <body>
 <div class="col l-9 m-10 c-12">
-    <div class="direct"><span><i class="direct-icon fas fa-home"></i>Trang chủ</span> &#160; &#62; &#160; Tất cả tài khoản</div>
+    <div class="direct"><span><i class="direct-icon fas fa-home"></i>Trang chủ</span> &#160; &#62; &#160; Tất cả tài
+        khoản
+    </div>
     <div class="action">
-        <a title="Thêm sản phẩm" href="./insert-account.html" class="action__add">
+        <a title="Thêm sản phẩm" href="admin-insert-account" class="action__add">
             <i class="action-icon fas fa-plus"></i>
         </a>
         <a title="Xóa sản phẩm" href="" class="action__delete">
@@ -44,12 +44,10 @@
                 <div class="contact__body-column account__body-password">111111111111</div>
                 <div class="contact__body-column account__body-phone">090920910</div>
                 <div class="contact__body-column account__body-address">huyen Duc Linh Tinh Binh Thuan</div>
-
                 <div class="contact__body-column account__body-update">
                     <a title="chỉnh sửa sản phẩm" href="" class="account__body-icon far fa-edit"></a>
                 </div>
             </div>
-
             <div class="account__body">
                 <div class="contact__body-column account__body-choose">
                     <input class="check-delete" type="checkbox">
@@ -67,7 +65,6 @@
                     <a title="chỉnh sửa sản phẩm" href="" class="account__body-icon far fa-edit"></a>
                 </div>
             </div>
-
             <div class="account__body">
                 <div class="contact__body-column account__body-choose">
                     <input class="check-delete" type="checkbox">
@@ -80,13 +77,10 @@
                 <div class="contact__body-column account__body-password">111111111111</div>
                 <div class="contact__body-column account__body-phone">090920910</div>
                 <div class="contact__body-column account__body-address">huyen Duc Linh Tinh Binh Thuan</div>
-
                 <div class="contact__body-column account__body-update">
                     <a title="chỉnh sửa sản phẩm" href="" class="account__body-icon far fa-edit"></a>
                 </div>
             </div>
-
-
         </div>
     </div>
     <div class="pagination">
@@ -112,9 +106,9 @@
             const checkEl = [...checkDeletes].find(item => {
                 return item.matches('.check-delete:checked');
             })
-            if(checkEl) {
+            if (checkEl) {
                 btnDelete.style = `opacity: 1; pointer-events: all`;
-            }else {
+            } else {
                 btnDelete.style = `opacity: 0.5; pointer-events: none`;
             }
         }

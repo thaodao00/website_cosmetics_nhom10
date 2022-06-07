@@ -1,57 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <decorators defaultdir="/decorators">
-
     <!-- Any urls that are excluded will never be decorated by Sitemesh -->
     <excludes>
         <pattern>/api*</pattern>
     </excludes>
-    
     <!-- apply Sitemesh default template -->
+    <decorator name="admin-home" page="admin-home.jsp">
+        <pattern>/admin-home</pattern>
+    </decorator>
     <decorator name="admin-account" page="admin-account.jsp">
         <pattern>/admin-account</pattern>
     </decorator>
     <decorator name="admin-insert-account" page="admin-insert-account.jsp">
         <pattern>/admin-insert-account</pattern>
     </decorator>
-    <decorator name="admin-product" page="admin-products.jsp">
+    <decorator name="admin-products" page="admin-products.jsp">
         <pattern>/admin-products</pattern>
     </decorator>
     <decorator name="admin-insert-product" page="admin-insert-products.jsp">
         <pattern>/admin-insert-products</pattern>
     </decorator>
-
     <decorator name="admin-category" page="admin-category.jsp">
         <pattern>/admin-category</pattern>
     </decorator>
     <decorator name="admin-insert-category" page="admin-insert-category.jsp">
         <pattern>/admin-insert-category</pattern>
     </decorator>
-
     <decorator name="admin-order" page="admin-order.jsp">
         <pattern>/admin-order</pattern>
     </decorator>
-
     <decorator name="admin-contact" page="admin-contact.jsp">
         <pattern>/admin-contact</pattern>
     </decorator>
-    <decorator name="admin-insert-contact" page="admin-insert-contact.jsp">
-        <pattern>/admin-insert-contact</pattern>
+    <decorator name="admin-insert-contacts" page="admin-insert-contacts.jsp">
+        <pattern>/admin-insert-contacts</pattern>
     </decorator>
-    
     <decorator name="web" page="home.jsp">
         <pattern>/web*</pattern>
     </decorator>
-    
-<!--    <decorator name="login" page="login.jsp">-->
-<!--        <pattern>/dang-nhap</pattern>-->
-<!--    </decorator>-->
-
     <excludes>
         <!--Không apply giao diện-->
         <pattern>/api*</pattern>
     </excludes>
     <!--Apply giao diện-->
-
     <decorator name="home" page="home.jsp">
         <pattern>/web-home</pattern>
     </decorator>
@@ -62,7 +53,7 @@
         <pattern>/web-product</pattern>
     </decorator>
     <decorator name="about" page="about.jsp">
-        <pattern>/web-abount</pattern>
+        <pattern>/web-about</pattern>
     </decorator>
     <decorator name="pay" page="pay.jsp">
         <pattern>/web-pay</pattern>
@@ -70,7 +61,6 @@
     <decorator name="contact" page="contact.jsp">
         <pattern>/web-contact</pattern>
     </decorator>
-
     <decorator name="personalInformation" page="personalInformation.jsp">
         <pattern>/web-personalInformation</pattern>
     </decorator>
