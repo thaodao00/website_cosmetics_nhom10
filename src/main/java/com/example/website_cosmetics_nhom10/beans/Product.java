@@ -21,15 +21,21 @@ public class Product {
     double rate;
     String weight;
     String dimension;
-    String tagName;
-    String companyName;
+    Long originId;
+    Long categoryId;
+    Long companyId;
+    Long tagId;
+
     String originName;
+    String categoryName;
+    String companyName;
+    String tagName;
 
     public Product() {
 
     }
 
-    public Product(Long id, String name, String thumbnailImg, double price, double discount, int sold, String shortDescription, String longDescription, double rate, String weight, String dimension, String tagName, String companyName, String originName) {
+    public Product(Long id, String name, String thumbnailImg, double price, double discount, int sold, String shortDescription, String longDescription, double rate, String weight, String dimension, Long originId, Long categoryId, Long companyName, Long tagName) {
         this.id = id;
         this.name = name;
         this.thumbnailImg = thumbnailImg;
@@ -41,9 +47,28 @@ public class Product {
         this.rate = rate;
         this.weight = weight;
         this.dimension = dimension;
-        this.tagName = tagName;
-        this.companyName = companyName;
+        this.originId = originId;
+        this.categoryId = categoryId;
+        this.companyId = companyName;
+        this.tagId = tagName;
+    }
+
+    public Product(Long id, String name, String thumbnailImg, double price, double discount, int sold, String shortDescription, String longDescription, double rate, String weight, String dimension, String originName, String categoryName, String companyName, String tagName) {
+        this.id = id;
+        this.name = name;
+        this.thumbnailImg = thumbnailImg;
+        this.price = price;
+        this.discount = discount;
+        this.sold = sold;
+        this.shortDescription = shortDescription;
+        this.longDescription = longDescription;
+        this.rate = rate;
+        this.weight = weight;
+        this.dimension = dimension;
         this.originName = originName;
+        this.categoryName = categoryName;
+        this.companyName = companyName;
+        this.tagName = tagName;
     }
 
     public Long getId() {
@@ -134,28 +159,88 @@ public class Product {
         this.dimension = dimension;
     }
 
-    public void setTagName(String tagName) {
-        this.tagName = tagName;
+    public Long getOriginId() {
+        return originId;
     }
 
-    public String getTagName() {
-        return tagName;
+    public void setOriginId(Long originId) {
+        this.originId = originId;
     }
 
-    public void setCompanyName(String companyName) {
-        this.companyName = companyName;
+    public Long getCategoryId() {
+        return categoryId;
     }
 
-    public String getCompanyName() {
-        return companyName;
+    public void setCategoryId(Long categoryId) {
+        this.categoryId = categoryId;
     }
 
-    public void setOriginName(String originName) {
-        this.originName = originName;
+    public Long getCompanyId() {
+        return companyId;
+    }
+
+    public void setCompanyId(Long companyId) {
+        this.companyId = companyId;
+    }
+
+    public Long getTagId() {
+        return tagId;
+    }
+
+    public void setTagId(Long tagId) {
+        this.tagId = tagId;
     }
 
     public String getOriginName() {
         return originName;
     }
 
+    public void setOriginName(String originName) {
+        this.originName = originName;
+    }
+
+    public String getCategoryName() {
+        return categoryName;
+    }
+
+    public void setCategoryName(String categoryName) {
+        this.categoryName = categoryName;
+    }
+
+    public String getCompanyName() {
+        return companyName;
+    }
+
+    public void setCompanyName(String companyName) {
+        this.companyName = companyName;
+    }
+
+    public String getTagName() {
+        return tagName;
+    }
+
+    public void setTagName(String tagName) {
+        this.tagName = tagName;
+    }
+
+    @Override
+    public String toString() {
+        return "Product{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", thumbnailImg='" + thumbnailImg + '\'' +
+                ", price=" + price +
+                ", discount=" + discount +
+                ", sold=" + sold +
+                ", shortDescription='" + shortDescription + '\'' +
+                ", longDescription='" + longDescription + '\'' +
+                ", rate=" + rate +
+                ", weight='" + weight + '\'' +
+                ", dimension='" + dimension + '\'' +
+                ", originId='" + originId + '\'' +
+                ", categoryId='" + categoryId + '\'' +
+                ", companyName='" + companyId + '\'' +
+                ", tagName='" + tagId + '\'' +
+                '}';
+    }
 }

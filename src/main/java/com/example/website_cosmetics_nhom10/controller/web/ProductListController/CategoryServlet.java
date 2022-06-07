@@ -1,10 +1,9 @@
 package com.example.website_cosmetics_nhom10.controller.web.ProductListController;
 
 import com.example.website_cosmetics_nhom10.beans.Category;
-import com.example.website_cosmetics_nhom10.beans.Products;
-import com.example.website_cosmetics_nhom10.dao.ProductDao;
+import com.example.website_cosmetics_nhom10.beans.Product;
 import com.example.website_cosmetics_nhom10.service.CategoryService;
-import com.example.website_cosmetics_nhom10.service.ProductsService;
+import com.example.website_cosmetics_nhom10.service.ProductService;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -19,7 +18,7 @@ public class CategoryServlet extends HttpServlet {
         response.setContentType ("text/html; charset = UTF-8");
         String cateId = request.getParameter ("categoryId");
         Long iCateId = Long.parseLong (cateId);
-        List<Products> products = ProductsService.getInstance ().getProductByCateId (iCateId);
+        List<Product> products = ProductService.getInstance ().getProductByCateId (iCateId);
         List<Category> category = CategoryService.getInstance().getAllCategory ();
         request.setAttribute ("products",products);
         request.setAttribute ("category",category);

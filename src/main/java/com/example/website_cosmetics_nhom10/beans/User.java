@@ -13,16 +13,16 @@ public class User {
         this.password = password;
     }
 
-    public User(long id, String phone, long roleId, String username, String fullName, String password, String email, String country, String avatar) {
+    public User(long id, String username, String fullName, String password, String email, String phone, String country, long roleId, String avatar) {
         this.id = id;
-        this.phone = phone;
         this.roleId = roleId;
         this.username = username;
+        this.fullName = fullName;
         this.password = password;
         this.email = email;
         this.country = country;
         this.avatar = avatar;
-        this.fullName = fullName;
+        this.phone = phone;
     }
 
     public long getId() {

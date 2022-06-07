@@ -1,53 +1,48 @@
 package com.example.website_cosmetics_nhom10.service;
 
 import com.example.website_cosmetics_nhom10.beans.Product;
-import com.example.website_cosmetics_nhom10.beans.Products;
 import com.example.website_cosmetics_nhom10.dao.ProductDao;
 
 import java.util.List;
 
-public class ProductsService {
-    public static ProductsService instance;
+public class ProductService {
+    public static ProductService instance;
 
-    public static ProductsService getInstance() {
+    public static ProductService getInstance() {
         if (instance == null) {
-            instance = new ProductsService();
+            instance = new ProductService();
         }
         return instance;
     }
 
-    private ProductsService() {
+    private ProductService() {
 
     }
 
-    public List<Products> getAll() {
+    public List<Product> getAll() {
         return ProductDao.getInstance().getAll();
 
     }
 
-    public List<Products> getTop10() {
+    public List<Product> getTop10() {
         return ProductDao.getInstance().getTop10();
 
     }
 
-    public List<Products> getNext10(int amount) {
+    public List<Product> getNext10(int amount) {
         return ProductDao.getInstance().getNext10(amount);
 
     }
 
-    public List<Products> getProductByCateId(Long id) {
+    public List<Product> getProductByCateId(long id) {
         return ProductDao.getInstance().getProductByCateId(id);
     }
 
-    public List<Products> getTagNameLimit5(String name) {
-        return ProductDao.getInstance().getTagNameLimit5(name);
+    public List<Product> getProductByTagName(String tagName, int quantity) {
+        return ProductDao.getInstance().getProductByTagName(tagName, quantity);
     }
 
-    public List<Products> getTagNameLimit8(String name) {
-        return ProductDao.getInstance().getTagNameLimit8(name);
-    }
-
-    public List<Products> searchByName(String txtSearch) {
+    public List<Product> searchByName(String txtSearch) {
         return ProductDao.getInstance().searchByName(txtSearch);
     }
 
@@ -55,11 +50,11 @@ public class ProductsService {
         return ProductDao.getInstance().getById(id);
     }
 
-    public List<Products> priceByLowestFirst() {
+    public List<Product> priceByLowestFirst() {
         return ProductDao.getInstance().priceByLowestFirst();
     }
 
-    public Products loadProductById(Long id) {
+    public Product loadProductById(Long id) {
         return ProductDao.getInstance().getProductById(id);
     }
 }

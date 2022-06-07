@@ -1,10 +1,10 @@
 package com.example.website_cosmetics_nhom10.controller.web.HomeController;
 
 import com.example.website_cosmetics_nhom10.beans.Cart;
-import com.example.website_cosmetics_nhom10.beans.Products;
+import com.example.website_cosmetics_nhom10.beans.Product;
 import com.example.website_cosmetics_nhom10.beans.User;
 import com.example.website_cosmetics_nhom10.service.CartService;
-import com.example.website_cosmetics_nhom10.service.ProductsService;
+import com.example.website_cosmetics_nhom10.service.ProductService;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -16,11 +16,11 @@ import java.util.List;
 public class HomeServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        List<Products> productsHot = ProductsService.getInstance().getTagNameLimit5("Hot");
+        List<Product> productsHot = ProductService.getInstance().getProductByTagName("Hot", 5);
         request.setAttribute("productsHot", productsHot);
-        List<Products> productsNew = ProductsService.getInstance().getTagNameLimit5("New");
+        List<Product> productsNew = ProductService.getInstance().getProductByTagName("New", 5);
         request.setAttribute("productsNew", productsNew);
-        List<Products> productsSale = ProductsService.getInstance().getTagNameLimit8("Sale");
+        List<Product> productsSale = ProductService.getInstance().getProductByTagName("Sale", 8);
         request.setAttribute("productsSale", productsSale);
         request.getRequestDispatcher("/view/web/home.jsp").forward(request, response);
         HttpSession session = request.getSession();

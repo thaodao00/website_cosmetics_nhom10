@@ -6,7 +6,7 @@ import java.util.HashMap;
 public class Cart {
     private long id, userId;
     private double total;
-    private HashMap<Products, Long> data;
+    private HashMap<Product, Long> data;
 
     public Cart() {
 
@@ -43,15 +43,15 @@ public class Cart {
         this.total = total;
     }
 
-    public Collection<Products> getData() {
+    public Collection<Product> getData() {
         return this.data.keySet();
     }
 
-    public HashMap<Products, Long> getDataAndQuantity() {
+    public HashMap<Product, Long> getDataAndQuantity() {
         return this.data;
     }
 
-    public void setData(HashMap<Products, Long> data) {
+    public void setData(HashMap<Product, Long> data) {
         this.data = data;
     }
 }

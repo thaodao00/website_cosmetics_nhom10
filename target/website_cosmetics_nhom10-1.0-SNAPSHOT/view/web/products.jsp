@@ -77,10 +77,10 @@
                                 </h5>
                                 <div class="product__item-price-wrapper">
                                     <h3 class="product__item-price product__item-price--old">
-                                            ${i.discount}
+                                            $${i.price}
                                     </h3>
                                     <h3 class="product__item-price">
-                                        $${i.price}
+                                        $${i.discount}
                                     </h3>
                                 </div>
                                 <div class="star-link-sold-wrapper">

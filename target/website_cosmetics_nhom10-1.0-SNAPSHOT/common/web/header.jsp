@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ include file="/common/taglib.jsp" %>
 <%@ page import="java.util.HashMap" %>
-<%@ page import="com.example.website_cosmetics_nhom10.beans.Products" %>
+<%@ page import="com.example.website_cosmetics_nhom10.beans.Product" %>
 <%@ page import="com.example.website_cosmetics_nhom10.beans.Cart" %>
 <%@include file="/common/taglib.jsp" %>
 <%
