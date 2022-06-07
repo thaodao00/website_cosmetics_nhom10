@@ -9,13 +9,12 @@
 </head>
 <body>
 <div class="col l-9 m-10 c-12">
-    <div class="direct"><span><i class="direct-icon fas fa-home"></i>Trang chủ</span> &#160; &#62; &#160; Thêm hoặc sửa
-        chi nhánh
+    <div class="direct"><span><i class="direct-icon fas fa-home"></i>Home</span> &#160; &#62; &#160; Add or Edit branch
     </div>
     <form action="" class="form">
-        <h2 class="form__title">THÊM THÔNG TIN CHI NHÁNH</h2>
+        <h2 class="form__title">Add branch</h2>
         <div class="form-group">
-            <lable class="form__label">Tên chi nhánh:</lable>
+            <lable class="form__label">Name:</lable>
             <input id="account-id" type="text" class="form__input" placeholder="">
         </div>
         <div class="form-group">
@@ -23,17 +22,17 @@
             <input id="account-name" type="text" class="form__input" placeholder="">
         </div>
         <div class="form-group">
-            <lable class="form__label">Địa chỉ:</lable>
+            <lable class="form__label">Address:</lable>
             <input id="account-mail" type="text" class="form__input" placeholder="...@gmail.com">
         </div>
         <div class="form-group">
-            <lable class="form__label">Điện thoại:</lable>
+            <lable class="form__label">Phone:</lable>
             <input id="account-password" type="text" class="form__input" placeholder="">
         </div>
 
         <div class="form-group-button">
-            <input id="reset" class="form__btn" type="reset" value='Nhập lại'>
-            <a href="#"><input class="form__btn form__btn--black" type="button" value='Thêm'></a>
+            <input id="reset" class="form__btn" type="reset" value='Refresh'>
+            <a href="#"><input class="form__btn form__btn--black" type="button" value='Add'></a>
         </div>
     </form>
 </div>

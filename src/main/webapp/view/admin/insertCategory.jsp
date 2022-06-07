@@ -9,18 +9,17 @@
 </head>
 <body>
 <div class="col l-9 m-10 c-12">
-    <div class="direct"><span><i class="direct-icon fas fa-home"></i>Trang chủ</span> &#160; &#62; &#160; Thêm hoặc sửa
-        danh mục
+    <div class="direct"><span><i class="direct-icon fas fa-home"></i>Home</span> &#160; &#62; &#160; Add or Edit Category
     </div>
     <form action="" class="form">
-        <h2 class="form__title">THÊM DANH MỤC</h2>
+        <h2 class="form__title">ADD CATEGORY</h2>
         <div class="form-group">
-            <lable class="form__label">Tên danh mục:</lable>
-            <input id="product-name" type="text" class="form__input" placeholder="Serum trị mụn">
+            <lable class="form__label">Name:</lable>
+            <input id="product-name" type="text" class="form__input" placeholder="Enter name category">
         </div>
         <div class="form-group-button">
-            <input id="reset" class="form__btn" type="reset" value='Nhập lại'>
-            <a href="#"><input class="form__btn form__btn--black" type="button" value='Thêm'></a>
+            <input id="reset" class="form__btn" type="reset" value='Refresh'>
+            <a href="#"><input class="form__btn form__btn--black" type="button" value='Add'></a>
         </div>
     </form>
 </div>

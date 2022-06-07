@@ -12,10 +12,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    cursor: pointer;
-}
-.sidebar__chooses-item:hover {
-    filter: brightness(90%);
 }
 .sidebar__chooses-item__icon {
     font-size: 2rem;

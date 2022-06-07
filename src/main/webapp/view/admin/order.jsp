@@ -13,29 +13,27 @@
 </head>
 <body>
 <div class="col l-9 m-10 c-12">
-    <div class="direct"><span><i class="direct-icon fas fa-home"></i>Trang chủ</span> &#160; &#62; &#160; Tất cả đơn
-        hàng
+    <div class="direct"><span><i class="direct-icon fas fa-home"></i>Home</span> &#160; &#62; &#160; All order
     </div>
     <div class="action">
-        <a title="Xóa sản phẩm" href="" class="action__delete">
-            <i class="action-icon far fa-trash-alt"></i>
-        </a>
     </div>
     <div class="order">
         <div class="order__header">
-            <div class="order__header-column order__header-choose">Chọn</div>
-            <div class="order__header-column order__header-id">Mã đơn hàng</div>
-            <div class="order__header-column order__header-name">Khách hàng</div>
-            <div class="order__header-column order__header-quantity">Số lượng sp</div>
-            <div class="order__header-column order__header-price">Giá trị đh</div>
-            <div class="order__header-column order__header-date">Ngày đặt hàng</div>
-            <div class="order__header-column order__header-ttdh">Trìng trạng đh</div>
-            <div class="order__header-column order__header-update">Chỉnh sửa</div>
+            <div class="order__header-column order__header-choose"></div>
+            <div class="order__header-column order__header-id">ID Order </div>
+            <div class="order__header-column order__header-name">Customer</div>
+            <div class="order__header-column order__header-quantity">Quantity</div>
+            <div class="order__header-column order__header-price">Total order</div>
+            <div class="order__header-column order__header-date">Create at</div>
+            <div class="order__header-column order__header-ttdh">Status order</div>
+            <div class="order__header-column order__header-update">Edit</div>
         </div>
         <div class="order__body-wrap">
             <div class="order__body">
                 <div class="order__body-column order__body-choose">
-                    <input class="check-delete" type="checkbox">
+                    <a  href="" class="action__delete">
+                        <i class="action-icon far fa-trash-alt"></i>
+                    </a>
                 </div>
                 <div class="order__body-column order__body-id">0111111</div>
                 <div class="order__body-column order__body-name">

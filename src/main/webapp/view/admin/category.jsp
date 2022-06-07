@@ -1,4 +1,10 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%
+    request.setCharacterEncoding("UTF-8");
+    response.setCharacterEncoding("UTF-8");
+%>
+<jsp:useBean id="category" scope="request" type="java.util.List"/>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,59 +18,34 @@
 </head>
 <body>
 <div class="col l-9 m-10 c-12">
-    <div class="direct"><span><i class="direct-icon fas fa-home"></i>Trang chủ</span> &#160; &#62; &#160; Danh mục loại
+    <div class="direct"><span><i class="direct-icon fas fa-home"></i>Home</span> &#160; &#62; &#160; All Category
     </div>
     <div class="action">
         <a title="Thêm mục loại" href="admin-insert-category" class="action__add">
             <i class="action-icon fas fa-plus"></i>
         </a>
-        <a title="Xóa mục loại" href="" class="action__delete">
-            <i class="action-icon far fa-trash-alt"></i>
-        </a>
     </div>
     <div class="categories">
         <div class="categories__header">
-            <p class="categories__header-column categories__header-choose">Chọn</p>
-            <div class="categories__header-column categories__header-name">Tên danh mục</div>
-            <div class="categories__header-column categories__header-update">Chỉnh sửa</div>
+            <p class="categories__header-column categories__header-choose"></p>
+            <div class="categories__header-column categories__header-name">Name</div>
+            <div class="categories__header-column categories__header-update">Edit</div>
         </div>
         <div class="categories__body-wrap">
-            <div class="categories__body">
-                <div class="categories__body-column categories__body-choose">
-                    <input class="check-delete" type="checkbox">
+            <c:forEach var="i" items="${category}">
+                <div class="categories__body">
+                    <div class="categories__body-column categories__body-choose">
+                        <a href="" class="action__delete">
+                            <i class="action-icon far fa-trash-alt"></i>
+                        </a>
+                    </div>
+                    <div class="categories__body-column categories__body-name">${i.name}</div>
+                    <div class="categories__body-column categories__body-update">
+                        <a title="chỉnh sửa mục loại" href="" class="categories__body-icon far fa-edit"></a>
+                    </div>
                 </div>
-                <div class="categories__body-column categories__body-name">Áo nam</div>
-                <div class="categories__body-column categories__body-update">
-                    <a title="chỉnh sửa mục loại" href="" class="categories__body-icon far fa-edit"></a>
-                </div>
-            </div>
-            <div class="categories__body">
-                <div class="categories__body-column categories__body-choose">
-                    <input class="check-delete" type="checkbox">
-                </div>
-                <div class="categories__body-column categories__body-name">Quần nam</div>
-                <div class="categories__body-column categories__body-update">
-                    <a title="chỉnh sửa mục loại" href="" class="categories__body-icon far fa-edit"></a>
-                </div>
-            </div>
-            <div class="categories__body">
-                <div class="categories__body-column categories__body-choose">
-                    <input class="check-delete" type="checkbox">
-                </div>
-                <div class="categories__body-column categories__body-name">Áo nữ</div>
-                <div class="categories__body-column categories__body-update">
-                    <a title="chỉnh sửa mục loại" href="" class="categories__body-icon far fa-edit"></a>
-                </div>
-            </div>
-            <div class="categories__body">
-                <div class="categories__body-column categories__body-choose">
-                    <input class="check-delete" type="checkbox">
-                </div>
-                <div class="categories__body-column categories__body-name">Quần nữ</div>
-                <div class="categories__body-column categories__body-update">
-                    <a title="chỉnh sửa mục loại" href="" class="categories__body-icon far fa-edit"></a>
-                </div>
-            </div>
+            </c:forEach>
+
         </div>
     </div>
     <div class="pagination">

@@ -10,48 +10,86 @@
 </head>
 <body>
 <div class="col l-9 m-10 c-12">
-    <div class="direct"><span><i class="direct-icon fas fa-home"></i>Trang chủ</span> &#160; &#62; &#160; Thêm hoặc sửa
-        sản phẩm
+    <div class="direct"><span><i class="direct-icon fas fa-home"></i>Home</span> &#160; &#62; &#160; Add or Edit product
     </div>
     <form action="" class="form">
-        <h2 class="form__title">THÊM SẢN PHẨM</h2>
+        <h2 class="form__title">Add product</h2>
         <div class="form-group">
-            <lable class="form__label">Tên sản phẩm:</lable>
-            <input id="product-name" type="text" class="form__input" placeholder="Áo polo phối khóa cổ">
+            <lable class="form__label">Name:</lable>
+            <input id="product-name" type="text" class="form__input" placeholder="Enter name product">
         </div>
         <div class="form-group">
-            <lable class="form__label">Giá sản phẩm (USD):</lable>
+            <lable class="form__label">Price (USD):</lable>
             <input id="product-price" type="text" class="form__input" placeholder="0.00$">
         </div>
         <div class="form-group">
-            <lable class="form__label">Khối lượng (ml):</lable>
-            <input id="product-ml" type="text" class="form__input" placeholder="0.0ml">
+            <lable class="form__label">Discount (USD):</lable>
+            <input id="product-discount" type="text" class="form__input" placeholder="0.00$">
         </div>
         <div class="form-group">
-            <lable class="form__label">Số lượng:</lable>
-            <input id="product-quantity" type="text" class="form__input" placeholder="10">
+            <lable class="form__label">Sold:</lable>
+            <input id="product-quantity" type="text" class="form__input" placeholder="">
         </div>
         <div class="form-group">
-            <lable class="form__label">Phần trăm giảm giá (nếu có):</lable>
-            <input id="product-sale" type="text" class="form__input" placeholder="5">
-        </div>
-        <div class="form-group">
-            <lable class="form__label">Mô tả ngắn:</lable>
+            <lable class="form__label">Short description:</lable>
             <textarea id="product-description-short" type="text" class="form__input" placeholder=""
                       style="height: 50px"></textarea>
         </div>
         <div class="form-group">
-            <lable class="form__label">Mô tả dài:</lable>
+            <lable class="form__label">Long description:</lable>
             <textarea id="product-description-long" type="text" class="form__input" placeholder=""
                       style="height: 100px"></textarea>
         </div>
         <div class="form-group">
-            <lable class="form__label">Loại danh muc:</lable>
-            <select id="" class="form__input">
-                <option value="">Chọn danh mục</option>
+            <lable class="form__label">Rate:</lable>
+            <input id="product-rate" type="text" class="form__input" placeholder="">
+        </div>
+        <div class="form-group">
+            <lable class="form__label">Weight (ml):</lable>
+            <input id="product-ml" type="text" class="form__input" placeholder="ml">
+        </div>
+
+        <div class="form-group">
+            <lable class="form__label">Dimension:</lable>
+            <input id="product-dimension" type="text" class="form__input" placeholder="">
+        </div>
+        <div class="form-group">
+            <lable class="form__label">OriginID:</lable>
+            <select id="origin" class="form__input">
+                <option value="">1</option>
+                <option value="">1</option>
+                <option value="">1</option>
+                <option value="">1</option>
             </select>
         </div>
-        <label for="" class="form__label">Chọn ảnh:</label>
+        <div class="form-group">
+            <lable class="form__label">CategoryID:</lable>
+            <select id="category" class="form__input">
+                <option value="">1</option>
+                <option value="">1</option>
+                <option value="">1</option>
+                <option value="">1</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <lable class="form__label">CompanyID:</lable>
+            <select id="company" class="form__input">
+                <option value="">1</option>
+                <option value="">2</option>
+                <option value="">3</option>
+                <option value="">4</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <lable class="form__label">TagID:</lable>
+            <select id="Tag" class="form__input">
+                <option value="">1</option>
+                <option value="">2</option>
+                <option value="">3</option>
+                <option value="">0</option>
+            </select>
+        </div>
+<%--        //<label for="" class="form__label">Chọn ảnh:</label>--%>
         <!--                            <div class="form-group-img">-->
         <!--                                <div class="form__img-wrap">-->
         <!--                                    <label for = 'img1' class="form__img-icon fas fa-plus"></label>-->
@@ -61,12 +99,12 @@
         <!--                                    <label for="img2" class="form__img-icon fas fa-plus"></label>-->
         <!--                                    &lt;!&ndash; <img id="form__img2" src="" alt="" class="form__img"> &ndash;&gt;-->
         <!--                                </div>-->
-        <input type="file" id="files" name="files" multiple><br><br>
-        <input hidden type="file" class="form__input">
+<%--        <input type="file" id="files" name="files" multiple><br><br>--%>
+<%--        <input hidden type="file" class="form__input">--%>
         <!--                            </div>-->
         <div class="form-group-button">
-            <input id="reset" class="form__btn" type="reset" value='Nhập lại'>
-            <a href="#"><input class="form__btn form__btn--black" type="button" value='Thêm'></a>
+            <input id="reset" class="form__btn" type="reset" value='Refresh'>
+            <a href="#"><input class="form__btn form__btn--black" type="button" value='Add'></a>
 
         </div>
     </form>
