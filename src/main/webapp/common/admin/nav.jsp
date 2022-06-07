@@ -17,28 +17,28 @@
     <ul class="sidebar">
         <li class="sidebar__item">
             <i class="sidebar__item-icon fas fa-tachometer-alt"></i>
-            <a href="admin-home" class="sidebar__item-link">Thống kê</a>
+            <a href="admin-home" class="sidebar__item-link">Statistical</a>
         </li>
         <label for='check-sidebar-list' class="sidebar__item">
             <i class="sidebar__item-icon fas fa-list"></i>
-            <a href="admin-category" class="sidebar__item-link">Danh mục</a>
+            <a href="admin-category" class="sidebar__item-link">Category Management</a>
         </label>
         <input hidden id='check-sidebar-list' type="checkbox">
         <li class="sidebar__item">
-            <i class="sidebar__item-icon fas fa-tshirt"></i>
-            <a href="admin-products" class="sidebar__item-link">Sản phẩm</a>
+            <i class="sidebar__item-icon fas fa-air-freshener"></i>
+            <a href="admin-products" class="sidebar__item-link">Product Management</a>
         </li>
         <label for='check-sidebar-list' class="sidebar__item">
             <i class="sidebar__item-icon fas fa-users"></i>
-            <a href="admin-account" class="sidebar__item-link">Quản lý tài khoản</a>
+            <a href="admin-account" class="sidebar__item-link">Account Management</a>
         </label>
         <label for='check-sidebar-list' class="sidebar__item">
             <i class="sidebar__item-icon fas fa-store"></i>
-            <a href="admin-order" class="sidebar__item-link">Quản lý đơn hàng</a>
+            <a href="admin-order" class="sidebar__item-link">Order Management</a>
         </label>
         <label for='check-sidebar-list' class="sidebar__item">
             <i class="sidebar__item-icon fas fa-phone"></i>
-            <a href="admin-contact" class="sidebar__item-link">Quản lý thông tin chi nhánh</a>
+            <a href="admin-contact" class="sidebar__item-link">Branch Management</a>
         </label>
     </ul>
 </div>

@@ -15,18 +15,6 @@
     font-size: 2.8rem;
     color: var(--white);
 }
-/* .header__logo::before {
-    content: '';
-    position: absolute;
-    z-index: 1;
-    bottom: 0;
-    left: 20%;
-    transform: translateY(2px);
-    width: 80%;
-    height: 2px;
-    background-color: var(--white);
-    border-radius: 5px;
-} */
 .header__welcome {
     /* width: 25%; */
     height: 100%;;
@@ -42,20 +30,10 @@
 }
 .header__welcome-item:hover {
     opacity: 0.9;
-    cursor: pointer;
 }
 .header__welcome-icon {
     color: var(--white);
     font-size: 1.8rem;
-}
-.header__welcome-item:nth-of-type(1) {
-    background-color: var(--gray-sand);
-}
-.header__welcome-item:nth-of-type(2) {
-    background-color: var(--purple-pastel);
-}
-.header__welcome-item:nth-of-type(3) {
-    background-color: var(--green-pastel);
 }
 .header__welcome-item:nth-of-type(4) {
     position: relative;

@@ -5,8 +5,7 @@
     background-color: var(--light);
     margin-top: 10px;
 }
-.action__add,
-.action__delete {
+.action__add{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -16,12 +15,20 @@
     border-radius: 4px;
 }
 .action__add {
-    background-color: var(--green-pastel);
+    background-color: var(--green);
 }
 .action__delete {
     background-color: var(--danger);
     opacity: 0.5;
-    pointer-events: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.action__delete:hover{
+    background-color: red;
 }
 .action-icon {
     font-size: 1.4rem;
@@ -55,14 +62,11 @@
 .account__body-choose {
     width: 5%;
 }
-.account__body-id{
-    width: 11%;
-}
 .account__body-name {
-    width: 12%;
+    width: 15%;
 }
 .account__body-mail {
-    width: 17%;
+    width: 21%;
 }
 .account__body-password {
     width: 15%;
@@ -74,7 +78,7 @@
     width: 12%;
 }
 .account__body-address{
-    width: 18%;
+    width: 22%;
 }
 .contact__body-column{
     word-break: break-word;
@@ -111,15 +115,12 @@
 .contact__header-choose {
     width: 5%;
 }
-.account__header-id{
-    width: 11%;
-}
 .account__header-name {
-    width: 12%;
+    width: 15%;
 }
 
 .account__header-mail {
-    width: 17%;
+    width: 21%;
 }
 .account__header-password {
     width: 15%;
@@ -131,7 +132,7 @@
     width: 12%;
 }
 .account__header-address{
-    width: 18%;
+    width: 22%;
 }
 .check-delete {
     outline: none;

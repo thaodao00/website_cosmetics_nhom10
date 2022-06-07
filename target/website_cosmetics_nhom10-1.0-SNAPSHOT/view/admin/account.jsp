@@ -9,34 +9,31 @@
 </head>
 <body>
 <div class="col l-9 m-10 c-12">
-    <div class="direct"><span><i class="direct-icon fas fa-home"></i>Trang chủ</span> &#160; &#62; &#160; Tất cả tài
-        khoản
+    <div class="direct"><span><i class="direct-icon fas fa-home"></i>Home</span> &#160; &#62; &#160; All account
     </div>
     <div class="action">
         <a title="Thêm sản phẩm" href="admin-insert-account" class="action__add">
             <i class="action-icon fas fa-plus"></i>
         </a>
-        <a title="Xóa sản phẩm" href="" class="action__delete">
-            <i class="action-icon far fa-trash-alt"></i>
-        </a>
+
     </div>
     <div class="account">
         <div class="account__header">
-            <div class="contact__header-column contact__header-choose">Chọn</div>
-            <div class="contact__header-column account__header-id">Mã TK</div>
-            <div class="contact__header-column account__header-name">Tên đăng nhập</div>
-            <div class="contact__header-column account__header-mail">Mail</div>
-            <div class="contact__header-column account__header-password">Mật khẩu</div>
-            <div class="contact__header-column account__header-phone">Điện thoại</div>
-            <div class="contact__header-column account__header-address">Địa chỉ</div>
-            <div class="contact__header-column account__header-update">Chỉnh sửa</div>
+            <div class="contact__header-column contact__header-choose"></div>
+            <div class="contact__header-column account__header-name">User name</div>
+            <div class="contact__header-column account__header-mail">Email</div>
+            <div class="contact__header-column account__header-password">Password</div>
+            <div class="contact__header-column account__header-phone">Phone</div>
+            <div class="contact__header-column account__header-address">Address</div>
+            <div class="contact__header-column account__header-update">Edit</div>
         </div>
         <div class="account__body-wrap">
             <div class="account__body">
                 <div class="contact__body-column account__body-choose">
-                    <input class="check-delete" type="checkbox">
+                    <a href="" class="action__delete">
+                        <i class="action-icon far fa-trash-alt"></i>
+                    </a>
                 </div>
-                <div class="contact__body-column account__body-id">0111111</div>
                 <div class="contact__body-column account__body-name">
                     ThaoDao
                 </div>
@@ -52,7 +49,6 @@
                 <div class="contact__body-column account__body-choose">
                     <input class="check-delete" type="checkbox">
                 </div>
-                <div class="contact__body-column account__body-id">0111112</div>
                 <div class="contact__body-column account__body-name">
                     HuuKha
                 </div>
@@ -69,7 +65,6 @@
                 <div class="contact__body-column account__body-choose">
                     <input class="check-delete" type="checkbox">
                 </div>
-                <div class="contact__body-column account__body-id">0111113</div>
                 <div class="contact__body-column account__body-name">
                     HueMan
                 </div>

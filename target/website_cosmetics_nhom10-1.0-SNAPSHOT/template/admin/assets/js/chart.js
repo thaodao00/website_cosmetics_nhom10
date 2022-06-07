@@ -1,6 +1,6 @@
 
-const xValues1 = ["Ordinary", "Body Oil", "Face Masks", "Make Up", "Hair Care", "Skincare", "Tool"];
-const yValues1 = [1155, 349, 124, 434, 23, 343, 44];
+const xValues1 = ["Toner", "Serum", "Face cleaner", "Sunscreen", "Moisturizer", "Mask"];
+const yValues1 = [1155, 349, 124, 434, 23, 343];
 const barColors1 = '#000';
 
 new Chart("chart1", {
@@ -17,7 +17,7 @@ new Chart("chart1", {
     options:{
         title: {
             display: true,
-            text: 'Số lượng các sản phẩm của danh mục đã tiêu thụ',
+            text: 'Number of products of the catalog sold',
             fontSize: 14,
         },
         legend: {

@@ -9,31 +9,31 @@
 </head>
 <body>
 <div class="col l-9 m-10 c-12">
-    <div class="direct"><span><i class="direct-icon fas fa-home"></i>Trang chủ</span> &#160; &#62;
-        &#160; Tất cả thông tin chi nhánh
+    <div class="direct"><span><i class="direct-icon fas fa-home"></i>Home</span> &#160; &#62;
+        &#160; All branch information
     </div>
     <div class="action">
         <a title="Thêm sản phẩm" href="admin-insert-contacts" class="action__add">
             <i class="action-icon fas fa-plus"></i>
         </a>
-        <a title="Xóa sản phẩm" href="" class="action__delete">
-            <i class="action-icon far fa-trash-alt"></i>
-        </a>
+
     </div>
     <div class="contact">
         <div class="contact__header">
-            <div class="contact__header-column contact__header-choose">Chọn</div>
-            <div class="contact__header-column contact__header-name">Tên chi nhánh</div>
+            <div class="contact__header-column contact__header-choose"></div>
+            <div class="contact__header-column contact__header-name">Name</div>
             <div class="contact__header-column contact__header-mail">Email</div>
-            <div class="contact__header-column contact__header-address">Địa chỉ</div>
-            <div class="contact__header-column contact__header-phone">Điện thoại</div>
+            <div class="contact__header-column contact__header-address">Address</div>
+            <div class="contact__header-column contact__header-phone">Phone</div>
 
-            <div class="contact__header-column contact__header-update">Chỉnh sửa</div>
+            <div class="contact__header-column contact__header-update">Edit</div>
         </div>
         <div class="contact__body-wrap">
             <div class="contact__body">
                 <div class="contact__body-column contact__body-choose">
-                    <input class="check-delete" type="checkbox">
+                    <a href="" class="action__delete">
+                        <i class="action-icon far fa-trash-alt"></i>
+                    </a>
                 </div>
 
                 <div class="contact__body-column contact__body-name">

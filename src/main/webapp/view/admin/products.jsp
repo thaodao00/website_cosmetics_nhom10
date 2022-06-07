@@ -1,4 +1,10 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%
+    request.setCharacterEncoding("UTF-8");
+    response.setCharacterEncoding("UTF-8");
+%>
+<jsp:useBean id="products" scope="request" type="java.util.List"/>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,38 +15,37 @@
 </head>
 <body>
 <div class="col l-9 m-10 c-12">
-    <div class="direct"><span><i class="direct-icon fas fa-home"></i>Trang chủ</span> &#160; &#62; &#160; Tất cả sản
-        phẩm
+    <div class="direct"><span><i class="direct-icon fas fa-home"></i>Home</span> &#160; &#62; &#160; All products
     </div>
     <div class="action">
         <a title="Thêm sản phẩm" href="admin-insert-products" class="action__add">
             <i class="action-icon fas fa-plus"></i>
         </a>
-        <a title="Xóa sản phẩm" href="" class="action__delete">
-            <i class="action-icon far fa-trash-alt"></i>
-        </a>
     </div>
     <div class="products">
         <div class="products__header">
-            <p class="products__header-column products__header-choose">Chọn</p>
-            <div class="products__header-column products__header-name">Tên sản phẩm</div>
-            <div class="products__header-column products__header-quantity">Số lượng</div>
-            <div class="products__header-column products__header-price">Giá</div>
-            <div class="products__header-column products__header-update">Chỉnh sửa</div>
+            <p class="products__header-column products__header-choose"></p>
+            <div class="products__header-column products__header-name">Name</div>
+            <div class="products__header-column products__header-quantity">Sold</div>
+            <div class="products__header-column products__header-price">Price</div>
+            <div class="products__header-column products__header-update">Edit</div>
         </div>
         <div class="products__body-wrap">
-            <div class="products__body">
-                <div class="products__body-column products__body-choose">
-                    <input class="check-delete" type="checkbox">
+            <c:forEach var="i" items="${products}">
+                <div class="products__body">
+                    <div class="products__body-column products__body-choose">
+                        <a title="" href="" class="action__delete">
+                            <i class="action-icon far fa-trash-alt"></i>
+                        </a>
+                    </div>
+                    <div class="products__body-column products__body-name">${i.name}</div>
+                    <div class="products__body-column products__body-quantity">${i.sold}</div>
+                    <div class="products__body-column products__body-price">$${i.price}</div>
+                    <div class="products__body-column products__body-update">
+                        <a title="chỉnh sửa sản phẩm" href="" class="order__body-icon far fa-edit"></a>
+                    </div>
                 </div>
-                <div class="products__body-column products__body-name">Serum trị mụn thâm</div>
-                <div class="products__body-column products__body-quantity">55</div>
-                <div class="products__body-column products__body-price">45.00$</div>
-                <div class="products__body-column products__body-update">
-                    <a title="chỉnh sửa sản phẩm" href="" class="order__body-icon far fa-edit"></a>
-                </div>
-            </div>
-
+            </c:forEach>
         </div>
     </div>
     <div class="pagination">
