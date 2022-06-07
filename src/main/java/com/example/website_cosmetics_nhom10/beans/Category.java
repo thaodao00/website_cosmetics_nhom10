@@ -4,10 +4,15 @@ import java.io.Serializable;
 
 public class Category implements Serializable {
     Long id;
-    String title;
+    String name;
 
     public Category() {
 
+    }
+
+    public Category(Long id, String name) {
+        this.id = id;
+        this.name = name;
     }
 
     public Long getId() {
@@ -19,10 +24,10 @@ public class Category implements Serializable {
     }
 
     public String getTitle() {
-        return title;
+        return name;
     }
 
     public void setTitle(String title) {
-        this.title = title;
+        this.name = name;
     }
 }
