@@ -1,8 +1,8 @@
 <%@include file="/common/taglib.jsp" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
-    request.setCharacterEncoding ("UTF-8");
-    response.setCharacterEncoding ("UTF-8");
+    request.setCharacterEncoding("UTF-8");
+    response.setCharacterEncoding("UTF-8");
 %>
 <jsp:useBean id="products" scope="request" type="java.util.List"/>
 <jsp:useBean id="category" scope="request" type="java.util.List"/>
@@ -29,7 +29,7 @@
                     <ul class="product__items-list">
                         <c:forEach var="i" items="${category}">
                             <a href="category?categoryId=${i.id}" class="product__item-link">
-                                <li class="product__items-item  ${tag==i.id?"active-btn":""}">${i.title}</li>
+                                <li class="product__items-item  ${tag==i.id?"active-btn":""}">${i.name}</li>
                             </a>
                         </c:forEach>
                     </ul>
@@ -38,17 +38,19 @@
             <div class="col l-10 m-10 c-12">
                 <div class="home-filter hide-on-mobile-tablet">
                     <span class="home-filter__lable">Sort by</span>
-                    <button class="home-filter__btn btn">Common</button>
-                    <button class="home-filter__btn btn btn--primary">New</button>
+                    <button class="home-filter__btn btn btn-sort--js" type="common">Common</button>
+                    <button class="home-filter__btn btn btn--primary btn-sort--js" type="new">New</button>
                     <div class="select-input">
                         <span class="select-input__lable">Price</span>
                         <i class="select-input__icon fas fa-angle-down "></i>
                         <ul class="select-input__list">
                             <li class="select-input__item">
-                                <a onclick="sortPrice()" class="select-input__link">Lowest first</a>
+                                <span class="select-input__link btn-sort--js"
+                                      type="low" style="cursor: pointer">Lowest first</span>
                             </li>
                             <li class="select-input__item">
-                                <a href="" class="select-input__link">Highest first</a>
+                                <span class="select-input__link btn-sort--js" type="high" style="cursor: pointer">Highest
+                                    first</span>
                             </li>
                         </ul>
                     </div>
@@ -58,7 +60,7 @@
                         <c:forEach var="i" items="${category}">
                             <li class="mobile-category__item">
                                 <a href="category?categoryId=${i.id}"
-                                   class="mobile-category__link ${tag==i.id?"active-btn":""}">${i.title}</a>
+                                   class="mobile-category__link ${tag==i.id?"active-btn":""}">${i.name}</a>
                             </li>
                         </c:forEach>
                     </ul>
@@ -77,7 +79,7 @@
                                 </h5>
                                 <div class="product__item-price-wrapper">
                                     <h3 class="product__item-price product__item-price--old">
-                                            $${i.price}
+                                        $${i.price}
                                     </h3>
                                     <h3 class="product__item-price">
                                         $${i.discount}
@@ -112,13 +114,12 @@
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<%--<script type="text/javascript" src="<c:url value='/template/web/assets/js/showHide.js' />"></script>--%>
-<%--<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>--%>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
-    var btn = document.getElementsByClassName("buttons");
+    let btn = document.getElementsByClassName("buttons");
+
     function loadMore() {
-        var amount = document.getElementsByClassName("product").length;
-        console.log(amount);
+        let amount = document.getElementsByClassName("product").length;
         jQuery.ajax({
             url: "LoadMoreServlet",
             type: "get",
@@ -126,31 +127,27 @@
                 exits: amount
             },
             success: function (data) {
-                var row = document.getElementById("content");
+                let row = document.getElementById("content");
                 row.innerHTML += data;
             }
         });
     }
 
-    function sortPrice() {
-        var amount = document.getElementsByClassName("product").length;
-        // console.log(amount);
+    $(".btn-sort--js").click(function() {
+        let type = $(this).attr("type")
+        console.log(type)
         jQuery.ajax({
             url: "SortProductsServlet",
             type: "get",
             data: {
-                sort: amount
+                type: type
             },
-
             success: function (data) {
-                var row = document.getElementById("content");
+                let row = document.getElementById("content");
                 row.innerHTML = data;
             }
-
         });
-
-
-    }
+    })
 
 
 </script>

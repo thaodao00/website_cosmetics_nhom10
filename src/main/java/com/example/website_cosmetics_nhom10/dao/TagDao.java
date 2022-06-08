@@ -15,7 +15,7 @@ public class TagDao {
         return instance;
     }
 
-    public Tag getIdByTagName(String tagName) {
+    public Tag getTagByTagName(String tagName) {
         return JDBIConnector.get().withHandle(
                 handle -> handle.createQuery("SELECT * from tag where name = ?")
                         .bind(0, tagName)
@@ -26,5 +26,13 @@ public class TagDao {
     public List<Tag> getAll() {
         return JDBIConnector.get().withHandle(handle ->
                 handle.createQuery("select * from tag").mapToBean(Tag.class).stream().collect(Collectors.toList()));
+    }
+
+    public Tag getTagById(Long id) {
+        return JDBIConnector.get().withHandle(
+                handle -> handle.createQuery("SELECT * from tag where id = ?")
+                        .bind(0, id)
+                        .mapToBean(Tag.class)
+                        .one());
     }
 }

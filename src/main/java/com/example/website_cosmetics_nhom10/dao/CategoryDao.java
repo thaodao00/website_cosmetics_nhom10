@@ -8,17 +8,22 @@ import java.util.stream.Collectors;
 
 public class CategoryDao {
     public static CategoryDao instance;
-    public CategoryDao(){
+
+    public CategoryDao() {
 
     }
-    public static CategoryDao getInstance(){
-        if(instance ==null){
-            instance = new CategoryDao ();
-        }
-        return  instance;
-    }
-    public List<Category>getAllCategory(){
-        return JDBIConnector.get ().withHandle (handle -> handle.createQuery ("select * from category").mapToBean (Category.class).stream ().collect(Collectors.toList()));
+
+    public static CategoryDao getInstance() {
+        if (instance == null)
+            instance = new CategoryDao();
+        return instance;
     }
 
+    public List<Category> getAll() {
+        return JDBIConnector.get().withHandle(handle -> handle.createQuery("select * from category").mapToBean(Category.class).stream().collect(Collectors.toList()));
+    }
+
+    public static void main(String[] args) {
+        System.out.print(CategoryDao.getInstance().getAll());
+    }
 }
