@@ -51,7 +51,7 @@
                     </div>
 
                     <script>
-                        var index = 1;
+                        let index = 1;
                         showSliders(index)
 
                         function plusSlider(n) {
@@ -63,8 +63,8 @@
                         }
 
                         function showSliders(n) {
-                            var i;
-                            var slider = document.getElementsByClassName("mySlider");
+                            let i;
+                            let slider = document.getElementsByClassName("mySlider");
                             if (n > slider.length) {
                                 index = 1
                             }
@@ -121,17 +121,17 @@
                                 <div class="product-content__meta">
                                 <span class="meta__sku-wrapper">
                                 SKU:
-                                <span class="meta__sku">049</span>
+                                <span class="meta__sku">${product.id}</span>
                                 </span>
 
                                     <span class="meta__category-wrapper">
                                 Category:
-                                <span class="meta__category">skin solutions</span>
+                                <span class="meta__category">${product.categoryName}</span>
                                 </span>
 
                                     <span class="meta__tag-wrapper">
                                 Tag:
-                                <span class="meta__tag">Make up</span>
+                                <span class="meta__tag">${product.tagName}</span>
                                 </span>
                                 </div>
                             </div>
@@ -145,7 +145,7 @@
                     <ul class="product-content__tabs-list">
                         <li class="product-content__tabs-item tabs-item__description tabs-active">Description</li>
                         <li class="product-content__tabs-item tabs-item__info">Additional information</li>
-                        <li class="product-content__tabs-item tabs-item__review">Review (1)</li>
+                        <li class="product-content__tabs-item tabs-item__review">Review</li>
                     </ul>
 
                     <div class="product-content__tabs-content">
@@ -155,11 +155,11 @@
                         <div class="tabs-content__item tabs-content__info">
                             <div class="tabs-content__info-weight">
                                 weight
-                                <span>2kg</span>
+                                <span>${product.weight}</span>
                             </div>
                             <div class="tabs-content__info-dimensions">
                                 dimensions
-                                <span>2 x 4 x 5cm</span>
+                                <span>${product.dimension}</span>
                             </div>
                         </div>
                         <div class="tabs-content__item tabs-content__review">
@@ -185,7 +185,7 @@
                                                 <img src="./assets/img/admin_info/DaoThiThuThao.jpg" alt="avatar">
                                             </div>
                                             <div class="product-comment__body">
-                                                <span class="product-comment__user-name">Thaothao</span>
+                                                <span class="product-comment__user-name">Thao</span>
                                                 <div class="product-content__rating product-content__user-rating">
                                                     <i class="fas fa-star star-rating"></i>
                                                     <i class="fas fa-star star-rating"></i>
@@ -207,7 +207,7 @@
                                                 <img src="./assets/img/admin_info/NguyenHuuKha2.jpg" alt="avatar">
                                             </div>
                                             <div class="product-comment__body">
-                                                <span class="product-comment__user-name">Yangheenlw</span>
+                                                <span class="product-comment__user-name">Kha</span>
                                                 <div class="product-content__rating product-content__user-rating">
                                                     <i class="fas fa-star star-rating"></i>
                                                     <i class="fas fa-star star-rating"></i>
@@ -229,7 +229,7 @@
                                                 <img src="./assets/img/admin_info/TrieuHueMan2.jpg" alt="avatar">
                                             </div>
                                             <div class="product-comment__body">
-                                                <span class="product-comment__user-name">Manman</span>
+                                                <span class="product-comment__user-name">Man</span>
                                                 <div class="product-content__rating product-content__user-rating">
                                                     <i class="fas fa-star star-rating"></i>
                                                     <i class="fas fa-star star-rating"></i>
@@ -238,7 +238,7 @@
                                                     <i class="fas fa-star star-rating"></i>
                                                 </div>
                                                 <div class="product-comment__content-wrapper">
-                                                    <span class="product-comment__content">Looks like this serum doesn't suit my skin :((</span>
+                                                    <span class="product-comment__content">This serum doesn't suit my skin</span>
                                                 </div>
                                                 <div class="product-comment__created-time-wrapper">
                                                     <span class="product-comment__created-time">2021-11-16 22:30</span>
@@ -282,10 +282,10 @@
                                 </h5>
                                 <div class="product__item-price-wrapper">
                                     <h3 class="product__item-price product__item-price--old">
-                                            $${i.price}
+                                        $${i.price}
                                     </h3>
                                     <h3 class="product__item-price">
-                                            $${i.discount}
+                                        $${i.discount}
                                     </h3>
                                 </div>
                                 <div class="star-link-sold-wrapper">
@@ -304,7 +304,7 @@
                                 </div>
                             </div>
                         </a>
-                        </c:forEach>
+                    </c:forEach>
                 </div>
             </div>
         </div>
@@ -316,11 +316,7 @@
 
 <%--<script src="template/web/assets/js/JSProduct.js"></script>--%>
 <%--<script type="module" src="template/web/assets/js/showHide.js"></script>--%>
-<script
-        src="https://code.jquery.com/jquery-3.6.0.min.js"
-        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-        crossorigin="anonymous">
-</script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
     $(document).ready(function () {
         $("#add-product-be").click(function () {
@@ -336,12 +332,10 @@
                 },
                 success: function (data) {
                     alert("Add to cart successfully!")
-                    console.log("added")
+                    $(".cart-link-notice").text(data)
                 },
                 error: function (data) {
                     alert("Error")
-                    console.log(data)
-                    console.log("failed")
                 }
             })
         })

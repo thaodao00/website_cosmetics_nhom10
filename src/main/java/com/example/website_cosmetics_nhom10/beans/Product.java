@@ -237,10 +237,14 @@ public class Product {
                 ", rate=" + rate +
                 ", weight='" + weight + '\'' +
                 ", dimension='" + dimension + '\'' +
-                ", originId='" + originId + '\'' +
-                ", categoryId='" + categoryId + '\'' +
-                ", companyName='" + companyId + '\'' +
-                ", tagName='" + tagId + '\'' +
+                ", originId=" + originId +
+                ", categoryId=" + categoryId +
+                ", companyId=" + companyId +
+                ", tagId=" + tagId +
+                ", originName='" + originName + '\'' +
+                ", categoryName='" + categoryName + '\'' +
+                ", companyName='" + companyName + '\'' +
+                ", tagName='" + tagName + '\'' +
                 '}';
     }
 }

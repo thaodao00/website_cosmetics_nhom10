@@ -40,7 +40,7 @@
                     </div>
                     <div class="products__body-column products__body-name">${i.name}</div>
                     <div class="products__body-column products__body-quantity">${i.sold}</div>
-                    <div class="products__body-column products__body-price">$${i.price}</div>
+                    <div class="products__body-column products__body-price">$${i.discount}</div>
                     <div class="products__body-column products__body-update">
                         <a title="chỉnh sửa sản phẩm" href="" class="order__body-icon far fa-edit"></a>
                     </div>

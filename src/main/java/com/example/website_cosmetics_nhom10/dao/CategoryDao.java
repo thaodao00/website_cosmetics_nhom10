@@ -22,12 +22,25 @@ public class CategoryDao {
     public List<Category> getAll() {
         return JDBIConnector.get().withHandle(handle -> handle.createQuery("select * from category").mapToBean(Category.class).stream().collect(Collectors.toList()));
     }
+
     public void insertCategory(String name) {
-        JDBIConnector.get ().withHandle (handle ->
-                handle.createUpdate ("INSERT INTO category (name) VALUES(?)")
-                        .bind (0, name)
-                        .execute ());
+        JDBIConnector.get().withHandle(handle ->
+                handle.createUpdate("INSERT INTO category (name) VALUES(?)")
+                        .bind(0, name)
+                        .execute());
     }
+
+    public Category getCategoryById(Long id) {
+        List<Category> list = JDBIConnector.get().withHandle(handle ->
+                handle.createQuery("select * from category where id = ?")
+                        .bind(0, id)
+                        .mapToBean(Category.class)
+                        .list());
+        if (list.size() > 0)
+            return list.get(0);
+        return null;
+    }
+
     public static void main(String[] args) {
         System.out.print(CategoryDao.getInstance().getAll());
     }
