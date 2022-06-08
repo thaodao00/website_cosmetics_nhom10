@@ -17,22 +17,25 @@
     <div class="modal__overlay"></div>
     <div class="modal__body">
         <!--Login form -->
-        <form name="login-form" action="web-login" method="post" id="login-form" class="login-form" style="display: block;">
+        <form name="login-form" action="web-login" method="post" id="login-form" class="login-form"
+              style="display: block;">
             <div class="auth-form">
                 <div class="auth-form__container">
                     <div class="auth-form__header">
                         <h3 class="auth-form__heading">Login</h3>
                         <a href="<c:url value="/web-register"/>"
-                        class="register-from__btn auth-form__switch-btn">Register
+                           class="register-from__btn auth-form__switch-btn">Register
                         </a>
 
                     </div>
                     <div class="auth-form__form">
                         <div class="auth-form__group">
-                            <input id="mail" type="mail" class="auth-form__input" placeholder="user name" required name="username">
+                            <input id="mail" type="mail" class="auth-form__input" placeholder="user name" required
+                                   name="username">
                         </div>
                         <div class="auth-form__group">
-                            <input id="password" type="password" class="auth-form__input" placeholder="password" required name="password">
+                            <input id="password" type="password" class="auth-form__input" placeholder="password"
+                                   required name="password">
                         </div>
 
                     </div>
@@ -48,7 +51,7 @@
                         <p class="error-message regis-fail-js">${error}</p>
                     </div>
                     <div class="auth-form__controls">
-                        <button class="btn buttons auth-form__controls-back ">
+                        <button class="btn buttons auth-form__controls-back" onclick="history.back();">
                             BACK
                         </button>
                         <a><input id="submit" type="submit" class="buttons" name="Login" value="SEND"></a>

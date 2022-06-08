@@ -9,9 +9,8 @@ public class ProductService {
     public static ProductService instance;
 
     public static ProductService getInstance() {
-        if (instance == null) {
+        if (instance == null)
             instance = new ProductService();
-        }
         return instance;
     }
 

@@ -331,7 +331,7 @@
                         <p class="error-message regis-fail-js">${error}</p>
                     </div>
                     <div class="auth-form__controls">
-                        <button class="btn buttons auth-form__controls-back ">
+                        <button class="btn buttons auth-form__controls-back" onclick="history.back()">
                             BACK
                         </button>
                         <button type="submit" form="register-form" class="buttons">

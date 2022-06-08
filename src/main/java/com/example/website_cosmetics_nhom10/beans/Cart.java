@@ -54,4 +54,14 @@ public class Cart {
     public void setData(HashMap<Product, Long> data) {
         this.data = data;
     }
+
+    @Override
+    public String toString() {
+        return "Cart{" +
+                "id=" + id +
+                ", userId=" + userId +
+                ", total=" + total +
+                ", data=" + data +
+                '}';
+    }
 }
