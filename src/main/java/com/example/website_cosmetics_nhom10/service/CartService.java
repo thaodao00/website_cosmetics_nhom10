@@ -21,35 +21,39 @@ public class CartService {
         return instance;
     }
 
-    public static boolean createCart(Long userId) {
+    public Cart createCart(Long userId) {
         return CartDao.getInstance().createCart(userId);
     }
 
-    public static Cart getByIdUser(Long userId) {
+    public Cart getByIdUser(Long userId) {
         return CartDao.getInstance().getByIdUser(userId);
     }
 
-    public static boolean checkCartExist(Long userId) {
+    public boolean checkCartExist(Long userId) {
         return CartDao.getInstance().checkCartExist(userId);
     }
 
-    public static boolean addToCart(long cartId, long productId, int quantity) {
+    public boolean addToCart(long cartId, long productId, int quantity) {
         return CartDao.getInstance().addToCart(cartId, productId, quantity);
     }
 
-    public static boolean updateCart(long cartId, long productId, int quantity) {
+    public boolean updateCart(long cartId, long productId, int quantity) {
         return CartDao.getInstance().updateCart(cartId, productId, quantity);
     }
 
-    public static List<CartItems> loadCart(long cartId) {
+    public List<CartItems> loadCart(long cartId) {
         return CartDao.getInstance().loadCart(cartId);
     }
 
-    public static HashMap<Product, Long> loadCartData(long cartId) {
+    public HashMap<Product, Long> loadCartData(long cartId) {
         List<CartItems> list = loadCart(cartId);
         HashMap<Product, Long> cartData = new HashMap<>();
         for (CartItems ci : list)
             cartData.put(ProductService.getInstance().loadProductById(ci.getProductId()), (long) ci.getQuantity());
         return cartData;
+    }
+
+    public static void main(String[] args) {
+        CartService.getInstance().addToCart(4, 3, 2);
     }
 }

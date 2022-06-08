@@ -10,10 +10,7 @@ import java.util.Map;
 public class UserServices {
     private static UserServices instance;
 
-    private static Map<String, String> users = new HashMap<>();
-
     private UserServices() {
-
     }
 
     public static UserServices getInstance() {
@@ -22,11 +19,11 @@ public class UserServices {
         return instance;
     }
 
-    public static boolean checkLogin(String username) {
+    public boolean checkLogin(String username) {
         return UserDao.getInstance().checkLogin(username);
     }
 
-    public static User login(String username, String password) {
+    public User login(String username, String password) {
         return UserDao.getInstance().login(username, password);
     }
 

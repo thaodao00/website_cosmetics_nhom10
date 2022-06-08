@@ -38,8 +38,8 @@
             <div class="col l-10 m-10 c-12">
                 <div class="home-filter hide-on-mobile-tablet">
                     <span class="home-filter__lable">Sort by</span>
-                    <button class="home-filter__btn btn btn-sort--js" type="common">Common</button>
-                    <button class="home-filter__btn btn btn--primary btn-sort--js" type="new">New</button>
+                    <button class="home-filter__btn btn btn--primary btn-sort--js" type="common">Common</button>
+                    <button class="home-filter__btn btn btn-sort--js" type="new">New</button>
                     <div class="select-input">
                         <span class="select-input__lable">Price</span>
                         <i class="select-input__icon fas fa-angle-down "></i>
@@ -133,7 +133,7 @@
         });
     }
 
-    $(".btn-sort--js").click(function() {
+    $(".btn-sort--js").click(function () {
         let type = $(this).attr("type")
         console.log(type)
         jQuery.ajax({
@@ -147,6 +147,12 @@
                 row.innerHTML = data;
             }
         });
+
+        if ($(this).hasClass("home-filter__btn")) {
+            $(".product__items-item").removeClass("active-btn")
+            $(".home-filter__btn").removeClass("btn--primary")
+            $(this).addClass("btn--primary")
+        }
     })
 
 

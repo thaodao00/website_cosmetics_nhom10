@@ -21,19 +21,18 @@ public class LoginServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
-        if (UserServices.checkLogin(username)) {
-            User user = UserServices.login(username, password);
+        if (UserServices.getInstance().checkLogin(username)) {
+            User user = UserServices.getInstance().login(username, password);
             if (user != null) {
                 Cart cart = CartService.getInstance().getByIdUser(user.getId());
-                if (cart != null) {
-                    HttpSession session = request.getSession();
-                    cart.setData(CartService.getInstance().loadCartData(cart.getId()));
-                    session.setAttribute("cart", cart);
-                    session.setAttribute("auth", user);
-                    session.setAttribute("cData", cart.getDataAndQuantity());
-                    response.sendRedirect("web-home");
-//                    request.getRequestDispatcher("/view/web/home.jsp").forward(request, response);
-                }
+                if (cart == null)
+                    cart = CartService.getInstance().createCart(user.getId());
+                HttpSession session = request.getSession();
+                cart.setData(CartService.getInstance().loadCartData(cart.getId()));
+                session.setAttribute("cart", cart);
+                session.setAttribute("auth", user);
+                session.setAttribute("cData", cart.getDataAndQuantity());
+                response.sendRedirect("web-home");
             } else {
                 request.setAttribute("error", "Wrong password");
                 request.getRequestDispatcher("/view/web/login.jsp").forward(request, response);

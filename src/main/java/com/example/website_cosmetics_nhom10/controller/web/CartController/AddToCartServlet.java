@@ -18,17 +18,17 @@ public class AddToCartServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        // get cart from session
         HttpSession session = request.getSession();
         long pid = Long.parseLong(request.getParameter("pid"));
         int quantity = Integer.parseInt(request.getParameter("quantity"));
         Cart cart = (Cart) session.getAttribute("cart");
         User user = (User) session.getAttribute("auth");
         if (cart == null)
-            cart = CartService.getByIdUser(user.getId());
+            cart = CartService.getInstance().getByIdUser(user.getId());
         if (CartService.getInstance().addToCart(cart.getId(), pid, quantity)) {
             cart.setData(CartService.getInstance().loadCartData(cart.getId()));
             session.setAttribute("cart", cart);
+            response.getWriter().println(cart.getData().size());
             response.setStatus(HttpServletResponse.SC_ACCEPTED);
         }
         else

@@ -71,7 +71,7 @@
                         </div>
                     </div>
                     <div class="col l-6 m-12 c-12 contact-map">
-                        <img src="./assets/img/contact2.jpg" alt="Map" class="img-map">
+                        <img src="<c:url value="/template/web/assets/img/contact-map.jpg" /> " alt="Map" class="img-map">
                     </div>
                 </div>
             </div>
