@@ -59,13 +59,14 @@
         </div>
         <div class="form-group">
             <lable class="form__label">OriginID:</lable>
-<%--            <select name="origin" class="form__input">--%>
-<%--                <option value="1">1</option>--%>
-<%--                <option value="2">1</option>--%>
-<%--                <option value="3">1</option>--%>
-<%--                <option value="4">1</option>--%>
-<%--            </select>--%>
-            <input name="origin" type="text" class="form__input" placeholder="">
+                        <select name="origin" class="form__input">
+                            <option value="1">China</option>
+                            <option value="2">Japan</option>
+                            <option value="3">France</option>
+                            <option value="4">America</option>
+                            <option value="5">USA</option>
+                            <option value="6">Australia</option>
+                        </select>
         </div>
         <div class="form-group">
             <lable class="form__label">CategoryID:</lable>
@@ -95,7 +96,7 @@
                 <option value="4">normal</option>
             </select>
         </div>
-<%--        //<label for="" class="form__label">Chọn ảnh:</label>--%>
+        <%--        //<label for="" class="form__label">Chọn ảnh:</label>--%>
         <!--                            <div class="form-group-img">-->
         <!--                                <div class="form__img-wrap">-->
         <!--                                    <label for = 'img1' class="form__img-icon fas fa-plus"></label>-->
@@ -106,7 +107,7 @@
         <!--                                    &lt;!&ndash; <img id="form__img2" src="" alt="" class="form__img"> &ndash;&gt;-->
         <!--                                </div>-->
 
-<%--        <input hidden type="file" class="form__input">--%>
+        <%--        <input hidden type="file" class="form__input">--%>
         <!--                            </div>-->
         <div class="form-group-button">
             <input id="reset" class="form__btn" type="reset" value='Refresh'>
