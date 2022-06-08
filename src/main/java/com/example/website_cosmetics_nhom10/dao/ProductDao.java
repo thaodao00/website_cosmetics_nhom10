@@ -1,9 +1,6 @@
 package com.example.website_cosmetics_nhom10.dao;
 
-import com.example.website_cosmetics_nhom10.beans.Company;
-import com.example.website_cosmetics_nhom10.beans.Origin;
-import com.example.website_cosmetics_nhom10.beans.Product;
-import com.example.website_cosmetics_nhom10.beans.Tag;
+import com.example.website_cosmetics_nhom10.beans.*;
 import com.example.website_cosmetics_nhom10.database.JDBIConnector;
 
 import java.util.List;
@@ -51,6 +48,7 @@ public class ProductDao {
         List<Tag> tagNameList = TagDao.getInstance().getAll();
         List<Company> companyList = CompanyDao.getInstance().getAll();
         List<Origin> originList = OriginDao.getInstance().getAll();
+        List<Category> categoryList = CategoryDao.getInstance().getAll();
 
         for (Product p : list) {
             for (Tag t : tagNameList)
@@ -62,6 +60,9 @@ public class ProductDao {
             for (Origin o : originList)
                 if (o.getId() == p.getOriginId())
                     p.setOriginName(o.getName());
+            for (Category c : categoryList)
+                if (c.getId() == p.getCategoryId())
+                    p.setCategoryName(c.getName());
         }
         return list;
     }
@@ -70,6 +71,7 @@ public class ProductDao {
         p.setTagName(TagDao.getInstance().getTagById(p.getTagId()).getName());
         p.setOriginName(OriginDao.getInstance().getOriginById(p.getOriginId()).getName());
         p.setCompanyName(CompanyDao.getInstance().getCompanyById(p.getCompanyId()).getName());
+        p.setCategoryName(CategoryDao.getInstance().getCategoryById(p.getCategoryId()).getName());
         return p;
     }
 
@@ -110,32 +112,36 @@ public class ProductDao {
     }
 
     public Product getProductById(Long id) {
-        Product p = JDBIConnector.get().withHandle(handle -> handle.createQuery("select * from product where id = ?")
+        List<Product> list = JDBIConnector.get().withHandle(handle -> handle.createQuery("select * from product where id = ?")
                 .bind(0, id)
-                .mapToBean(Product.class).one());
-        return setProductInfo(p);
+                .mapToBean(Product.class).list());
+        if (list.size() > 0)
+            return setProductInfo(list.get(0));
+        return null;
     }
-    public void deleteProductById(Long id){
+
+    public void deleteProductById(Long id) {
         JDBIConnector.get().withHandle(handle ->
-                handle.createUpdate ("DELETE FROM product WHERE id = ?").bind(0, id).execute());
+                handle.createUpdate("DELETE FROM product WHERE id = ?").bind(0, id).execute());
     }
-    public void insertProduct(String name, String thumbnailImg, double price, double discount,int sold, String shortDescription, String longDescription, double rate, String weight, String dimension, Long originid, Long categoryid, Long companyid, Long tagid){
+
+    public void insertProduct(String name, String thumbnailImg, double price, double discount, int sold, String shortDescription, String longDescription, double rate, String weight, String dimension, Long originid, Long categoryid, Long companyid, Long tagid) {
         JDBIConnector.get().withHandle(handle ->
                 handle.createUpdate("INSERT INTO product (name, thumbnailimg, price, discount, sold, shortDescription,longDescription, rate, weight, dimension, originid, categoryid, companyid, tagid) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)")
-                        .bind (0,name)
-                        .bind (1, thumbnailImg)
-                        .bind (2,price)
-                        .bind (3, discount)
-                        .bind (4, sold)
-                        .bind (5, shortDescription)
-                        .bind (6, longDescription)
-                        .bind (7, rate)
-                        .bind (8, weight)
-                        .bind (9, dimension)
-                        .bind (10, originid)
-                        .bind (11, categoryid)
-                        .bind (12, companyid)
-                        .bind (13, tagid)
-                        .execute ());
+                        .bind(0, name)
+                        .bind(1, thumbnailImg)
+                        .bind(2, price)
+                        .bind(3, discount)
+                        .bind(4, sold)
+                        .bind(5, shortDescription)
+                        .bind(6, longDescription)
+                        .bind(7, rate)
+                        .bind(8, weight)
+                        .bind(9, dimension)
+                        .bind(10, originid)
+                        .bind(11, categoryid)
+                        .bind(12, companyid)
+                        .bind(13, tagid)
+                        .execute());
     }
 }

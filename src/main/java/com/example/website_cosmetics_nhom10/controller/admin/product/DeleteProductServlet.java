@@ -14,7 +14,7 @@ public class DeleteProductServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Long id = Long.parseLong(request.getParameter("sid"));
-        ProductService.getInstance ().deleteProductById (id);
+        ProductService.getInstance ().deleteProductById(id);
         response.sendRedirect ("admin-products");
     }
     @Override

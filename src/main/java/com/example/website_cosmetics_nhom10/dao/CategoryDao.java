@@ -16,40 +16,42 @@ public class CategoryDao {
 
     public static CategoryDao getInstance() {
         if (instance == null)
-            instance = new CategoryDao ();
+            instance = new CategoryDao();
         return instance;
     }
 
     public List<Category> getAll() {
-        return JDBIConnector.get ().withHandle (handle -> handle.createQuery ("select * from category").mapToBean (Category.class).stream ().collect (Collectors.toList ()));
+        return JDBIConnector.get().withHandle(handle -> handle.createQuery("select * from category").mapToBean(Category.class).stream().collect(Collectors.toList()));
     }
 
     public void insertCategory(String name) {
-        JDBIConnector.get ().withHandle (handle ->
-                handle.createUpdate ("INSERT INTO category (name) VALUES(?)")
-                        .bind (0, name)
-                        .execute ());
+        JDBIConnector.get().withHandle(handle ->
+                handle.createUpdate("INSERT INTO category (name) VALUES(?)")
+                        .bind(0, name)
+                        .execute());
     }
 
-    public Category getCategoryByID(Long id) {
-        return JDBIConnector.get ().withHandle (handle -> handle.createQuery ("select * from category where id = ?")
-                .bind (0, id)
-                .mapToBean (Category.class)
-                .one ());
-
+    public Category getCategoryById(Long id) {
+        List<Category> list = JDBIConnector.get().withHandle(handle ->
+                handle.createQuery("select * from category where id = ?")
+                        .bind(0, id)
+                        .mapToBean(Category.class)
+                        .list());
+        if (list.size() > 0)
+            return list.get(0);
+        return null;
     }
 
     public void updateCategory(String name, Long id) {
-        JDBIConnector.get ().withHandle (handle -> handle.createUpdate ("UPDATE category set name = ? WHERE id = ?")
-                .bind (0, name)
-                .bind (1, id)
-                .execute ());
-
+        JDBIConnector.get().withHandle(handle -> handle.createUpdate("UPDATE category set name = ? WHERE id = ?")
+                .bind(0, name)
+                .bind(1, id)
+                .execute());
     }
 
     public static void main(String[] args) {
 //        System.out.print(CategoryDao.getInstance().getCategoryByID (1L));
-        CategoryDao.getInstance ().updateCategory ("ttttttt", 43L);
-        System.out.print (CategoryDao.getInstance ().getAll ());
+        CategoryDao.getInstance().updateCategory("ttttttt", 43L);
+        System.out.print(CategoryDao.getInstance().getAll());
     }
 }

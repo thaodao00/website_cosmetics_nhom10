@@ -22,7 +22,7 @@ public class CategoryService {
         CategoryDao.getInstance ().insertCategory (name);
     }
     public Category getCategoryById(Long id){
-        return  CategoryDao.instance.getCategoryByID (id);
+        return  CategoryDao.instance.getCategoryById(id);
     }
     public void updateCategory( String name, Long id){
         CategoryDao.getInstance ().updateCategory ( name, id);
