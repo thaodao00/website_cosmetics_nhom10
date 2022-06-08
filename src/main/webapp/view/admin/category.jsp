@@ -35,7 +35,7 @@
             <c:forEach var="i" items="${category}">
                 <div class="categories__body">
                     <div class="categories__body-column categories__body-choose">
-                        <a href="" class="action__delete">
+                        <a href="#" class="action__delete">
                             <i class="action-icon far fa-trash-alt"></i>
                         </a>
                     </div>

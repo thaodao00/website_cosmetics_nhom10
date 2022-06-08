@@ -14,7 +14,7 @@ import java.util.List;
 public class CategoryServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        List<Category> category = CategoryService.getInstance().getAllCategory ();
+        List<Category> category = CategoryService.getInstance().getAll ();
         request.setAttribute ("category",category);
         request.getRequestDispatcher ("/view/admin/category.jsp").forward (request,response);
     }
