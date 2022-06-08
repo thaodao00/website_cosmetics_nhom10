@@ -16,49 +16,49 @@
         <h2 class="form__title">Add product</h2>
         <div class="form-group">
             <lable class="form__label">Name:</lable>
-            <input name="product-name" type="text" class="form__input" placeholder="Enter name product">
+            <input required name="product-name" type="text" class="form__input" placeholder="Enter name product">
         </div>
         <div class="form-group">
             <label  class="form__label">Select picture:</label>
-            <input  name="product-thumbnailImg" type="file" class="form__input">
+            <input  required name="product-thumbnailImg" type="file" class="form__input">
         </div>
         <div class="form-group">
             <lable class="form__label">Price (USD):</lable>
-            <input name="product-price" type="text" class="form__input" placeholder="0.00$">
+            <input required name="product-price" type="text" class="form__input" placeholder="0.00$">
         </div>
         <div class="form-group">
             <lable class="form__label">Discount (USD):</lable>
-            <input name="product-discount" type="text" class="form__input" placeholder="0.00$">
+            <input required name="product-discount" type="text" class="form__input" placeholder="0.00$">
         </div>
         <div class="form-group">
             <lable class="form__label">Sold:</lable>
-            <input name="product-quantity" type="text" class="form__input" placeholder="">
+            <input  required name="product-quantity" type="text" class="form__input" placeholder="">
         </div>
         <div class="form-group">
             <lable class="form__label">Short description:</lable>
-            <textarea name="product-description-short" type="text" class="form__input" placeholder=""
+            <textarea required name="product-description-short" type="text" class="form__input" placeholder=""
                       style="height: 50px"></textarea>
         </div>
         <div class="form-group">
             <lable class="form__label">Long description:</lable>
-            <textarea name="product-description-long" type="text" class="form__input" placeholder=""
+            <textarea required name="product-description-long" type="text" class="form__input" placeholder=""
                       style="height: 100px"></textarea>
         </div>
         <div class="form-group">
             <lable class="form__label">Rate:</lable>
-            <input name="product-rate" type="text" class="form__input" placeholder="">
+            <input required name="product-rate" type="text" class="form__input" placeholder="">
         </div>
         <div class="form-group">
             <lable class="form__label">Weight (ml):</lable>
-            <input name="product-weight" type="text" class="form__input" placeholder="ml">
+            <input required name="product-weight" type="text" class="form__input" placeholder="ml">
         </div>
 
         <div class="form-group">
             <lable class="form__label">Dimension:</lable>
-            <input name="product-dimension" type="text" class="form__input" placeholder="">
+            <input required name="product-dimension" type="text" class="form__input" placeholder="">
         </div>
         <div class="form-group">
-            <lable class="form__label">OriginID:</lable>
+            <lable required class="form__label">OriginID:</lable>
                         <select name="origin" class="form__input">
                             <option value="1">China</option>
                             <option value="2">Japan</option>
@@ -70,7 +70,7 @@
         </div>
         <div class="form-group">
             <lable class="form__label">CategoryID:</lable>
-            <select name="category" class="form__input">
+            <select required name="category" class="form__input">
                 <option value="1">Toner</option>
                 <option value="2">Serum</option>
                 <option value="3">Face cleaner</option>
@@ -81,7 +81,7 @@
         </div>
         <div class="form-group">
             <lable class="form__label">CompanyID:</lable>
-            <select name="company" class="form__input">
+            <select required name="company" class="form__input">
                 <option value="1">Wal-Mart</option>
                 <option value="2">Target</option>
                 <option value="3">IKEA</option>
@@ -89,7 +89,7 @@
         </div>
         <div class="form-group">
             <lable class="form__label">TagID:</lable>
-            <select name="tag" class="form__input">
+            <select required name="tag" class="form__input">
                 <option value="1">Hot</option>
                 <option value="2">New</option>
                 <option value="3">Sale</option>

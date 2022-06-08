@@ -1,5 +1,6 @@
 package com.example.website_cosmetics_nhom10.dao;
 
+import com.example.website_cosmetics_nhom10.beans.Product;
 import com.example.website_cosmetics_nhom10.database.JDBIConnector;
 import com.example.website_cosmetics_nhom10.beans.Category;
 
@@ -41,7 +42,16 @@ public class CategoryDao {
         return null;
     }
 
+    public void updateCategory(String name, Long id) {
+        JDBIConnector.get().withHandle(handle -> handle.createUpdate("UPDATE category set name = ? WHERE id = ?")
+                .bind(0, name)
+                .bind(1, id)
+                .execute());
+    }
+
     public static void main(String[] args) {
+//        System.out.print(CategoryDao.getInstance().getCategoryByID (1L));
+        CategoryDao.getInstance().updateCategory("ttttttt", 43L);
         System.out.print(CategoryDao.getInstance().getAll());
     }
 }
