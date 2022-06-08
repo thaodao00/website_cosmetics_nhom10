@@ -9,9 +9,8 @@ public class CategoryService {
     private static CategoryService instance;
 
     public static CategoryService getInstance() {
-        if (instance == null) {
+        if (instance == null)
             instance = new CategoryService();
-        }
         return instance;
     }
 
@@ -19,8 +18,7 @@ public class CategoryService {
 
     }
 
-    public List<Category> getAllCategory() {
-        return CategoryDao.getInstance().getAllCategory();
-
+    public List<Category> getAll() {
+        return CategoryDao.getInstance().getAll();
     }
 }

@@ -31,7 +31,7 @@
     <%@ include file="/common/web/footer.jsp" %>
     <!-- footer -->
     <%--Modal search--%>
-    <%@ include file="/common/web/modalSerch.jsp" %>
+    <%@ include file="/common/web/modalSearch.jsp" %>
 </div>
 <script type="text/javascript" src="<c:url value='/template/web/assets/js/JSBase.js' />"></script>
 <script type="text/javascript" src="<c:url value='/template/web/assets/js/showHide.js' />"></script>

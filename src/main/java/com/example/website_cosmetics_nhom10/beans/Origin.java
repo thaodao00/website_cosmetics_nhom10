@@ -10,23 +10,23 @@ public class Origin {
         return instance;
     }
 
-    String id;
+    Long id;
     String name;
 
     public Origin() {
 
     }
 
-    public Origin(String id, String tagName) {
+    public Origin(Long id, String tagName) {
         this.id = id;
         this.name = tagName;
     }
 
-    public String getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -38,4 +38,11 @@ public class Origin {
         this.name = name;
     }
 
+    @Override
+    public String toString() {
+        return "Origin{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                '}';
+    }
 }

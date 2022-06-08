@@ -23,7 +23,7 @@ public class SearchController extends HttpServlet {
         request.setCharacterEncoding ("UTF-8");
         String txtSearch = request.getParameter ("txt");
         List<Product> list= ProductService.getInstance ().searchByName (txtSearch);
-        List<Category> category = CategoryService.getInstance().getAllCategory ();
+        List<Category> category = CategoryService.getInstance().getAll ();
         request.setAttribute ("products", list);
         request.setAttribute ("category",category);
         request.getRequestDispatcher ("/view/web/products.jsp").forward (request,response);

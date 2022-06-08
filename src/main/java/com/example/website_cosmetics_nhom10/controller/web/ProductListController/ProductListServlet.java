@@ -15,17 +15,17 @@ import java.util.List;
 public class ProductListServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        List<Product> products = ProductService.getInstance().getTop10();
-        List<Category> category = CategoryService.getInstance().getAllCategory();
-        List<Product>sort = ProductService.getInstance().getAll();
-        request.setAttribute ("category",category);
-        request.setAttribute ("products",products);
-        request.setAttribute ("sort",sort);
+        List<Product> products = ProductService.getInstance().getProductWithLimit(10);
+        List<Category> category = CategoryService.getInstance().getAll();
+        List<Product> sort = ProductService.getInstance().getAll();
+        request.setAttribute("category", category);
+        request.setAttribute("products", products);
+        request.setAttribute("sort", sort);
         request.getRequestDispatcher("/view/web/products.jsp").forward(request, response);
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        doGet (request,response);
+        doGet(request, response);
     }
 }

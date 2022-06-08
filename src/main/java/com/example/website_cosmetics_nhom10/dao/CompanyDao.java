@@ -1,7 +1,6 @@
 package com.example.website_cosmetics_nhom10.dao;
 
 import com.example.website_cosmetics_nhom10.beans.Company;
-import com.example.website_cosmetics_nhom10.beans.Product;
 import com.example.website_cosmetics_nhom10.database.JDBIConnector;
 
 import java.util.List;
@@ -27,6 +26,14 @@ public class CompanyDao {
     public List<Company> getAll() {
         return JDBIConnector.get().withHandle(handle ->
                 handle.createQuery("select * from company").mapToBean(Company.class).stream().collect(Collectors.toList()));
+    }
+
+    public Company getCompanyByName(String name) {
+        return JDBIConnector.get().withHandle(
+                handle -> handle.createQuery("SELECT * from company where name = ?")
+                        .bind(0, name)
+                        .mapToBean(Company.class)
+                        .one());
     }
 
     public static void main(String[] args) {
