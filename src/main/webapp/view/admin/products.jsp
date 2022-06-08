@@ -34,7 +34,7 @@
             <c:forEach var="i" items="${products}">
                 <div class="products__body">
                     <div class="products__body-column products__body-choose">
-                        <a title="" href="" class="action__delete">
+                        <a title="" href="#" onclick="showMess(${i.id})" class="action__delete">
                             <i class="action-icon far fa-trash-alt"></i>
                         </a>
                     </div>
@@ -77,6 +77,12 @@
             }
         }
     })
+    function showMess(id){
+        const option = confirm('Are you sure to delete');
+        if(option === true){
+            window.location.href = 'deleteProduct?sid='+id;
+        }
+    }
 </script>
 </body>
 </html>
