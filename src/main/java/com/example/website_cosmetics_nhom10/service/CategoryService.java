@@ -13,16 +13,18 @@ public class CategoryService {
             instance = new CategoryService();
         return instance;
     }
-
     public CategoryService() {
-
     }
-
     public List<Category> getAll() {
         return CategoryDao.getInstance().getAll();
     }
     public void insertCategory(String name){
         CategoryDao.getInstance ().insertCategory (name);
     }
-
+    public Category getCategoryById(Long id){
+        return  CategoryDao.instance.getCategoryByID (id);
+    }
+    public void updateCategory( String name, Long id){
+        CategoryDao.getInstance ().updateCategory ( name, id);
+    }
 }
