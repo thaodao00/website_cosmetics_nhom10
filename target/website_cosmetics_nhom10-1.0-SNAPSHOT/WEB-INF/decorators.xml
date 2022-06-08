@@ -26,6 +26,9 @@
     <decorator name="admin-insert-category" page="admin-insert-category.jsp">
         <pattern>/admin-insert-category</pattern>
     </decorator>
+    <decorator name="admin-update-category" page="admin-update-category.jsp">
+        <pattern>/admin-update-category</pattern>
+    </decorator>
     <decorator name="admin-order" page="admin-order.jsp">
         <pattern>/admin-order</pattern>
     </decorator>

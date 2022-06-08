@@ -4,7 +4,7 @@
     request.setCharacterEncoding("UTF-8");
     response.setCharacterEncoding("UTF-8");
 %>
-<jsp:useBean id="category" scope="request" type="java.util.List"/>
+<%--<jsp:useBean id="category" scope="request" type="java.util.List"/>--%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -41,7 +41,7 @@
                     </div>
                     <div class="categories__body-column categories__body-name">${i.name}</div>
                     <div class="categories__body-column categories__body-update">
-                        <a title="chỉnh sửa mục loại" href="" class="categories__body-icon far fa-edit"></a>
+                        <a href="admin-update-category?sid=${i.id}" class="categories__body-icon far fa-edit"></a>
                     </div>
                 </div>
             </c:forEach>

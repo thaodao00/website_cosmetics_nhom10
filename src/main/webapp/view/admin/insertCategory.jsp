@@ -1,3 +1,4 @@
+<%@ page import="com.example.website_cosmetics_nhom10.beans.Category" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,9 +14,10 @@
     </div>
     <form action="admin-insert-category" class="form" method="post">
         <h2 class="form__title">ADD CATEGORY</h2>
+        <% Category category = (Category) request.getAttribute("category"); %>
         <div class="form-group">
             <lable class="form__label">Name:</lable>
-            <input name="name" type="text" class="form__input" placeholder="Enter name category">
+            <input  name="name" type="text" value="${category.name}" required class="form__input" placeholder="Enter name category">
         </div>
         <div class="form-group-button">
             <input id="reset" class="form__btn" type="reset" value='Refresh'>
