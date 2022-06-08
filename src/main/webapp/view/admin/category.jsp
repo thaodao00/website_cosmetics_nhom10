@@ -65,7 +65,6 @@
 <script>
     const btnDelete = document.querySelector('.action__delete');
     const checkDeletes = document.querySelectorAll('.check-delete');
-
     checkDeletes.forEach(check => {
         check.onclick = e => {
             const checkEl = [...checkDeletes].find(item => {

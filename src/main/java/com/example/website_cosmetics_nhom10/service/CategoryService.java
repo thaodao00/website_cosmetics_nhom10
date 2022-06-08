@@ -21,4 +21,8 @@ public class CategoryService {
     public List<Category> getAll() {
         return CategoryDao.getInstance().getAll();
     }
+    public void insertCategory(String name){
+        CategoryDao.getInstance ().insertCategory (name);
+    }
+
 }

@@ -115,4 +115,27 @@ public class ProductDao {
                 .mapToBean(Product.class).one());
         return setProductInfo(p);
     }
+    public void deleteProductById(Long id){
+        JDBIConnector.get().withHandle(handle ->
+                handle.createUpdate ("DELETE FROM product WHERE id = ?").bind(0, id).execute());
+    }
+    public void insertProduct(String name, String thumbnailImg, double price, double discount,int sold, String shortDescription, String longDescription, double rate, String weight, String dimension, Long originid, Long categoryid, Long companyid, Long tagid){
+        JDBIConnector.get().withHandle(handle ->
+                handle.createUpdate("INSERT INTO product (name, thumbnailimg, price, discount, sold, shortDescription,longDescription, rate, weight, dimension, originid, categoryid, companyid, tagid) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)")
+                        .bind (0,name)
+                        .bind (1, thumbnailImg)
+                        .bind (2,price)
+                        .bind (3, discount)
+                        .bind (4, sold)
+                        .bind (5, shortDescription)
+                        .bind (6, longDescription)
+                        .bind (7, rate)
+                        .bind (8, weight)
+                        .bind (9, dimension)
+                        .bind (10, originid)
+                        .bind (11, categoryid)
+                        .bind (12, companyid)
+                        .bind (13, tagid)
+                        .execute ());
+    }
 }
