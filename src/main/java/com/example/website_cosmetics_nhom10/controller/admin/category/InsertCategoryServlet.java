@@ -1,5 +1,7 @@
 package com.example.website_cosmetics_nhom10.controller.admin.category;
 
+import com.example.website_cosmetics_nhom10.service.CategoryService;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -15,6 +17,8 @@ public class InsertCategoryServlet extends HttpServlet {
     }
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+            String sname = request.getParameter ("name");
+            CategoryService.getInstance().insertCategory (sname);
+            response.sendRedirect ("admin-category");
     }
 }

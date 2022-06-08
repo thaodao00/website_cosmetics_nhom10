@@ -12,81 +12,87 @@
 <div class="col l-9 m-10 c-12">
     <div class="direct"><span><i class="direct-icon fas fa-home"></i>Home</span> &#160; &#62; &#160; Add or Edit product
     </div>
-    <form action="" class="form">
+    <form action="admin-insert-products" class="form" method="post">
         <h2 class="form__title">Add product</h2>
         <div class="form-group">
             <lable class="form__label">Name:</lable>
-            <input id="product-name" type="text" class="form__input" placeholder="Enter name product">
+            <input name="product-name" type="text" class="form__input" placeholder="Enter name product">
+        </div>
+        <div class="form-group">
+            <label  class="form__label">Select picture:</label>
+            <input  name="product-thumbnailImg" type="file" class="form__input">
         </div>
         <div class="form-group">
             <lable class="form__label">Price (USD):</lable>
-            <input id="product-price" type="text" class="form__input" placeholder="0.00$">
+            <input name="product-price" type="text" class="form__input" placeholder="0.00$">
         </div>
         <div class="form-group">
             <lable class="form__label">Discount (USD):</lable>
-            <input id="product-discount" type="text" class="form__input" placeholder="0.00$">
+            <input name="product-discount" type="text" class="form__input" placeholder="0.00$">
         </div>
         <div class="form-group">
             <lable class="form__label">Sold:</lable>
-            <input id="product-quantity" type="text" class="form__input" placeholder="">
+            <input name="product-quantity" type="text" class="form__input" placeholder="">
         </div>
         <div class="form-group">
             <lable class="form__label">Short description:</lable>
-            <textarea id="product-description-short" type="text" class="form__input" placeholder=""
+            <textarea name="product-description-short" type="text" class="form__input" placeholder=""
                       style="height: 50px"></textarea>
         </div>
         <div class="form-group">
             <lable class="form__label">Long description:</lable>
-            <textarea id="product-description-long" type="text" class="form__input" placeholder=""
+            <textarea name="product-description-long" type="text" class="form__input" placeholder=""
                       style="height: 100px"></textarea>
         </div>
         <div class="form-group">
             <lable class="form__label">Rate:</lable>
-            <input id="product-rate" type="text" class="form__input" placeholder="">
+            <input name="product-rate" type="text" class="form__input" placeholder="">
         </div>
         <div class="form-group">
             <lable class="form__label">Weight (ml):</lable>
-            <input id="product-ml" type="text" class="form__input" placeholder="ml">
+            <input name="product-weight" type="text" class="form__input" placeholder="ml">
         </div>
 
         <div class="form-group">
             <lable class="form__label">Dimension:</lable>
-            <input id="product-dimension" type="text" class="form__input" placeholder="">
+            <input name="product-dimension" type="text" class="form__input" placeholder="">
         </div>
         <div class="form-group">
             <lable class="form__label">OriginID:</lable>
-            <select id="origin" class="form__input">
-                <option value="">1</option>
-                <option value="">1</option>
-                <option value="">1</option>
-                <option value="">1</option>
-            </select>
+<%--            <select name="origin" class="form__input">--%>
+<%--                <option value="1">1</option>--%>
+<%--                <option value="2">1</option>--%>
+<%--                <option value="3">1</option>--%>
+<%--                <option value="4">1</option>--%>
+<%--            </select>--%>
+            <input name="origin" type="text" class="form__input" placeholder="">
         </div>
         <div class="form-group">
             <lable class="form__label">CategoryID:</lable>
-            <select id="category" class="form__input">
-                <option value="">1</option>
-                <option value="">1</option>
-                <option value="">1</option>
-                <option value="">1</option>
+            <select name="category" class="form__input">
+                <option value="1">Toner</option>
+                <option value="2">Serum</option>
+                <option value="3">Face cleaner</option>
+                <option value="4">Sunscreen</option>
+                <option value="5">Moisturizer</option>
+                <option value="6">Mask</option>
             </select>
         </div>
         <div class="form-group">
             <lable class="form__label">CompanyID:</lable>
-            <select id="company" class="form__input">
-                <option value="">1</option>
-                <option value="">2</option>
-                <option value="">3</option>
-                <option value="">4</option>
+            <select name="company" class="form__input">
+                <option value="1">Wal-Mart</option>
+                <option value="2">Target</option>
+                <option value="3">IKEA</option>
             </select>
         </div>
         <div class="form-group">
             <lable class="form__label">TagID:</lable>
-            <select id="Tag" class="form__input">
-                <option value="">1</option>
-                <option value="">2</option>
-                <option value="">3</option>
-                <option value="">0</option>
+            <select name="tag" class="form__input">
+                <option value="1">Hot</option>
+                <option value="2">New</option>
+                <option value="3">Sale</option>
+                <option value="4">normal</option>
             </select>
         </div>
 <%--        //<label for="" class="form__label">Chọn ảnh:</label>--%>
@@ -99,13 +105,12 @@
         <!--                                    <label for="img2" class="form__img-icon fas fa-plus"></label>-->
         <!--                                    &lt;!&ndash; <img id="form__img2" src="" alt="" class="form__img"> &ndash;&gt;-->
         <!--                                </div>-->
-<%--        <input type="file" id="files" name="files" multiple><br><br>--%>
+
 <%--        <input hidden type="file" class="form__input">--%>
         <!--                            </div>-->
         <div class="form-group-button">
             <input id="reset" class="form__btn" type="reset" value='Refresh'>
-            <a href="#"><input class="form__btn form__btn--black" type="button" value='Add'></a>
-
+            <a href="#"><input class="form__btn form__btn--black" type="submit" value='Add'></a>
         </div>
     </form>
 </div>

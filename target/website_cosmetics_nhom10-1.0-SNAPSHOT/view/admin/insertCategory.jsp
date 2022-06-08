@@ -11,15 +11,15 @@
 <div class="col l-9 m-10 c-12">
     <div class="direct"><span><i class="direct-icon fas fa-home"></i>Home</span> &#160; &#62; &#160; Add or Edit Category
     </div>
-    <form action="" class="form">
+    <form action="admin-insert-category" class="form" method="post">
         <h2 class="form__title">ADD CATEGORY</h2>
         <div class="form-group">
             <lable class="form__label">Name:</lable>
-            <input id="product-name" type="text" class="form__input" placeholder="Enter name category">
+            <input name="name" type="text" class="form__input" placeholder="Enter name category">
         </div>
         <div class="form-group-button">
             <input id="reset" class="form__btn" type="reset" value='Refresh'>
-            <a href="#"><input class="form__btn form__btn--black" type="button" value='Add'></a>
+            <a href="#"><input class="form__btn form__btn--black" type="submit" value='Add'></a>
         </div>
     </form>
 </div>
