@@ -1,4 +1,5 @@
 <%@ page import="com.example.website_cosmetics_nhom10.beans.Product" %>
+<%@ page import="com.example.website_cosmetics_nhom10.beans.User" %>
 <%@ include file="/common/taglib.jsp" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
@@ -7,6 +8,9 @@
 %>
 <jsp:useBean id="products" scope="request" type="java.util.List"/>
 <jsp:useBean id="reviews" scope="request" type="java.util.List"/>
+
+<% Product product = (Product) request.getAttribute("product"); %>
+<% User user = (User) request.getAttribute("user"); %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -32,7 +36,6 @@
                     <div class="col l-6 m-7 c-12">
                         <div class="product-content__img-wrapper products-slidesshow">
                             <div class="mySlider fadeSlider">
-                                <% Product product = (Product) request.getAttribute("product"); %>
                                 <img class="mySlider-img"
                                      src="<c:url value="/template/web/assets/img/ordinary/${product.thumbnailImg}"/>"
                                      style="height: 440px"/>
@@ -97,8 +100,8 @@
                                     <i class="fas fa-star star-rating"></i>
                                     <i class="fas fa-star star-rating"></i>
 
-                                    <a href="#" class="product-content__rating-description">(
-                                        ${reviews.size()}
+                                    <a href="#" class="product-content__rating-description">
+                                        (${reviews.size()}
                                         customer review)</a>
                                 </div>
 
@@ -182,86 +185,48 @@
                                         </div>
                                     </div>
                                     <div class="product-review__body">
-                                        <!-- comment -->
-                                        <div class="product-comment__wrapper">
-                                            <div class="product-comment__user-img">
-                                                <img src="./assets/img/admin_info/DaoThiThuThao.jpg" alt="avatar">
-                                            </div>
-                                            <div class="product-comment__body">
-                                                <span class="product-comment__user-name">Thao</span>
-                                                <div class="product-content__rating product-content__user-rating">
-                                                    <i class="fas fa-star star-rating"></i>
-                                                    <i class="fas fa-star star-rating"></i>
-                                                    <i class="fas fa-star star-rating"></i>
-                                                    <i class="fas fa-star star-rating"></i>
-                                                    <i class="fas fa-star star-rating"></i>
+                                        <c:forEach var="review" items="${reviews}" begin="0" end="2">
+                                            <c:set var="u" value="${review.getUser()}"></c:set>
+                                            <div class="product-comment__wrapper">
+                                                <div class="product-comment__user-img">
+                                                    <img src="<c:url value="/template/web/assets/img/avatar/${u.getAvatar()}" />"
+                                                         alt="avatar">
                                                 </div>
-                                                <div class="product-comment__content-wrapper">
-                                                    <span class="product-comment__content">Good product</span>
-                                                </div>
-                                                <div class="product-comment__created-time-wrapper">
-                                                    <span class="product-comment__created-time">2021-11-16 22:30</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- comment -->
-                                        <div class="product-comment__wrapper">
-                                            <div class="product-comment__user-img">
-                                                <img src="./assets/img/admin_info/NguyenHuuKha2.jpg" alt="avatar">
-                                            </div>
-                                            <div class="product-comment__body">
-                                                <span class="product-comment__user-name">Kha</span>
-                                                <div class="product-content__rating product-content__user-rating">
-                                                    <i class="fas fa-star star-rating"></i>
-                                                    <i class="fas fa-star star-rating"></i>
-                                                    <i class="fas fa-star star-rating"></i>
-                                                    <i class="fas fa-star star-rating"></i>
-                                                    <i class="fas fa-star star-rating"></i>
-                                                </div>
-                                                <div class="product-comment__content-wrapper">
-                                                    <span class="product-comment__content">Did anyone get pimples after using it?</span>
-                                                </div>
-                                                <div class="product-comment__created-time-wrapper">
-                                                    <span class="product-comment__created-time">2021-11-17 2:52</span>
+                                                <div class="product-comment__body">
+                                                    <span class="product-comment__user-name">${u.getUsername()}</span>
+                                                    <div class="product-content__rating product-content__user-rating">
+                                                        <i class="fas fa-star star-rating"></i>
+                                                        <i class="fas fa-star star-rating"></i>
+                                                        <i class="fas fa-star star-rating"></i>
+                                                        <i class="fas fa-star star-rating"></i>
+                                                        <i class="fas fa-star star-rating"></i>
+                                                    </div>
+                                                    <div class="product-comment__content-wrapper">
+                                                        <span class="product-comment__content">${review.getComment()}</span>
+                                                    </div>
+                                                    <div class="product-comment__created-time-wrapper">
+                                                        <span class="product-comment__created-time">${review.getCreated_at()}</span>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <!-- comment -->
-                                        <div class="product-comment__wrapper">
-                                            <div class="product-comment__user-img">
-                                                <img src="./assets/img/admin_info/TrieuHueMan2.jpg" alt="avatar">
+                                        </c:forEach>
+                                        <c:if test="${reviews.size()} > 3">
+                                            <div class="review-load-comment__wrapper">
+                                                <button class="buttons">load more...</button>
                                             </div>
-                                            <div class="product-comment__body">
-                                                <span class="product-comment__user-name">Man</span>
-                                                <div class="product-content__rating product-content__user-rating">
-                                                    <i class="fas fa-star star-rating"></i>
-                                                    <i class="fas fa-star star-rating"></i>
-                                                    <i class="fas fa-star star-rating"></i>
-                                                    <i class="fas fa-star star-rating"></i>
-                                                    <i class="fas fa-star star-rating"></i>
-                                                </div>
-                                                <div class="product-comment__content-wrapper">
-                                                    <span class="product-comment__content">This serum doesn't suit my skin</span>
-                                                </div>
-                                                <div class="product-comment__created-time-wrapper">
-                                                    <span class="product-comment__created-time">2021-11-16 22:30</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="review-load-comment__wrapper">
-                                            <button class="buttons">load more...</button>
-                                        </div>
+                                        </c:if>
                                     </div>
                                 </div>
                             </div>
                             <!-- review: end -->
-
-                            <textarea id="your-review-text" type="text" placeholder="Write your review"></textarea>
-                            <input id="your-name-text" type="text" placeholder="Your name" required>
-                            <input id="your-email-text" type="text" placeholder="Your email" required>
-                            <div class="review-commit__wrapper">
-                                <button class="buttons">submit</button>
-                            </div>
+                            <c:if test="${user != null}">
+                                <span id="user-info--id" hidden>${user.id}</span>
+                                <textarea id="your-review-text" type="text"
+                                          placeholder="Write your review" style="width: 100%;"></textarea>
+                                <div class="review-commit__wrapper">
+                                    <button id="submit-comment-btn" class="buttons">submit</button>
+                                </div>
+                            </c:if>
                         </div>
                     </div>
                 </div>
@@ -313,15 +278,12 @@
         </div>
     </div>
 </div>
-<%--<script src="template/web/assets/js/JSProduct.js"></script>--%>
-<%--<script type="module" src="template/web/assets/js/showHide.js"></script>--%>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
     $(document).ready(function () {
         $("#add-product-be").click(function () {
             const pid = ${product.id};
             const quantity = $("#quantity-product-be").text();
-            console.log(pid + " " + quantity);
             $.ajax({
                 url: "api-add-to-cart",
                 method: "POST",
@@ -338,8 +300,39 @@
                 }
             })
         })
+
+        $("#submit-comment-btn").click(() => {
+            <c:set var="pid" value="${product.id}"/>
+            const userID = $("#user-info--id").text()
+            const comment = $("#your-review-text").val()
+            const pid = ${pid};
+            console.log(userID, comment, pid);
+
+            $.ajax({
+                url: "api-insert-review",
+                method: "POST",
+                data: {
+                    uid: userID,
+                    comment: comment,
+                    pid: pid
+                },
+                success: function (data) {
+                    appendComment(comment)
+                    $("#your-review-text").val("")
+                },
+                error: function (data) {
+                    alert("Error")
+                }
+            })
+        })
     })
 
+    const appendComment = (comment) => {
+        let time = new Date($.now())
+        $(".product-review__body").append(
+            '<div class="product-comment__wrapper"><div class="product-comment__user-img"><img src="<c:url value="/template/web/assets/img/avatar/${user.getAvatar()}" />"alt="avatar"></div> <div class="product-comment__body"><span class="product-comment__user-name">${user.getUsername()}</span><div class="product-content__rating product-content__user-rating"><i class="fas fa-star star-rating"></i><i class="fas fa-star star-rating"></i><i class="fas fa-star star-rating"></i><i class="fas fa-star star-rating"></i> <i class="fas fa-star star-rating"></i></div><div class="product-comment__content-wrapper"><span class="product-comment__content">' + comment + '</span></div><div class="product-comment__created-time-wrapper"><span class="product-comment__created-time">' + time + '</span></div></div></div>'
+        )
+    }
 </script>
 </div>
 </body>

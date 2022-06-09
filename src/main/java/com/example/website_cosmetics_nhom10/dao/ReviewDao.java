@@ -23,7 +23,7 @@ public class ReviewDao {
 
     public List<Review> getAll() {
         List<Review> list = JDBIConnector.get().withHandle(handle ->
-                handle.createQuery("select * from review")
+                handle.createQuery("select * from review  order by created_at desc")
                         .mapToBean(Review.class)
                         .list());
         if (list.size() > 0)
@@ -33,12 +33,23 @@ public class ReviewDao {
 
     public List<Review> getByProductId(Long pid) {
         List<Review> list = JDBIConnector.get().withHandle(handle ->
-                handle.createQuery("select * from review where productid = ?")
+                handle.createQuery("select * from review where productid = ? order by created_at desc")
                         .bind(0, pid)
                         .mapToBean(Review.class)
                         .list());
         if (list.size() > 0)
             return setUserInfo(list);
         return new ArrayList<>();
+    }
+
+    public boolean insertReview(Long userId, Long productId, String comment) {
+        int i = JDBIConnector.get().withHandle(handle ->
+                handle.createUpdate("insert into review (userid, productid, comment) values (?, ?, ?)")
+                        .bind(0, userId)
+                        .bind(1, productId)
+                        .bind(2, comment)
+                        .execute());
+        return i == 1;
+
     }
 }
