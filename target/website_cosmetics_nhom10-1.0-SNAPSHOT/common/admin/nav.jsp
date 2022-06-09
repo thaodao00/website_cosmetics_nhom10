@@ -26,7 +26,7 @@
         <input hidden id='check-sidebar-list' type="checkbox">
         <li class="sidebar__item">
             <i class="sidebar__item-icon fas fa-air-freshener"></i>
-            <a href="admin-products" class="sidebar__item-link">Product Management</a>
+            <a href="admin-products?index=1" class="sidebar__item-link">Product Management</a>
         </li>
         <label for='check-sidebar-list' class="sidebar__item">
             <i class="sidebar__item-icon fas fa-users"></i>
