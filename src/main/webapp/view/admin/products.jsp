@@ -42,7 +42,7 @@
                     <div class="products__body-column products__body-quantity">${i.sold}</div>
                     <div class="products__body-column products__body-price">$${i.discount}</div>
                     <div class="products__body-column products__body-update">
-                        <a title="chỉnh sửa sản phẩm" href="" class="order__body-icon far fa-edit"></a>
+                        <a title="chỉnh sửa sản phẩm" href="admin-update-products?sid=${i.id}" class="order__body-icon far fa-edit"></a>
                     </div>
                 </div>
             </c:forEach>
@@ -63,20 +63,6 @@
     </div>
 </div>
 <script>
-    const btnDelete = document.querySelector('.action__delete');
-    const checkDeletes = document.querySelectorAll('.check-delete');
-    checkDeletes.forEach(check => {
-        check.onclick = e => {
-            const checkEl = [...checkDeletes].find(item => {
-                return item.matches('.check-delete:checked');
-            })
-            if (checkEl) {
-                btnDelete.style = `opacity: 1; pointer-events: all`;
-            } else {
-                btnDelete.style = `opacity: 0.5; pointer-events: none`;
-            }
-        }
-    })
     function showMess(id){
         const option = confirm('Are you sure to delete');
         if(option === true){
@@ -85,4 +71,5 @@
     }
 </script>
 </body>
+
 </html>
