@@ -7,17 +7,21 @@ public class Review {
     Long productId;
     Long userId;
     String comment;
+    String created_at;
+    String updated_at;
 
     User user;
 
     public Review() {
     }
 
-    public Review(Long id, Long productId, Long userId, String comment) {
+    public Review(Long id, Long productId, Long userId, String comment, String created_at, String updated_at) {
         this.id = id;
         this.productId = productId;
         this.userId = userId;
         this.comment = comment;
+        this.created_at = created_at;
+        this.updated_at = updated_at;
     }
 
     public static Review getInstance() {
@@ -64,6 +68,22 @@ public class Review {
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    public String getCreated_at() {
+        return created_at;
+    }
+
+    public void setCreated_at(String created_at) {
+        this.created_at = created_at;
+    }
+
+    public String getUpdated_at() {
+        return updated_at;
+    }
+
+    public void setUpdated_at(String updated_at) {
+        this.updated_at = updated_at;
     }
 
     @Override

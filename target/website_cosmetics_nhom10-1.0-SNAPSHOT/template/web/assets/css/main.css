@@ -1797,10 +1797,10 @@ select.auth-form__input:hover {
 .product-comment__content-wrapper {
     width: 100%;
     margin: 8px 0;
-    font-size: 28px;
+    font-size: 18px;
     color: var(--text-color);
-    font-family: 'Tangerine', cursive;
     font-weight: 500;
+    letter-spacing: 0.08rem;
 }
 
 .product-comment__content {
@@ -1825,16 +1825,15 @@ select.auth-form__input:hover {
     width: 80%;
     margin-top: 20px;
     line-height: 2;
-    font-style: italic;
-    font-size: 28px;
+    font-size: 22px;
     color: var(--grey-color);
     padding: 10px 20px;
     border-radius: 2px;
     border: 1px solid var(--border-color);
     outline: none;
     font-weight: 300;
-    font-family: 'Tangerine', cursive;
     text-align: left;
+    letter-spacing: 0.08rem;
 }
 
 .tabs-content__review .review-commit__wrapper {
