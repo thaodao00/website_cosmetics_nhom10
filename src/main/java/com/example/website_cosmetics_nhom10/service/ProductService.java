@@ -70,4 +70,7 @@ public class ProductService {
     public List<Product> getRelatedProducts(Long id, int n) {
         return ProductDao.getInstance().getRelatedProducts(id, n);
     }
+    public List<Product> paginationProduct(int index, int size){
+        return ProductDao.getInstance().paginationProduct (index, size);
+    }
 }

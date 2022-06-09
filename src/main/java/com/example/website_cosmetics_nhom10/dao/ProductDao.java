@@ -179,5 +179,20 @@ public class ProductDao {
             return setProductInfo(list.subList(0, n));
         return setProductInfo(list);
     }
+
+    public List<Product> paginationProduct(int index, int size) {
+        List<Product> list = JDBIConnector.get ().withHandle (handle ->
+                handle.createQuery ("With X AS (SELECT *, ROW_NUMBER() OVER(ORDER BY id DESC) as RN FROM product)\n" +
+                                "select * FROM x WHERE RN BETWEEN ?*6-5 AND ?*6")
+                        .bind (0, index)
+                        .bind (1, index)
+                        .mapToBean (Product.class)
+                        .list ());
+        return list;
+    }
+
+    public static void main(String[] args) {
+        System.out.println (ProductDao.getInstance ().paginationProduct (1,0));
+    }
 }
 
