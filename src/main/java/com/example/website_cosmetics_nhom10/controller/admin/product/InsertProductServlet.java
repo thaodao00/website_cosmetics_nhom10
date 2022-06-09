@@ -41,6 +41,6 @@ public class InsertProductServlet extends HttpServlet {
         Long scompany = Long.parseLong (request.getParameter ("company"));
         Long stag = Long.parseLong (request.getParameter ("tag"));
         ProductService.getInstance ().insetProduct(sname, sthumbnailImg, sprice, sdiscount, ssold, sshortDescription, slongDescription, srate, sweight, sdimension, sorigin, scategory, scompany, stag);
-        response.sendRedirect ("admin-products?index=1");
+        response.sendRedirect ("admin-products");
     }
 }

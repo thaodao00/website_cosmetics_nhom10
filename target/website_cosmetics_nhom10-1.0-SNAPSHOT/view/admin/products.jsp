@@ -50,11 +50,15 @@
     </div>
     <div class="pagination">
         <ul class="pagination__list">
-            <c:forEach begin="1" end="${endPage}" var="i">
-                <li class="pagination__list-item">
-                    <a href="admin-products?index=${i}" class="pagination__list-item__link">${i}</a>
-                </li>
-            </c:forEach>
+            <li class="pagination__list-item">
+                <a href="" class="pagination__list-item__link">1</a>
+            </li>
+            <li class="pagination__list-item">
+                <a href="" class="pagination__list-item__link">2</a>
+            </li>
+            <li class="pagination__list-item">
+                <a href="" class="pagination__list-item__link"><i class="fas fa-chevron-right"></i></a>
+            </li>
         </ul>
     </div>
 </div>

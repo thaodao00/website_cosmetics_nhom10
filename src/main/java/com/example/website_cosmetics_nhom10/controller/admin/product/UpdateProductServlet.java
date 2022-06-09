@@ -46,6 +46,6 @@ public class UpdateProductServlet extends HttpServlet {
         Long stag = Long.parseLong (request.getParameter ("tag"));
         Long sid = Long.parseLong (request.getParameter ("product-id"));
         ProductService.getInstance ().updateProduct(sname, sthumbnailImg, sprice, sdiscount, ssold, sshortDescription, slongDescription, srate, sweight, sdimension, sorigin, scategory, scompany, stag, sid);
-        response.sendRedirect ("admin-products?index=1");
+        response.sendRedirect ("admin-products");
     }
 }
