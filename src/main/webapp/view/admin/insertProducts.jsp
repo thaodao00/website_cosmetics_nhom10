@@ -1,4 +1,9 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%
+    request.setCharacterEncoding("UTF-8");
+    response.setCharacterEncoding("UTF-8");
+%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,7 +18,7 @@
     <div class="direct"><span><i class="direct-icon fas fa-home"></i>Home</span> &#160; &#62; &#160; Add or Edit product
     </div>
     <form action="admin-insert-products" class="form" method="post">
-        <h2 class="form__title">Add product</h2>
+        <h2 class="form__title">ADD PRODUCT</h2>
         <div class="form-group">
             <lable class="form__label">Name:</lable>
             <input required name="product-name" type="text" class="form__input" placeholder="Enter name product">
@@ -58,86 +63,42 @@
             <input required name="product-dimension" type="text" class="form__input" placeholder="">
         </div>
         <div class="form-group">
-            <lable required class="form__label">OriginID:</lable>
+            <lable required class="form__label">Origin:</lable>
                         <select name="origin" class="form__input">
-                            <option value="1">China</option>
-                            <option value="2">Japan</option>
-                            <option value="3">France</option>
-                            <option value="4">America</option>
-                            <option value="5">USA</option>
-                            <option value="6">Australia</option>
+                            <c:forEach var="i" items="${origin}">
+                                <option value="${i.id}">${i.name}</option>
+                            </c:forEach>
                         </select>
         </div>
         <div class="form-group">
-            <lable class="form__label">CategoryID:</lable>
+            <lable class="form__label">Category:</lable>
             <select required name="category" class="form__input">
-                <option value="1">Toner</option>
-                <option value="2">Serum</option>
-                <option value="3">Face cleaner</option>
-                <option value="4">Sunscreen</option>
-                <option value="5">Moisturizer</option>
-                <option value="6">Mask</option>
+                <c:forEach var="i" items="${category}">
+                    <option value="${i.id}">${i.name}</option>
+                </c:forEach>
             </select>
         </div>
         <div class="form-group">
-            <lable class="form__label">CompanyID:</lable>
+            <lable class="form__label">Company:</lable>
             <select required name="company" class="form__input">
-                <option value="1">Wal-Mart</option>
-                <option value="2">Target</option>
-                <option value="3">IKEA</option>
+                <c:forEach var="i" items="${company}">
+                    <option value="${i.id}">${i.name}</option>
+                </c:forEach>
             </select>
         </div>
         <div class="form-group">
-            <lable class="form__label">TagID:</lable>
+            <lable class="form__label">Tag:</lable>
             <select required name="tag" class="form__input">
-                <option value="1">Hot</option>
-                <option value="2">New</option>
-                <option value="3">Sale</option>
-                <option value="4">normal</option>
+                <c:forEach var="i" items="${tag}">
+                    <option value="${i.id}">${i.name}</option>
+                </c:forEach>
             </select>
         </div>
-        <%--        //<label for="" class="form__label">Chọn ảnh:</label>--%>
-        <!--                            <div class="form-group-img">-->
-        <!--                                <div class="form__img-wrap">-->
-        <!--                                    <label for = 'img1' class="form__img-icon fas fa-plus"></label>-->
-        <!--                                    &lt;!&ndash; <img id="form__img1" src="" alt="" class="form__img"> &ndash;&gt;-->
-        <!--                                </div>-->
-        <!--                                <div class="form__img-wrap">-->
-        <!--                                    <label for="img2" class="form__img-icon fas fa-plus"></label>-->
-        <!--                                    &lt;!&ndash; <img id="form__img2" src="" alt="" class="form__img"> &ndash;&gt;-->
-        <!--                                </div>-->
-
-        <%--        <input hidden type="file" class="form__input">--%>
-        <!--                            </div>-->
         <div class="form-group-button">
             <input id="reset" class="form__btn" type="reset" value='Refresh'>
             <a href="#"><input class="form__btn form__btn--black" type="submit" value='Add'></a>
         </div>
     </form>
 </div>
-<!--    <script>-->
-<!--        const imgWrap = document.querySelectorAll('.form__img-wrap');-->
-<!--        const resetBtn = document.getElementById('reset');-->
-<!--        const img1 = document.getElementById('img1');-->
-<!--        const img2 = document.getElementById('img2');-->
-<!--        let file1;-->
-
-<!--        img1.onchange = e => {-->
-<!--            file1 = URL.createObjectURL(e.target.files[0]);-->
-<!--            const img1El = `<img id="form__img1" src="${file1}" alt="" class="form__img">`;-->
-<!--            imgWrap[0].insertAdjacentHTML('beforeend', img1El);-->
-<!--        }-->
-<!--        img2.onchange = e => {-->
-<!--            const file2 = URL.createObjectURL(e.target.files[0]);-->
-<!--            const img2El = `<img id="form__img2" src="${file2}" alt="" class="form__img">`;-->
-<!--            imgWrap[1].insertAdjacentHTML('beforeend', img2El);-->
-<!--        }-->
-<!--        resetBtn.onclick = e => {-->
-<!--            const formImg1 = document.getElementById('form__img1');-->
-<!--            const formImg2 = document.getElementById('form__img2');-->
-<!--            formImg1 ? formImg1.remove() : undefined;-->
-<!--            formImg2 ? formImg2.remove() : undefined;-->
-<!--        }-->
-<!--    </script>-->
 </body>
 </html>

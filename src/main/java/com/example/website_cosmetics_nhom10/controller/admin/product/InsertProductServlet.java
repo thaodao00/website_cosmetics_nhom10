@@ -1,19 +1,27 @@
 package com.example.website_cosmetics_nhom10.controller.admin.product;
 
-import com.example.website_cosmetics_nhom10.beans.Product;
-import com.example.website_cosmetics_nhom10.service.ProductService;
-
+import com.example.website_cosmetics_nhom10.beans.*;
+import com.example.website_cosmetics_nhom10.service.*;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.List;
 
 @WebServlet(name = "InsertProductServlet", value = "/admin-insert-products")
 public class InsertProductServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        List<Origin> origin = OriginService.getInstance ().getAll ();
+        request.setAttribute ("origin", origin);
+        List<Category> category = CategoryService.getInstance ().getAll ();
+        request.setAttribute ("category", category);
+        List<Company> company = CompanyService.getInstance().getAll ();
+        request.setAttribute ("company", company);
+        List<Tag> tag = TagService.getInstance ().getAll ();
+        request.setAttribute ("tag", tag);
         request.getRequestDispatcher ("/view/admin/insertProducts.jsp").forward (request,response);
     }
     @Override

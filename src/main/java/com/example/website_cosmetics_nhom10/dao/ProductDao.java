@@ -144,4 +144,29 @@ public class ProductDao {
                         .bind(13, tagid)
                         .execute());
     }
+
+    public void updateProduct(String name, String thumbnailImg, double price, double discount, int sold, String shortDescription, String longDescription, double rate, String weight, String dimension, Long originid, Long categoryid, Long companyid, Long tagid, Long id) {
+        JDBIConnector.get().withHandle(handle -> handle.createUpdate("UPDATE product set name = ?, thumbnailImg=?, price=?, discount=?, sold = ?, shortDescription = ?, longDescription = ?, rate = ?, weight = ?, dimension = ?, originid = ?, categoryid = ?, companyid =? , tagid = ? WHERE id = ?")
+                .bind(0, name)
+                .bind(1, thumbnailImg)
+                .bind(2, price)
+                .bind(3, discount)
+                .bind(4, sold)
+                .bind(5, shortDescription)
+                .bind(6, longDescription)
+                .bind(7, rate)
+                .bind(8, weight)
+                .bind(9, dimension)
+                .bind(10, originid)
+                .bind(11, categoryid)
+                .bind(12, companyid)
+                .bind(13, tagid)
+                .bind(14, id)
+                .execute());
+    }
+    public static void main(String[] args) {
+        System.out.println (ProductDao.getInstance ().getProductById (13L));
+    }
+
 }
+

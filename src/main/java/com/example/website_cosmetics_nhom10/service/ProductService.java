@@ -53,12 +53,17 @@ public class ProductService {
     public Product loadProductById(Long id) {
         return ProductDao.getInstance().getProductById(id);
     }
-
+    public Product getProductById(Long id){
+        return  ProductDao.getInstance ().getProductById (id);
+    }
     public void deleteProductById(Long id) {
         ProductDao.getInstance().deleteProductById(id);
     }
 
     public void insetProduct(String name, String thumbnailImg, double price, double discount, int sold, String shortDescription, String longDescription, double rate, String weight, String dimension, Long originid, Long categoryid, Long companyid, Long tagid) {
         ProductDao.getInstance().insertProduct(name, thumbnailImg, price, discount, sold, shortDescription, longDescription, rate, weight, dimension, originid, categoryid, companyid, tagid);
+    }
+    public void updateProduct(String name, String thumbnailImg, double price, double discount, int sold, String shortDescription, String longDescription, double rate, String weight, String dimension, Long originid, Long categoryid, Long companyid, Long tagid, Long id) {
+        ProductDao.getInstance().updateProduct (name, thumbnailImg, price, discount, sold, shortDescription, longDescription, rate, weight, dimension, originid, categoryid, companyid, tagid, id);
     }
 }

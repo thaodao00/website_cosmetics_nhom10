@@ -20,6 +20,9 @@
     <decorator name="admin-insert-product" page="admin-insert-products.jsp">
         <pattern>/admin-insert-products</pattern>
     </decorator>
+    <decorator name="admin-update-products" page="admin-update-products.jsp">
+        <pattern>/admin-update-products</pattern>
+    </decorator>
     <decorator name="admin-category" page="admin-category.jsp">
         <pattern>/admin-category</pattern>
     </decorator>
