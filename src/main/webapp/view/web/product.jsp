@@ -312,11 +312,7 @@
             </div>
         </div>
     </div>
-
-
 </div>
-
-
 <%--<script src="template/web/assets/js/JSProduct.js"></script>--%>
 <%--<script type="module" src="template/web/assets/js/showHide.js"></script>--%>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
