@@ -66,4 +66,8 @@ public class ProductService {
     public void updateProduct(String name, String thumbnailImg, double price, double discount, int sold, String shortDescription, String longDescription, double rate, String weight, String dimension, Long originid, Long categoryid, Long companyid, Long tagid, Long id) {
         ProductDao.getInstance().updateProduct (name, thumbnailImg, price, discount, sold, shortDescription, longDescription, rate, weight, dimension, originid, categoryid, companyid, tagid, id);
     }
+
+    public List<Product> getRelatedProducts(Long id, int n) {
+        return ProductDao.getInstance().getRelatedProducts(id, n);
+    }
 }

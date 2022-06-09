@@ -171,7 +171,7 @@
     <!-- Discount Items: begin-->
     <div id="discount-items">
         <h1 class="content__title">
-            SALE OFF 25%
+            HOT SALE
         </h1>
         <div class="grid wide">
             <div class="row products">
