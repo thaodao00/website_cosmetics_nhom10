@@ -42,4 +42,8 @@ public class UserServices {
     public User findByUsername(String username) throws SQLException {
         return UserDao.getInstance().findByUsername(username);
     }
+
+    public User findById(Long id) {
+        return UserDao.getInstance().findById(id);
+    }
 }

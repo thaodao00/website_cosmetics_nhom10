@@ -6,6 +6,7 @@
     response.setCharacterEncoding("UTF-8");
 %>
 <jsp:useBean id="products" scope="request" type="java.util.List"/>
+<jsp:useBean id="reviews" scope="request" type="java.util.List"/>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -96,7 +97,9 @@
                                     <i class="fas fa-star star-rating"></i>
                                     <i class="fas fa-star star-rating"></i>
 
-                                    <a href="#" class="product-content__rating-description">(1 customer review)</a>
+                                    <a href="#" class="product-content__rating-description">(
+                                        ${reviews.size()}
+                                        customer review)</a>
                                 </div>
 
                                 <div class="product-content__details-description">
@@ -340,6 +343,7 @@
             })
         })
     })
+
 </script>
 </div>
 </body>

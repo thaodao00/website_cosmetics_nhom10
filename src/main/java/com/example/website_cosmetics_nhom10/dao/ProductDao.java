@@ -3,6 +3,7 @@ package com.example.website_cosmetics_nhom10.dao;
 import com.example.website_cosmetics_nhom10.beans.*;
 import com.example.website_cosmetics_nhom10.database.JDBIConnector;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -64,6 +65,7 @@ public class ProductDao {
                 if (c.getId() == p.getCategoryId())
                     p.setCategoryName(c.getName());
         }
+        Collections.shuffle(list);
         return list;
     }
 
@@ -164,9 +166,18 @@ public class ProductDao {
                 .bind(14, id)
                 .execute());
     }
-    public static void main(String[] args) {
-        System.out.println (ProductDao.getInstance ().getProductById (13L));
-    }
 
+    public List<Product> getRelatedProducts(Long id, int n) {
+        Product p = getProductById(id);
+        List<Product> list = JDBIConnector.get().withHandle(handle
+                -> handle.createQuery("select * from product where categoryid = ?")
+                .bind(0, p.getCategoryId())
+                .mapToBean(Product.class)
+                .list());
+        Collections.shuffle(list);
+        if (list.size() > 10)
+            return setProductInfo(list.subList(0, n));
+        return setProductInfo(list);
+    }
 }
 

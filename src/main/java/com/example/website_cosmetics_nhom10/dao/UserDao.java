@@ -90,4 +90,14 @@ public class UserDao {
             return list.get(0);
         return null;
     }
+
+    public User findById(Long id) {
+        String sql = "select * from user where id = ?";
+        List<User> list = JDBIConnector.get().withHandle(handle -> handle.createQuery(sql)
+                .bind(0, id)
+                .mapToBean(User.class).list());
+        if (list.size() == 1)
+            return list.get(0);
+        return null;
+    }
 }
