@@ -15,7 +15,17 @@ import java.util.List;
 public class ProductServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        List<Product> product = ProductService.getInstance().getAll();
+        List<Product> list = ProductService.getInstance().getAll ();
+        int index = Integer.parseInt (request.getParameter ("index"));
+        int count = list.size ();
+        int pageSize = 6;
+        int endPage =0;
+        endPage = count/ pageSize;
+        if(count% pageSize !=0){
+            endPage++;
+        }
+        request.setAttribute ("endPage",endPage);
+        List<Product> product = ProductService.getInstance().paginationProduct (index,0);
         request.setAttribute ("products",product);
         request.getRequestDispatcher ("/view/admin/products.jsp").forward (request,response);
     }
