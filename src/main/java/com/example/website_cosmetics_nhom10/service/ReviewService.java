@@ -22,7 +22,11 @@ public class ReviewService {
         return ReviewDao.getInstance().getByProductId(pid);
     }
 
+    public boolean insertReview(Long userId, Long productId, String comment) {
+        return ReviewDao.getInstance().insertReview(userId, productId, comment);
+    }
+
     public static void main(String[] args) {
-        System.out.println(ReviewService.getInstance().getByProductId(8L));
+        ReviewService.getInstance().insertReview(10L, 5L, "Ewwww");
     }
 }

@@ -2,6 +2,7 @@ package com.example.website_cosmetics_nhom10.controller.web.ProductController;
 
 import com.example.website_cosmetics_nhom10.beans.Product;
 import com.example.website_cosmetics_nhom10.beans.Review;
+import com.example.website_cosmetics_nhom10.beans.User;
 import com.example.website_cosmetics_nhom10.service.ProductService;
 import com.example.website_cosmetics_nhom10.service.ReviewService;
 
@@ -22,6 +23,9 @@ public class ProductServlet extends HttpServlet {
         request.setAttribute("products", products);
         List<Review> reviews = ReviewService.getInstance().getByProductId(pid);
         request.setAttribute("reviews", reviews);
+        HttpSession session = request.getSession();
+        User user = (User) session.getAttribute("auth");
+        request.setAttribute("user", user);
         request.getRequestDispatcher("/view/web/product.jsp").forward(request, response);
     }
 
