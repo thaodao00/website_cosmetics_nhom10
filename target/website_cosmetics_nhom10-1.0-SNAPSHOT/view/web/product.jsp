@@ -210,9 +210,37 @@
                                                 </div>
                                             </div>
                                         </c:forEach>
-                                        <c:if test="${reviews.size()} > 3">
+                                        <div id="hidden-cmt" hidden>
+                                            <c:forEach var="review" items="${reviews}" begin="3"
+                                                       end="${reviews.size() - 1}">
+                                                <c:set var="u" value="${review.getUser()}"></c:set>
+                                                <div class="product-comment__wrapper">
+                                                    <div class="product-comment__user-img">
+                                                        <img src="<c:url value="/template/web/assets/img/avatar/${u.getAvatar()}" />"
+                                                             alt="avatar">
+                                                    </div>
+                                                    <div class="product-comment__body">
+                                                        <span class="product-comment__user-name">${u.getUsername()}</span>
+                                                        <div class="product-content__rating product-content__user-rating">
+                                                            <i class="fas fa-star star-rating"></i>
+                                                            <i class="fas fa-star star-rating"></i>
+                                                            <i class="fas fa-star star-rating"></i>
+                                                            <i class="fas fa-star star-rating"></i>
+                                                            <i class="fas fa-star star-rating"></i>
+                                                        </div>
+                                                        <div class="product-comment__content-wrapper">
+                                                            <span class="product-comment__content">${review.getComment()}</span>
+                                                        </div>
+                                                        <div class="product-comment__created-time-wrapper">
+                                                            <span class="product-comment__created-time">${review.getCreated_at()}</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </c:forEach>
+                                        </div>
+                                        <c:if test="${reviews.size() > 3}">
                                             <div class="review-load-comment__wrapper">
-                                                <button class="buttons">load more...</button>
+                                                <button onclick=loadMoreCmt() class="buttons">load more...</button>
                                             </div>
                                         </c:if>
                                     </div>
@@ -306,7 +334,6 @@
             const userID = $("#user-info--id").text()
             const comment = $("#your-review-text").val()
             const pid = ${pid};
-            console.log(userID, comment, pid);
 
             $.ajax({
                 url: "api-insert-review",
@@ -328,10 +355,17 @@
     })
 
     const appendComment = (comment) => {
-        let time = new Date($.now())
+        let date = new Date();
+        let time = date.getFullYear() + "-" + date.getMonth() + "-" + date.getDay() + " " + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
+        console.log(time)
         $(".product-review__body").append(
             '<div class="product-comment__wrapper"><div class="product-comment__user-img"><img src="<c:url value="/template/web/assets/img/avatar/${user.getAvatar()}" />"alt="avatar"></div> <div class="product-comment__body"><span class="product-comment__user-name">${user.getUsername()}</span><div class="product-content__rating product-content__user-rating"><i class="fas fa-star star-rating"></i><i class="fas fa-star star-rating"></i><i class="fas fa-star star-rating"></i><i class="fas fa-star star-rating"></i> <i class="fas fa-star star-rating"></i></div><div class="product-comment__content-wrapper"><span class="product-comment__content">' + comment + '</span></div><div class="product-comment__created-time-wrapper"><span class="product-comment__created-time">' + time + '</span></div></div></div>'
         )
+    }
+
+    const loadMoreCmt = () => {
+        $("#hidden-cmt").removeAttr("hidden")
+        $(".review-load-comment__wrapper").css("display", "none")
     }
 </script>
 </div>

@@ -1,5 +1,6 @@
 package com.example.website_cosmetics_nhom10.dao;
 
+import com.example.website_cosmetics_nhom10.beans.Review;
 import com.example.website_cosmetics_nhom10.database.JDBIConnector;
 import com.example.website_cosmetics_nhom10.beans.User;
 
@@ -101,4 +102,13 @@ public class UserDao {
         return null;
     }
 
+    public List<User> getAll() {
+        List<User> list = JDBIConnector.get().withHandle(handle ->
+                handle.createQuery("select * from user")
+                        .mapToBean(User.class)
+                        .list());
+        if (list.size() > 0)
+            return list;
+        return null;
+    }
 }

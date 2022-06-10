@@ -5,6 +5,7 @@ import com.example.website_cosmetics_nhom10.dao.UserDao;
 
 import java.sql.SQLException;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class UserServices {
@@ -45,5 +46,9 @@ public class UserServices {
 
     public User findById(Long id) {
         return UserDao.getInstance().findById(id);
+    }
+
+    public List<User> getAll() {
+        return UserDao.getInstance().getAll();
     }
 }

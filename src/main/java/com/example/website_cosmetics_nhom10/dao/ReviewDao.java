@@ -1,9 +1,12 @@
 package com.example.website_cosmetics_nhom10.dao;
 
+import com.example.website_cosmetics_nhom10.beans.Product;
 import com.example.website_cosmetics_nhom10.beans.Review;
+import com.example.website_cosmetics_nhom10.beans.User;
 import com.example.website_cosmetics_nhom10.database.JDBIConnector;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class ReviewDao {
@@ -50,6 +53,14 @@ public class ReviewDao {
                         .bind(2, comment)
                         .execute());
         return i == 1;
+    }
 
+    public void seedData(List<User> users, List<Product> products, List<String> comments) {
+        for (Product p : products) {
+            Collections.shuffle(comments);
+            Collections.shuffle(users);
+            for (int i = 0; i < 7; i++)
+                insertReview(users.get(i).getId(), p.getId(), comments.get(i));
+        }
     }
 }

@@ -6,7 +6,7 @@ import com.example.website_cosmetics_nhom10.dao.ProductDao;
 import java.util.List;
 
 public class ProductService {
-    public static ProductService instance;
+    private static ProductService instance;
 
     public static ProductService getInstance() {
         if (instance == null)
