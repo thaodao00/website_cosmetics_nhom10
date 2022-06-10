@@ -9,7 +9,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 10px;
+    padding: 5px;
     border-radius: 4px;
     background-color: var(--danger);
     opacity: 0.5;
@@ -35,7 +35,7 @@
     border-bottom: 1px solid var(--gray-dark);
 }
 .order__header-column {
-    padding: 10px 0;
+    padding: 2px 0;
     display: flex;
     justify-content: center;
     align-items: center;

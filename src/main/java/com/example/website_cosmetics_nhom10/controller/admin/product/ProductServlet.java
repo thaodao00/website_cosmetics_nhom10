@@ -18,14 +18,14 @@ public class ProductServlet extends HttpServlet {
         List<Product> list = ProductService.getInstance().getAll ();
         int index = Integer.parseInt (request.getParameter ("index"));
         int count = list.size ();
-        int pageSize = 6;
+        int pageSize = 20;
         int endPage =0;
         endPage = count/ pageSize;
-        if(count% pageSize !=0){
+        if(count % pageSize !=0){
             endPage++;
         }
         request.setAttribute ("endPage",endPage);
-        List<Product> product = ProductService.getInstance().paginationProduct (index,0);
+        List<Product> product = ProductService.getInstance().paginationProduct (index,pageSize);
         request.setAttribute ("products",product);
         request.getRequestDispatcher ("/view/admin/products.jsp").forward (request,response);
     }

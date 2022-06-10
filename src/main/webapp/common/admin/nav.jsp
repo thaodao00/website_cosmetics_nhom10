@@ -21,7 +21,7 @@
         </li>
         <label for='check-sidebar-list' class="sidebar__item">
             <i class="sidebar__item-icon fas fa-list"></i>
-            <a href="admin-category" class="sidebar__item-link">Category Management</a>
+            <a href="admin-category?index=1" class="sidebar__item-link">Category Management</a>
         </label>
         <input hidden id='check-sidebar-list' type="checkbox">
         <li class="sidebar__item">

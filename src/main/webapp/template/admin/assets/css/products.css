@@ -15,21 +15,32 @@
     border-radius: 4px;
 }
 .action__delete {
+    background-color: var(--danger);
+    opacity: 0.5;
+    cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 10px;
+    padding: 5px;
     border-radius: 4px;
-    cursor: pointer;
-    background-color: var(--red);
+    padding: 5px;
+    border-radius: 4px;
+}
+.fa-edit{
+    color: var(--gray-dark);
+    padding: 5px;
+    border-radius: 4px;
+}
+.fa-edit:hover{
+    color: red ;
     opacity: 0.5;
 }
-
 .action__add {
     background-color: var(--green);
 }
 .action__delete:hover{
-    background-color: red;
+    background-color: red ;
+    opacity: 0.5;
 }
 .action-icon {
     font-size: 1.4rem;
@@ -88,7 +99,7 @@
     background-color: var(--light);
 }
 .products__body-column {
-    padding: 10px 0;
+    padding: 2px 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -113,10 +124,6 @@
 }
 .products__body-update {
     width: 10%;
-}
-.check-delete {
-    outline: none;
-    cursor: pointer;
 }
 .products__body-icon {
     font-size: 1.4rem;

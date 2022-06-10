@@ -25,6 +25,6 @@ public class InsertCategoryServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
             String sname = request.getParameter ("name");
             CategoryService.getInstance().insertCategory (sname);
-            response.sendRedirect ("admin-category");
+            response.sendRedirect ("admin-category?index=1");
     }
 }
