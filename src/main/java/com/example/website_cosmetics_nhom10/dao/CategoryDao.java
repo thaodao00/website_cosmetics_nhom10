@@ -41,14 +41,32 @@ public class CategoryDao {
             return list.get(0);
         return null;
     }
-
+    public void deleteCategoryById(Long id) {
+        JDBIConnector.get ().withHandle (handle ->
+                handle.createUpdate ("DELETE FROM category WHERE id = ?").bind (0, id).execute ());
+        if(Product.getInstance ().getCompanyId ()==id){
+            return;
+        }
+    }
     public void updateCategory(String name, Long id) {
         JDBIConnector.get().withHandle(handle -> handle.createUpdate("UPDATE category set name = ? WHERE id = ?")
                 .bind(0, name)
                 .bind(1, id)
                 .execute());
     }
-
+    public List<Category> paginationCategory(int index, int size) {
+        List<Category> list = JDBIConnector.get ().withHandle (handle ->
+                handle.createQuery ("With C AS (SELECT *, ROW_NUMBER() OVER(ORDER BY id DESC) as RN FROM category)\n" +
+                                "select * FROM C WHERE RN BETWEEN ?*?-(?-1) AND ?*?")
+                        .bind (0, index)
+                        .bind (1, size)
+                        .bind (2, size)
+                        .bind (3, index)
+                        .bind (4, size)
+                        .mapToBean (Category.class)
+                        .list ());
+        return list;
+    }
     public static void main(String[] args) {
 //        System.out.print(CategoryDao.getInstance().getCategoryByID (1L));
         CategoryDao.getInstance().updateCategory("ttttttt", 43L);

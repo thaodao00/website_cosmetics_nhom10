@@ -27,4 +27,10 @@ public class CategoryService {
     public void updateCategory( String name, Long id){
         CategoryDao.getInstance ().updateCategory ( name, id);
     }
+    public List<Category> paginationCategory(int index, int size) {
+        return CategoryDao.instance.paginationCategory (index, size);
+    }
+    public void deleteCategoryById(Long id){
+         CategoryDao.getInstance ().deleteCategoryById (id);
+    }
 }

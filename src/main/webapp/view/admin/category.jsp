@@ -35,7 +35,7 @@
             <c:forEach var="i" items="${category}">
                 <div class="categories__body">
                     <div class="categories__body-column categories__body-choose">
-                        <a href="#" class="action__delete">
+                        <a href="#" onclick="showMess(${i.id})" class="action__delete">
                             <i class="action-icon far fa-trash-alt"></i>
                         </a>
                     </div>
@@ -50,17 +50,21 @@
     </div>
     <div class="pagination">
         <ul class="pagination__list">
-            <li class="pagination__list-item">
-                <a href="" class="pagination__list-item__link active">1</a>
-            </li>
-            <li class="pagination__list-item">
-                <a href="" class="pagination__list-item__link">2</a>
-            </li>
-            <li class="pagination__list-item">
-                <a href="" class="pagination__list-item__link"><i class="fas fa-chevron-right"></i></a>
-            </li>
+            <c:forEach begin="1" end="${endPage}" var="i">
+                <li class="pagination__list-item">
+                    <a href="admin-category?index=${i}" class="pagination__list-item__link">${i}</a>
+                </li>
+            </c:forEach>
         </ul>
     </div>
 </div>
+<script>
+    function showMess(id){
+        const option = confirm('Are you sure to delete');
+        if(option === true){
+            window.location.href = 'deleteCategory?sid='+id;
+        }
+    }
+</script>
 </body>
 </html>
