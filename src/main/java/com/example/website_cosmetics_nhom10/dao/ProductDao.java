@@ -183,9 +183,12 @@ public class ProductDao {
     public List<Product> paginationProduct(int index, int size) {
         List<Product> list = JDBIConnector.get ().withHandle (handle ->
                 handle.createQuery ("With X AS (SELECT *, ROW_NUMBER() OVER(ORDER BY id DESC) as RN FROM product)\n" +
-                                "select * FROM x WHERE RN BETWEEN ?*6-5 AND ?*6")
+                                "select * FROM x WHERE RN BETWEEN ?*?-(?-1) AND ?*?")
                         .bind (0, index)
-                        .bind (1, index)
+                        .bind (1, size)
+                        .bind (2, size)
+                        .bind (3, index)
+                        .bind (4, size)
                         .mapToBean (Product.class)
                         .list ());
         return list;

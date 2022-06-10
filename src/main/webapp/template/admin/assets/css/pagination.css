@@ -2,7 +2,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 20px;
+    margin: 20px;
 }
 .pagination__list {
     display: flex;
@@ -23,9 +23,11 @@
     transition: all ease-in 0.1s;
     text-decoration: none;
 }
-.pagination__list-item__link.active,
-.pagination__list-item__link:hover {
+.active{
     background-color: var(--black-color);
+    color: var(--white);
+}
+.pagination__list-item__link:hover {
     color: var(--white);
 }
 .pagination__list-item__link i {

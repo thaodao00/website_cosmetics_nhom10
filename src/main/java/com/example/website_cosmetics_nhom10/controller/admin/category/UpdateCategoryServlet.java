@@ -23,6 +23,6 @@ public class UpdateCategoryServlet extends HttpServlet {
         Long sid = Long.parseLong(request.getParameter("id"));
         String name = request.getParameter("name");
         CategoryService.getInstance().updateCategory(name, sid);
-        response.sendRedirect("admin-category");
+        response.sendRedirect("admin-category?index=1");
     }
 }
