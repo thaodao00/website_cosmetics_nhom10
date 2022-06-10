@@ -1,5 +1,10 @@
 package com.example.website_cosmetics_nhom10.beans;
 
+import com.example.website_cosmetics_nhom10.dao.ReviewDao;
+import com.example.website_cosmetics_nhom10.service.ProductService;
+
+import java.util.List;
+
 public class Review {
     private static Review instance;
 
@@ -95,4 +100,5 @@ public class Review {
                 ", comment='" + comment + '\'' +
                 '}';
     }
+
 }
