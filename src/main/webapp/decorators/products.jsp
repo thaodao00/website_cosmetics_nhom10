@@ -29,7 +29,6 @@
     <%--Modal search--%>
     <%@ include file="/common/web/modalSearch.jsp" %>
 </div>
-<script type="text/javascript" src="<c:url value='/template/web/assets/js/showHide.js' />"></script>
 
 </body>
 </html>

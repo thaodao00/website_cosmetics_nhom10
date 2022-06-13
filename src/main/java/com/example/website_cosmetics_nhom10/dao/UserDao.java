@@ -111,7 +111,8 @@ public class UserDao {
             return list;
         return null;
     }
-    public void insertAccount(String username, String fullname, String password, String email, String phone, String country, Long roleId, String avatar ) {
+
+    public void insertAccount(String username, String fullname, String password, String email, String phone, String country, Long roleId, String avatar) {
         JDBIConnector.get().withHandle(handle ->
                 handle.createUpdate("INSERT INTO user (username, fullname, password, email, phone, country, roleId, avatar) VALUES(?, ?, ?, ?, ?, ?, ?, ?)")
                         .bind(0, username)
@@ -124,10 +125,12 @@ public class UserDao {
                         .bind(7, avatar)
                         .execute());
     }
+
     public void deleteAccountById(Long id) {
-        JDBIConnector.get ().withHandle (handle ->
-                handle.createUpdate ("DELETE FROM user WHERE id = ?").bind (0, id).execute ());
+        JDBIConnector.get().withHandle(handle ->
+                handle.createUpdate("DELETE FROM user WHERE id = ?").bind(0, id).execute());
     }
+
     public void updateAccount(String username, String fullname, String password, String email, String phone, String country, Long roleId, String avatar, Long id) {
         JDBIConnector.get().withHandle(handle -> handle.createUpdate("UPDATE user set username = ?, fullname= ?, password = ?, email = ?, phone = ?, country = ?, roleId = ?, avatar = ?  WHERE id = ?")
                 .bind(0, username)
@@ -138,20 +141,43 @@ public class UserDao {
                 .bind(5, country)
                 .bind(6, roleId)
                 .bind(7, avatar)
-                .bind (8, id)
+                .bind(8, id)
                 .execute());
     }
+
     public List<User> paginationAccount(int index, int size) {
-        List<User> list = JDBIConnector.get ().withHandle (handle ->
-                handle.createQuery ("With U AS (SELECT *, ROW_NUMBER() OVER(ORDER BY id DESC) as RN FROM user)\n" +
+        List<User> list = JDBIConnector.get().withHandle(handle ->
+                handle.createQuery("With U AS (SELECT *, ROW_NUMBER() OVER(ORDER BY id DESC) as RN FROM user)\n" +
                                 "select * FROM U WHERE RN BETWEEN ?*?-(?-1) AND ?*?")
-                        .bind (0, index)
-                        .bind (1, size)
-                        .bind (2, size)
-                        .bind (3, index)
-                        .bind (4, size)
-                        .mapToBean (User.class)
-                        .list ());
+                        .bind(0, index)
+                        .bind(1, size)
+                        .bind(2, size)
+                        .bind(3, index)
+                        .bind(4, size)
+                        .mapToBean(User.class)
+                        .list());
         return list;
+    }
+
+    public boolean checkNamesake(User user) {
+        List<User> list = JDBIConnector.get().withHandle(handle ->
+                handle.createQuery("select * from user where username = ?")
+                        .bind(0, user.getUsername())
+                        .mapToBean(User.class)
+                        .list());
+        return !((list.size() > 0 && list.get(0).getId() == user.getId()) || list.size() == 0);
+    }
+
+    public boolean updateUser(User user) {
+        int i = JDBIConnector.get().withHandle(handle ->
+                handle.createUpdate("update user set username = ?, fullname = ?, email = ?, phone = ?, country = ? where id = ?")
+                        .bind(0, user.getUsername())
+                        .bind(1, user.getFullName())
+                        .bind(2, user.getEmail())
+                        .bind(3, user.getPhone())
+                        .bind(4, user.getCountry())
+                        .bind(5, user.getId())
+                        .execute());
+        return i == 1;
     }
 }

@@ -49,7 +49,6 @@ public class ReviewService {
     }
 
     public static void main(String[] args) {
-//        ReviewService.getInstance().seedData();
-        System.out.println(ReviewService.getInstance().getByProductId(1L));
+        ReviewService.getInstance().seedData();
     }
 }

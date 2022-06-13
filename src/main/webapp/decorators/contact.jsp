@@ -29,6 +29,5 @@
 <!-- footer -->
 <%--Modal search--%>
 <%@ include file="/common/web/modalSearch.jsp" %>
-<script src="template/web/assets/js/showHide.js"></script>
 </body>
 </html>
