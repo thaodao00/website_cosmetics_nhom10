@@ -44,9 +44,6 @@ public class CategoryDao {
     public void deleteCategoryById(Long id) {
         JDBIConnector.get ().withHandle (handle ->
                 handle.createUpdate ("DELETE FROM category WHERE id = ?").bind (0, id).execute ());
-        if(Product.getInstance ().getCompanyId ()==id){
-            return;
-        }
     }
     public void updateCategory(String name, Long id) {
         JDBIConnector.get().withHandle(handle -> handle.createUpdate("UPDATE category set name = ? WHERE id = ?")

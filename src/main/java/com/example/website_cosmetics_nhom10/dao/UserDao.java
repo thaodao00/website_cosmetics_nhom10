@@ -1,6 +1,6 @@
 package com.example.website_cosmetics_nhom10.dao;
 
-import com.example.website_cosmetics_nhom10.beans.Review;
+import com.example.website_cosmetics_nhom10.beans.Category;
 import com.example.website_cosmetics_nhom10.database.JDBIConnector;
 import com.example.website_cosmetics_nhom10.beans.User;
 
@@ -110,5 +110,48 @@ public class UserDao {
         if (list.size() > 0)
             return list;
         return null;
+    }
+    public void insertAccount(String username, String fullname, String password, String email, String phone, String country, Long roleId, String avatar ) {
+        JDBIConnector.get().withHandle(handle ->
+                handle.createUpdate("INSERT INTO user (username, fullname, password, email, phone, country, roleId, avatar) VALUES(?, ?, ?, ?, ?, ?, ?, ?)")
+                        .bind(0, username)
+                        .bind(1, fullname)
+                        .bind(2, password)
+                        .bind(3, email)
+                        .bind(4, phone)
+                        .bind(5, country)
+                        .bind(6, roleId)
+                        .bind(7, avatar)
+                        .execute());
+    }
+    public void deleteAccountById(Long id) {
+        JDBIConnector.get ().withHandle (handle ->
+                handle.createUpdate ("DELETE FROM user WHERE id = ?").bind (0, id).execute ());
+    }
+    public void updateAccount(String username, String fullname, String password, String email, String phone, String country, Long roleId, String avatar, Long id) {
+        JDBIConnector.get().withHandle(handle -> handle.createUpdate("UPDATE user set username = ?, fullname= ?, password = ?, email = ?, phone = ?, country = ?, roleId = ?, avatar = ?  WHERE id = ?")
+                .bind(0, username)
+                .bind(1, fullname)
+                .bind(2, password)
+                .bind(3, email)
+                .bind(4, phone)
+                .bind(5, country)
+                .bind(6, roleId)
+                .bind(7, avatar)
+                .bind (8, id)
+                .execute());
+    }
+    public List<User> paginationAccount(int index, int size) {
+        List<User> list = JDBIConnector.get ().withHandle (handle ->
+                handle.createQuery ("With U AS (SELECT *, ROW_NUMBER() OVER(ORDER BY id DESC) as RN FROM user)\n" +
+                                "select * FROM U WHERE RN BETWEEN ?*?-(?-1) AND ?*?")
+                        .bind (0, index)
+                        .bind (1, size)
+                        .bind (2, size)
+                        .bind (3, index)
+                        .bind (4, size)
+                        .mapToBean (User.class)
+                        .list ());
+        return list;
     }
 }
