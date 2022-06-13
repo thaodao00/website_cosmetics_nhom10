@@ -25,6 +25,7 @@ public class ProductServlet extends HttpServlet {
             endPage++;
         }
         request.setAttribute ("endPage",endPage);
+        request.setAttribute ("index", index);
         List<Product> product = ProductService.getInstance().paginationProduct (index,pageSize);
         request.setAttribute ("products",product);
         request.getRequestDispatcher ("/view/admin/products.jsp").forward (request,response);

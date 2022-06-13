@@ -41,7 +41,7 @@
                     </div>
                     <div class="categories__body-column categories__body-name">${i.name}</div>
                     <div class="categories__body-column categories__body-update">
-                        <a href="admin-update-category?sid=${i.id}" class="categories__body-icon far fa-edit"></a>
+                        <a href="admin-update-account?sid=${i.id}" class="categories__body-icon far fa-edit"></a>
                     </div>
                 </div>
             </c:forEach>
@@ -52,7 +52,7 @@
         <ul class="pagination__list">
             <c:forEach begin="1" end="${endPage}" var="i">
                 <li class="pagination__list-item">
-                    <a href="admin-category?index=${i}" class="pagination__list-item__link">${i}</a>
+                    <a id="${i}" href="admin-category?index=${i}" class="pagination__list-item__link">${i}</a>
                 </li>
             </c:forEach>
         </ul>
@@ -65,6 +65,9 @@
             window.location.href = 'deleteCategory?sid='+id;
         }
     }
+    var elem = document.getElementById('${index}');
+    elem.style.backgroundColor="black"
+    elem.style.color="white"
 </script>
 </body>
 </html>

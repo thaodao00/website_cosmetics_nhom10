@@ -78,7 +78,10 @@
     width: 12%;
 }
 .account__body-address{
-    width: 22%;
+    width: 15%;
+}
+.account__body-role{
+    width: 7%;
 }
 .contact__body-column{
     word-break: break-word;
@@ -96,7 +99,7 @@
     background-color: var(--light);
 }
 .contact__body-column {
-    padding: 10px 2px;
+    padding: 2px 0px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -132,7 +135,10 @@
     width: 12%;
 }
 .account__header-address{
-    width: 22%;
+    width: 15%;
+}
+.account__header-role{
+    width: 7%;
 }
 .check-delete {
     outline: none;

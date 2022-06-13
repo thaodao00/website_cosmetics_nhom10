@@ -27,6 +27,7 @@ public class CategoryServlet extends HttpServlet {
             endPage++;
         }
         request.setAttribute ("endPage",endPage);
+        request.setAttribute ("index", index);
         List<Category> category = CategoryService.getInstance ().paginationCategory (index, pageSize);
         request.setAttribute ("category",category);
         request.getRequestDispatcher ("/view/admin/category.jsp").forward (request,response);

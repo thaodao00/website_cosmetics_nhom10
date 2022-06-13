@@ -30,7 +30,7 @@
         </li>
         <label for='check-sidebar-list' class="sidebar__item">
             <i class="sidebar__item-icon fas fa-users"></i>
-            <a href="admin-account" class="sidebar__item-link">Account Management</a>
+            <a href="admin-account?index=1" class="sidebar__item-link">Account Management</a>
         </label>
         <label for='check-sidebar-list' class="sidebar__item">
             <i class="sidebar__item-icon fas fa-store"></i>

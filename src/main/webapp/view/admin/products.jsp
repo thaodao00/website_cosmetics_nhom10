@@ -52,7 +52,9 @@
         <ul class="pagination__list">
             <c:forEach begin="1" end="${endPage}" var="i">
                 <li class="pagination__list-item">
-                    <a href="admin-products?index=${i}" class="pagination__list-item__link">${i}</a>
+                    <a id="${i}" href="admin-products?index=${i}" class="pagination__list-item__link">
+                            ${i}
+                    </a>
                 </li>
             </c:forEach>
         </ul>
@@ -65,6 +67,9 @@
             window.location.href = 'deleteProduct?sid='+id;
         }
     }
+    var elem = document.getElementById('${index}');
+    elem.style.backgroundColor="black"
+    elem.style.color="white"
 </script>
 </body>
 
