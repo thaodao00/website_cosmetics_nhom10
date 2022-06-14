@@ -126,7 +126,6 @@ public class ProductDao {
         JDBIConnector.get ().withHandle (handle ->
                 handle.createUpdate ("DELETE FROM product WHERE id = ?").bind (0, id).execute ());
     }
-
     public void insertProduct(String name, String thumbnailImg, double price, double discount, int sold, String shortDescription, String longDescription, double rate, String weight, String dimension, Long originid, Long categoryid, Long companyid, Long tagid) {
         JDBIConnector.get ().withHandle (handle ->
                 handle.createUpdate ("INSERT INTO product (name, thumbnailimg, price, discount, sold, shortDescription,longDescription, rate, weight, dimension, originid, categoryid, companyid, tagid) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)")
@@ -164,6 +163,12 @@ public class ProductDao {
                 .bind (12, companyid)
                 .bind (13, tagid)
                 .bind (14, id)
+                .execute ());
+    }
+    public void updateCategoryForProduct(Long categoryid, Long id) {
+        JDBIConnector.get ().withHandle (handle -> handle.createUpdate ("UPDATE product set  categoryid = ? WHERE id = ?")
+                .bind (0, categoryid)
+                .bind (1, id)
                 .execute ());
     }
 

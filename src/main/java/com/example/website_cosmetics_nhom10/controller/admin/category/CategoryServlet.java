@@ -17,7 +17,7 @@ import java.util.List;
 public class CategoryServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        List<Category> list = CategoryService.getInstance().getAll();
+        List<Category> list = CategoryService.getInstance().getCategory ();
         int index = Integer.parseInt (request.getParameter ("index"));
         int count = list.size ();
         int pageSize = 6;
@@ -29,7 +29,7 @@ public class CategoryServlet extends HttpServlet {
         request.setAttribute ("endPage",endPage);
         request.setAttribute ("index", index);
         List<Category> category = CategoryService.getInstance ().paginationCategory (index, pageSize);
-        request.setAttribute ("category",category);
+        request.setAttribute ("list",category);
         request.getRequestDispatcher ("/view/admin/category.jsp").forward (request,response);
     }
 
