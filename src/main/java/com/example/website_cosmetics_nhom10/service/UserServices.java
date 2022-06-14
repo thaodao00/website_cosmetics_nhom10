@@ -73,4 +73,8 @@ public class UserServices {
     public boolean checkNamesake(User user) {
         return UserDao.getInstance().checkNamesake(user);
     }
+
+    public boolean updatePassword(Long id, String passOld, String passNew) {
+        return UserDao.getInstance().updatePassword(id, passOld, passNew);
+    }
 }

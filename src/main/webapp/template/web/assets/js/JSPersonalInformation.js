@@ -6,11 +6,6 @@ const purchaseOrderMain = $('.purchase-order')
 const myAccountMain = $('.my-account')
 const tabActive = $('.my-account__main.active-tab')
 
-myAccountList.css("display", "block")
-purchaseOrderName.removeClass('active-btn')
-purchaseOrderMain.css("display", "none")
-myAccountMain.css("display", "block")
-
 myAccount.click(function () {
     myAccountList.css("display", "block")
     purchaseOrderName.removeClass('active-btn')

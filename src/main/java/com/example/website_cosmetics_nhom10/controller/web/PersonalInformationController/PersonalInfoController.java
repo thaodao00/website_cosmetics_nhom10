@@ -16,6 +16,7 @@ public class PersonalInfoController extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
         User user = (User) session.getAttribute("auth");
+        user.setPassword(null);
         if (user == null)
             response.sendRedirect("web-login");
         request.setAttribute("user", user);

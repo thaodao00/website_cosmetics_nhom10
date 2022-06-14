@@ -25,7 +25,5 @@
     <%@ include file="/common/web/modalSearch.jsp" %>
 </div>
 <script type="text/javascript" src="<c:url value='/template/web/assets/js/JSPersonalInformation.js' />"></script>
-
-
 </body>
 </html>
