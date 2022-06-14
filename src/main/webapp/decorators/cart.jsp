@@ -31,7 +31,6 @@
 <!-- footer -->
 <%--Modal search--%>
 <%@ include file="/common/web/modalSearch.jsp" %>
-<%--<script src="template/web/assets/js/showHide.js"></script>--%>
 <script src="template/web/assets/js/JSCart.js"></script>
 
 </body>

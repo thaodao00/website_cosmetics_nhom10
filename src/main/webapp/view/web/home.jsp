@@ -203,7 +203,7 @@
                         <span class="dotSlider" onclick="currentSlider(3)"></span>
                     </div>
                     <script>
-                        var index = 0;
+                        let index = 0;
                         showSliders(index)
 
                         function plusSlider(n) {
@@ -215,9 +215,9 @@
                         }
 
                         function showSliders(n) {
-                            var i;
-                            var slider = document.getElementsByClassName("mySlider");
-                            var dotSlider = document.getElementsByClassName("dotSlider");
+                            let i;
+                            let slider = document.getElementsByClassName("mySlider");
+                            let dotSlider = document.getElementsByClassName("dotSlider");
                             if (n > slider.length) {
                                 index = 1
                             }
@@ -331,14 +331,15 @@
 </div>
 
 <!--Js slide-->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
-    var slideIndex = 0
+    let slideIndex = 0
     showSlides()
 
     function showSlides() {
-        var i;
-        var slides = document.getElementsByClassName("mySlides");
-        var dots = document.getElementsByClassName("dot");
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        let dots = document.getElementsByClassName("dot");
         for (i = 0; i < slides.length; i++) {
             slides[i].style.display = "none";
         }

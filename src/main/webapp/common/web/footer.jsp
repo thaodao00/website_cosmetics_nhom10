@@ -1,4 +1,3 @@
-
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!--Footer: begin-->
 <div class="footer">
@@ -24,7 +23,8 @@
                             Phone: +0363275624
                         </li>
                     </a>
-                    <img class="footer__contact-img" src="assets/img/footer-tab-1.png" alt="">
+                    <img class="footer__contact-img" src="<c:url value="/template/web/assets/img/footer-tab-1.png" />"
+                         alt="">
 
                 </ul>
             </div>
