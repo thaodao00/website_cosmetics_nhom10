@@ -32,7 +32,7 @@
             <div class="categories__header-column categories__header-update">Edit</div>
         </div>
         <div class="categories__body-wrap">
-            <c:forEach var="i" items="${category}">
+            <c:forEach var="i" items="${list}">
                 <div class="categories__body">
                     <div class="categories__body-column categories__body-choose">
                         <a href="#" onclick="showMess(${i.id})" class="action__delete">
@@ -41,7 +41,7 @@
                     </div>
                     <div class="categories__body-column categories__body-name">${i.name}</div>
                     <div class="categories__body-column categories__body-update">
-                        <a href="admin-update-account?sid=${i.id}" class="categories__body-icon far fa-edit"></a>
+                        <a href="admin-update-category?sid=${i.id}" class="categories__body-icon far fa-edit"></a>
                     </div>
                 </div>
             </c:forEach>
@@ -60,10 +60,12 @@
 </div>
 <script>
     function showMess(id){
-        const option = confirm('Are you sure to delete');
+        let option = confirm('Are you sure to delete');
         if(option === true){
             window.location.href = 'deleteCategory?sid='+id;
         }
+
+
     }
     var elem = document.getElementById('${index}');
     elem.style.backgroundColor="black"

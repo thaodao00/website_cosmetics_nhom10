@@ -52,7 +52,12 @@ public class CartService {
             cartData.put(ProductService.getInstance().loadProductById(ci.getProductId()), (long) ci.getQuantity());
         return cartData;
     }
-
+    public List<CartItems> getCartItemAll(){
+        return CartDao.instance.getCartItemAll ();
+    }
+    public void deleteCartItemById(Long productid){
+        CartDao.getInstance ().deleteCartItemById (productid);
+    }
     public static void main(String[] args) {
         CartService.getInstance().addToCart(4, 3, 2);
     }

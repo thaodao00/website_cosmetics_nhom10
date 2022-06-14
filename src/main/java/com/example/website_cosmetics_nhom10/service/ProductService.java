@@ -73,4 +73,7 @@ public class ProductService {
     public List<Product> paginationProduct(int index, int size){
         return ProductDao.getInstance().paginationProduct (index, size);
     }
+    public void updatecCategoryProduct(Long categpryid, Long id){
+        ProductDao.getInstance ().updateCategoryForProduct (categpryid, id);
+    }
 }

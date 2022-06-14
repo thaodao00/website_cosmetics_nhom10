@@ -23,6 +23,9 @@ public class CategoryDao {
     public List<Category> getAll() {
         return JDBIConnector.get().withHandle(handle -> handle.createQuery("select * from category").mapToBean(Category.class).stream().collect(Collectors.toList()));
     }
+    public List<Category> getCategory() {
+        return JDBIConnector.get().withHandle(handle -> handle.createQuery("select * from category where id !=1").mapToBean(Category.class).stream().collect(Collectors.toList()));
+    }
 
     public void insertCategory(String name) {
         JDBIConnector.get().withHandle(handle ->
@@ -54,7 +57,7 @@ public class CategoryDao {
     public List<Category> paginationCategory(int index, int size) {
         List<Category> list = JDBIConnector.get ().withHandle (handle ->
                 handle.createQuery ("With C AS (SELECT *, ROW_NUMBER() OVER(ORDER BY id DESC) as RN FROM category)\n" +
-                                "select * FROM C WHERE RN BETWEEN ?*?-(?-1) AND ?*?")
+                                "select * FROM C WHERE RN BETWEEN ?*?-(?-1) AND ?*? AND id <> 1")
                         .bind (0, index)
                         .bind (1, size)
                         .bind (2, size)
@@ -65,8 +68,19 @@ public class CategoryDao {
         return list;
     }
     public static void main(String[] args) {
-//        System.out.print(CategoryDao.getInstance().getCategoryByID (1L));
-        CategoryDao.getInstance().updateCategory("ttttttt", 43L);
-        System.out.print(CategoryDao.getInstance().getAll());
+////        System.out.print(CategoryDao.getInstance().getCategoryByID (1L));
+//        CategoryDao.getInstance().updateCategory("ttttttt", 43L);
+//        System.out.print(CategoryDao.getInstance().getAll());
+        int[] myNum = {0, 20, 30, 0};
+        for (int i =0 ; i<myNum.length; i++){
+            if(myNum[i]==10){
+                System.out.println ("co");
+                break;
+            }
+            else{
+                System.out.println ("k");
+            }
+        }
+        System.out.println ("hhh");
     }
 }

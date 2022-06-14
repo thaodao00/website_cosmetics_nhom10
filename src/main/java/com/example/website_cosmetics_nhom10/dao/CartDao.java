@@ -2,9 +2,11 @@ package com.example.website_cosmetics_nhom10.dao;
 
 import com.example.website_cosmetics_nhom10.beans.Cart;
 import com.example.website_cosmetics_nhom10.beans.CartItems;
+import com.example.website_cosmetics_nhom10.beans.Category;
 import com.example.website_cosmetics_nhom10.database.JDBIConnector;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class CartDao {
     public static CartDao instance;
@@ -95,5 +97,12 @@ public class CartDao {
                 .bind(0, cartId)
                 .mapToBean(CartItems.class).list());
         return list;
+    }
+    public List<CartItems> getCartItemAll() {
+        return JDBIConnector.get().withHandle(handle -> handle.createQuery("select * from cartitems").mapToBean(CartItems.class).stream().collect(Collectors.toList()));
+    }
+    public void deleteCartItemById(Long productid) {
+        JDBIConnector.get ().withHandle (handle ->
+                handle.createUpdate ("DELETE FROM cartitems WHERE productid = ?").bind (0, productid).execute ());
     }
 }
