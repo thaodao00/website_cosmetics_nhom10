@@ -6,6 +6,7 @@
     response.setCharacterEncoding("UTF-8");
 %>
 <% User user = (User) request.getAttribute("user");%>
+<% String error = (String) request.getAttribute("error"); %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,23 +32,27 @@
                         <li class="nav__information-personal-account">
                             <div class="nav__information-personal-item">
                                 <img class="nav__information-personal-img"
-                                     src="<c:url value="/template/web/assets/img/avatar/default-avatar.jpg" />" alt="">
-                                <h5 class="nav__information-personal-name">
+                                <c:if test="${user != null}">
+                                     src="<c:url value="/template/web/assets/img/avatar/${user.avatar}" />" alt="">
+                                </c:if>
+                                <c:if test="${user == null}">
+                                    src="<c:url value="/template/web/assets/img/avatar/default-avatar.jpg"/>" alt="">
+                                </c:if>
+                                <h5 class="nav__information-personal-name active-btn">
                                     My account
                                 </h5>
                             </div>
-                            <ul class="nav__information-my-account-list">
+                            <ul class="nav__information-my-account-list" style="display: block">
                                 <li class="nav__information-my-account-item active-btn my-account-profiles">
                                     Profiles
-                                </li>
-                                <li class="nav__information-my-account-item my-account-address">
-                                    Address
                                 </li>
                                 <li class="nav__information-my-account-item my-account-passwords">
                                     Change passwords
                                 </li>
-                                <li href="" class="my-account-logout">
-                                    Log out
+                                <li class="my-account-logout">
+                                    <a href="<c:url value="web-logout" />">
+                                        Log out
+                                    </a>
                                 </li>
 
                             </ul>
@@ -55,14 +60,14 @@
                         <li class="nav__information-personal-purchase">
                             <img class="nav__information-personal-img"
                                  src="<c:url value="/template/web/assets/img/don-mua.png" />" alt="">
-                            <h5 class="nav__information-personal-name active-btn">
+                            <h5 class="nav__information-personal-name">
                                 Purchase order
                             </h5>
                         </li>
                     </ul>
                 </div>
             </div>
-            <div class="col l-10 m-12 c-12 purchase-order">
+            <div class="col l-10 m-12 c-12 purchase-order" style="display: none">
                 <div class="nav__information-orders">
                     <ul class="nav__information-orders-list">
                         <li class="nav__information-orders-item active-btn">
@@ -82,11 +87,10 @@
                         </li>
                     </ul>
                 </div>
-                <div class="nav__information-orders-content active-tab">
+                <div class="nav__information-orders-content">
                     <div class="nav__information-orders-content-item">
                         <div class="empty-order">
                             <div class="empty-order-img">
-
                             </div>
                             <div class="empty-order-text">
                                 No orders :)
@@ -429,8 +433,8 @@
                     </div>
                 </div>
             </div>
-            <div class="col l-10 m-12 c-12 my-account" style="display:none">
-                <div class="my-account__main active-tab ">
+            <div class="col l-10 m-12 c-12 my-account" style="display: block">
+                <div class="my-account__main active-tab">
                     <div class="my-account__top">
                         <h5 class="my-account__top-title">
                             My account
@@ -767,43 +771,6 @@
                         </div>
                     </form>
                 </div>
-                <div class="my-account__main address">
-                    <div class="my-account__top">
-                        <h5 class="my-account__top-title">
-                            My address
-                        </h5>
-                        <button class="my-account__top-btn">
-                            Add address
-                        </button>
-                    </div>
-                    <form class="my-account__form">
-                        <div class="my-account__form-name">
-                            <label class="my-account__form-label">
-                                Full name
-                            </label>
-                            <div class="my-account__form-content">
-
-                            </div>
-                        </div>
-                        <div class="my-account__form-name">
-                            <label class="my-account__form-label">
-                                Phone
-                            </label>
-                            <div class="my-account__form-content">
-
-                            </div>
-                        </div>
-                        <div class="my-account__form-name">
-                            <label class="my-account__form-label">
-                                Address
-                            </label>
-                            <div class="my-account__form-content">
-
-                            </div>
-
-                        </div>
-                    </form>
-                </div>
                 <div class="my-account__main password">
                     <div class="my-account__top">
                         <h5 class="my-account__top-title">
@@ -813,31 +780,37 @@
                             To secure your account, please don't share your password with others
                         </p>
                     </div>
-                    <form class="my-account__form">
+                    <form id="form-change-password" action="web-update-password" method="post" class="my-account__form">
                         <div class="my-account__form-change-password ">
-                            <label class="my-account__form-label">
+                            <label for="input-current-password" class="my-account__form-label">
                                 Current password
                             </label>
-                            <input type="password" class="my-account__form-input">
-                            <div class="my-account__form-forgot-password">
-                                Forgot password?
-                            </div>
+                            <input id="input-current-password" required type="password" class="my-account__form-input"
+                                   name="input-current-password" size="50">
                         </div>
-                        <div class="my-account__form-change-password ">
-                            <label class="my-account__form-label">
+                        <div class="my-account__form-change-password">
+                            <label for="input-new-password" class="my-account__form-label">
                                 New password
                             </label>
-                            <input type="password" class="my-account__form-input">
+                            <input id="input-new-password" name="input-new-password" required type="password"
+                                   class="my-account__form-input" size="50">
                         </div>
                         <div class="my-account__form-change-password ">
-                            <label class="my-account__form-label">
+                            <label for="input-confirm-password" class="my-account__form-label">
                                 Password confirm
                             </label>
-                            <input type="password" class="my-account__form-input">
+                            <input id="input-confirm-password" name="input-confirm-password" required type="password"
+                                   class="my-account__form-input" size="50">
                         </div>
-                        <button class="btn buttons my-account__password-btn">
-                            SAVE
-                        </button>
+                        <div class="my-account__form-forgot-password">
+                            Forgot password?
+                        </div>
+                        <div style="display: flex; justify-content: center">
+                            <button type="submit" form="form-change-password"
+                                    class="btn buttons my-account__password-btn">
+                                SAVE
+                            </button>
+                        </div>
                     </form>
 
                 </div>
@@ -888,5 +861,10 @@
 </div>
 
 <script type="module" src="template/web/assets/js/JSPersonalInformation.js"></script>
+<script>
+    <c:if test="${error != null}">
+    alert("${error}")
+    </c:if>
+</script>
 </body>
 </html>

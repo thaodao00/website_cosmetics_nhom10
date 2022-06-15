@@ -92,7 +92,7 @@ public class CartDao {
     }
 
     public List<CartItems> loadCart(long cartId) {
-        String sql = "select * from cartitems where cartid = ?";
+        String sql = "select * from cartitems where cartid = ? order by productid desc";
         List<CartItems> list = JDBIConnector.get().withHandle(handle -> handle.createQuery(sql)
                 .bind(0, cartId)
                 .mapToBean(CartItems.class).list());

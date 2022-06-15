@@ -1275,6 +1275,10 @@ select.auth-form__input:hover {
     padding-bottom: 10px;
 }
 
+.my-account-logout a {
+    color: var(--black-color);
+}
+
 .nav__information-my-account-item:hover {
     opacity: 0.8;
     cursor: pointer;

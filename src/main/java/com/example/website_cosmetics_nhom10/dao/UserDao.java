@@ -180,4 +180,23 @@ public class UserDao {
                         .execute());
         return i == 1;
     }
+
+    public boolean updatePassword(Long id, String passOld, String passNew) {
+        List<User> users = JDBIConnector.get().withHandle(handle ->
+                handle.createQuery("select * from user where id = ? and password = ?")
+                        .bind(0, id)
+                        .bind(1, hashPassword(passOld))
+                        .mapToBean(User.class)
+                        .list());
+        int i;
+        if (users.size() == 1) {
+            i = JDBIConnector.get().withHandle(handle ->
+                    handle.createUpdate("update user set password = ? where id = ?")
+                            .bind(0, hashPassword(passNew))
+                            .bind(1, id)
+                            .execute());
+            return i == 1;
+        }
+        return false;
+    }
 }
