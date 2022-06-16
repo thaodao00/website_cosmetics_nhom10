@@ -1,5 +1,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@include file="/common/taglib.jsp" %>
+<%
+    request.setCharacterEncoding("UTF-8");
+    response.setCharacterEncoding("UTF-8");
+%>
 
 <!DOCTYPE html>
 <html>
@@ -18,38 +22,16 @@
         <div class="contact-branch">
             <div class="grid wide branch-wrapper">
                 <div class="row branch-section">
-                    <div class="col l-3 m-6 c-12 branch">
-                        <ul class="branch-item">
-                            <li><h2>ZURICH</h2></li>
-                            <li><a href="#">Address: Seestrasse 21, Zurich</a></li>
-                            <li><a href="#">E-mail: biagiottitheme@gmail.com</a></li>
-                            <li><a href="#">Phone : + 99 411 725 39 12</a></li>
-                        </ul>
-                    </div>
-                    <div class="col l-3 m-6 c-12 branch">
-                        <ul class="branch-item">
-                            <li><h2>PARIS</h2></li>
-                            <li><a href="#">Address: Rue Vieille Du Temple, Paris</a></li>
-                            <li><a href="#">E-mail: biagiottitheme@gmail.com</a></li>
-                            <li><a href="#">Phone : + 99 411 725 39 12</a></li>
-                        </ul>
-                    </div>
-                    <div class="col l-3 m-6 c-12 branch">
-                        <ul class="branch-item">
-                            <li><h2>LONDON</h2></li>
-                            <li><a href="#">Address: 191 Victoria Street, London</a></li>
-                            <li><a href="#">E-mail: biagiottitheme@gmail.com</a></li>
-                            <li><a href="#">Phone : + 99 411 725 39 12</a></li>
-                        </ul>
-                    </div>
-                    <div class="col l-3 m-6 c-12 branch">
-                        <ul class="branch-item">
-                            <li><h2>VIETNAM</h2></li>
-                            <li><a href="#">Address: Tan Phu ward,Thu Duc city</a></li>
-                            <li><a href="#">E-mail: biagiottitheme@gmail.com</a></li>
-                            <li><a href="#">Phone : + 99 411 725 39 12</a></li>
-                        </ul>
-                    </div>
+                    <c:forEach var="i" items="${contact}">
+                        <div class="col l-3 m-6 c-12 branch">
+                            <ul class="branch-item">
+                                <li><h2>${i.name}</h2></li>
+                                <li><a href="#">${i.address}</a></li>
+                                <li><a href="#">${i.email}</a></li>
+                                <li><a href="#">${i.phone}</a></li>
+                            </ul>
+                        </div>
+                    </c:forEach>
                 </div>
             </div>
         </div>
@@ -80,36 +62,5 @@
     </div>
 </div>
 </div>
-
-
-
-<!-- Popup -->
-<%--<div class="popup-wrapper">--%>
-<%--    <div class="popup-overlay"></div>--%>
-<%--    <div class="popup stay-in-touch">--%>
-<%--        <div class="close-wrapper">--%>
-<%--            <a href="javascript:void(0)" class="close">--%>
-<%--                <i class="fas fa-times close-icon"></i>--%>
-<%--            </a>--%>
-<%--        </div>--%>
-<%--        <div class="stay-in-touch__title">--%>
-<%--            <h2>Stay in touch</h2>--%>
-<%--        </div>--%>
-<%--        <div class="stay-in-touch__form">--%>
-<%--            <input type="text" placeholder="E-mail address">--%>
-<%--            <button class="buttons">Send</button>--%>
-<%--        </div>--%>
-<%--        <div class="stay-in-touch__form-description">--%>
-<%--            <p>*At vero eos et accusamus et iusto odio dignissimos</p>--%>
-<%--        </div>--%>
-<%--        <div class="stay-in-touch__prevent">--%>
-<%--            <input type="checkbox" value="1" id="input-checkbox-prevent">--%>
-<%--            <label for="input-checkbox-prevent">--%>
-<%--                <p>Prevent This Pop-up</p>--%>
-<%--            </label>--%>
-<%--        </div>--%>
-<%--    </div>--%>
-<%--</div>--%>
-
 </body>
 </html>

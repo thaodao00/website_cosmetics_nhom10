@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -29,24 +30,27 @@
             <div class="contact__header-column contact__header-update">Edit</div>
         </div>
         <div class="contact__body-wrap">
-            <div class="contact__body">
-                <div class="contact__body-column contact__body-choose">
-                    <a href="" class="action__delete">
-                        <i class="action-icon far fa-trash-alt"></i>
-                    </a>
-                </div>
+            <c:forEach var="i" items="${contact}">
+                <div class="contact__body">
+                    <div class="contact__body-column contact__body-choose">
+                        <a href="#" onclick="showMess(${i.id})" class="action__delete">
+                            <i class="action-icon far fa-trash-alt"></i>
+                        </a>
+                    </div>
 
-                <div class="contact__body-column contact__body-name">
-                    Viet Nam
+                    <div class="contact__body-column contact__body-name">
+                        ${i.name}
+                    </div>
+                    <div class="contact__body-column contact__body-mail">${i.address}</div>
+                    <div class="contact__body-column contact__body-address">
+                        ${i.email}
+                    </div>
+                    <div class="contact__body-column contact__body-phone">${i.phone}</div>
+                    <div class="contact__body-column contact__body-update">
+                        <a title="chỉnh sửa sản phẩm" href="" class="account__body-icon far fa-edit"></a>
+                    </div>
                 </div>
-                <div class="contact__body-column contact__body-mail">huukha5624@gmail.com</div>
-                <div class="contact__body-column contact__body-address">huyen Duc Linh Tinh Binh Thuan
-                </div>
-                <div class="contact__body-column contact__body-phone">090920910</div>
-                <div class="contact__body-column contact__body-update">
-                    <a title="chỉnh sửa sản phẩm" href="" class="account__body-icon far fa-edit"></a>
-                </div>
-            </div>
+            </c:forEach>
 
 
         </div>
@@ -66,20 +70,12 @@
     </div>
 </div>
 <script>
-    const btnDelete = document.querySelector('.action__delete');
-    const checkDeletes = document.querySelectorAll('.check-delete');
-    checkDeletes.forEach(check => {
-        check.onclick = e => {
-            const checkEl = [...checkDeletes].find(item => {
-                return item.matches('.check-delete:checked');
-            })
-            if (checkEl) {
-                btnDelete.style = `opacity: 1; pointer-events: all`;
-            } else {
-                btnDelete.style = `opacity: 0.5; pointer-events: none`;
-            }
+    function showMess(id){
+        let option = confirm('Are you sure to delete');
+        if(option === true){
+            window.location.href = 'deleteContact?sid='+id;
         }
-    })
+    }
 </script>
 </body>
 </html>

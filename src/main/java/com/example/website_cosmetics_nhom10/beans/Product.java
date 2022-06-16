@@ -30,12 +30,12 @@ public class Product {
     String categoryName;
     String companyName;
     String tagName;
-
+    int amount;
     public Product() {
 
     }
 
-    public Product(Long id, String name, String thumbnailImg, double price, double discount, int sold, String shortDescription, String longDescription, double rate, String weight, String dimension, Long originId, Long categoryId, Long companyName, Long tagName) {
+    public Product(Long id, String name, String thumbnailImg, double price, double discount, int sold, String shortDescription, String longDescription, double rate, String weight, String dimension, Long originId, Long categoryId, Long companyName, Long tagName, int amount) {
         this.id = id;
         this.name = name;
         this.thumbnailImg = thumbnailImg;
@@ -51,9 +51,10 @@ public class Product {
         this.categoryId = categoryId;
         this.companyId = companyName;
         this.tagId = tagName;
+        this.amount = amount;
     }
 
-    public Product(Long id, String name, String thumbnailImg, double price, double discount, int sold, String shortDescription, String longDescription, double rate, String weight, String dimension, String originName, String categoryName, String companyName, String tagName) {
+    public Product(Long id, String name, String thumbnailImg, double price, double discount, int sold, String shortDescription, String longDescription, double rate, String weight, String dimension, String originName, String categoryName, String companyName, String tagName, int amount) {
         this.id = id;
         this.name = name;
         this.thumbnailImg = thumbnailImg;
@@ -69,6 +70,7 @@ public class Product {
         this.categoryName = categoryName;
         this.companyName = companyName;
         this.tagName = tagName;
+        this.amount = amount;
     }
 
     public Long getId() {
@@ -221,6 +223,14 @@ public class Product {
 
     public void setTagName(String tagName) {
         this.tagName = tagName;
+    }
+
+    public int getAmount() {
+        return amount;
+    }
+
+    public void setAmount(int amount) {
+        this.amount = amount;
     }
 
     @Override

@@ -101,8 +101,15 @@ public class CartDao {
     public List<CartItems> getCartItemAll() {
         return JDBIConnector.get().withHandle(handle -> handle.createQuery("select * from cartitems").mapToBean(CartItems.class).stream().collect(Collectors.toList()));
     }
+    public List<Cart> getAll() {
+        return JDBIConnector.get().withHandle(handle -> handle.createQuery("select * from cart").mapToBean(Cart.class).stream().collect(Collectors.toList()));
+    }
     public void deleteCartItemById(Long productid) {
         JDBIConnector.get ().withHandle (handle ->
                 handle.createUpdate ("DELETE FROM cartitems WHERE productid = ?").bind (0, productid).execute ());
+    }
+    public void deleteCartById(Long userid) {
+        JDBIConnector.get ().withHandle (handle ->
+                handle.createUpdate ("DELETE FROM cart WHERE userid = ?").bind (0, userid).execute ());
     }
 }

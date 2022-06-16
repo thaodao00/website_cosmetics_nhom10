@@ -26,7 +26,7 @@
         <div class="products__header">
             <p class="products__header-column products__header-choose"></p>
             <div class="products__header-column products__header-name">Name</div>
-            <div class="products__header-column products__header-quantity">Sold</div>
+            <div class="products__header-column products__header-quantity">Amount</div>
             <div class="products__header-column products__header-price">Price</div>
             <div class="products__header-column products__header-update">Edit</div>
         </div>
@@ -39,7 +39,9 @@
                         </a>
                     </div>
                     <div class="products__body-column products__body-name">${i.name}</div>
-                    <div class="products__body-column products__body-quantity">${i.sold}</div>
+                        <div class="products__body-column products__body-quantity">
+                                ${i.amount}
+                        </div>
                     <div class="products__body-column products__body-price">$${i.discount}</div>
                     <div class="products__body-column products__body-update">
                         <a title="chỉnh sửa sản phẩm" href="admin-update-products?sid=${i.id}" class="order__body-icon far fa-edit"></a>
