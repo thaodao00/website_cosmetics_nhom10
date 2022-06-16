@@ -1,6 +1,8 @@
 package com.example.website_cosmetics_nhom10.controller.admin.product;
 
+import com.example.website_cosmetics_nhom10.beans.Inventory;
 import com.example.website_cosmetics_nhom10.beans.Product;
+import com.example.website_cosmetics_nhom10.service.InventoryService;
 import com.example.website_cosmetics_nhom10.service.ProductService;
 
 import javax.servlet.ServletException;
@@ -9,6 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.List;
 
 @WebServlet(name = "ProductsAdminServlet", value = "/admin-products")

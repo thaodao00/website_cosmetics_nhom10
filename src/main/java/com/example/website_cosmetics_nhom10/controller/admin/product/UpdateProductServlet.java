@@ -30,6 +30,7 @@ public class UpdateProductServlet extends HttpServlet {
     }
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        int amount = Integer.parseInt (request.getParameter ("product-amount"));
         String sname = request.getParameter ("product-name");
         String sthumbnailImg = request.getParameter ("product-thumbnailImg");
         double sprice = Double.parseDouble (request.getParameter ("product-price"));
@@ -46,6 +47,7 @@ public class UpdateProductServlet extends HttpServlet {
         Long stag = Long.parseLong (request.getParameter ("tag"));
         Long sid = Long.parseLong (request.getParameter ("product-id"));
         ProductService.getInstance ().updateProduct(sname, sthumbnailImg, sprice, sdiscount, ssold, sshortDescription, slongDescription, srate, sweight, sdimension, sorigin, scategory, scompany, stag, sid);
+        InventoryService.getInstance ().updateInventory (sid, amount);
         response.sendRedirect ("admin-products?index=1");
     }
 }

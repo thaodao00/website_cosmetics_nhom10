@@ -7,7 +7,6 @@ import java.util.List;
 
 public class CategoryService {
     private static CategoryService instance;
-
     public static CategoryService getInstance() {
         if (instance == null)
             instance = new CategoryService();

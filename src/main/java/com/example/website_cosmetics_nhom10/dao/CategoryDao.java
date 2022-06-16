@@ -71,16 +71,6 @@ public class CategoryDao {
 ////        System.out.print(CategoryDao.getInstance().getCategoryByID (1L));
 //        CategoryDao.getInstance().updateCategory("ttttttt", 43L);
 //        System.out.print(CategoryDao.getInstance().getAll());
-        int[] myNum = {0, 20, 30, 0};
-        for (int i =0 ; i<myNum.length; i++){
-            if(myNum[i]==10){
-                System.out.println ("co");
-                break;
-            }
-            else{
-                System.out.println ("k");
-            }
-        }
-        System.out.println ("hhh");
+
     }
 }

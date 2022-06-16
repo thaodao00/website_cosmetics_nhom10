@@ -58,6 +58,12 @@ public class CartService {
     public void deleteCartItemById(Long productid){
         CartDao.getInstance ().deleteCartItemById (productid);
     }
+    public void deleteCartById(Long userid) {
+        CartDao.getInstance ().deleteCartById (userid);
+    }
+    public List<Cart> getAll(){
+        return CartDao.getInstance ().getAll ();
+    }
     public static void main(String[] args) {
         CartService.getInstance().addToCart(4, 3, 2);
     }

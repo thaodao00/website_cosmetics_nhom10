@@ -20,6 +20,10 @@
     <form action="admin-insert-products" class="form" method="post">
         <h2 class="form__title">ADD PRODUCT</h2>
         <div class="form-group">
+            <lable class="form__label">Id:</lable>
+            <input required name="product-id" type="text" class="form__input" placeholder="Enter name product">
+        </div>
+        <div class="form-group">
             <lable class="form__label">Name:</lable>
             <input required name="product-name" type="text" class="form__input" placeholder="Enter name product">
         </div>
@@ -34,6 +38,10 @@
         <div class="form-group">
             <lable class="form__label">Discount (USD):</lable>
             <input required name="product-discount" type="text" class="form__input" placeholder="0.00$">
+        </div>
+        <div class="form-group">
+            <lable class="form__label">Amount:</lable>
+            <input required name="product-amount" type="text" class="form__input" placeholder="0.00$">
         </div>
         <div class="form-group">
             <lable class="form__label">Sold:</lable>

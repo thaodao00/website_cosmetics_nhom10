@@ -1,10 +1,12 @@
 package com.example.website_cosmetics_nhom10.controller.admin.product;
 
 import com.example.website_cosmetics_nhom10.beans.CartItems;
+import com.example.website_cosmetics_nhom10.beans.Inventory;
 import com.example.website_cosmetics_nhom10.beans.Product;
 import com.example.website_cosmetics_nhom10.dao.CartDao;
 import com.example.website_cosmetics_nhom10.dao.ProductDao;
 import com.example.website_cosmetics_nhom10.service.CartService;
+import com.example.website_cosmetics_nhom10.service.InventoryService;
 import com.example.website_cosmetics_nhom10.service.ProductService;
 
 import javax.servlet.*;
@@ -22,6 +24,7 @@ public class DeleteProductServlet extends HttpServlet {
         Product p = ProductDao.getInstance ().getProductById (id);
         List<CartItems>items = new ArrayList<> ();
         List<CartItems> list = CartDao.getInstance ().getCartItemAll ();
+        List<Inventory> listI = InventoryService.getInstance ().getAll ();
         for(CartItems item : list){
             if(item.getProductId ()==p.getId ()){
                 items.add (item);
@@ -30,6 +33,10 @@ public class DeleteProductServlet extends HttpServlet {
                 }
             }
         }
+        for(Inventory item : listI)
+            if(item.getProductId () == p.getId ())
+                InventoryService.getInstance ().deleteinventoryId (item.productId);
+
         ProductService.getInstance ().deleteProductById(id);
         response.sendRedirect ("admin-products?index=1");
     }
