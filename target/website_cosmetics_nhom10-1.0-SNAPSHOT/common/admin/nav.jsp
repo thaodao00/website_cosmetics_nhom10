@@ -38,7 +38,7 @@
         </label>
         <label for='check-sidebar-list' class="sidebar__item">
             <i class="sidebar__item-icon fas fa-phone"></i>
-            <a href="admin-contact" class="sidebar__item-link">Branch Management</a>
+            <a href="admin-contact?index=1" class="sidebar__item-link">Branch Management</a>
         </label>
     </ul>
 </div>

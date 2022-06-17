@@ -64,8 +64,6 @@
         if(option === true){
             window.location.href = 'deleteCategory?sid='+id;
         }
-
-
     }
     var elem = document.getElementById('${index}');
     elem.style.backgroundColor="black"

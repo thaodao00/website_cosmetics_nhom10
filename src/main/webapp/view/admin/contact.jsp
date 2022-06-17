@@ -30,7 +30,7 @@
             <div class="contact__header-column contact__header-update">Edit</div>
         </div>
         <div class="contact__body-wrap">
-            <c:forEach var="i" items="${contact}">
+            <c:forEach var="i" items="${list}">
                 <div class="contact__body">
                     <div class="contact__body-column contact__body-choose">
                         <a href="#" onclick="showMess(${i.id})" class="action__delete">
@@ -47,25 +47,19 @@
                     </div>
                     <div class="contact__body-column contact__body-phone">${i.phone}</div>
                     <div class="contact__body-column contact__body-update">
-                        <a title="chỉnh sửa sản phẩm" href="" class="account__body-icon far fa-edit"></a>
+                        <a href="admin-update-contacts?sid=${i.id}" class="account__body-icon far fa-edit"></a>
                     </div>
                 </div>
             </c:forEach>
-
-
         </div>
     </div>
     <div class="pagination">
         <ul class="pagination__list">
-            <li class="pagination__list-item">
-                <a href="" class="pagination__list-item__link">1</a>
-            </li>
-            <li class="pagination__list-item">
-                <a href="" class="pagination__list-item__link">2</a>
-            </li>
-            <li class="pagination__list-item">
-                <a href="" class="pagination__list-item__link"><i class="fas fa-chevron-right"></i></a>
-            </li>
+            <c:forEach begin="1" end="${endPage}" var="i">
+                <li class="pagination__list-item">
+                    <a id="${i}" href="admin-contact?index=${i}" class="pagination__list-item__link">${i}</a>
+                </li>
+            </c:forEach>
         </ul>
     </div>
 </div>
@@ -76,6 +70,9 @@
             window.location.href = 'deleteContact?sid='+id;
         }
     }
+    var elem = document.getElementById('${index}');
+    elem.style.backgroundColor="black"
+    elem.style.color="white"
 </script>
 </body>
 </html>

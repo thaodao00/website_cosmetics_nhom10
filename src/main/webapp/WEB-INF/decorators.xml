@@ -44,6 +44,9 @@
     <decorator name="admin-insert-contacts" page="admin-insert-contacts.jsp">
         <pattern>/admin-insert-contacts</pattern>
     </decorator>
+    <decorator name="admin-update-contacts" page="admin-update-contacts.jsp">
+        <pattern>/admin-update-contacts</pattern>
+    </decorator>
     <decorator name="web" page="home.jsp">
         <pattern>/web*</pattern>
     </decorator>
