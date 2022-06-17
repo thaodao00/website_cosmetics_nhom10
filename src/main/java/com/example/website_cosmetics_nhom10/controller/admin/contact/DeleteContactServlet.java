@@ -13,7 +13,7 @@ public class DeleteContactServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Long id = Long.parseLong (request.getParameter ("sid"));
         ContactService.getInstance ().deleteContactById (id);
-        response.sendRedirect ("admin-contact");
+        response.sendRedirect ("admin-contact?index=1");
     }
 
     @Override

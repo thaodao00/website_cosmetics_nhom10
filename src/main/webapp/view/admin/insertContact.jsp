@@ -11,28 +11,28 @@
 <div class="col l-9 m-10 c-12">
     <div class="direct"><span><i class="direct-icon fas fa-home"></i>Home</span> &#160; &#62; &#160; Add or Edit branch
     </div>
-    <form action="" class="form">
+    <form action="admin-insert-contacts" method="post" class="form">
         <h2 class="form__title">Add branch</h2>
         <div class="form-group">
             <lable class="form__label">Name:</lable>
-            <input id="account-id" type="text" class="form__input" placeholder="">
-        </div>
-        <div class="form-group">
-            <lable class="form__label">Email:</lable>
-            <input id="account-name" type="text" class="form__input" placeholder="">
+            <input name="contact-name" type="text" class="form__input" placeholder="">
         </div>
         <div class="form-group">
             <lable class="form__label">Address:</lable>
-            <input id="account-mail" type="text" class="form__input" placeholder="...@gmail.com">
+            <input name="contact-address" type="text" class="form__input" placeholder="">
+        </div>
+        <div class="form-group">
+            <lable class="form__label">Email:</lable>
+            <input name="contact-email" type="text" class="form__input" placeholder="...@mail.com">
         </div>
         <div class="form-group">
             <lable class="form__label">Phone:</lable>
-            <input id="account-password" type="text" class="form__input" placeholder="">
+            <input name="contact-phone" type="text" class="form__input" placeholder=" ">
         </div>
 
         <div class="form-group-button">
             <input id="reset" class="form__btn" type="reset" value='Refresh'>
-            <a href="#"><input class="form__btn form__btn--black" type="button" value='Add'></a>
+            <a href="#"><input class="form__btn form__btn--black" type="submit" value='Add'></a>
         </div>
     </form>
 </div>
