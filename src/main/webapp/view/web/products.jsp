@@ -111,9 +111,12 @@
             </div>
         </div>
     </div>
-
 </div>
 
+<!-- Back to top -->
+<div id="back-to-top" class="back-to-top" title="Back to top">
+    <i class="fas fa-arrow-up"></i>
+</div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

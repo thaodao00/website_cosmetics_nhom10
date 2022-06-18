@@ -17,7 +17,7 @@
                     Hi Admin!
                     <ul class="header__welcome-item__board">
                         <li class="header__welcome-item__board-row">
-                            <a href="" class="header__welcome-item__board-link">
+                            <a href="<c:url value="web-logout" />" class="header__welcome-item__board-link">
                                 <i class="header__welcome-item__board-icon fas fa-sign-out-alt"></i>
                                 Logout
                             </a>

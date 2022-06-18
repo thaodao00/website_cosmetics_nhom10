@@ -10,6 +10,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
+import java.util.Collections;
 import java.util.List;
 
 @WebServlet(name = "HomeServlet", value = "/web-home")
@@ -17,10 +18,13 @@ public class HomeServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<Product> productsHot = ProductService.getInstance().getProductByTagName("Hot", 5);
+        Collections.shuffle(productsHot);
         request.setAttribute("productsHot", productsHot);
         List<Product> productsNew = ProductService.getInstance().getProductByTagName("New", 5);
+        Collections.shuffle(productsNew);
         request.setAttribute("productsNew", productsNew);
         List<Product> productsSale = ProductService.getInstance().getProductByTagName("Sale", 8);
+        Collections.shuffle(productsSale);
         request.setAttribute("productsSale", productsSale);
         request.getRequestDispatcher("/view/web/home.jsp").forward(request, response);
         HttpSession session = request.getSession();

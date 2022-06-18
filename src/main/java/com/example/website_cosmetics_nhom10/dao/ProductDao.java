@@ -68,7 +68,6 @@ public class ProductDao {
                 if (i.getProductId() == p.getId())
                     p.setAmount(i.getAmount());
         }
-        Collections.shuffle(list);
         return list;
     }
 
@@ -207,7 +206,8 @@ public class ProductDao {
     }
 
     public static void main(String[] args) {
-        System.out.println(ProductDao.getInstance().getProductById(17l));
+        for (Product p : ProductDao.getInstance().byPriceLowestFirst())
+            System.out.println(p.getDiscount());
     }
 }
 

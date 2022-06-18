@@ -9,6 +9,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
+import java.util.Collections;
 import java.util.List;
 
 @WebServlet(name = "ProductListServlet", value = "/web-products")
@@ -18,6 +19,7 @@ public class ProductListServlet extends HttpServlet {
         List<Product> products = ProductService.getInstance().getProductWithLimit(10);
         List<Category> category = CategoryService.getInstance().getAll();
         List<Product> sort = ProductService.getInstance().getAll();
+        Collections.shuffle(products);
         request.setAttribute("category", category);
         request.setAttribute("products", products);
         request.setAttribute("sort", sort);

@@ -8,6 +8,7 @@ import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Collections;
 import java.util.List;
 
 @WebServlet(name = "LoadMoreServlet", value = "/LoadMoreServlet")
@@ -18,6 +19,7 @@ public class LoadMoreServlet extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
         String amount = request.getParameter("exits");
         List<Product> list = ProductService.getInstance().getProductWithLimit(Integer.parseInt(amount), 10);
+        Collections.shuffle(list);
         PrintWriter out = response.getWriter();
 
         for (Product o : list) {
