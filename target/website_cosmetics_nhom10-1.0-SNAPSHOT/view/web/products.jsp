@@ -1,3 +1,5 @@
+<%@ page import="java.util.List" %>
+<%@ page import="com.example.website_cosmetics_nhom10.beans.Product" %>
 <%@include file="/common/taglib.jsp" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
@@ -70,10 +72,10 @@
                     <c:forEach var="i" items="${products}">
                         <a href="web-product?id=${i.id}" class="product col l-2-4 m-4 c-6">
                             <div class="product__item">
-
-                                <img class="product__item-img"
-                                     src="<c:url value="/template/web/assets/img/ordinary/${i.thumbnailImg}"/>"/>
-
+                                <div class="product__item-img__wrapper">
+                                    <img class="product__item-img"
+                                         src="<c:url value="/template/web/assets/img/thumbnail/${i.thumbnailImg}"/>">
+                                </div>
                                 <h5 class="product__item-name">
                                         ${i.name}
                                 </h5>
@@ -135,7 +137,6 @@
 
     $(".btn-sort--js").click(function () {
         let type = $(this).attr("type")
-        console.log(type)
         jQuery.ajax({
             url: "SortProductsServlet",
             type: "get",

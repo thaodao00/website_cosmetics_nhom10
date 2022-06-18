@@ -40,7 +40,7 @@
                         <input type="checkbox" class="select-product">
                         <a href="<c:url value="web-product?id=${entry.getKey().id}"/>" class="filled-cart__item-info">
                             <div class="filled-cart__item-img" style="background-image: url(<c:url
-                                    value="/template/web/assets/img/ordinary/${entry.getKey().thumbnailImg}"/>);"></div>
+                                    value="/template/web/assets/img/thumbnail/${entry.getKey().thumbnailImg}"/>);"></div>
                             <p class="filled-cart__item-description">${entry.getKey().name}</p>
                         </a>
                         <span class="filled-cart__item-price">${entry.getKey().price}</span>

@@ -9,7 +9,6 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,7 +24,7 @@ public class DeleteCategoryServlet extends HttpServlet {
             if(p.getCategoryId ()== c.getId ()){
                 listP.add (p);
                 for(Product p1 : listP){
-                    ProductService.getInstance ().updatecCategoryProduct (1L, p1.getId ());
+                    ProductService.getInstance ().updateCategoryProduct(1L, p1.getId ());
                 }
             }
         }

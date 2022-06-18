@@ -37,7 +37,7 @@
                         <div class="product-content__img-wrapper products-slidesshow">
                             <div class="mySlider fadeSlider">
                                 <img class="mySlider-img"
-                                     src="<c:url value="/template/web/assets/img/ordinary/${product.thumbnailImg}"/>"
+                                     src="<c:url value="/template/web/assets/img/thumbnail/${product.thumbnailImg}"/>"
                                      style="height: 440px"/>
                             </div>
                             <div class="mySlider fadeSlider">
@@ -271,8 +271,10 @@
                     <c:forEach var="i" items="${products}">
                         <a href="web-product?id=${i.id}" class="col l-2-4 m-4 c-6">
                             <div class="product__item">
-                                <img class="product__item-img"
-                                     src="<c:url value="/template/web/assets/img/ordinary/${i.thumbnailImg}"/>"/>
+                                <div class="product__item-img__wrapper">
+                                    <img class="product__item-img"
+                                         src="<c:url value="/template/web/assets/img/thumbnail/${i.thumbnailImg}"/>">
+                                </div>
                                 <h5 class="product__item-name">
                                         ${i.name}
                                 </h5>

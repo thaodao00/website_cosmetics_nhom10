@@ -52,8 +52,10 @@
                 <c:forEach var="i" items="${productsHot}">
                     <a href="web-product?id=${i.id}" class="col l-2-4 m-3 c-6">
                         <div class="product__item">
-                            <img class="product__item-img"
-                                 src="<c:url value="/template/web/assets/img/ordinary/${i.thumbnailImg}"/>">
+                            <div class="product__item-img__wrapper">
+                                <img class="product__item-img"
+                                     src="<c:url value="/template/web/assets/img/thumbnail/${i.thumbnailImg}"/>">
+                            </div>
                             <h3 class="product__item-name">
                                     ${i.name}
                             </h3>
@@ -127,9 +129,10 @@
                 <c:forEach var="i" items="${productsNew}">
                     <a href="web-product?id=${i.id}" class="col l-2-4 m-3 c-6">
                         <div class="product__item">
-                            <img class="product__item-img"
-
-                                 src="<c:url value="/template/web/assets/img/ordinary/${i.thumbnailImg}"/>">
+                            <div class="product__item-img__wrapper">
+                                <img class="product__item-img"
+                                     src="<c:url value="/template/web/assets/img/thumbnail/${i.thumbnailImg}"/>">
+                            </div>
                             <h3 class="product__item-name">
                                     ${i.name}
                             </h3>
@@ -242,8 +245,10 @@
                         <c:forEach var="i" items="${productsSale}">
                             <a href="web-product?id=${i.id}" class="col l-3 m-3 c-6">
                                 <div class="product__item">
-                                    <img class="product__item-img"
-                                         src="<c:url value="/template/web/assets/img/ordinary/${i.thumbnailImg}"/>">
+                                    <div class="product__item-img__wrapper">
+                                        <img class="product__item-img"
+                                             src="<c:url value="/template/web/assets/img/thumbnail/${i.thumbnailImg}"/>">
+                                    </div>
                                     <h3 class="product__item-name">
                                             ${i.name}
                                     </h3>

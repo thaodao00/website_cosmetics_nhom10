@@ -21,11 +21,13 @@ public class LoadMoreServlet extends HttpServlet {
         PrintWriter out = response.getWriter();
 
         for (Product o : list) {
-            out.println("<a href=\"web-product?id=${i.id}\" class=\"product col l-2-4 m-4 c-6\">\n" +
+            out.println("<a href=\"web-product?id=" + o.getId() + "\" class=\"product col l-2-4 m-4 c-6\">\n" +
                     "                            <div class=\"product__item\">\n" +
                     "\n" +
+                    "                               <div class=\"product__item-img__wrapper\">" +
                     "                                <img class=\"product__item-img\"\n" +
-                    "                                     src=\"template\\web\\assets\\img\\ordinary\\" + o.getThumbnailImg() + "\">\n" +
+                    "                                     src=\"template\\web\\assets\\img\\thumbnail\\" + o.getThumbnailImg() + "\">\n" +
+                    "                               </div>" +
                     "                                <h5 class=\"product__item-name\">\n" +
                     "                                        " + o.getName() + "\n" +
                     "                                </h5>\n" +

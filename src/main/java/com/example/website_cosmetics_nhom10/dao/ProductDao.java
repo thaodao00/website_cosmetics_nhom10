@@ -50,7 +50,7 @@ public class ProductDao {
         List<Company> companyList = CompanyDao.getInstance().getAll();
         List<Origin> originList = OriginDao.getInstance().getAll();
         List<Category> categoryList = CategoryDao.getInstance().getAll();
-        List<Inventory> inventoryList = InventoryDao.getInstance ().getAll ();
+        List<Inventory> inventoryList = InventoryDao.getInstance().getAll();
         for (Product p : list) {
             for (Tag t : tagNameList)
                 if (t.getId() == p.getTagId())
@@ -65,8 +65,8 @@ public class ProductDao {
                 if (c.getId() == p.getCategoryId())
                     p.setCategoryName(c.getName());
             for (Inventory i : inventoryList)
-                if (i.getProductId () == p.getId ())
-                    p.setAmount (i.getAmount ());
+                if (i.getProductId() == p.getId())
+                    p.setAmount(i.getAmount());
         }
         Collections.shuffle(list);
         return list;
@@ -77,7 +77,7 @@ public class ProductDao {
         p.setOriginName(OriginDao.getInstance().getOriginById(p.getOriginId()).getName());
         p.setCompanyName(CompanyDao.getInstance().getCompanyById(p.getCompanyId()).getName());
         p.setCategoryName(CategoryDao.getInstance().getCategoryById(p.getCategoryId()).getName());
-        p.setAmount (InventoryDao.getInstance ().getInventory (p.getId ()).getAmount ());
+        p.setAmount(InventoryDao.getInstance().getInventory(p.getId()).getAmount());
         return p;
     }
 
@@ -130,10 +130,11 @@ public class ProductDao {
         JDBIConnector.get().withHandle(handle ->
                 handle.createUpdate("DELETE FROM product WHERE id = ?").bind(0, id).execute());
     }
+
     public void insertProduct(Long id, String name, String thumbnailImg, double price, double discount, int sold, String shortDescription, String longDescription, double rate, String weight, String dimension, Long originid, Long categoryid, Long companyid, Long tagid) {
         JDBIConnector.get().withHandle(handle ->
                 handle.createUpdate("INSERT INTO product (id, name, thumbnailimg, price, discount, sold, shortDescription,longDescription, rate, weight, dimension, originid, categoryid, companyid, tagid) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)")
-                        .bind (0,id)
+                        .bind(0, id)
                         .bind(1, name)
                         .bind(2, thumbnailImg)
                         .bind(3, price)
@@ -170,11 +171,12 @@ public class ProductDao {
                 .bind(14, id)
                 .execute());
     }
+
     public void updateCategoryForProduct(Long categoryid, Long id) {
-        JDBIConnector.get ().withHandle (handle -> handle.createUpdate ("UPDATE product set  categoryid = ? WHERE id = ?")
-                .bind (0, categoryid)
-                .bind (1, id)
-                .execute ());
+        JDBIConnector.get().withHandle(handle -> handle.createUpdate("UPDATE product set  categoryid = ? WHERE id = ?")
+                .bind(0, categoryid)
+                .bind(1, id)
+                .execute());
     }
 
     public List<Product> getRelatedProducts(Long id, int n) {
@@ -201,10 +203,11 @@ public class ProductDao {
                         .bind(4, size)
                         .mapToBean(Product.class)
                         .list());
-        return setProductInfo (list);
+        return setProductInfo(list);
     }
+
     public static void main(String[] args) {
-        System.out.println(ProductDao.getInstance().getProductById (17l));
+        System.out.println(ProductDao.getInstance().getProductById(17l));
     }
 }
 
