@@ -18,4 +18,16 @@ public class ContactService {
     public void deleteContactById(Long id) {
         ContactDao.getInstance ().deleteContactById (id);
     }
+    public void insertContact(String name, String address, String email, String phone) {
+        ContactDao.getInstance ().insertContact (name, address, email, phone);
+    }
+    public Contact getContactById(Long id) {
+        return ContactDao.getInstance ().getContactById (id);
+    }
+    public void updateContact(String name, String address, String email, String phone, Long id) {
+        ContactDao.getInstance ().updateContact (name, address, email, phone, id);
+    }
+    public List<Contact> paginationContact(int index, int size) {
+        return ContactDao.getInstance ().paginationContact (index, size);
+    }
 }
