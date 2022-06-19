@@ -1,8 +1,11 @@
 package com.example.website_cosmetics_nhom10.service;
 
 import com.example.website_cosmetics_nhom10.beans.Product;
+import com.example.website_cosmetics_nhom10.beans.ProductImages;
 import com.example.website_cosmetics_nhom10.dao.ProductDao;
+import com.example.website_cosmetics_nhom10.dao.ProductImagesDao;
 
+import java.io.File;
 import java.util.List;
 
 public class ProductService {
@@ -82,7 +85,42 @@ public class ProductService {
         ProductDao.getInstance().updateCategoryForProduct(categoryid, id);
     }
 
+
     public static void main(String[] args) {
-        System.out.println(ProductService.getInstance().loadProductById(8L));
+//        List<Product> list = ProductService.getInstance().getAll();
+//        File[] images = new File("C:\\Users\\DELL\\OneDrive\\Documents\\GitHub\\website_cosmetics_nhom10\\src\\main\\webapp\\template\\web\\assets\\img\\product_images").listFiles();
+//        List<ProductImages> list = ProductImagesDao.getInstance().getAll();
+
+
+//        File dir = new File("C:\\Users\\DELL\\OneDrive\\Documents\\GitHub\\website_cosmetics_nhom10\\src\\main\\webapp\\template\\web\\assets\\img\\product_images");
+//        final File[] children = dir.listFiles();
+//        for (File f : children) {
+//            String fName = f.getName();
+//            String absolutePath = f.getAbsolutePath();
+//            f.renameTo(new File(absolutePath.substring(0, absolutePath.lastIndexOf("\\")) + "\\" + fName.replaceAll("-", "")));
+//        }
+
+//        for (Product p : list) {
+//            String thumbHead = p.getThumbnailImg().substring(0, p.getThumbnailImg().lastIndexOf("."));
+//            for (File f : images) {
+//                String fHead = f.getName().substring(0, f.getName().lastIndexOf(".") - 1);
+//                if (thumbHead.equals(fHead)) {
+//                    ProductImages pi = new ProductImages();
+//                    pi.setLink(f.getName());
+//                    pi.setPid(p.getId());
+//                    ProductImagesDao.getInstance().insertProductImages(pi);
+//                }
+//            }
+//        }
+
+//        for (int i = 0; i < images.length; i++)
+//            for (ProductImages pi : list)
+//                if (images[i].getName().equals(pi.getLink())) {
+//                    images[i] = null;
+//                    break;
+//                }
+//        for (File f : images)
+//            if (f != null)
+//                System.out.println(f.getName());
     }
 }

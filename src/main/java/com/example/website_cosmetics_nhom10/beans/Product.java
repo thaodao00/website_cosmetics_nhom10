@@ -1,5 +1,8 @@
 package com.example.website_cosmetics_nhom10.beans;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Product {
     private static Product instance;
 
@@ -30,7 +33,11 @@ public class Product {
     String categoryName;
     String companyName;
     String tagName;
+
     int amount;
+
+    List<ProductImages> images;
+
     public Product() {
 
     }
@@ -52,6 +59,7 @@ public class Product {
         this.companyId = companyName;
         this.tagId = tagName;
         this.amount = amount;
+        this.images = new ArrayList<>();
     }
 
     public Product(Long id, String name, String thumbnailImg, double price, double discount, int sold, String shortDescription, String longDescription, double rate, String weight, String dimension, String originName, String categoryName, String companyName, String tagName, int amount) {
@@ -71,6 +79,7 @@ public class Product {
         this.companyName = companyName;
         this.tagName = tagName;
         this.amount = amount;
+        this.images = new ArrayList<>();
     }
 
     public Long getId() {
@@ -231,6 +240,14 @@ public class Product {
 
     public void setAmount(int amount) {
         this.amount = amount;
+    }
+
+    public List<ProductImages> getImages() {
+        return images;
+    }
+
+    public void setImages(List<ProductImages> images) {
+        this.images = images;
     }
 
     @Override
