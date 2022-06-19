@@ -63,4 +63,12 @@ public class ReviewDao {
                 insertReview(users.get(i).getId(), p.getId(), comments.get(i));
         }
     }
+    public void deleteReviewId(Long productid) {
+        JDBIConnector.get().withHandle(handle ->
+                handle.createUpdate("DELETE FROM review WHERE productid = ?").bind(0, productid).execute());
+    }
+    public void deleteReviewUserId(Long userid) {
+        JDBIConnector.get().withHandle(handle ->
+                handle.createUpdate("DELETE FROM review WHERE userid = ?").bind(0, userid).execute());
+    }
 }

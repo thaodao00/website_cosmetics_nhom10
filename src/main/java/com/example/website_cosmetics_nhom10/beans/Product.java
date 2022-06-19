@@ -241,7 +241,6 @@ public class Product {
     public void setAmount(int amount) {
         this.amount = amount;
     }
-
     public List<ProductImages> getImages() {
         return images;
     }
@@ -272,6 +271,7 @@ public class Product {
                 ", categoryName='" + categoryName + '\'' +
                 ", companyName='" + companyName + '\'' +
                 ", tagName='" + tagName + '\'' +
+                ", amount=" + amount +
                 '}';
     }
 }

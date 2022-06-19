@@ -51,7 +51,12 @@ public class ReviewService {
 
         ReviewDao.getInstance().seedData(users, products, comments);
     }
-
+    public void deleteReviewId(Long productid) {
+        ReviewDao.getInstance ().deleteReviewId (productid);
+    }
+    public void deleteReviewUserId(Long userId) {
+        ReviewDao.getInstance ().deleteReviewUserId (userId);
+    }
     public static void main(String[] args) {
 //        ReviewService.getInstance().seedData();
 //        List<Product> list = ProductService.getInstance().getAll();

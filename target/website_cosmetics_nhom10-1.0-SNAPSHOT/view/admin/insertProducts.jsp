@@ -41,7 +41,7 @@
         </div>
         <div class="form-group">
             <lable class="form__label">Amount:</lable>
-            <input required name="product-amount" type="text" class="form__input" placeholder="0.00$">
+            <input required name="product-amount" type="text" class="form__input" placeholder="">
         </div>
         <div class="form-group">
             <lable class="form__label">Sold:</lable>

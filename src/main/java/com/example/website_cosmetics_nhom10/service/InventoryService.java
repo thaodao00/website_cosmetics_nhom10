@@ -24,7 +24,7 @@ public class InventoryService {
     public void updateInventory(Long productid, int amount){
         InventoryDao.getInstance ().updateInventory (productid, amount);
     }
-    public void deleteinventoryId(Long productid){
-        InventoryDao.getInstance ().deleteinventoryId (productid);
+    public void deleteInventoryId(Long productid){
+        InventoryDao.getInstance ().deleteInventoryId (productid);
     }
 }
