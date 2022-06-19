@@ -2,6 +2,7 @@ package com.example.website_cosmetics_nhom10.controller.admin.product;
 
 import com.example.website_cosmetics_nhom10.beans.Inventory;
 import com.example.website_cosmetics_nhom10.beans.Product;
+import com.example.website_cosmetics_nhom10.dao.ProductDao;
 import com.example.website_cosmetics_nhom10.service.InventoryService;
 import com.example.website_cosmetics_nhom10.service.ProductService;
 
@@ -30,6 +31,9 @@ public class ProductServlet extends HttpServlet {
         request.setAttribute ("endPage",endPage);
         request.setAttribute ("index", index);
         List<Product> product = ProductService.getInstance().paginationProduct (index,pageSize);
+        for(Product p : product){
+            ProductDao.setProductInfo(p);
+        }
         request.setAttribute ("products",product);
         request.getRequestDispatcher ("/view/admin/products.jsp").forward (request,response);
     }

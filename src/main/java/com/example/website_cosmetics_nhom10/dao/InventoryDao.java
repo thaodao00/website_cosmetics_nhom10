@@ -53,7 +53,7 @@ public class InventoryDao {
                 .execute());
     }
 
-    public void deleteinventoryId(Long productid) {
+    public void deleteInventoryId(Long productid) {
         JDBIConnector.get().withHandle(handle ->
                 handle.createUpdate("DELETE FROM inventory WHERE productid = ?").bind(0, productid).execute());
     }

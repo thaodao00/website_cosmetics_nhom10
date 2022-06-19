@@ -1,6 +1,7 @@
 package com.example.website_cosmetics_nhom10.controller.admin.product;
 
 import com.example.website_cosmetics_nhom10.beans.*;
+import com.example.website_cosmetics_nhom10.dao.ProductDao;
 import com.example.website_cosmetics_nhom10.service.*;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -26,8 +27,8 @@ public class InsertProductServlet extends HttpServlet {
     }
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        Long id = Long.parseLong (request.getParameter ("product-id"));
         int amount = Integer.parseInt (request.getParameter ("product-amount"));
+        Long id = Long.parseLong (request.getParameter ("product-id"));
         String sname = request.getParameter ("product-name");
         String sthumbnailImg = request.getParameter ("product-thumbnailImg");
         double sprice = Double.parseDouble (request.getParameter ("product-price"));
@@ -44,6 +45,8 @@ public class InsertProductServlet extends HttpServlet {
         Long stag = Long.parseLong (request.getParameter ("tag"));
         ProductService.getInstance ().insetProduct(id, sname, sthumbnailImg, sprice, sdiscount, ssold, sshortDescription, slongDescription, srate, sweight, sdimension, sorigin, scategory, scompany, stag);
         InventoryService.getInstance ().insertInventory (id, amount);
+//        List<Product> list = ProductService.getInstance ().getAll ();
+//        ProductDao.getInstance ().;
         response.sendRedirect ("admin-products?index=1");
     }
 }

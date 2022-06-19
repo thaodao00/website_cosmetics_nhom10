@@ -31,7 +31,7 @@
             <div class="products__header-column products__header-update">Edit</div>
         </div>
         <div class="products__body-wrap">
-            <c:forEach var="i" items="${products}">
+            <c:forEach  var="i" items="${products}">
                 <div class="products__body">
                     <div class="products__body-column products__body-choose">
                         <a title="" href="#" onclick="showMess(${i.id})" class="action__delete">

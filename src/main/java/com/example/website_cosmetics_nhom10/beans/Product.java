@@ -232,7 +232,6 @@ public class Product {
     public void setAmount(int amount) {
         this.amount = amount;
     }
-
     @Override
     public String toString() {
         return "Product{" +
@@ -255,6 +254,7 @@ public class Product {
                 ", categoryName='" + categoryName + '\'' +
                 ", companyName='" + companyName + '\'' +
                 ", tagName='" + tagName + '\'' +
+                ", amount=" + amount +
                 '}';
     }
 }

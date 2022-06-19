@@ -71,7 +71,7 @@ public class ProductDao {
         return list;
     }
 
-    private static Product setProductInfo(Product p) {
+    public static Product setProductInfo(Product p) {
         p.setTagName(TagDao.getInstance().getTagById(p.getTagId()).getName());
         p.setOriginName(OriginDao.getInstance().getOriginById(p.getOriginId()).getName());
         p.setCompanyName(CompanyDao.getInstance().getCompanyById(p.getCompanyId()).getName());
@@ -202,12 +202,13 @@ public class ProductDao {
                         .bind(4, size)
                         .mapToBean(Product.class)
                         .list());
-        return setProductInfo(list);
+        return setProductInfo (list);
     }
 
     public static void main(String[] args) {
-        for (Product p : ProductDao.getInstance().byPriceLowestFirst())
-            System.out.println(p.getDiscount());
+//        for (Product p : ProductDao.getInstance().getAll ())
+//            System.out.println(p.getDiscount());
+       System.out.println ( ProductDao.getInstance ().paginationProduct (1,30));
     }
 }
 
