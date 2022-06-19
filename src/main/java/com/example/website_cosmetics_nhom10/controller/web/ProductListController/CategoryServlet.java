@@ -15,15 +15,16 @@ import java.util.List;
 public class CategoryServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.setContentType ("text/html; charset = UTF-8");
-        String cateId = request.getParameter ("categoryId");
+        response.setContentType("text/html; charset = UTF-8");
+        String cateId = request.getParameter("categoryId");
         Long iCateId = Long.parseLong(cateId);
         List<Product> products = ProductService.getInstance().getProductByCateId(iCateId);
         List<Category> category = CategoryService.getInstance().getAll();
-        request.setAttribute ("products",products);
-        request.setAttribute ("category",category);
-        request.setAttribute ("tag",cateId);
-        request.getRequestDispatcher ("/view/web/products.jsp").forward (request,response);
+        category.remove(0);
+        request.setAttribute("products", products);
+        request.setAttribute("category", category);
+        request.setAttribute("tag", cateId);
+        request.getRequestDispatcher("/view/web/products.jsp").forward(request, response);
     }
 
     @Override
