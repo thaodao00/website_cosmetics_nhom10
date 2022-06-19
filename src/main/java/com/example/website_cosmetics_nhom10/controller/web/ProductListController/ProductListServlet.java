@@ -18,6 +18,7 @@ public class ProductListServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<Product> products = ProductService.getInstance().getProductWithLimit(10);
         List<Category> category = CategoryService.getInstance().getAll();
+        category.remove(0);
         List<Product> sort = ProductService.getInstance().getAll();
         Collections.shuffle(products);
         request.setAttribute("category", category);

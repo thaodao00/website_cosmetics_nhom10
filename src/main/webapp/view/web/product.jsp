@@ -40,11 +40,15 @@
                                      src="<c:url value="/template/web/assets/img/thumbnail/${product.thumbnailImg}"/>"
                                      style="height: 440px"/>
                             </div>
-                            <div class="mySlider fadeSlider">
-                                <img class="mySlider-img" src="assets/img/product/granary/zin10%25.webp"
-                                     style="height: 440px"/>
+                            <c:set var="productImages" value="${product.getImages()}"/>
+                            <c:forEach var="image" items="${productImages}">
+                                <div class="mySlider fadeSlider">
+                                    <img class="mySlider-img"
+                                         src="<c:url value="/template/web/assets/img/product_images/${image.link}"/>"
+                                         style="height: 440px"/>
+                                </div>
+                            </c:forEach>
 
-                            </div>
                             <a class="prev" onclick="plusSlider(-1)" style="color: black;left: 0">
                                 <i class="fas fa-chevron-circle-left"></i>
                             </a>
