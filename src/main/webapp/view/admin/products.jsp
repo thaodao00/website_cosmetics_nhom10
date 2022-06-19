@@ -38,13 +38,18 @@
                             <i class="action-icon far fa-trash-alt"></i>
                         </a>
                     </div>
-                    <div class="products__body-column products__body-name">${i.name}</div>
-                        <div class="products__body-column products__body-quantity">
-                                ${i.amount}
-                        </div>
+                    <div class="products__body-column products__body-name" style="justify-content: flex-start">
+                        <span class="products__body-name__content">
+                                ${i.name}
+                        </span>
+                    </div>
+                    <div class="products__body-column products__body-quantity">
+                            ${i.amount}
+                    </div>
                     <div class="products__body-column products__body-price">$${i.discount}</div>
                     <div class="products__body-column products__body-update">
-                        <a title="chỉnh sửa sản phẩm" href="admin-update-products?sid=${i.id}" class="order__body-icon far fa-edit"></a>
+                        <a title="chỉnh sửa sản phẩm" href="admin-update-products?sid=${i.id}"
+                           class="order__body-icon far fa-edit"></a>
                     </div>
                 </div>
             </c:forEach>
@@ -63,15 +68,16 @@
     </div>
 </div>
 <script>
-    function showMess(id){
+    function showMess(id) {
         const option = confirm('Are you sure to delete');
-        if(option === true){
-            window.location.href = 'deleteProduct?sid='+id;
+        if (option === true) {
+            window.location.href = 'deleteProduct?sid=' + id;
         }
     }
+
     var elem = document.getElementById('${index}');
-    elem.style.backgroundColor="black"
-    elem.style.color="white"
+    elem.style.backgroundColor = "black"
+    elem.style.color = "white"
 </script>
 </body>
 

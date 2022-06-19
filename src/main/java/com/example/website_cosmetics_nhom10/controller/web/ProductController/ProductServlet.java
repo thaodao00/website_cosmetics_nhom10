@@ -10,6 +10,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
+import java.util.Collections;
 import java.util.List;
 
 @WebServlet(name = "ProductServlet", value = "/web-product")
@@ -20,6 +21,7 @@ public class ProductServlet extends HttpServlet {
         Product product = ProductService.getInstance().loadProductById(pid);
         request.setAttribute("product", product);
         List<Product> products = ProductService.getInstance().getRelatedProducts(pid, 10);
+        Collections.shuffle(products);
         request.setAttribute("products", products);
         List<Review> reviews = ReviewService.getInstance().getByProductId(pid);
         request.setAttribute("reviews", reviews);

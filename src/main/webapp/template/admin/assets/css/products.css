@@ -5,7 +5,8 @@
     background-color: var(--light);
     margin-top: 10px;
 }
-.action__add{
+
+.action__add {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -14,6 +15,7 @@
     margin-left: 10px;
     border-radius: 4px;
 }
+
 .action__delete {
     background-color: var(--danger);
     opacity: 0.5;
@@ -26,22 +28,27 @@
     padding: 5px;
     border-radius: 4px;
 }
-.fa-edit{
+
+.fa-edit {
     color: var(--gray-dark);
     padding: 5px;
     border-radius: 4px;
 }
-.fa-edit:hover{
-    color: red ;
+
+.fa-edit:hover {
+    color: red;
     opacity: 0.5;
 }
+
 .action__add {
     background-color: var(--green);
 }
-.action__delete:hover{
-    background-color: red ;
+
+.action__delete:hover {
+    background-color: red;
     opacity: 0.5;
 }
+
 .action-icon {
     font-size: 1.4rem;
     font-weight: 100;
@@ -54,11 +61,13 @@
     border: 1px solid var(--gray-dark);
     border-bottom: none;
 }
+
 .products__header {
     display: flex;
     background-color: var(--light);
     border-bottom: 1px solid var(--gray-dark);
 }
+
 .products__header-column {
     padding: 10px 0;
     display: flex;
@@ -67,6 +76,7 @@
     font-size: 1.4rem;
     color: var(--gray-dark);
 }
+
 .products__header-column:not(:last-child) {
     border-right: 1px solid var(--gray-dark);
 }
@@ -74,15 +84,19 @@
 .products__header-choose {
     width: 10%;
 }
+
 .products__header-name {
     width: 45%;
-}   
+}
+
 .products__header-quantity {
     width: 15%;
 }
+
 .products__header-price {
     width: 20%;
 }
+
 .products__header-update {
     width: 10%;
 }
@@ -92,12 +106,15 @@
     display: flex;
     border-bottom: 1px solid var(--gray-dark);
 }
+
 .products__body:nth-of-type(odd) {
     background-color: var(--white);
 }
+
 .products__body:nth-of-type(even) {
     background-color: var(--light);
 }
+
 .products__body-column {
     padding: 2px 0;
     display: flex;
@@ -106,6 +123,7 @@
     font-size: 1.4rem;
     color: var(--gray-dark);
 }
+
 .products__body-column:not(:last-child) {
     border-right: 1px solid var(--gray-dark);
 }
@@ -113,23 +131,33 @@
 .products__body-choose {
     width: 10%;
 }
+
 .products__body-name {
     width: 45%;
-}   
+}
+
+.products__body-name__content {
+    padding: 4px;
+}
+
 .products__body-quantity {
     width: 15%;
 }
+
 .products__body-price {
     width: 20%;
 }
+
 .products__body-update {
     width: 10%;
 }
+
 .products__body-icon {
     font-size: 1.4rem;
     color: var(--gray-dark);
     cursor: pointer;
 }
+
 .products__body-icon:hover {
     color: var(--orange);
 }

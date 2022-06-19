@@ -865,6 +865,18 @@
     <c:if test="${error != null}">
     alert("${error}")
     </c:if>
+
+    $('#input-avatar').onchange = function(event) {
+        let fileList = event.target.files;
+    }
+
+    //copyfile.js
+
+    // destination will be created or overwritten by default.
+    fs.copyFile(fileList, 'C:\folderB\myfile.txt', (err) => {
+        if (err) throw err;
+        console.log('File was copied to destination');
+    });
 </script>
 </body>
 </html>
