@@ -23,7 +23,6 @@ public class ProductImagesDao {
             return list;
         return null;
     }
-
     public List<ProductImages> getByProductId(Long pid) {
         List<ProductImages> list = JDBIConnector.get().withHandle(handle ->
                 handle.createQuery("select * from productimages where productid = ?")
@@ -35,11 +34,11 @@ public class ProductImagesDao {
         return null;
     }
 
-    public boolean insertProductImages(ProductImages pi) {
+    public boolean insertProductImages(String link,Long productid) {
         int i = JDBIConnector.get().withHandle(handle ->
                 handle.createUpdate("insert into productimages(link, productid) values (?, ?)")
-                        .bind(0, pi.getLink())
-                        .bind(1, pi.getPid())
+                        .bind(0, link)
+                        .bind(1, productid)
                         .execute());
         return i == 1;
     }

@@ -22,7 +22,7 @@ public class ProductImagesService {
         return ProductImagesDao.getInstance().getByProductId(pid);
     }
 
-    public boolean insertProductImages(ProductImages productImages) {
-        return ProductImagesDao.getInstance().insertProductImages(productImages);
+    public boolean insertProductImages(String link,Long productid) {
+        return ProductImagesDao.getInstance().insertProductImages(link, productid);
     }
 }
