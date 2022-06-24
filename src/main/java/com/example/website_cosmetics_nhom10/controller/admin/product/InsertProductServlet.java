@@ -27,6 +27,7 @@ public class InsertProductServlet extends HttpServlet {
     }
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String link = request.getParameter ("product-img");
         int amount = Integer.parseInt (request.getParameter ("product-amount"));
         Long id = Long.parseLong (request.getParameter ("product-id"));
         String sname = request.getParameter ("product-name");
@@ -45,8 +46,7 @@ public class InsertProductServlet extends HttpServlet {
         Long stag = Long.parseLong (request.getParameter ("tag"));
         ProductService.getInstance ().insetProduct(id, sname, sthumbnailImg, sprice, sdiscount, ssold, sshortDescription, slongDescription, srate, sweight, sdimension, sorigin, scategory, scompany, stag);
         InventoryService.getInstance ().insertInventory (id, amount);
-//        List<Product> list = ProductService.getInstance ().getAll ();
-//        ProductDao.getInstance ().;
+        ProductImagesService.getInstance ().insertProductImages (link, id);
         response.sendRedirect ("admin-products?index=1");
     }
 }

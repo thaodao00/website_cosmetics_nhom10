@@ -32,6 +32,10 @@
             <input  required name="product-thumbnailImg" type="file" class="form__input">
         </div>
         <div class="form-group">
+            <label  class="form__label">Select picture detail:</label>
+            <input  required name="product-img" type="file" multiple class="form__input">
+        </div>
+        <div class="form-group">
             <lable class="form__label">Price (USD):</lable>
             <input required name="product-price" type="text" class="form__input" placeholder="0.00$">
         </div>
